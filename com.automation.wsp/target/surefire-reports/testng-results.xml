@@ -1,41 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="13" failed="2" ignored="0" total="15" passed="0">
+<testng-results ignored="0" total="15" passed="3" failed="6" skipped="6">
   <reporter-output>
   </reporter-output>
-  <suite name="Suite" duration-ms="67396" started-at="2018-08-03T11:14:54Z" finished-at="2018-08-03T11:16:02Z">
+  <suite started-at="2018-08-21T10:09:20Z" name="Suite" finished-at="2018-08-21T10:13:38Z" duration-ms="258011">
     <groups>
     </groups>
-    <test name="Test" duration-ms="67396" started-at="2018-08-03T11:14:54Z" finished-at="2018-08-03T11:16:02Z">
+    <test started-at="2018-08-21T10:09:20Z" name="Test" finished-at="2018-08-21T10:13:38Z" duration-ms="258011">
       <class name="com.controller.ScriptExecution">
-        <test-method status="PASS" signature="Launch_Browser()[pri:0, instance:com.controller.ScriptExecution@13fee20c]" name="Launch_Browser" is-config="true" duration-ms="16713" started-at="2018-08-03T11:14:54Z" finished-at="2018-08-03T11:15:11Z">
+        <test-method is-config="true" signature="Launch_Browser()[pri:0, instance:com.controller.ScriptExecution@2638011]" started-at="2018-08-21T10:09:20Z" name="Launch_Browser" finished-at="2018-08-21T10:09:30Z" duration-ms="9998" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Launch_Browser -->
-        <test-method status="FAIL" signature="Scenario_005()[pri:0, instance:com.controller.ScriptExecution@13fee20c]" name="Scenario_005" duration-ms="28114" started-at="2018-08-03T11:15:11Z" finished-at="2018-08-03T11:15:39Z">
+        <test-method signature="Scenario_005()[pri:0, instance:com.controller.ScriptExecution@2638011]" started-at="2018-08-21T10:09:30Z" name="Scenario_005" finished-at="2018-08-21T10:09:54Z" duration-ms="23212" status="FAIL">
           <exception class="org.openqa.selenium.NoSuchElementException">
             <message>
               <![CDATA[Unable to locate element: //span[contains(text(),'log in')]
 For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
 Build info: version: '3.13.0', revision: '2f0d292', time: '2018-06-25T15:24:21.231Z'
-System info: host: 'DESKTOP-RC48C0S', ip: '10.7.22.55', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_171'
+System info: host: 'DESKTOP-L268OE3', ip: '10.7.23.187', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '10.0.2'
 Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 61.0.1, javascriptEnabled: true, moz:accessibilityChecks: false, moz:headless: false, moz:processID: 3428, moz:profile: C:\Users\lenovo\AppData\Loc..., moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: XP, platformName: XP, platformVersion: 10.0, rotatable: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}}
-Session ID: 0fe005e4-d741-426b-90f6-92f357759370
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 61.0.1, javascriptEnabled: true, moz:accessibilityChecks: false, moz:headless: false, moz:processID: 4820, moz:profile: C:\Users\DELL\AppData\Local..., moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: XP, platformName: XP, platformVersion: 10.0, rotatable: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}}
+Session ID: 03e82325-17aa-4203-acd7-a0d8b04600bf
 *** Element info: {Using=xpath, value=//span[contains(text(),'log in')]}]]>
             </message>
             <full-stacktrace>
               <![CDATA[org.openqa.selenium.NoSuchElementException: Unable to locate element: //span[contains(text(),'log in')]
 For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
 Build info: version: '3.13.0', revision: '2f0d292', time: '2018-06-25T15:24:21.231Z'
-System info: host: 'DESKTOP-RC48C0S', ip: '10.7.22.55', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_171'
+System info: host: 'DESKTOP-L268OE3', ip: '10.7.23.187', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '10.0.2'
 Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 61.0.1, javascriptEnabled: true, moz:accessibilityChecks: false, moz:headless: false, moz:processID: 3428, moz:profile: C:\Users\lenovo\AppData\Loc..., moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: XP, platformName: XP, platformVersion: 10.0, rotatable: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}}
-Session ID: 0fe005e4-d741-426b-90f6-92f357759370
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 61.0.1, javascriptEnabled: true, moz:accessibilityChecks: false, moz:headless: false, moz:processID: 4820, moz:profile: C:\Users\DELL\AppData\Local..., moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: XP, platformName: XP, platformVersion: 10.0, rotatable: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}}
+Session ID: 03e82325-17aa-4203-acd7-a0d8b04600bf
 *** Element info: {Using=xpath, value=//span[contains(text(),'log in')]}
-at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
-at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:488)
 at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
 at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
 at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
@@ -48,14 +48,14 @@ at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
 at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:314)
 at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
 at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-at com.sun.proxy.$Proxy8.isDisplayed(Unknown Source)
-at com.objects_pages.loginPage.LoginTab(loginPage.java:162)
+at com.sun.proxy.$Proxy10.isDisplayed(Unknown Source)
+at com.objects_pages.loginPage.LoginTab(loginPage.java:158)
 at com.scenarios.Sc_005_Verify_LoginPage.Verify_all_elements_present_in_loginPage(Sc_005_Verify_LoginPage.java:109)
-at com.controller.ScriptExecution.Scenario_005(ScriptExecution.java:54)
-at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.lang.reflect.Method.invoke(Method.java:498)
+at com.controller.ScriptExecution.Scenario_005(ScriptExecution.java:53)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:564)
 at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
 at org.testng.internal.Invoker.invokeMethod(Invoker.java:580)
 at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:716)
@@ -74,49 +74,52 @@ at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
 at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
 at org.testng.TestNG.runSuites(TestNG.java:1049)
 at org.testng.TestNG.run(TestNG.java:1017)
-at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:293)
-at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:84)
-at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:91)
-at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:200)
-at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:153)
-at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
+at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:283)
+at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:75)
+at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:120)
+at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:383)
+at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:344)
+at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:125)
+at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:417)
 ]]>
             </full-stacktrace>
           </exception> <!-- org.openqa.selenium.NoSuchElementException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Scenario_005 -->
-        <test-method status="PASS" signature="Close_Browser()[pri:0, instance:com.controller.ScriptExecution@13fee20c]" name="Close_Browser" is-config="true" duration-ms="3828" started-at="2018-08-03T11:15:40Z" finished-at="2018-08-03T11:15:43Z">
+        <test-method is-config="true" signature="Close_Browser()[pri:0, instance:com.controller.ScriptExecution@2638011]" started-at="2018-08-21T10:09:54Z" name="Close_Browser" finished-at="2018-08-21T10:09:58Z" duration-ms="3629" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Close_Browser -->
-        <test-method status="PASS" signature="Launch_Browser()[pri:0, instance:com.controller.ScriptExecution@13fee20c]" name="Launch_Browser" is-config="true" duration-ms="6187" started-at="2018-08-03T11:15:43Z" finished-at="2018-08-03T11:15:50Z">
+        <test-method is-config="true" signature="Launch_Browser()[pri:0, instance:com.controller.ScriptExecution@2638011]" started-at="2018-08-21T10:09:58Z" name="Launch_Browser" finished-at="2018-08-21T10:10:07Z" duration-ms="9417" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Launch_Browser -->
-        <test-method status="FAIL" signature="Scenario_006()[pri:0, instance:com.controller.ScriptExecution@13fee20c]" name="Scenario_006" duration-ms="9799" started-at="2018-08-03T11:15:50Z" finished-at="2018-08-03T11:15:59Z">
-          <exception class="org.openqa.selenium.WebDriverException">
+        <test-method signature="Scenario_006()[pri:0, instance:com.controller.ScriptExecution@2638011]" started-at="2018-08-21T10:10:07Z" name="Scenario_006" finished-at="2018-08-21T10:10:33Z" duration-ms="25762" status="FAIL">
+          <exception class="org.openqa.selenium.NoSuchElementException">
             <message>
-              <![CDATA[Failed to decode response from marionette
+              <![CDATA[Unable to locate element: //mat-error/div
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
 Build info: version: '3.13.0', revision: '2f0d292', time: '2018-06-25T15:24:21.231Z'
-System info: host: 'DESKTOP-RC48C0S', ip: '10.7.22.55', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_171'
+System info: host: 'DESKTOP-L268OE3', ip: '10.7.23.187', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '10.0.2'
 Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 61.0.1, javascriptEnabled: true, moz:accessibilityChecks: false, moz:headless: false, moz:processID: 13928, moz:profile: C:\Users\lenovo\AppData\Loc..., moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: XP, platformName: XP, platformVersion: 10.0, rotatable: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}}
-Session ID: 5ff0884e-487b-4ddd-82cd-2b02e00f6bfb
-*** Element info: {Using=xpath, value=//div[contains(text(),'Required fields cannot be empty')]}]]>
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 61.0.1, javascriptEnabled: true, moz:accessibilityChecks: false, moz:headless: false, moz:processID: 4000, moz:profile: C:\Users\DELL\AppData\Local..., moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: XP, platformName: XP, platformVersion: 10.0, rotatable: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}}
+Session ID: 5046428f-527d-49b1-939e-a1ce28d359c8
+*** Element info: {Using=xpath, value=//mat-error/div}]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.WebDriverException: Failed to decode response from marionette
+              <![CDATA[org.openqa.selenium.NoSuchElementException: Unable to locate element: //mat-error/div
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
 Build info: version: '3.13.0', revision: '2f0d292', time: '2018-06-25T15:24:21.231Z'
-System info: host: 'DESKTOP-RC48C0S', ip: '10.7.22.55', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_171'
+System info: host: 'DESKTOP-L268OE3', ip: '10.7.23.187', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '10.0.2'
 Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 61.0.1, javascriptEnabled: true, moz:accessibilityChecks: false, moz:headless: false, moz:processID: 13928, moz:profile: C:\Users\lenovo\AppData\Loc..., moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: XP, platformName: XP, platformVersion: 10.0, rotatable: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}}
-Session ID: 5ff0884e-487b-4ddd-82cd-2b02e00f6bfb
-*** Element info: {Using=xpath, value=//div[contains(text(),'Required fields cannot be empty')]}
-at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
-at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 61.0.1, javascriptEnabled: true, moz:accessibilityChecks: false, moz:headless: false, moz:processID: 4000, moz:profile: C:\Users\DELL\AppData\Local..., moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: XP, platformName: XP, platformVersion: 10.0, rotatable: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}}
+Session ID: 5046428f-527d-49b1-939e-a1ce28d359c8
+*** Element info: {Using=xpath, value=//mat-error/div}
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:488)
 at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
 at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
 at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
@@ -129,14 +132,14 @@ at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
 at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:314)
 at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
 at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-at com.sun.proxy.$Proxy8.isDisplayed(Unknown Source)
-at com.objects_pages.loginPage.Error_MandatoryField(loginPage.java:95)
-at com.scenarios.Sc_006_Verify_EmailID_Password_LoginPage.Verify_MailId_Password(Sc_006_Verify_EmailID_Password_LoginPage.java:29)
-at com.controller.ScriptExecution.Scenario_006(ScriptExecution.java:61)
-at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.lang.reflect.Method.invoke(Method.java:498)
+at com.sun.proxy.$Proxy10.isDisplayed(Unknown Source)
+at com.objects_pages.loginPage.Error_InvalidMail(loginPage.java:85)
+at com.scenarios.Sc_006_Verify_EmailID_Password_LoginPage.Verify_MailId_Password(Sc_006_Verify_EmailID_Password_LoginPage.java:42)
+at com.controller.ScriptExecution.Scenario_006(ScriptExecution.java:60)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:564)
 at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
 at org.testng.internal.Invoker.invokeMethod(Invoker.java:580)
 at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:716)
@@ -155,58 +158,41 @@ at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
 at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
 at org.testng.TestNG.runSuites(TestNG.java:1049)
 at org.testng.TestNG.run(TestNG.java:1017)
-at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:293)
-at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:84)
-at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:91)
-at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:200)
-at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:153)
-at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
+at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:283)
+at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:75)
+at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:120)
+at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:383)
+at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:344)
+at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:125)
+at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:417)
 ]]>
             </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.WebDriverException -->
+          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Scenario_006 -->
-        <test-method status="FAIL" signature="Close_Browser()[pri:0, instance:com.controller.ScriptExecution@13fee20c]" name="Close_Browser" is-config="true" duration-ms="2078" started-at="2018-08-03T11:15:59Z" finished-at="2018-08-03T11:16:02Z">
-          <exception class="org.openqa.selenium.SessionNotCreatedException">
-            <message>
-              <![CDATA[Tried to run command without establishing a connection
-Build info: version: '3.13.0', revision: '2f0d292', time: '2018-06-25T15:24:21.231Z'
-System info: host: 'DESKTOP-RC48C0S', ip: '10.7.22.55', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_171'
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 61.0.1, javascriptEnabled: true, moz:accessibilityChecks: false, moz:headless: false, moz:processID: 13928, moz:profile: C:\Users\lenovo\AppData\Loc..., moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: XP, platformName: XP, platformVersion: 10.0, rotatable: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}}
-Session ID: 5ff0884e-487b-4ddd-82cd-2b02e00f6bfb]]>
-            </message>
+        <test-method is-config="true" signature="Close_Browser()[pri:0, instance:com.controller.ScriptExecution@2638011]" started-at="2018-08-21T10:10:33Z" name="Close_Browser" finished-at="2018-08-21T10:10:37Z" duration-ms="3479" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Close_Browser -->
+        <test-method is-config="true" signature="Launch_Browser()[pri:0, instance:com.controller.ScriptExecution@2638011]" started-at="2018-08-21T10:10:37Z" name="Launch_Browser" finished-at="2018-08-21T10:10:46Z" duration-ms="9109" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Launch_Browser -->
+        <test-method signature="Scenario_008()[pri:0, instance:com.controller.ScriptExecution@2638011]" started-at="2018-08-21T10:10:46Z" name="Scenario_008" finished-at="2018-08-21T10:10:51Z" duration-ms="4899" status="FAIL">
+          <exception class="java.lang.NullPointerException">
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.SessionNotCreatedException: Tried to run command without establishing a connection
-Build info: version: '3.13.0', revision: '2f0d292', time: '2018-06-25T15:24:21.231Z'
-System info: host: 'DESKTOP-RC48C0S', ip: '10.7.22.55', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_171'
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 61.0.1, javascriptEnabled: true, moz:accessibilityChecks: false, moz:headless: false, moz:processID: 13928, moz:profile: C:\Users\lenovo\AppData\Loc..., moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: XP, platformName: XP, platformVersion: 10.0, rotatable: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}}
-Session ID: 5ff0884e-487b-4ddd-82cd-2b02e00f6bfb
-at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
-at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:548)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:605)
-at org.openqa.selenium.remote.RemoteWebDriver.quit(RemoteWebDriver.java:448)
-at com.controller.Action_Method.close_browser(Action_Method.java:239)
-at com.controller.ScriptExecution.Close_Browser(ScriptExecution.java:45)
-at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.lang.reflect.Method.invoke(Method.java:498)
+              <![CDATA[java.lang.NullPointerException
+at com.controller.Action_Method.getExceldata(Action_Method.java:105)
+at com.objects_pages.RegisterPage.Enter_Inputs_For_All_The_Fields_In_RegisterPage(RegisterPage.java:45)
+at com.scenarios.Sc_008_Verify_Register.Verify_Registration_Of_user(Sc_008_Verify_Register.java:31)
+at com.controller.ScriptExecution.Scenario_008(ScriptExecution.java:68)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:564)
 at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
-at org.testng.internal.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:59)
-at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:455)
-at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:222)
-at org.testng.internal.Invoker.invokeMethod(Invoker.java:643)
+at org.testng.internal.Invoker.invokeMethod(Invoker.java:580)
 at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:716)
 at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:988)
 at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
@@ -223,522 +209,110 @@ at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
 at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
 at org.testng.TestNG.runSuites(TestNG.java:1049)
 at org.testng.TestNG.run(TestNG.java:1017)
-at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:293)
-at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:84)
-at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:91)
-at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:200)
-at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:153)
-at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
+at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:283)
+at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:75)
+at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:120)
+at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:383)
+at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:344)
+at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:125)
+at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:417)
 ]]>
             </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.SessionNotCreatedException -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Close_Browser -->
-        <test-method status="SKIP" signature="Launch_Browser()[pri:0, instance:com.controller.ScriptExecution@13fee20c]" name="Launch_Browser" is-config="true" duration-ms="0" started-at="2018-08-03T11:16:02Z" finished-at="2018-08-03T11:16:02Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Launch_Browser -->
-        <test-method status="SKIP" signature="Launch_Browser()[pri:0, instance:com.controller.ScriptExecution@13fee20c]" name="Launch_Browser" is-config="true" duration-ms="0" started-at="2018-08-03T11:16:02Z" finished-at="2018-08-03T11:16:02Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Launch_Browser -->
-        <test-method status="SKIP" signature="Scenario_023()[pri:0, instance:com.controller.ScriptExecution@13fee20c]" name="Scenario_023" duration-ms="0" started-at="2018-08-03T11:16:02Z" finished-at="2018-08-03T11:16:02Z">
-          <exception class="org.openqa.selenium.SessionNotCreatedException">
-            <message>
-              <![CDATA[Tried to run command without establishing a connection
-Build info: version: '3.13.0', revision: '2f0d292', time: '2018-06-25T15:24:21.231Z'
-System info: host: 'DESKTOP-RC48C0S', ip: '10.7.22.55', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_171'
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 61.0.1, javascriptEnabled: true, moz:accessibilityChecks: false, moz:headless: false, moz:processID: 13928, moz:profile: C:\Users\lenovo\AppData\Loc..., moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: XP, platformName: XP, platformVersion: 10.0, rotatable: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}}
-Session ID: 5ff0884e-487b-4ddd-82cd-2b02e00f6bfb]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.SessionNotCreatedException: Tried to run command without establishing a connection
-Build info: version: '3.13.0', revision: '2f0d292', time: '2018-06-25T15:24:21.231Z'
-System info: host: 'DESKTOP-RC48C0S', ip: '10.7.22.55', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_171'
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 61.0.1, javascriptEnabled: true, moz:accessibilityChecks: false, moz:headless: false, moz:processID: 13928, moz:profile: C:\Users\lenovo\AppData\Loc..., moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: XP, platformName: XP, platformVersion: 10.0, rotatable: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}}
-Session ID: 5ff0884e-487b-4ddd-82cd-2b02e00f6bfb
-at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
-at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:548)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:605)
-at org.openqa.selenium.remote.RemoteWebDriver.quit(RemoteWebDriver.java:448)
-at com.controller.Action_Method.close_browser(Action_Method.java:239)
-at com.controller.ScriptExecution.Close_Browser(ScriptExecution.java:45)
-at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.lang.reflect.Method.invoke(Method.java:498)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
-at org.testng.internal.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:59)
-at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:455)
-at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:222)
-at org.testng.internal.Invoker.invokeMethod(Invoker.java:643)
-at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:716)
-at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:988)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
-at org.testng.TestRunner.privateRun(TestRunner.java:648)
-at org.testng.TestRunner.run(TestRunner.java:505)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
-at org.testng.SuiteRunner.run(SuiteRunner.java:364)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
-at org.testng.TestNG.runSuites(TestNG.java:1049)
-at org.testng.TestNG.run(TestNG.java:1017)
-at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:293)
-at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:84)
-at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:91)
-at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:200)
-at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:153)
-at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.SessionNotCreatedException -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Scenario_023 -->
-        <test-method status="SKIP" signature="Close_Browser()[pri:0, instance:com.controller.ScriptExecution@13fee20c]" name="Close_Browser" is-config="true" duration-ms="0" started-at="2018-08-03T11:16:02Z" finished-at="2018-08-03T11:16:02Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Close_Browser -->
-        <test-method status="SKIP" signature="Launch_Browser()[pri:0, instance:com.controller.ScriptExecution@13fee20c]" name="Launch_Browser" is-config="true" duration-ms="0" started-at="2018-08-03T11:16:02Z" finished-at="2018-08-03T11:16:02Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Launch_Browser -->
-        <test-method status="SKIP" signature="Launch_Browser()[pri:0, instance:com.controller.ScriptExecution@13fee20c]" name="Launch_Browser" is-config="true" duration-ms="0" started-at="2018-08-03T11:16:02Z" finished-at="2018-08-03T11:16:02Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Launch_Browser -->
-        <test-method status="SKIP" signature="Close_Browser()[pri:0, instance:com.controller.ScriptExecution@13fee20c]" name="Close_Browser" is-config="true" duration-ms="0" started-at="2018-08-03T11:16:02Z" finished-at="2018-08-03T11:16:02Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Close_Browser -->
-        <test-method status="SKIP" signature="Close_Browser()[pri:0, instance:com.controller.ScriptExecution@13fee20c]" name="Close_Browser" is-config="true" duration-ms="0" started-at="2018-08-03T11:16:02Z" finished-at="2018-08-03T11:16:02Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Close_Browser -->
-        <test-method status="SKIP" signature="Launch_Browser()[pri:0, instance:com.controller.ScriptExecution@13fee20c]" name="Launch_Browser" is-config="true" duration-ms="0" started-at="2018-08-03T11:16:02Z" finished-at="2018-08-03T11:16:02Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Launch_Browser -->
-        <test-method status="SKIP" signature="Scenario_008()[pri:0, instance:com.controller.ScriptExecution@13fee20c]" name="Scenario_008" duration-ms="0" started-at="2018-08-03T11:16:02Z" finished-at="2018-08-03T11:16:02Z">
-          <exception class="org.openqa.selenium.SessionNotCreatedException">
-            <message>
-              <![CDATA[Tried to run command without establishing a connection
-Build info: version: '3.13.0', revision: '2f0d292', time: '2018-06-25T15:24:21.231Z'
-System info: host: 'DESKTOP-RC48C0S', ip: '10.7.22.55', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_171'
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 61.0.1, javascriptEnabled: true, moz:accessibilityChecks: false, moz:headless: false, moz:processID: 13928, moz:profile: C:\Users\lenovo\AppData\Loc..., moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: XP, platformName: XP, platformVersion: 10.0, rotatable: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}}
-Session ID: 5ff0884e-487b-4ddd-82cd-2b02e00f6bfb]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.SessionNotCreatedException: Tried to run command without establishing a connection
-Build info: version: '3.13.0', revision: '2f0d292', time: '2018-06-25T15:24:21.231Z'
-System info: host: 'DESKTOP-RC48C0S', ip: '10.7.22.55', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_171'
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 61.0.1, javascriptEnabled: true, moz:accessibilityChecks: false, moz:headless: false, moz:processID: 13928, moz:profile: C:\Users\lenovo\AppData\Loc..., moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: XP, platformName: XP, platformVersion: 10.0, rotatable: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}}
-Session ID: 5ff0884e-487b-4ddd-82cd-2b02e00f6bfb
-at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
-at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:548)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:605)
-at org.openqa.selenium.remote.RemoteWebDriver.quit(RemoteWebDriver.java:448)
-at com.controller.Action_Method.close_browser(Action_Method.java:239)
-at com.controller.ScriptExecution.Close_Browser(ScriptExecution.java:45)
-at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.lang.reflect.Method.invoke(Method.java:498)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
-at org.testng.internal.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:59)
-at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:455)
-at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:222)
-at org.testng.internal.Invoker.invokeMethod(Invoker.java:643)
-at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:716)
-at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:988)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
-at org.testng.TestRunner.privateRun(TestRunner.java:648)
-at org.testng.TestRunner.run(TestRunner.java:505)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
-at org.testng.SuiteRunner.run(SuiteRunner.java:364)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
-at org.testng.TestNG.runSuites(TestNG.java:1049)
-at org.testng.TestNG.run(TestNG.java:1017)
-at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:293)
-at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:84)
-at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:91)
-at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:200)
-at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:153)
-at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.SessionNotCreatedException -->
+          </exception> <!-- java.lang.NullPointerException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Scenario_008 -->
-        <test-method status="SKIP" signature="Close_Browser()[pri:0, instance:com.controller.ScriptExecution@13fee20c]" name="Close_Browser" is-config="true" duration-ms="0" started-at="2018-08-03T11:16:02Z" finished-at="2018-08-03T11:16:02Z">
+        <test-method is-config="true" signature="Close_Browser()[pri:0, instance:com.controller.ScriptExecution@2638011]" started-at="2018-08-21T10:10:51Z" name="Close_Browser" finished-at="2018-08-21T10:10:54Z" duration-ms="3650" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Close_Browser -->
-        <test-method status="SKIP" signature="Scenario_011()[pri:0, instance:com.controller.ScriptExecution@13fee20c]" name="Scenario_011" duration-ms="0" started-at="2018-08-03T11:16:02Z" finished-at="2018-08-03T11:16:02Z">
-          <exception class="org.openqa.selenium.SessionNotCreatedException">
-            <message>
-              <![CDATA[Tried to run command without establishing a connection
-Build info: version: '3.13.0', revision: '2f0d292', time: '2018-06-25T15:24:21.231Z'
-System info: host: 'DESKTOP-RC48C0S', ip: '10.7.22.55', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_171'
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 61.0.1, javascriptEnabled: true, moz:accessibilityChecks: false, moz:headless: false, moz:processID: 13928, moz:profile: C:\Users\lenovo\AppData\Loc..., moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: XP, platformName: XP, platformVersion: 10.0, rotatable: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}}
-Session ID: 5ff0884e-487b-4ddd-82cd-2b02e00f6bfb]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.SessionNotCreatedException: Tried to run command without establishing a connection
-Build info: version: '3.13.0', revision: '2f0d292', time: '2018-06-25T15:24:21.231Z'
-System info: host: 'DESKTOP-RC48C0S', ip: '10.7.22.55', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_171'
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 61.0.1, javascriptEnabled: true, moz:accessibilityChecks: false, moz:headless: false, moz:processID: 13928, moz:profile: C:\Users\lenovo\AppData\Loc..., moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: XP, platformName: XP, platformVersion: 10.0, rotatable: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}}
-Session ID: 5ff0884e-487b-4ddd-82cd-2b02e00f6bfb
-at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
-at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:548)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:605)
-at org.openqa.selenium.remote.RemoteWebDriver.quit(RemoteWebDriver.java:448)
-at com.controller.Action_Method.close_browser(Action_Method.java:239)
-at com.controller.ScriptExecution.Close_Browser(ScriptExecution.java:45)
-at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.lang.reflect.Method.invoke(Method.java:498)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
-at org.testng.internal.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:59)
-at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:455)
-at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:222)
-at org.testng.internal.Invoker.invokeMethod(Invoker.java:643)
-at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:716)
-at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:988)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
-at org.testng.TestRunner.privateRun(TestRunner.java:648)
-at org.testng.TestRunner.run(TestRunner.java:505)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
-at org.testng.SuiteRunner.run(SuiteRunner.java:364)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
-at org.testng.TestNG.runSuites(TestNG.java:1049)
-at org.testng.TestNG.run(TestNG.java:1017)
-at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:293)
-at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:84)
-at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:91)
-at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:200)
-at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:153)
-at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.SessionNotCreatedException -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Scenario_011 -->
-        <test-method status="SKIP" signature="Close_Browser()[pri:0, instance:com.controller.ScriptExecution@13fee20c]" name="Close_Browser" is-config="true" duration-ms="0" started-at="2018-08-03T11:16:02Z" finished-at="2018-08-03T11:16:02Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Close_Browser -->
-        <test-method status="SKIP" signature="Scenario_022()[pri:0, instance:com.controller.ScriptExecution@13fee20c]" name="Scenario_022" duration-ms="0" started-at="2018-08-03T11:16:02Z" finished-at="2018-08-03T11:16:02Z">
-          <exception class="org.openqa.selenium.SessionNotCreatedException">
-            <message>
-              <![CDATA[Tried to run command without establishing a connection
-Build info: version: '3.13.0', revision: '2f0d292', time: '2018-06-25T15:24:21.231Z'
-System info: host: 'DESKTOP-RC48C0S', ip: '10.7.22.55', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_171'
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 61.0.1, javascriptEnabled: true, moz:accessibilityChecks: false, moz:headless: false, moz:processID: 13928, moz:profile: C:\Users\lenovo\AppData\Loc..., moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: XP, platformName: XP, platformVersion: 10.0, rotatable: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}}
-Session ID: 5ff0884e-487b-4ddd-82cd-2b02e00f6bfb]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.SessionNotCreatedException: Tried to run command without establishing a connection
-Build info: version: '3.13.0', revision: '2f0d292', time: '2018-06-25T15:24:21.231Z'
-System info: host: 'DESKTOP-RC48C0S', ip: '10.7.22.55', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_171'
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 61.0.1, javascriptEnabled: true, moz:accessibilityChecks: false, moz:headless: false, moz:processID: 13928, moz:profile: C:\Users\lenovo\AppData\Loc..., moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: XP, platformName: XP, platformVersion: 10.0, rotatable: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}}
-Session ID: 5ff0884e-487b-4ddd-82cd-2b02e00f6bfb
-at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
-at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:548)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:605)
-at org.openqa.selenium.remote.RemoteWebDriver.quit(RemoteWebDriver.java:448)
-at com.controller.Action_Method.close_browser(Action_Method.java:239)
-at com.controller.ScriptExecution.Close_Browser(ScriptExecution.java:45)
-at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.lang.reflect.Method.invoke(Method.java:498)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
-at org.testng.internal.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:59)
-at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:455)
-at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:222)
-at org.testng.internal.Invoker.invokeMethod(Invoker.java:643)
-at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:716)
-at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:988)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
-at org.testng.TestRunner.privateRun(TestRunner.java:648)
-at org.testng.TestRunner.run(TestRunner.java:505)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
-at org.testng.SuiteRunner.run(SuiteRunner.java:364)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
-at org.testng.TestNG.runSuites(TestNG.java:1049)
-at org.testng.TestNG.run(TestNG.java:1017)
-at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:293)
-at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:84)
-at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:91)
-at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:200)
-at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:153)
-at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.SessionNotCreatedException -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Scenario_022 -->
-        <test-method status="SKIP" signature="Launch_Browser()[pri:0, instance:com.controller.ScriptExecution@13fee20c]" name="Launch_Browser" is-config="true" duration-ms="0" started-at="2018-08-03T11:16:02Z" finished-at="2018-08-03T11:16:02Z">
+        <test-method is-config="true" signature="Launch_Browser()[pri:0, instance:com.controller.ScriptExecution@2638011]" started-at="2018-08-21T10:10:54Z" name="Launch_Browser" finished-at="2018-08-21T10:11:03Z" duration-ms="8401" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Launch_Browser -->
-        <test-method status="SKIP" signature="Scenario_009()[pri:0, instance:com.controller.ScriptExecution@13fee20c]" name="Scenario_009" duration-ms="0" started-at="2018-08-03T11:16:02Z" finished-at="2018-08-03T11:16:02Z">
-          <exception class="org.openqa.selenium.SessionNotCreatedException">
-            <message>
-              <![CDATA[Tried to run command without establishing a connection
-Build info: version: '3.13.0', revision: '2f0d292', time: '2018-06-25T15:24:21.231Z'
-System info: host: 'DESKTOP-RC48C0S', ip: '10.7.22.55', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_171'
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 61.0.1, javascriptEnabled: true, moz:accessibilityChecks: false, moz:headless: false, moz:processID: 13928, moz:profile: C:\Users\lenovo\AppData\Loc..., moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: XP, platformName: XP, platformVersion: 10.0, rotatable: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}}
-Session ID: 5ff0884e-487b-4ddd-82cd-2b02e00f6bfb]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.SessionNotCreatedException: Tried to run command without establishing a connection
-Build info: version: '3.13.0', revision: '2f0d292', time: '2018-06-25T15:24:21.231Z'
-System info: host: 'DESKTOP-RC48C0S', ip: '10.7.22.55', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_171'
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 61.0.1, javascriptEnabled: true, moz:accessibilityChecks: false, moz:headless: false, moz:processID: 13928, moz:profile: C:\Users\lenovo\AppData\Loc..., moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: XP, platformName: XP, platformVersion: 10.0, rotatable: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}}
-Session ID: 5ff0884e-487b-4ddd-82cd-2b02e00f6bfb
-at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
-at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:548)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:605)
-at org.openqa.selenium.remote.RemoteWebDriver.quit(RemoteWebDriver.java:448)
-at com.controller.Action_Method.close_browser(Action_Method.java:239)
-at com.controller.ScriptExecution.Close_Browser(ScriptExecution.java:45)
-at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.lang.reflect.Method.invoke(Method.java:498)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
-at org.testng.internal.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:59)
-at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:455)
-at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:222)
-at org.testng.internal.Invoker.invokeMethod(Invoker.java:643)
-at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:716)
-at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:988)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
-at org.testng.TestRunner.privateRun(TestRunner.java:648)
-at org.testng.TestRunner.run(TestRunner.java:505)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
-at org.testng.SuiteRunner.run(SuiteRunner.java:364)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
-at org.testng.TestNG.runSuites(TestNG.java:1049)
-at org.testng.TestNG.run(TestNG.java:1017)
-at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:293)
-at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:84)
-at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:91)
-at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:200)
-at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:153)
-at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.SessionNotCreatedException -->
+        <test-method signature="Scenario_009()[pri:0, instance:com.controller.ScriptExecution@2638011]" started-at="2018-08-21T10:11:03Z" name="Scenario_009" finished-at="2018-08-21T10:11:06Z" duration-ms="3544" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Scenario_009 -->
-        <test-method status="SKIP" signature="Scenario_010()[pri:0, instance:com.controller.ScriptExecution@13fee20c]" name="Scenario_010" duration-ms="0" started-at="2018-08-03T11:16:02Z" finished-at="2018-08-03T11:16:02Z">
-          <exception class="org.openqa.selenium.SessionNotCreatedException">
-            <message>
-              <![CDATA[Tried to run command without establishing a connection
-Build info: version: '3.13.0', revision: '2f0d292', time: '2018-06-25T15:24:21.231Z'
-System info: host: 'DESKTOP-RC48C0S', ip: '10.7.22.55', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_171'
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 61.0.1, javascriptEnabled: true, moz:accessibilityChecks: false, moz:headless: false, moz:processID: 13928, moz:profile: C:\Users\lenovo\AppData\Loc..., moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: XP, platformName: XP, platformVersion: 10.0, rotatable: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}}
-Session ID: 5ff0884e-487b-4ddd-82cd-2b02e00f6bfb]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.SessionNotCreatedException: Tried to run command without establishing a connection
-Build info: version: '3.13.0', revision: '2f0d292', time: '2018-06-25T15:24:21.231Z'
-System info: host: 'DESKTOP-RC48C0S', ip: '10.7.22.55', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_171'
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 61.0.1, javascriptEnabled: true, moz:accessibilityChecks: false, moz:headless: false, moz:processID: 13928, moz:profile: C:\Users\lenovo\AppData\Loc..., moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: XP, platformName: XP, platformVersion: 10.0, rotatable: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}}
-Session ID: 5ff0884e-487b-4ddd-82cd-2b02e00f6bfb
-at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
-at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:548)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:605)
-at org.openqa.selenium.remote.RemoteWebDriver.quit(RemoteWebDriver.java:448)
-at com.controller.Action_Method.close_browser(Action_Method.java:239)
-at com.controller.ScriptExecution.Close_Browser(ScriptExecution.java:45)
-at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.lang.reflect.Method.invoke(Method.java:498)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
-at org.testng.internal.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:59)
-at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:455)
-at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:222)
-at org.testng.internal.Invoker.invokeMethod(Invoker.java:643)
-at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:716)
-at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:988)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
-at org.testng.TestRunner.privateRun(TestRunner.java:648)
-at org.testng.TestRunner.run(TestRunner.java:505)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
-at org.testng.SuiteRunner.run(SuiteRunner.java:364)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
-at org.testng.TestNG.runSuites(TestNG.java:1049)
-at org.testng.TestNG.run(TestNG.java:1017)
-at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:293)
-at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:84)
-at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:91)
-at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:200)
-at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:153)
-at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.SessionNotCreatedException -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Scenario_010 -->
-        <test-method status="SKIP" signature="Close_Browser()[pri:0, instance:com.controller.ScriptExecution@13fee20c]" name="Close_Browser" is-config="true" duration-ms="0" started-at="2018-08-03T11:16:02Z" finished-at="2018-08-03T11:16:02Z">
+        <test-method is-config="true" signature="Close_Browser()[pri:0, instance:com.controller.ScriptExecution@2638011]" started-at="2018-08-21T10:11:06Z" name="Close_Browser" finished-at="2018-08-21T10:11:10Z" duration-ms="3338" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Close_Browser -->
-        <test-method status="SKIP" signature="Launch_Browser()[pri:0, instance:com.controller.ScriptExecution@13fee20c]" name="Launch_Browser" is-config="true" duration-ms="0" started-at="2018-08-03T11:16:02Z" finished-at="2018-08-03T11:16:02Z">
+        <test-method is-config="true" signature="Launch_Browser()[pri:0, instance:com.controller.ScriptExecution@2638011]" started-at="2018-08-21T10:11:10Z" name="Launch_Browser" finished-at="2018-08-21T10:11:19Z" duration-ms="8788" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Launch_Browser -->
-        <test-method status="SKIP" signature="Close_Browser()[pri:0, instance:com.controller.ScriptExecution@13fee20c]" name="Close_Browser" is-config="true" duration-ms="0" started-at="2018-08-03T11:16:02Z" finished-at="2018-08-03T11:16:02Z">
+        <test-method signature="Scenario_010()[pri:0, instance:com.controller.ScriptExecution@2638011]" started-at="2018-08-21T10:11:19Z" name="Scenario_010" finished-at="2018-08-21T10:11:23Z" duration-ms="4785" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Scenario_010 -->
+        <test-method is-config="true" signature="Close_Browser()[pri:0, instance:com.controller.ScriptExecution@2638011]" started-at="2018-08-21T10:11:23Z" name="Close_Browser" finished-at="2018-08-21T10:11:27Z" duration-ms="3750" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Close_Browser -->
-        <test-method status="SKIP" signature="Scenario_028()[pri:0, instance:com.controller.ScriptExecution@13fee20c]" name="Scenario_028" duration-ms="0" started-at="2018-08-03T11:16:02Z" finished-at="2018-08-03T11:16:02Z">
-          <exception class="org.openqa.selenium.SessionNotCreatedException">
+        <test-method is-config="true" signature="Launch_Browser()[pri:0, instance:com.controller.ScriptExecution@2638011]" started-at="2018-08-21T10:11:27Z" name="Launch_Browser" finished-at="2018-08-21T10:11:36Z" duration-ms="8782" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Launch_Browser -->
+        <test-method signature="Scenario_011()[pri:0, instance:com.controller.ScriptExecution@2638011]" started-at="2018-08-21T10:11:36Z" name="Scenario_011" finished-at="2018-08-21T10:11:42Z" duration-ms="6241" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Scenario_011 -->
+        <test-method is-config="true" signature="Close_Browser()[pri:0, instance:com.controller.ScriptExecution@2638011]" started-at="2018-08-21T10:11:42Z" name="Close_Browser" finished-at="2018-08-21T10:11:46Z" duration-ms="3728" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Close_Browser -->
+        <test-method is-config="true" signature="Launch_Browser()[pri:0, instance:com.controller.ScriptExecution@2638011]" started-at="2018-08-21T10:11:46Z" name="Launch_Browser" finished-at="2018-08-21T10:11:55Z" duration-ms="9506" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Launch_Browser -->
+        <test-method signature="Scenario_022()[pri:0, instance:com.controller.ScriptExecution@2638011]" started-at="2018-08-21T10:11:55Z" name="Scenario_022" finished-at="2018-08-21T10:12:19Z" duration-ms="23606" status="FAIL">
+          <exception class="org.openqa.selenium.NoSuchElementException">
             <message>
-              <![CDATA[Tried to run command without establishing a connection
+              <![CDATA[Unable to locate element: //a[contains(text(),'Post Job')]
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
 Build info: version: '3.13.0', revision: '2f0d292', time: '2018-06-25T15:24:21.231Z'
-System info: host: 'DESKTOP-RC48C0S', ip: '10.7.22.55', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_171'
+System info: host: 'DESKTOP-L268OE3', ip: '10.7.23.187', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '10.0.2'
 Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 61.0.1, javascriptEnabled: true, moz:accessibilityChecks: false, moz:headless: false, moz:processID: 13928, moz:profile: C:\Users\lenovo\AppData\Loc..., moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: XP, platformName: XP, platformVersion: 10.0, rotatable: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}}
-Session ID: 5ff0884e-487b-4ddd-82cd-2b02e00f6bfb]]>
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 61.0.1, javascriptEnabled: true, moz:accessibilityChecks: false, moz:headless: false, moz:processID: 7772, moz:profile: C:\Users\DELL\AppData\Local..., moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: XP, platformName: XP, platformVersion: 10.0, rotatable: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}}
+Session ID: d48312d0-75cc-4ea9-8489-56219c0ec23e
+*** Element info: {Using=xpath, value=//a[contains(text(),'Post Job')]}]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.SessionNotCreatedException: Tried to run command without establishing a connection
+              <![CDATA[org.openqa.selenium.NoSuchElementException: Unable to locate element: //a[contains(text(),'Post Job')]
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
 Build info: version: '3.13.0', revision: '2f0d292', time: '2018-06-25T15:24:21.231Z'
-System info: host: 'DESKTOP-RC48C0S', ip: '10.7.22.55', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_171'
+System info: host: 'DESKTOP-L268OE3', ip: '10.7.23.187', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '10.0.2'
 Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 61.0.1, javascriptEnabled: true, moz:accessibilityChecks: false, moz:headless: false, moz:processID: 13928, moz:profile: C:\Users\lenovo\AppData\Loc..., moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: XP, platformName: XP, platformVersion: 10.0, rotatable: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}}
-Session ID: 5ff0884e-487b-4ddd-82cd-2b02e00f6bfb
-at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
-at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 61.0.1, javascriptEnabled: true, moz:accessibilityChecks: false, moz:headless: false, moz:processID: 7772, moz:profile: C:\Users\DELL\AppData\Local..., moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: XP, platformName: XP, platformVersion: 10.0, rotatable: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}}
+Session ID: d48312d0-75cc-4ea9-8489-56219c0ec23e
+*** Element info: {Using=xpath, value=//a[contains(text(),'Post Job')]}
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:488)
 at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
 at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
 at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
 at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
 at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
 at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:548)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:605)
-at org.openqa.selenium.remote.RemoteWebDriver.quit(RemoteWebDriver.java:448)
-at com.controller.Action_Method.close_browser(Action_Method.java:239)
-at com.controller.ScriptExecution.Close_Browser(ScriptExecution.java:45)
-at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.lang.reflect.Method.invoke(Method.java:498)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:322)
+at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:424)
+at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:314)
+at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+at com.sun.proxy.$Proxy10.click(Unknown Source)
+at com.objects_pages.Corporate_PostVideoJD_JobSummaryPage.ClickOnPostVideoJD_Tab(Corporate_PostVideoJD_JobSummaryPage.java:103)
+at com.scenarios.Sc_022_Verify_JobSummaryPage.Verify_AllElements_JobSummaryPage(Sc_022_Verify_JobSummaryPage.java:32)
+at com.controller.ScriptExecution.Scenario_022(ScriptExecution.java:101)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:564)
 at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
-at org.testng.internal.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:59)
-at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:455)
-at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:222)
-at org.testng.internal.Invoker.invokeMethod(Invoker.java:643)
+at org.testng.internal.Invoker.invokeMethod(Invoker.java:580)
 at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:716)
 at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:988)
 at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
@@ -755,59 +329,198 @@ at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
 at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
 at org.testng.TestNG.runSuites(TestNG.java:1049)
 at org.testng.TestNG.run(TestNG.java:1017)
-at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:293)
-at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:84)
-at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:91)
-at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:200)
-at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:153)
-at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
+at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:283)
+at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:75)
+at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:120)
+at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:383)
+at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:344)
+at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:125)
+at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:417)
 ]]>
             </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.SessionNotCreatedException -->
+          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Scenario_022 -->
+        <test-method is-config="true" signature="Close_Browser()[pri:0, instance:com.controller.ScriptExecution@2638011]" started-at="2018-08-21T10:12:19Z" name="Close_Browser" finished-at="2018-08-21T10:12:23Z" duration-ms="3699" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Close_Browser -->
+        <test-method is-config="true" signature="Launch_Browser()[pri:0, instance:com.controller.ScriptExecution@2638011]" started-at="2018-08-21T10:12:23Z" name="Launch_Browser" finished-at="2018-08-21T10:12:32Z" duration-ms="9177" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Launch_Browser -->
+        <test-method signature="Scenario_023()[pri:0, instance:com.controller.ScriptExecution@2638011]" started-at="2018-08-21T10:12:32Z" name="Scenario_023" finished-at="2018-08-21T10:12:56Z" duration-ms="24035" status="FAIL">
+          <exception class="org.openqa.selenium.NoSuchElementException">
+            <message>
+              <![CDATA[Unable to locate element: //a[contains(text(),'Post Job')]
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.13.0', revision: '2f0d292', time: '2018-06-25T15:24:21.231Z'
+System info: host: 'DESKTOP-L268OE3', ip: '10.7.23.187', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '10.0.2'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 61.0.1, javascriptEnabled: true, moz:accessibilityChecks: false, moz:headless: false, moz:processID: 6572, moz:profile: C:\Users\DELL\AppData\Local..., moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: XP, platformName: XP, platformVersion: 10.0, rotatable: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}}
+Session ID: 1e1a0454-ea5a-45af-92fd-c6d60b62cb70
+*** Element info: {Using=xpath, value=//a[contains(text(),'Post Job')]}]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.NoSuchElementException: Unable to locate element: //a[contains(text(),'Post Job')]
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.13.0', revision: '2f0d292', time: '2018-06-25T15:24:21.231Z'
+System info: host: 'DESKTOP-L268OE3', ip: '10.7.23.187', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '10.0.2'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 61.0.1, javascriptEnabled: true, moz:accessibilityChecks: false, moz:headless: false, moz:processID: 6572, moz:profile: C:\Users\DELL\AppData\Local..., moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: XP, platformName: XP, platformVersion: 10.0, rotatable: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}}
+Session ID: 1e1a0454-ea5a-45af-92fd-c6d60b62cb70
+*** Element info: {Using=xpath, value=//a[contains(text(),'Post Job')]}
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:488)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:548)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:322)
+at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:424)
+at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:314)
+at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+at com.sun.proxy.$Proxy10.click(Unknown Source)
+at com.objects_pages.Corporate_PostVideoJD_JobSummaryPage.ClickOnPostVideoJD_Tab(Corporate_PostVideoJD_JobSummaryPage.java:103)
+at com.scenarios.Sc_023_Verify_ErrorMessage_JobSummaryPage.Verify_ErrorMessage_NoInputs(Sc_023_Verify_ErrorMessage_JobSummaryPage.java:62)
+at com.controller.ScriptExecution.Scenario_023(ScriptExecution.java:110)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+at org.testng.internal.Invoker.invokeMethod(Invoker.java:580)
+at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:716)
+at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:988)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+at org.testng.TestRunner.privateRun(TestRunner.java:648)
+at org.testng.TestRunner.run(TestRunner.java:505)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
+at org.testng.SuiteRunner.run(SuiteRunner.java:364)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
+at org.testng.TestNG.runSuites(TestNG.java:1049)
+at org.testng.TestNG.run(TestNG.java:1017)
+at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:283)
+at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:75)
+at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:120)
+at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:383)
+at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:344)
+at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:125)
+at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:417)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Scenario_023 -->
+        <test-method is-config="true" signature="Close_Browser()[pri:0, instance:com.controller.ScriptExecution@2638011]" started-at="2018-08-21T10:12:57Z" name="Close_Browser" finished-at="2018-08-21T10:13:01Z" duration-ms="4247" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Close_Browser -->
+        <test-method is-config="true" signature="Launch_Browser()[pri:0, instance:com.controller.ScriptExecution@2638011]" started-at="2018-08-21T10:13:01Z" name="Launch_Browser" finished-at="2018-08-21T10:13:09Z" duration-ms="8579" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Launch_Browser -->
+        <test-method signature="Scenario_028()[pri:0, instance:com.controller.ScriptExecution@2638011]" started-at="2018-08-21T10:13:09Z" name="Scenario_028" finished-at="2018-08-21T10:13:34Z" duration-ms="24863" status="FAIL">
+          <exception class="org.openqa.selenium.NoSuchElementException">
+            <message>
+              <![CDATA[Unable to locate element: //a[contains(text(),'Post Job')]
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.13.0', revision: '2f0d292', time: '2018-06-25T15:24:21.231Z'
+System info: host: 'DESKTOP-L268OE3', ip: '10.7.23.187', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '10.0.2'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 61.0.1, javascriptEnabled: true, moz:accessibilityChecks: false, moz:headless: false, moz:processID: 12168, moz:profile: C:\Users\DELL\AppData\Local..., moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: XP, platformName: XP, platformVersion: 10.0, rotatable: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}}
+Session ID: e159c104-bac5-42af-970b-aef8141e9f05
+*** Element info: {Using=xpath, value=//a[contains(text(),'Post Job')]}]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.NoSuchElementException: Unable to locate element: //a[contains(text(),'Post Job')]
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.13.0', revision: '2f0d292', time: '2018-06-25T15:24:21.231Z'
+System info: host: 'DESKTOP-L268OE3', ip: '10.7.23.187', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '10.0.2'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 61.0.1, javascriptEnabled: true, moz:accessibilityChecks: false, moz:headless: false, moz:processID: 12168, moz:profile: C:\Users\DELL\AppData\Local..., moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: XP, platformName: XP, platformVersion: 10.0, rotatable: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}}
+Session ID: e159c104-bac5-42af-970b-aef8141e9f05
+*** Element info: {Using=xpath, value=//a[contains(text(),'Post Job')]}
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:488)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:548)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:322)
+at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:424)
+at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:314)
+at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+at com.sun.proxy.$Proxy10.click(Unknown Source)
+at com.objects_pages.Corporate_PostVideoJD_JobSummaryPage.ClickOnPostVideoJD_Tab(Corporate_PostVideoJD_JobSummaryPage.java:103)
+at com.scenarios.Sc_028_Post_Video_JD.Verify_Post_Video_Jd(Sc_028_Post_Video_JD.java:35)
+at com.controller.ScriptExecution.Scenario_028(ScriptExecution.java:124)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+at org.testng.internal.Invoker.invokeMethod(Invoker.java:580)
+at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:716)
+at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:988)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+at org.testng.TestRunner.privateRun(TestRunner.java:648)
+at org.testng.TestRunner.run(TestRunner.java:505)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
+at org.testng.SuiteRunner.run(SuiteRunner.java:364)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
+at org.testng.TestNG.runSuites(TestNG.java:1049)
+at org.testng.TestNG.run(TestNG.java:1017)
+at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:283)
+at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:75)
+at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:120)
+at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:383)
+at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:344)
+at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:125)
+at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:417)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Scenario_028 -->
-        <test-method status="SKIP" signature="Scenarion_087()[pri:0, instance:com.controller.ScriptExecution@13fee20c]" name="Scenarion_087" duration-ms="0" started-at="2018-08-03T11:16:02Z" depends-on-methods="com.controller.ScriptExecution.Scenario_068" finished-at="2018-08-03T11:16:02Z">
-          <exception class="java.lang.Throwable">
-            <message>
-              <![CDATA[Method ScriptExecution.Scenarion_087()[pri:0, instance:com.controller.ScriptExecution@13fee20c] depends on not successfully finished methods]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.Throwable: Method ScriptExecution.Scenarion_087()[pri:0, instance:com.controller.ScriptExecution@13fee20c] depends on not successfully finished methods
-at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:887)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
-at org.testng.TestRunner.privateRun(TestRunner.java:648)
-at org.testng.TestRunner.run(TestRunner.java:505)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
-at org.testng.SuiteRunner.run(SuiteRunner.java:364)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
-at org.testng.TestNG.runSuites(TestNG.java:1049)
-at org.testng.TestNG.run(TestNG.java:1017)
-at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:293)
-at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:84)
-at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:91)
-at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:200)
-at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:153)
-at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.Throwable -->
+        <test-method is-config="true" signature="Close_Browser()[pri:0, instance:com.controller.ScriptExecution@2638011]" started-at="2018-08-21T10:13:34Z" name="Close_Browser" finished-at="2018-08-21T10:13:38Z" duration-ms="3604" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- Scenarion_087 -->
-        <test-method status="SKIP" signature="Scenario_032()[pri:0, instance:com.controller.ScriptExecution@13fee20c]" name="Scenario_032" duration-ms="0" started-at="2018-08-03T11:16:02Z" depends-on-methods="com.controller.ScriptExecution.Scenario_028" finished-at="2018-08-03T11:16:02Z">
+        </test-method> <!-- Close_Browser -->
+        <test-method signature="Scenario_032()[pri:0, instance:com.controller.ScriptExecution@2638011]" started-at="2018-08-21T10:13:38Z" name="Scenario_032" finished-at="2018-08-21T10:13:38Z" depends-on-methods="com.controller.ScriptExecution.Scenario_028" duration-ms="0" status="SKIP">
           <exception class="java.lang.Throwable">
             <message>
-              <![CDATA[Method ScriptExecution.Scenario_032()[pri:0, instance:com.controller.ScriptExecution@13fee20c] depends on not successfully finished methods]]>
+              <![CDATA[Method ScriptExecution.Scenario_032()[pri:0, instance:com.controller.ScriptExecution@2638011] depends on not successfully finished methods]]>
             </message>
             <full-stacktrace>
-              <![CDATA[java.lang.Throwable: Method ScriptExecution.Scenario_032()[pri:0, instance:com.controller.ScriptExecution@13fee20c] depends on not successfully finished methods
+              <![CDATA[java.lang.Throwable: Method ScriptExecution.Scenario_032()[pri:0, instance:com.controller.ScriptExecution@2638011] depends on not successfully finished methods
 at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:887)
 at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
 at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
@@ -823,25 +536,26 @@ at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
 at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
 at org.testng.TestNG.runSuites(TestNG.java:1049)
 at org.testng.TestNG.run(TestNG.java:1017)
-at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:293)
-at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:84)
-at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:91)
-at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:200)
-at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:153)
-at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
+at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:283)
+at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:75)
+at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:120)
+at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:383)
+at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:344)
+at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:125)
+at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:417)
 ]]>
             </full-stacktrace>
           </exception> <!-- java.lang.Throwable -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Scenario_032 -->
-        <test-method status="SKIP" signature="Scenario_080()[pri:0, instance:com.controller.ScriptExecution@13fee20c]" name="Scenario_080" duration-ms="0" started-at="2018-08-03T11:16:02Z" depends-on-methods="com.controller.ScriptExecution.Scenario_101" finished-at="2018-08-03T11:16:02Z">
+        <test-method signature="Scenario_068()[pri:0, instance:com.controller.ScriptExecution@2638011]" started-at="2018-08-21T10:13:38Z" name="Scenario_068" finished-at="2018-08-21T10:13:38Z" depends-on-methods="com.controller.ScriptExecution.Scenario_032" duration-ms="0" status="SKIP">
           <exception class="java.lang.Throwable">
             <message>
-              <![CDATA[Method ScriptExecution.Scenario_080()[pri:0, instance:com.controller.ScriptExecution@13fee20c] depends on not successfully finished methods]]>
+              <![CDATA[Method ScriptExecution.Scenario_068()[pri:0, instance:com.controller.ScriptExecution@2638011] depends on not successfully finished methods]]>
             </message>
             <full-stacktrace>
-              <![CDATA[java.lang.Throwable: Method ScriptExecution.Scenario_080()[pri:0, instance:com.controller.ScriptExecution@13fee20c] depends on not successfully finished methods
+              <![CDATA[java.lang.Throwable: Method ScriptExecution.Scenario_068()[pri:0, instance:com.controller.ScriptExecution@2638011] depends on not successfully finished methods
 at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:887)
 at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
 at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
@@ -857,59 +571,26 @@ at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
 at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
 at org.testng.TestNG.runSuites(TestNG.java:1049)
 at org.testng.TestNG.run(TestNG.java:1017)
-at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:293)
-at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:84)
-at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:91)
-at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:200)
-at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:153)
-at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.Throwable -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Scenario_080 -->
-        <test-method status="SKIP" signature="Scenario_068()[pri:0, instance:com.controller.ScriptExecution@13fee20c]" name="Scenario_068" duration-ms="0" started-at="2018-08-03T11:16:02Z" depends-on-methods="com.controller.ScriptExecution.Scenario_032" finished-at="2018-08-03T11:16:02Z">
-          <exception class="java.lang.Throwable">
-            <message>
-              <![CDATA[Method ScriptExecution.Scenario_068()[pri:0, instance:com.controller.ScriptExecution@13fee20c] depends on not successfully finished methods]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.Throwable: Method ScriptExecution.Scenario_068()[pri:0, instance:com.controller.ScriptExecution@13fee20c] depends on not successfully finished methods
-at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:887)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
-at org.testng.TestRunner.privateRun(TestRunner.java:648)
-at org.testng.TestRunner.run(TestRunner.java:505)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
-at org.testng.SuiteRunner.run(SuiteRunner.java:364)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
-at org.testng.TestNG.runSuites(TestNG.java:1049)
-at org.testng.TestNG.run(TestNG.java:1017)
-at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:293)
-at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:84)
-at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:91)
-at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:200)
-at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:153)
-at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
+at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:283)
+at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:75)
+at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:120)
+at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:383)
+at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:344)
+at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:125)
+at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:417)
 ]]>
             </full-stacktrace>
           </exception> <!-- java.lang.Throwable -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Scenario_068 -->
-        <test-method status="SKIP" signature="Scenario_101()[pri:0, instance:com.controller.ScriptExecution@13fee20c]" name="Scenario_101" duration-ms="0" started-at="2018-08-03T11:16:02Z" depends-on-methods="com.controller.ScriptExecution.Scenarion_087" finished-at="2018-08-03T11:16:02Z">
+        <test-method signature="Scenarion_087()[pri:0, instance:com.controller.ScriptExecution@2638011]" started-at="2018-08-21T10:13:38Z" name="Scenarion_087" finished-at="2018-08-21T10:13:38Z" depends-on-methods="com.controller.ScriptExecution.Scenario_068" duration-ms="0" status="SKIP">
           <exception class="java.lang.Throwable">
             <message>
-              <![CDATA[Method ScriptExecution.Scenario_101()[pri:0, instance:com.controller.ScriptExecution@13fee20c] depends on not successfully finished methods]]>
+              <![CDATA[Method ScriptExecution.Scenarion_087()[pri:0, instance:com.controller.ScriptExecution@2638011] depends on not successfully finished methods]]>
             </message>
             <full-stacktrace>
-              <![CDATA[java.lang.Throwable: Method ScriptExecution.Scenario_101()[pri:0, instance:com.controller.ScriptExecution@13fee20c] depends on not successfully finished methods
+              <![CDATA[java.lang.Throwable: Method ScriptExecution.Scenarion_087()[pri:0, instance:com.controller.ScriptExecution@2638011] depends on not successfully finished methods
 at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:887)
 at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
 at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
@@ -925,25 +606,61 @@ at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
 at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
 at org.testng.TestNG.runSuites(TestNG.java:1049)
 at org.testng.TestNG.run(TestNG.java:1017)
-at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:293)
-at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:84)
-at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:91)
-at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:200)
-at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:153)
-at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
+at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:283)
+at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:75)
+at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:120)
+at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:383)
+at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:344)
+at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:125)
+at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:417)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.Throwable -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Scenarion_087 -->
+        <test-method signature="Scenario_101()[pri:0, instance:com.controller.ScriptExecution@2638011]" started-at="2018-08-21T10:13:38Z" name="Scenario_101" finished-at="2018-08-21T10:13:38Z" depends-on-methods="com.controller.ScriptExecution.Scenarion_087" duration-ms="0" status="SKIP">
+          <exception class="java.lang.Throwable">
+            <message>
+              <![CDATA[Method ScriptExecution.Scenario_101()[pri:0, instance:com.controller.ScriptExecution@2638011] depends on not successfully finished methods]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.Throwable: Method ScriptExecution.Scenario_101()[pri:0, instance:com.controller.ScriptExecution@2638011] depends on not successfully finished methods
+at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:887)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+at org.testng.TestRunner.privateRun(TestRunner.java:648)
+at org.testng.TestRunner.run(TestRunner.java:505)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
+at org.testng.SuiteRunner.run(SuiteRunner.java:364)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
+at org.testng.TestNG.runSuites(TestNG.java:1049)
+at org.testng.TestNG.run(TestNG.java:1017)
+at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:283)
+at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:75)
+at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:120)
+at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:383)
+at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:344)
+at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:125)
+at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:417)
 ]]>
             </full-stacktrace>
           </exception> <!-- java.lang.Throwable -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Scenario_101 -->
-        <test-method status="SKIP" signature="Scenario_036()[pri:0, instance:com.controller.ScriptExecution@13fee20c]" name="Scenario_036" duration-ms="0" started-at="2018-08-03T11:16:02Z" depends-on-methods="com.controller.ScriptExecution.Scenario_080" finished-at="2018-08-03T11:16:02Z">
+        <test-method signature="Scenario_080()[pri:0, instance:com.controller.ScriptExecution@2638011]" started-at="2018-08-21T10:13:38Z" name="Scenario_080" finished-at="2018-08-21T10:13:38Z" depends-on-methods="com.controller.ScriptExecution.Scenario_101" duration-ms="0" status="SKIP">
           <exception class="java.lang.Throwable">
             <message>
-              <![CDATA[Method ScriptExecution.Scenario_036()[pri:0, instance:com.controller.ScriptExecution@13fee20c] depends on not successfully finished methods]]>
+              <![CDATA[Method ScriptExecution.Scenario_080()[pri:0, instance:com.controller.ScriptExecution@2638011] depends on not successfully finished methods]]>
             </message>
             <full-stacktrace>
-              <![CDATA[java.lang.Throwable: Method ScriptExecution.Scenario_036()[pri:0, instance:com.controller.ScriptExecution@13fee20c] depends on not successfully finished methods
+              <![CDATA[java.lang.Throwable: Method ScriptExecution.Scenario_080()[pri:0, instance:com.controller.ScriptExecution@2638011] depends on not successfully finished methods
 at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:887)
 at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
 at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
@@ -959,12 +676,48 @@ at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
 at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
 at org.testng.TestNG.runSuites(TestNG.java:1049)
 at org.testng.TestNG.run(TestNG.java:1017)
-at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:293)
-at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:84)
-at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:91)
-at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:200)
-at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:153)
-at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
+at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:283)
+at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:75)
+at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:120)
+at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:383)
+at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:344)
+at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:125)
+at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:417)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.Throwable -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Scenario_080 -->
+        <test-method signature="Scenario_036()[pri:0, instance:com.controller.ScriptExecution@2638011]" started-at="2018-08-21T10:13:38Z" name="Scenario_036" finished-at="2018-08-21T10:13:38Z" depends-on-methods="com.controller.ScriptExecution.Scenario_080" duration-ms="1" status="SKIP">
+          <exception class="java.lang.Throwable">
+            <message>
+              <![CDATA[Method ScriptExecution.Scenario_036()[pri:0, instance:com.controller.ScriptExecution@2638011] depends on not successfully finished methods]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.Throwable: Method ScriptExecution.Scenario_036()[pri:0, instance:com.controller.ScriptExecution@2638011] depends on not successfully finished methods
+at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:887)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+at org.testng.TestRunner.privateRun(TestRunner.java:648)
+at org.testng.TestRunner.run(TestRunner.java:505)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
+at org.testng.SuiteRunner.run(SuiteRunner.java:364)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
+at org.testng.TestNG.runSuites(TestNG.java:1049)
+at org.testng.TestNG.run(TestNG.java:1017)
+at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:283)
+at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:75)
+at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:120)
+at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:383)
+at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:344)
+at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:125)
+at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:417)
 ]]>
             </full-stacktrace>
           </exception> <!-- java.lang.Throwable -->

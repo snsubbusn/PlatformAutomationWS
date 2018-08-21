@@ -24,20 +24,20 @@
     <div class="top-banner-root">
       <span class="top-banner-title-font">Test results</span>
       <br/>
-      <span class="top-banner-font-1">1 suite, 2 failed tests</span>
+      <span class="top-banner-font-1">1 suite, 6 failed tests</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
         <span>All suites</span>
-        <a href="#" class="collapse-all-link" title="Collapse/expand all the suites">
-          <img class="collapse-all-icon" src="collapseall.gif">
+        <a href="#" title="Collapse/expand all the suites" class="collapse-all-link">
+          <img src="collapseall.gif" class="collapse-all-icon">
           </img> <!-- collapse-all-icon -->
         </a> <!-- collapse-all-link -->
       </div> <!-- navigator-suite-header -->
       <div class="suite">
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
-            <a href="#" class="navigator-link" panel-name="suite-Suite">
+            <a href="#" panel-name="suite-Suite" class="navigator-link">
               <span class="suite-name border-failed">Suite</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
@@ -48,37 +48,37 @@
             <div class="suite-section-content">
               <ul>
                 <li>
-                  <a href="#" class="navigator-link " panel-name="test-xml-Suite">
-                    <span>E:\Workstreets Platform\com.automation.wsp\src\main\resources\testng.xml</span>
+                  <a href="#" panel-name="test-xml-Suite" class="navigator-link ">
+                    <span>E:\platformautomation\com.automation.wsp\src\main\resources\testng.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
-                  <a href="#" class="navigator-link " panel-name="testlist-Suite">
+                  <a href="#" panel-name="testlist-Suite" class="navigator-link ">
                     <span class="test-stats">1 test</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
-                  <a href="#" class="navigator-link " panel-name="group-Suite">
+                  <a href="#" panel-name="group-Suite" class="navigator-link ">
                     <span>0 groups</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
-                  <a href="#" class="navigator-link " panel-name="times-Suite">
+                  <a href="#" panel-name="times-Suite" class="navigator-link ">
                     <span>Times</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
-                  <a href="#" class="navigator-link " panel-name="reporter-Suite">
+                  <a href="#" panel-name="reporter-Suite" class="navigator-link ">
                     <span>Reporter output</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
-                  <a href="#" class="navigator-link " panel-name="ignored-methods-Suite">
+                  <a href="#" panel-name="ignored-methods-Suite" class="navigator-link ">
                     <span>Ignored methods</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
-                  <a href="#" class="navigator-link " panel-name="chronological-Suite">
+                  <a href="#" panel-name="chronological-Suite" class="navigator-link ">
                     <span>Chronological view</span>
                   </a> <!-- navigator-link  -->
                 </li>
@@ -91,7 +91,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">15 methods, 2 failed,  13 skipped,  </span>
+                    <span class="method-stats">15 methods, 6 failed,  6 skipped,  3 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title failed">Failed methods</span>
@@ -101,13 +101,33 @@
                     </span>
                     <div class="method-list-content failed suite-Suite">
                       <span>
-                        <img width="3%" src="failed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="com.controller.ScriptExecution" hash-for-method="Scenario_005">Scenario_005</a> <!-- method navigator-link -->
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="com.controller.ScriptExecution" class="method navigator-link" hash-for-method="Scenario_005">Scenario_005</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
-                        <img width="3%" src="failed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="com.controller.ScriptExecution" hash-for-method="Scenario_006">Scenario_006</a> <!-- method navigator-link -->
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="com.controller.ScriptExecution" class="method navigator-link" hash-for-method="Scenario_006">Scenario_006</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="com.controller.ScriptExecution" class="method navigator-link" hash-for-method="Scenario_008">Scenario_008</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="com.controller.ScriptExecution" class="method navigator-link" hash-for-method="Scenario_022">Scenario_022</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="com.controller.ScriptExecution" class="method navigator-link" hash-for-method="Scenario_023">Scenario_023</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="com.controller.ScriptExecution" class="method navigator-link" hash-for-method="Scenario_028">Scenario_028</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content failed suite-Suite -->
@@ -120,71 +140,60 @@
                     </span>
                     <div class="method-list-content skipped suite-Suite">
                       <span>
-                        <img width="3%" src="skipped.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="com.controller.ScriptExecution" hash-for-method="Scenario_008">Scenario_008</a> <!-- method navigator-link -->
+                        <img src="skipped.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="com.controller.ScriptExecution" class="method navigator-link" hash-for-method="Scenario_032">Scenario_032</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
-                        <img width="3%" src="skipped.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="com.controller.ScriptExecution" hash-for-method="Scenario_009">Scenario_009</a> <!-- method navigator-link -->
+                        <img src="skipped.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="com.controller.ScriptExecution" class="method navigator-link" hash-for-method="Scenario_036">Scenario_036</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
-                        <img width="3%" src="skipped.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="com.controller.ScriptExecution" hash-for-method="Scenario_010">Scenario_010</a> <!-- method navigator-link -->
+                        <img src="skipped.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="com.controller.ScriptExecution" class="method navigator-link" hash-for-method="Scenario_068">Scenario_068</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
-                        <img width="3%" src="skipped.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="com.controller.ScriptExecution" hash-for-method="Scenario_011">Scenario_011</a> <!-- method navigator-link -->
+                        <img src="skipped.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="com.controller.ScriptExecution" class="method navigator-link" hash-for-method="Scenario_080">Scenario_080</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
-                        <img width="3%" src="skipped.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="com.controller.ScriptExecution" hash-for-method="Scenario_022">Scenario_022</a> <!-- method navigator-link -->
+                        <img src="skipped.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="com.controller.ScriptExecution" class="method navigator-link" hash-for-method="Scenario_101">Scenario_101</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
-                        <img width="3%" src="skipped.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="com.controller.ScriptExecution" hash-for-method="Scenario_023">Scenario_023</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img width="3%" src="skipped.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="com.controller.ScriptExecution" hash-for-method="Scenario_028">Scenario_028</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img width="3%" src="skipped.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="com.controller.ScriptExecution" hash-for-method="Scenario_032">Scenario_032</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img width="3%" src="skipped.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="com.controller.ScriptExecution" hash-for-method="Scenario_036">Scenario_036</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img width="3%" src="skipped.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="com.controller.ScriptExecution" hash-for-method="Scenario_068">Scenario_068</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img width="3%" src="skipped.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="com.controller.ScriptExecution" hash-for-method="Scenario_080">Scenario_080</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img width="3%" src="skipped.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="com.controller.ScriptExecution" hash-for-method="Scenario_101">Scenario_101</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img width="3%" src="skipped.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="com.controller.ScriptExecution" hash-for-method="Scenarion_087">Scenarion_087</a> <!-- method navigator-link -->
+                        <img src="skipped.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="com.controller.ScriptExecution" class="method navigator-link" hash-for-method="Scenarion_087">Scenarion_087</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content skipped suite-Suite -->
+                  </li>
+                  <li>
+                    <span class="method-list-title passed">Passed methods</span>
+                    <span class="show-or-hide-methods passed">
+                      <a href="#" panel-name="suite-Suite" class="hide-methods passed suite-Suite"> (hide)</a> <!-- hide-methods passed suite-Suite -->
+                      <a href="#" panel-name="suite-Suite" class="show-methods passed suite-Suite"> (show)</a> <!-- show-methods passed suite-Suite -->
+                    </span>
+                    <div class="method-list-content passed suite-Suite">
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="com.controller.ScriptExecution" class="method navigator-link" hash-for-method="Scenario_009">Scenario_009</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="com.controller.ScriptExecution" class="method navigator-link" hash-for-method="Scenario_010">Scenario_010</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="com.controller.ScriptExecution" class="method navigator-link" hash-for-method="Scenario_011">Scenario_011</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content passed suite-Suite -->
                   </li>
                 </ul>
               </div> <!-- suite-section-content -->
@@ -210,10 +219,10 @@
                   <div class="stack-trace">org.openqa.selenium.NoSuchElementException: Unable to locate element: //span[contains(text(),&apos;log in&apos;)]
 For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
 Build info: version: &apos;3.13.0&apos;, revision: &apos;2f0d292&apos;, time: &apos;2018-06-25T15:24:21.231Z&apos;
-System info: host: &apos;DESKTOP-RC48C0S&apos;, ip: &apos;10.7.22.55&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_171&apos;
+System info: host: &apos;DESKTOP-L268OE3&apos;, ip: &apos;10.7.23.187&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;10.0.2&apos;
 Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 61.0.1, javascriptEnabled: true, moz:accessibilityChecks: false, moz:headless: false, moz:processID: 3428, moz:profile: C:\Users\lenovo\AppData\Loc..., moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: XP, platformName: XP, platformVersion: 10.0, rotatable: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}}
-Session ID: 0fe005e4-d741-426b-90f6-92f357759370
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 61.0.1, javascriptEnabled: true, moz:accessibilityChecks: false, moz:headless: false, moz:processID: 4820, moz:profile: C:\Users\DELL\AppData\Local..., moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: XP, platformName: XP, platformVersion: 10.0, rotatable: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}}
+Session ID: 03e82325-17aa-4203-acd7-a0d8b04600bf
 *** Element info: {Using=xpath, value=//span[contains(text(),&apos;log in&apos;)]}
 	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
 	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
@@ -227,11 +236,11 @@ Session ID: 0fe005e4-d741-426b-90f6-92f357759370
 	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:314)
 	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
 	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-	at com.sun.proxy.$Proxy8.isDisplayed(Unknown Source)
-	at com.objects_pages.loginPage.LoginTab(loginPage.java:162)
+	at com.sun.proxy.$Proxy10.isDisplayed(Unknown Source)
+	at com.objects_pages.loginPage.LoginTab(loginPage.java:158)
 	at com.scenarios.Sc_005_Verify_LoginPage.Verify_all_elements_present_in_loginPage(Sc_005_Verify_LoginPage.java:109)
-	at com.controller.ScriptExecution.Scenario_005(ScriptExecution.java:54)
-... Removed 32 stack frames
+	at com.controller.ScriptExecution.Scenario_005(ScriptExecution.java:53)
+... Removed 33 stack frames
 </div> <!-- stack-trace -->
                 </div> <!-- method-content -->
               </div> <!-- method -->
@@ -240,13 +249,14 @@ Session ID: 0fe005e4-d741-426b-90f6-92f357759370
                   <a name="Scenario_006">
                   </a> <!-- Scenario_006 -->
                   <span class="method-name">Scenario_006</span>
-                  <div class="stack-trace">org.openqa.selenium.WebDriverException: Failed to decode response from marionette
+                  <div class="stack-trace">org.openqa.selenium.NoSuchElementException: Unable to locate element: //mat-error/div
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
 Build info: version: &apos;3.13.0&apos;, revision: &apos;2f0d292&apos;, time: &apos;2018-06-25T15:24:21.231Z&apos;
-System info: host: &apos;DESKTOP-RC48C0S&apos;, ip: &apos;10.7.22.55&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_171&apos;
+System info: host: &apos;DESKTOP-L268OE3&apos;, ip: &apos;10.7.23.187&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;10.0.2&apos;
 Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 61.0.1, javascriptEnabled: true, moz:accessibilityChecks: false, moz:headless: false, moz:processID: 13928, moz:profile: C:\Users\lenovo\AppData\Loc..., moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: XP, platformName: XP, platformVersion: 10.0, rotatable: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}}
-Session ID: 5ff0884e-487b-4ddd-82cd-2b02e00f6bfb
-*** Element info: {Using=xpath, value=//div[contains(text(),&apos;Required fields cannot be empty&apos;)]}
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 61.0.1, javascriptEnabled: true, moz:accessibilityChecks: false, moz:headless: false, moz:processID: 4000, moz:profile: C:\Users\DELL\AppData\Local..., moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: XP, platformName: XP, platformVersion: 10.0, rotatable: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}}
+Session ID: 5046428f-527d-49b1-939e-a1ce28d359c8
+*** Element info: {Using=xpath, value=//mat-error/div}
 	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
 	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
 	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
@@ -259,11 +269,124 @@ Session ID: 5ff0884e-487b-4ddd-82cd-2b02e00f6bfb
 	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:314)
 	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
 	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-	at com.sun.proxy.$Proxy8.isDisplayed(Unknown Source)
-	at com.objects_pages.loginPage.Error_MandatoryField(loginPage.java:95)
-	at com.scenarios.Sc_006_Verify_EmailID_Password_LoginPage.Verify_MailId_Password(Sc_006_Verify_EmailID_Password_LoginPage.java:29)
-	at com.controller.ScriptExecution.Scenario_006(ScriptExecution.java:61)
-... Removed 32 stack frames
+	at com.sun.proxy.$Proxy10.isDisplayed(Unknown Source)
+	at com.objects_pages.loginPage.Error_InvalidMail(loginPage.java:85)
+	at com.scenarios.Sc_006_Verify_EmailID_Password_LoginPage.Verify_MailId_Password(Sc_006_Verify_EmailID_Password_LoginPage.java:42)
+	at com.controller.ScriptExecution.Scenario_006(ScriptExecution.java:60)
+... Removed 33 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="Scenario_008">
+                  </a> <!-- Scenario_008 -->
+                  <span class="method-name">Scenario_008</span>
+                  <div class="stack-trace">java.lang.NullPointerException
+	at com.controller.Action_Method.getExceldata(Action_Method.java:105)
+	at com.objects_pages.RegisterPage.Enter_Inputs_For_All_The_Fields_In_RegisterPage(RegisterPage.java:45)
+	at com.scenarios.Sc_008_Verify_Register.Verify_Registration_Of_user(Sc_008_Verify_Register.java:31)
+	at com.controller.ScriptExecution.Scenario_008(ScriptExecution.java:68)
+... Removed 29 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="Scenario_022">
+                  </a> <!-- Scenario_022 -->
+                  <span class="method-name">Scenario_022</span>
+                  <div class="stack-trace">org.openqa.selenium.NoSuchElementException: Unable to locate element: //a[contains(text(),&apos;Post Job&apos;)]
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;3.13.0&apos;, revision: &apos;2f0d292&apos;, time: &apos;2018-06-25T15:24:21.231Z&apos;
+System info: host: &apos;DESKTOP-L268OE3&apos;, ip: &apos;10.7.23.187&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;10.0.2&apos;
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 61.0.1, javascriptEnabled: true, moz:accessibilityChecks: false, moz:headless: false, moz:processID: 7772, moz:profile: C:\Users\DELL\AppData\Local..., moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: XP, platformName: XP, platformVersion: 10.0, rotatable: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}}
+Session ID: d48312d0-75cc-4ea9-8489-56219c0ec23e
+*** Element info: {Using=xpath, value=//a[contains(text(),&apos;Post Job&apos;)]}
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:548)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:322)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:424)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:314)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at com.sun.proxy.$Proxy10.click(Unknown Source)
+	at com.objects_pages.Corporate_PostVideoJD_JobSummaryPage.ClickOnPostVideoJD_Tab(Corporate_PostVideoJD_JobSummaryPage.java:103)
+	at com.scenarios.Sc_022_Verify_JobSummaryPage.Verify_AllElements_JobSummaryPage(Sc_022_Verify_JobSummaryPage.java:32)
+	at com.controller.ScriptExecution.Scenario_022(ScriptExecution.java:101)
+... Removed 33 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="Scenario_023">
+                  </a> <!-- Scenario_023 -->
+                  <span class="method-name">Scenario_023</span>
+                  <div class="stack-trace">org.openqa.selenium.NoSuchElementException: Unable to locate element: //a[contains(text(),&apos;Post Job&apos;)]
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;3.13.0&apos;, revision: &apos;2f0d292&apos;, time: &apos;2018-06-25T15:24:21.231Z&apos;
+System info: host: &apos;DESKTOP-L268OE3&apos;, ip: &apos;10.7.23.187&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;10.0.2&apos;
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 61.0.1, javascriptEnabled: true, moz:accessibilityChecks: false, moz:headless: false, moz:processID: 6572, moz:profile: C:\Users\DELL\AppData\Local..., moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: XP, platformName: XP, platformVersion: 10.0, rotatable: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}}
+Session ID: 1e1a0454-ea5a-45af-92fd-c6d60b62cb70
+*** Element info: {Using=xpath, value=//a[contains(text(),&apos;Post Job&apos;)]}
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:548)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:322)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:424)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:314)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at com.sun.proxy.$Proxy10.click(Unknown Source)
+	at com.objects_pages.Corporate_PostVideoJD_JobSummaryPage.ClickOnPostVideoJD_Tab(Corporate_PostVideoJD_JobSummaryPage.java:103)
+	at com.scenarios.Sc_023_Verify_ErrorMessage_JobSummaryPage.Verify_ErrorMessage_NoInputs(Sc_023_Verify_ErrorMessage_JobSummaryPage.java:62)
+	at com.controller.ScriptExecution.Scenario_023(ScriptExecution.java:110)
+... Removed 33 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="Scenario_028">
+                  </a> <!-- Scenario_028 -->
+                  <span class="method-name">Scenario_028</span>
+                  <div class="stack-trace">org.openqa.selenium.NoSuchElementException: Unable to locate element: //a[contains(text(),&apos;Post Job&apos;)]
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;3.13.0&apos;, revision: &apos;2f0d292&apos;, time: &apos;2018-06-25T15:24:21.231Z&apos;
+System info: host: &apos;DESKTOP-L268OE3&apos;, ip: &apos;10.7.23.187&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;10.0.2&apos;
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 61.0.1, javascriptEnabled: true, moz:accessibilityChecks: false, moz:headless: false, moz:processID: 12168, moz:profile: C:\Users\DELL\AppData\Local..., moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: XP, platformName: XP, platformVersion: 10.0, rotatable: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}}
+Session ID: e159c104-bac5-42af-970b-aef8141e9f05
+*** Element info: {Using=xpath, value=//a[contains(text(),&apos;Post Job&apos;)]}
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:548)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:322)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:424)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:314)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at com.sun.proxy.$Proxy10.click(Unknown Source)
+	at com.objects_pages.Corporate_PostVideoJD_JobSummaryPage.ClickOnPostVideoJD_Tab(Corporate_PostVideoJD_JobSummaryPage.java:103)
+	at com.scenarios.Sc_028_Post_Video_JD.Verify_Post_Video_Jd(Sc_028_Post_Video_JD.java:35)
+	at com.controller.ScriptExecution.Scenario_028(ScriptExecution.java:124)
+... Removed 33 stack frames
 </div> <!-- stack-trace -->
                 </div> <!-- method-content -->
               </div> <!-- method -->
@@ -277,186 +400,11 @@ Session ID: 5ff0884e-487b-4ddd-82cd-2b02e00f6bfb
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="Scenario_008">
-                  </a> <!-- Scenario_008 -->
-                  <span class="method-name">Scenario_008</span>
-                  <div class="stack-trace">org.openqa.selenium.SessionNotCreatedException: Tried to run command without establishing a connection
-Build info: version: &apos;3.13.0&apos;, revision: &apos;2f0d292&apos;, time: &apos;2018-06-25T15:24:21.231Z&apos;
-System info: host: &apos;DESKTOP-RC48C0S&apos;, ip: &apos;10.7.22.55&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_171&apos;
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 61.0.1, javascriptEnabled: true, moz:accessibilityChecks: false, moz:headless: false, moz:processID: 13928, moz:profile: C:\Users\lenovo\AppData\Loc..., moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: XP, platformName: XP, platformVersion: 10.0, rotatable: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}}
-Session ID: 5ff0884e-487b-4ddd-82cd-2b02e00f6bfb
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:548)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:605)
-	at org.openqa.selenium.remote.RemoteWebDriver.quit(RemoteWebDriver.java:448)
-	at com.controller.Action_Method.close_browser(Action_Method.java:239)
-	at com.controller.ScriptExecution.Close_Browser(ScriptExecution.java:45)
-... Removed 35 stack frames
-</div> <!-- stack-trace -->
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="Scenario_009">
-                  </a> <!-- Scenario_009 -->
-                  <span class="method-name">Scenario_009</span>
-                  <div class="stack-trace">org.openqa.selenium.SessionNotCreatedException: Tried to run command without establishing a connection
-Build info: version: &apos;3.13.0&apos;, revision: &apos;2f0d292&apos;, time: &apos;2018-06-25T15:24:21.231Z&apos;
-System info: host: &apos;DESKTOP-RC48C0S&apos;, ip: &apos;10.7.22.55&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_171&apos;
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 61.0.1, javascriptEnabled: true, moz:accessibilityChecks: false, moz:headless: false, moz:processID: 13928, moz:profile: C:\Users\lenovo\AppData\Loc..., moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: XP, platformName: XP, platformVersion: 10.0, rotatable: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}}
-Session ID: 5ff0884e-487b-4ddd-82cd-2b02e00f6bfb
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:548)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:605)
-	at org.openqa.selenium.remote.RemoteWebDriver.quit(RemoteWebDriver.java:448)
-	at com.controller.Action_Method.close_browser(Action_Method.java:239)
-	at com.controller.ScriptExecution.Close_Browser(ScriptExecution.java:45)
-... Removed 35 stack frames
-</div> <!-- stack-trace -->
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="Scenario_010">
-                  </a> <!-- Scenario_010 -->
-                  <span class="method-name">Scenario_010</span>
-                  <div class="stack-trace">org.openqa.selenium.SessionNotCreatedException: Tried to run command without establishing a connection
-Build info: version: &apos;3.13.0&apos;, revision: &apos;2f0d292&apos;, time: &apos;2018-06-25T15:24:21.231Z&apos;
-System info: host: &apos;DESKTOP-RC48C0S&apos;, ip: &apos;10.7.22.55&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_171&apos;
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 61.0.1, javascriptEnabled: true, moz:accessibilityChecks: false, moz:headless: false, moz:processID: 13928, moz:profile: C:\Users\lenovo\AppData\Loc..., moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: XP, platformName: XP, platformVersion: 10.0, rotatable: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}}
-Session ID: 5ff0884e-487b-4ddd-82cd-2b02e00f6bfb
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:548)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:605)
-	at org.openqa.selenium.remote.RemoteWebDriver.quit(RemoteWebDriver.java:448)
-	at com.controller.Action_Method.close_browser(Action_Method.java:239)
-	at com.controller.ScriptExecution.Close_Browser(ScriptExecution.java:45)
-... Removed 35 stack frames
-</div> <!-- stack-trace -->
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="Scenario_011">
-                  </a> <!-- Scenario_011 -->
-                  <span class="method-name">Scenario_011</span>
-                  <div class="stack-trace">org.openqa.selenium.SessionNotCreatedException: Tried to run command without establishing a connection
-Build info: version: &apos;3.13.0&apos;, revision: &apos;2f0d292&apos;, time: &apos;2018-06-25T15:24:21.231Z&apos;
-System info: host: &apos;DESKTOP-RC48C0S&apos;, ip: &apos;10.7.22.55&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_171&apos;
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 61.0.1, javascriptEnabled: true, moz:accessibilityChecks: false, moz:headless: false, moz:processID: 13928, moz:profile: C:\Users\lenovo\AppData\Loc..., moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: XP, platformName: XP, platformVersion: 10.0, rotatable: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}}
-Session ID: 5ff0884e-487b-4ddd-82cd-2b02e00f6bfb
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:548)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:605)
-	at org.openqa.selenium.remote.RemoteWebDriver.quit(RemoteWebDriver.java:448)
-	at com.controller.Action_Method.close_browser(Action_Method.java:239)
-	at com.controller.ScriptExecution.Close_Browser(ScriptExecution.java:45)
-... Removed 35 stack frames
-</div> <!-- stack-trace -->
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="Scenario_022">
-                  </a> <!-- Scenario_022 -->
-                  <span class="method-name">Scenario_022</span>
-                  <div class="stack-trace">org.openqa.selenium.SessionNotCreatedException: Tried to run command without establishing a connection
-Build info: version: &apos;3.13.0&apos;, revision: &apos;2f0d292&apos;, time: &apos;2018-06-25T15:24:21.231Z&apos;
-System info: host: &apos;DESKTOP-RC48C0S&apos;, ip: &apos;10.7.22.55&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_171&apos;
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 61.0.1, javascriptEnabled: true, moz:accessibilityChecks: false, moz:headless: false, moz:processID: 13928, moz:profile: C:\Users\lenovo\AppData\Loc..., moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: XP, platformName: XP, platformVersion: 10.0, rotatable: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}}
-Session ID: 5ff0884e-487b-4ddd-82cd-2b02e00f6bfb
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:548)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:605)
-	at org.openqa.selenium.remote.RemoteWebDriver.quit(RemoteWebDriver.java:448)
-	at com.controller.Action_Method.close_browser(Action_Method.java:239)
-	at com.controller.ScriptExecution.Close_Browser(ScriptExecution.java:45)
-... Removed 35 stack frames
-</div> <!-- stack-trace -->
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="Scenario_023">
-                  </a> <!-- Scenario_023 -->
-                  <span class="method-name">Scenario_023</span>
-                  <div class="stack-trace">org.openqa.selenium.SessionNotCreatedException: Tried to run command without establishing a connection
-Build info: version: &apos;3.13.0&apos;, revision: &apos;2f0d292&apos;, time: &apos;2018-06-25T15:24:21.231Z&apos;
-System info: host: &apos;DESKTOP-RC48C0S&apos;, ip: &apos;10.7.22.55&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_171&apos;
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 61.0.1, javascriptEnabled: true, moz:accessibilityChecks: false, moz:headless: false, moz:processID: 13928, moz:profile: C:\Users\lenovo\AppData\Loc..., moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: XP, platformName: XP, platformVersion: 10.0, rotatable: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}}
-Session ID: 5ff0884e-487b-4ddd-82cd-2b02e00f6bfb
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:548)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:605)
-	at org.openqa.selenium.remote.RemoteWebDriver.quit(RemoteWebDriver.java:448)
-	at com.controller.Action_Method.close_browser(Action_Method.java:239)
-	at com.controller.ScriptExecution.Close_Browser(ScriptExecution.java:45)
-... Removed 35 stack frames
-</div> <!-- stack-trace -->
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="Scenario_028">
-                  </a> <!-- Scenario_028 -->
-                  <span class="method-name">Scenario_028</span>
-                  <div class="stack-trace">org.openqa.selenium.SessionNotCreatedException: Tried to run command without establishing a connection
-Build info: version: &apos;3.13.0&apos;, revision: &apos;2f0d292&apos;, time: &apos;2018-06-25T15:24:21.231Z&apos;
-System info: host: &apos;DESKTOP-RC48C0S&apos;, ip: &apos;10.7.22.55&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_171&apos;
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 61.0.1, javascriptEnabled: true, moz:accessibilityChecks: false, moz:headless: false, moz:processID: 13928, moz:profile: C:\Users\lenovo\AppData\Loc..., moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: XP, platformName: XP, platformVersion: 10.0, rotatable: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}}
-Session ID: 5ff0884e-487b-4ddd-82cd-2b02e00f6bfb
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:548)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:605)
-	at org.openqa.selenium.remote.RemoteWebDriver.quit(RemoteWebDriver.java:448)
-	at com.controller.Action_Method.close_browser(Action_Method.java:239)
-	at com.controller.ScriptExecution.Close_Browser(ScriptExecution.java:45)
-... Removed 35 stack frames
-</div> <!-- stack-trace -->
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
                   <a name="Scenario_032">
                   </a> <!-- Scenario_032 -->
                   <span class="method-name">Scenario_032</span>
-                  <div class="stack-trace">java.lang.Throwable: Method ScriptExecution.Scenario_032()[pri:0, instance:com.controller.ScriptExecution@13fee20c] depends on not successfully finished methods
-... Removed 21 stack frames
+                  <div class="stack-trace">java.lang.Throwable: Method ScriptExecution.Scenario_032()[pri:0, instance:com.controller.ScriptExecution@2638011] depends on not successfully finished methods
+... Removed 22 stack frames
 </div> <!-- stack-trace -->
                 </div> <!-- method-content -->
               </div> <!-- method -->
@@ -465,8 +413,8 @@ Session ID: 5ff0884e-487b-4ddd-82cd-2b02e00f6bfb
                   <a name="Scenario_036">
                   </a> <!-- Scenario_036 -->
                   <span class="method-name">Scenario_036</span>
-                  <div class="stack-trace">java.lang.Throwable: Method ScriptExecution.Scenario_036()[pri:0, instance:com.controller.ScriptExecution@13fee20c] depends on not successfully finished methods
-... Removed 21 stack frames
+                  <div class="stack-trace">java.lang.Throwable: Method ScriptExecution.Scenario_036()[pri:0, instance:com.controller.ScriptExecution@2638011] depends on not successfully finished methods
+... Removed 22 stack frames
 </div> <!-- stack-trace -->
                 </div> <!-- method-content -->
               </div> <!-- method -->
@@ -475,8 +423,8 @@ Session ID: 5ff0884e-487b-4ddd-82cd-2b02e00f6bfb
                   <a name="Scenario_068">
                   </a> <!-- Scenario_068 -->
                   <span class="method-name">Scenario_068</span>
-                  <div class="stack-trace">java.lang.Throwable: Method ScriptExecution.Scenario_068()[pri:0, instance:com.controller.ScriptExecution@13fee20c] depends on not successfully finished methods
-... Removed 21 stack frames
+                  <div class="stack-trace">java.lang.Throwable: Method ScriptExecution.Scenario_068()[pri:0, instance:com.controller.ScriptExecution@2638011] depends on not successfully finished methods
+... Removed 22 stack frames
 </div> <!-- stack-trace -->
                 </div> <!-- method-content -->
               </div> <!-- method -->
@@ -485,8 +433,8 @@ Session ID: 5ff0884e-487b-4ddd-82cd-2b02e00f6bfb
                   <a name="Scenario_080">
                   </a> <!-- Scenario_080 -->
                   <span class="method-name">Scenario_080</span>
-                  <div class="stack-trace">java.lang.Throwable: Method ScriptExecution.Scenario_080()[pri:0, instance:com.controller.ScriptExecution@13fee20c] depends on not successfully finished methods
-... Removed 21 stack frames
+                  <div class="stack-trace">java.lang.Throwable: Method ScriptExecution.Scenario_080()[pri:0, instance:com.controller.ScriptExecution@2638011] depends on not successfully finished methods
+... Removed 22 stack frames
 </div> <!-- stack-trace -->
                 </div> <!-- method-content -->
               </div> <!-- method -->
@@ -495,8 +443,8 @@ Session ID: 5ff0884e-487b-4ddd-82cd-2b02e00f6bfb
                   <a name="Scenario_101">
                   </a> <!-- Scenario_101 -->
                   <span class="method-name">Scenario_101</span>
-                  <div class="stack-trace">java.lang.Throwable: Method ScriptExecution.Scenario_101()[pri:0, instance:com.controller.ScriptExecution@13fee20c] depends on not successfully finished methods
-... Removed 21 stack frames
+                  <div class="stack-trace">java.lang.Throwable: Method ScriptExecution.Scenario_101()[pri:0, instance:com.controller.ScriptExecution@2638011] depends on not successfully finished methods
+... Removed 22 stack frames
 </div> <!-- stack-trace -->
                 </div> <!-- method-content -->
               </div> <!-- method -->
@@ -505,24 +453,53 @@ Session ID: 5ff0884e-487b-4ddd-82cd-2b02e00f6bfb
                   <a name="Scenarion_087">
                   </a> <!-- Scenarion_087 -->
                   <span class="method-name">Scenarion_087</span>
-                  <div class="stack-trace">java.lang.Throwable: Method ScriptExecution.Scenarion_087()[pri:0, instance:com.controller.ScriptExecution@13fee20c] depends on not successfully finished methods
-... Removed 21 stack frames
+                  <div class="stack-trace">java.lang.Throwable: Method ScriptExecution.Scenarion_087()[pri:0, instance:com.controller.ScriptExecution@2638011] depends on not successfully finished methods
+... Removed 22 stack frames
 </div> <!-- stack-trace -->
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
           </div> <!-- suite-Suite-class-skipped -->
+          <div class="suite-Suite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">com.controller.ScriptExecution</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="Scenario_009">
+                  </a> <!-- Scenario_009 -->
+                  <span class="method-name">Scenario_009</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="Scenario_010">
+                  </a> <!-- Scenario_010 -->
+                  <span class="method-name">Scenario_010</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="Scenario_011">
+                  </a> <!-- Scenario_011 -->
+                  <span class="method-name">Scenario_011</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Suite-class-passed -->
         </div> <!-- panel Suite -->
         <div panel-name="test-xml-Suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">E:\Workstreets Platform\com.automation.wsp\src\main\resources\testng.xml</span>
+            <span class="header-content">E:\platformautomation\com.automation.wsp\src\main\resources\testng.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
 &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
 &lt;!DOCTYPE suite SYSTEM &quot;http://testng.org/testng-1.0.dtd&quot;&gt;
-&lt;suite guice-stage=&quot;DEVELOPMENT&quot; verbose=&quot;0&quot; name=&quot;Suite&quot;&gt;
-  &lt;test thread-count=&quot;5&quot; verbose=&quot;0&quot; name=&quot;Test&quot;&gt;
+&lt;suite name=&quot;Suite&quot; guice-stage=&quot;DEVELOPMENT&quot; verbose=&quot;0&quot;&gt;
+  &lt;test thread-count=&quot;5&quot; name=&quot;Test&quot; verbose=&quot;0&quot;&gt;
     &lt;classes&gt;
       &lt;class name=&quot;com.controller.ScriptExecution&quot;/&gt;
     &lt;/classes&gt;
@@ -566,55 +543,55 @@ data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
 data.addRows(15);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'Scenario_005')
+data.setCell(0, 1, 'Scenario_006')
 data.setCell(0, 2, 'com.controller.ScriptExecution')
-data.setCell(0, 3, 28114);
+data.setCell(0, 3, 25762);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'Scenario_006')
+data.setCell(1, 1, 'Scenario_028')
 data.setCell(1, 2, 'com.controller.ScriptExecution')
-data.setCell(1, 3, 9799);
+data.setCell(1, 3, 24863);
 data.setCell(2, 0, 2)
-data.setCell(2, 1, 'Scenarion_087')
+data.setCell(2, 1, 'Scenario_023')
 data.setCell(2, 2, 'com.controller.ScriptExecution')
-data.setCell(2, 3, 0);
+data.setCell(2, 3, 24035);
 data.setCell(3, 0, 3)
-data.setCell(3, 1, 'Scenario_023')
+data.setCell(3, 1, 'Scenario_022')
 data.setCell(3, 2, 'com.controller.ScriptExecution')
-data.setCell(3, 3, 0);
+data.setCell(3, 3, 23606);
 data.setCell(4, 0, 4)
-data.setCell(4, 1, 'Scenario_011')
+data.setCell(4, 1, 'Scenario_005')
 data.setCell(4, 2, 'com.controller.ScriptExecution')
-data.setCell(4, 3, 0);
+data.setCell(4, 3, 23212);
 data.setCell(5, 0, 5)
-data.setCell(5, 1, 'Scenario_032')
+data.setCell(5, 1, 'Scenario_011')
 data.setCell(5, 2, 'com.controller.ScriptExecution')
-data.setCell(5, 3, 0);
+data.setCell(5, 3, 6241);
 data.setCell(6, 0, 6)
-data.setCell(6, 1, 'Scenario_080')
+data.setCell(6, 1, 'Scenario_008')
 data.setCell(6, 2, 'com.controller.ScriptExecution')
-data.setCell(6, 3, 0);
+data.setCell(6, 3, 4899);
 data.setCell(7, 0, 7)
-data.setCell(7, 1, 'Scenario_036')
+data.setCell(7, 1, 'Scenario_010')
 data.setCell(7, 2, 'com.controller.ScriptExecution')
-data.setCell(7, 3, 0);
+data.setCell(7, 3, 4785);
 data.setCell(8, 0, 8)
-data.setCell(8, 1, 'Scenario_068')
+data.setCell(8, 1, 'Scenario_009')
 data.setCell(8, 2, 'com.controller.ScriptExecution')
-data.setCell(8, 3, 0);
+data.setCell(8, 3, 3544);
 data.setCell(9, 0, 9)
-data.setCell(9, 1, 'Scenario_022')
+data.setCell(9, 1, 'Scenario_036')
 data.setCell(9, 2, 'com.controller.ScriptExecution')
-data.setCell(9, 3, 0);
+data.setCell(9, 3, 1);
 data.setCell(10, 0, 10)
-data.setCell(10, 1, 'Scenario_008')
+data.setCell(10, 1, 'Scenario_080')
 data.setCell(10, 2, 'com.controller.ScriptExecution')
 data.setCell(10, 3, 0);
 data.setCell(11, 0, 11)
-data.setCell(11, 1, 'Scenario_009')
+data.setCell(11, 1, 'Scenario_068')
 data.setCell(11, 2, 'com.controller.ScriptExecution')
 data.setCell(11, 3, 0);
 data.setCell(12, 0, 12)
-data.setCell(12, 1, 'Scenario_010')
+data.setCell(12, 1, 'Scenario_032')
 data.setCell(12, 2, 'com.controller.ScriptExecution')
 data.setCell(12, 3, 0);
 data.setCell(13, 0, 13)
@@ -622,14 +599,14 @@ data.setCell(13, 1, 'Scenario_101')
 data.setCell(13, 2, 'com.controller.ScriptExecution')
 data.setCell(13, 3, 0);
 data.setCell(14, 0, 14)
-data.setCell(14, 1, 'Scenario_028')
+data.setCell(14, 1, 'Scenarion_087')
 data.setCell(14, 2, 'com.controller.ScriptExecution')
 data.setCell(14, 3, 0);
 window.suiteTableData['Suite']= { tableData: data, tableDiv: 'times-div-Suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 37 seconds</span>
+              <span class="suite-total-time">Total running time: 2 minutes</span>
               <div id="times-div-Suite">
               </div> <!-- times-div-Suite -->
             </div> <!-- times-div -->
@@ -664,56 +641,118 @@ return data;
                 <img src="failed.png">
                 </img>
                 <span class="method-name">Scenario_005</span>
-                <span class="method-start">16713 ms</span>
+                <span class="method-start">9998 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">Close_Browser</span>
-                <span class="method-start">45207 ms</span>
+                <span class="method-start">33611 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">Launch_Browser</span>
-                <span class="method-start">49035 ms</span>
+                <span class="method-start">37240 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <img src="failed.png">
                 </img>
                 <span class="method-name">Scenario_006</span>
-                <span class="method-start">55222 ms</span>
+                <span class="method-start">46657 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
+                <span class="method-name">Close_Browser</span>
+                <span class="method-start">72727 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">Launch_Browser</span>
+                <span class="method-start">76206 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
                 <img src="failed.png">
                 </img>
-                <span class="method-name">Close_Browser</span>
-                <span class="method-start">65021 ms</span>
-              </div> <!-- configuration-method after -->
-              <div class="test-method">
                 <span class="method-name">Scenario_008</span>
-                <span class="method-start">-1533294894950 ms</span>
+                <span class="method-start">85315 ms</span>
               </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">Close_Browser</span>
+                <span class="method-start">90459 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">Launch_Browser</span>
+                <span class="method-start">94109 ms</span>
+              </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">Scenario_009</span>
-                <span class="method-start">-1533294894950 ms</span>
+                <span class="method-start">102510 ms</span>
               </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">Close_Browser</span>
+                <span class="method-start">106055 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">Launch_Browser</span>
+                <span class="method-start">109393 ms</span>
+              </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">Scenario_010</span>
-                <span class="method-start">-1533294894950 ms</span>
+                <span class="method-start">118181 ms</span>
               </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">Close_Browser</span>
+                <span class="method-start">122966 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">Launch_Browser</span>
+                <span class="method-start">126716 ms</span>
+              </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">Scenario_011</span>
-                <span class="method-start">-1533294894950 ms</span>
+                <span class="method-start">135498 ms</span>
               </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">Close_Browser</span>
+                <span class="method-start">141740 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">Launch_Browser</span>
+                <span class="method-start">145468 ms</span>
+              </div> <!-- configuration-method before -->
               <div class="test-method">
+                <img src="failed.png">
+                </img>
                 <span class="method-name">Scenario_022</span>
-                <span class="method-start">-1533294894950 ms</span>
+                <span class="method-start">154975 ms</span>
               </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">Close_Browser</span>
+                <span class="method-start">178965 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">Launch_Browser</span>
+                <span class="method-start">182664 ms</span>
+              </div> <!-- configuration-method before -->
               <div class="test-method">
+                <img src="failed.png">
+                </img>
                 <span class="method-name">Scenario_023</span>
-                <span class="method-start">-1533294894950 ms</span>
+                <span class="method-start">191841 ms</span>
               </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">Close_Browser</span>
+                <span class="method-start">216168 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">Launch_Browser</span>
+                <span class="method-start">220415 ms</span>
+              </div> <!-- configuration-method before -->
               <div class="test-method">
+                <img src="failed.png">
+                </img>
                 <span class="method-name">Scenario_028</span>
-                <span class="method-start">-1533294894950 ms</span>
+                <span class="method-start">228994 ms</span>
               </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">Close_Browser</span>
+                <span class="method-start">254098 ms</span>
+              </div> <!-- configuration-method after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
       </div> <!-- main-panel-root -->

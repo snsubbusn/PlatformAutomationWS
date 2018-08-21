@@ -8,7 +8,6 @@ import org.openqa.selenium.support.PageFactory;
 
 import com.controller.Action_Method;
 import com.controller.Variables;
-import com.objects_pages.ForgotPasswordPage;
 import com.objects_pages.RegisterPage;
 import com.relevantcodes.extentreports.LogStatus;
 

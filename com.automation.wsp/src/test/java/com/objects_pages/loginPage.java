@@ -1,9 +1,5 @@
 package com.objects_pages;
 
-import java.io.IOException;
-
-import org.apache.poi.EncryptedDocumentException;
-import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 

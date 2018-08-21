@@ -1,7 +1,5 @@
 package com.objects_pages;
 
-import javax.swing.JProgressBar;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;

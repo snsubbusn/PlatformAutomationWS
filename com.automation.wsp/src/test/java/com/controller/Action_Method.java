@@ -13,6 +13,7 @@ import org.apache.commons.io.FileUtils;
 import org.apache.poi.EncryptedDocumentException;
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.CellType;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
@@ -64,9 +65,10 @@ public class Action_Method implements ITestListener {
 		return data;
 	}
 
+	
 	public static void setExceldata(String filename,String sname,String word,String New_data) throws EncryptedDocumentException, InvalidFormatException, IOException
 	{
-		String Ex_Data = "";
+		//String Ex_Data = "";
 		String data="";
 		String filepath=filename;
 		FileInputStream fis=new FileInputStream(filepath);
@@ -81,7 +83,7 @@ public class Action_Method implements ITestListener {
 			if(word.equalsIgnoreCase(data))
 			{
 				Cell c=r.createCell(1);
-				c.setCellType(cel.CELL_TYPE_STRING);
+				c.setCellType(CellType.STRING);
 				c.setCellValue(New_data);
 				FileOutputStream fos=new FileOutputStream(filepath);
 				wb.write(fos);
@@ -177,7 +179,7 @@ public class Action_Method implements ITestListener {
 		Set<String> All_wid=driver.getWindowHandles();
 		Iterator<String> it=All_wid.iterator();
 
-		String wid1=it.next();
+		//String wid1=it.next();
 		String wid2=it.next();
 		driver.switchTo().window(wid2);
 

@@ -1,8 +1,6 @@
 package com.scenarios;
 
 import org.openqa.selenium.support.PageFactory;
-import org.testng.asserts.SoftAssert;
-
 import com.controller.Action_Method;
 import com.controller.Variables;
 import com.objects_pages.Corporate_landingPage;
@@ -11,7 +9,7 @@ import com.relevantcodes.extentreports.LogStatus;
 
 public class Verify_CorporateLandingPage extends Action_Method{
 
-	public void Verify_CorporateLandingPage() {
+	public void Verify_CorporateLanding_Page() {
 
 		logger = extent.startTest("Corporate Login Scenario Started.");
 
