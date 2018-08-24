@@ -26,7 +26,7 @@ public class loginPage extends Action_Method {
 	WebElement Text1_Under_LoginSection;
 	@FindBy(xpath="//div[contains(text(),'Please login to access your account')]")
 	WebElement Text2_Under_LoginSection;
-	@FindBy(xpath="//span[contains(text(),'log in')]")
+	@FindBy(xpath="//span[contains(text(),'Log in')]")
 	WebElement Login_Tab;
 	@FindBy(xpath="//span[contains(text(),'Register')]")
 	WebElement Register_Tab;

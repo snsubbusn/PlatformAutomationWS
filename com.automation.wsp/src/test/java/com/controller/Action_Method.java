@@ -206,7 +206,7 @@ public class Action_Method implements ITestListener {
 
 	public static  WebDriver getbrowser()
 	{
-		if(Variables.browser.equals("chrome"))
+		if(Variables.browser.equalsIgnoreCase("chrome"))
 		{
 			System.setProperty("webdriver.chrome.driver",Variables.chrome_driver_path);
 			ChromeOptions co=new ChromeOptions();

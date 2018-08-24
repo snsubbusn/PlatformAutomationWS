@@ -1,6 +1,7 @@
 package com.scenarios;
 
 import java.io.IOException;
+import java.util.concurrent.TimeUnit;
 
 import org.apache.poi.EncryptedDocumentException;
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
@@ -18,8 +19,8 @@ public class Sc_028_Post_Video_JD extends Action_Method
 {
 	public void Verify_Post_Video_Jd() throws EncryptedDocumentException, InvalidFormatException, IOException, InterruptedException
 	{
-		logger = extent.startTest("verifying video Posting by Corporate");
-		
+		logger = extent.startTest("SC_028_Verifying video Posting by Corporate");
+		driver.manage().timeouts().implicitlyWait(1,TimeUnit.MINUTES);
 		//Launching the url
 		
 		wait_for_pageload(Variables.url);

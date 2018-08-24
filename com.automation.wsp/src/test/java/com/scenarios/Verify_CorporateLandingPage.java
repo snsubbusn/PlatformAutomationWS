@@ -1,5 +1,7 @@
 package com.scenarios;
 
+import java.util.concurrent.TimeUnit;
+
 import org.openqa.selenium.support.PageFactory;
 import com.controller.Action_Method;
 import com.controller.Variables;
@@ -12,7 +14,7 @@ public class Verify_CorporateLandingPage extends Action_Method{
 	public void Verify_CorporateLanding_Page() {
 
 		logger = extent.startTest("Corporate Login Scenario Started.");
-
+		driver.manage().timeouts().implicitlyWait(1,TimeUnit.MINUTES);
 		//Launching the URL
 		wait_for_pageload(Variables.url);
 

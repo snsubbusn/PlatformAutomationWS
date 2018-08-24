@@ -1,6 +1,7 @@
 package com.scenarios;
 
 import java.io.IOException;
+import java.util.concurrent.TimeUnit;
 
 import org.apache.poi.EncryptedDocumentException;
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
@@ -18,7 +19,7 @@ public class Sc_023_Verify_ErrorMessage_JobSummaryPage extends Action_Method
 	public void Verify_ErrorMessage_Experience() throws EncryptedDocumentException, InvalidFormatException, IOException
 	{
 		logger = extent.startTest("Verifying error message for Minimum Experience greater than Maximum Experience in Job Summary Page");
-		
+		driver.manage().timeouts().implicitlyWait(1,TimeUnit.MINUTES);
 		//Launching the url
 		
 		driver.navigate().refresh();

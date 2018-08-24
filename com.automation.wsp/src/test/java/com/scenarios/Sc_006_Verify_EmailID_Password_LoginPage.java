@@ -1,6 +1,7 @@
 package com.scenarios;
 
 import java.io.IOException;
+import java.util.concurrent.TimeUnit;
 
 import org.apache.poi.EncryptedDocumentException;
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
@@ -16,7 +17,7 @@ public class Sc_006_Verify_EmailID_Password_LoginPage extends Action_Method
 	public void Verify_MailId_Password() throws EncryptedDocumentException, InvalidFormatException, IOException, InterruptedException
 	{
 		logger = extent.startTest("verifying error message for Email Id and password");
-		
+		driver.manage().timeouts().implicitlyWait(1,TimeUnit.MINUTES);
 		//Launching the url
 		
 		wait_for_pageload(Variables.url);

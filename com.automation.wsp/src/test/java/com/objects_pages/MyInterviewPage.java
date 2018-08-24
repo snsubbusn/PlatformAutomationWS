@@ -14,9 +14,21 @@ public class MyInterviewPage extends Action_Method
 	@FindBy (xpath="//iframe[contains(@src,'testing.workstreets.com')]")
 	WebElement MyInterview_Frame;
 	
+	
+	//Changed the iframe locator (Siva)
+	
+	@FindBy (id="myInterview")
+	WebElement MyInterview_Frame1;
+	
 	// Locating all elements present in My Interview
-	@FindBy(xpath="//div[@id='first-screen']/div[text()='Next']")
+//	@FindBy(xpath="//div[@id='first-screen']/div[text()='Next']")
+	
+	@FindBy(xpath="//div[@class='btn btn-red btn-big transition-opacity']")
 	WebElement First_Next_btn;
+	
+	@FindBy(id="tips-suggestion")
+	WebElement checkTips;
+	
 	@FindBy(xpath="//button[text()='Start Recording']")
 	WebElement Start_recording;
 	@FindBy(xpath="//button[text()='Stop Recording']")
@@ -31,9 +43,12 @@ public class MyInterviewPage extends Action_Method
 	public void VideoRecording_JobPost() throws InterruptedException
 	{
 		//Switch to MyInterview frame
+		driver.switchTo().frame(MyInterview_Frame1);
+		Thread.sleep(5000);
 		driver.switchTo().frame(MyInterview_Frame);
 		Thread.sleep(5000);
-		wait_for_elementpresent(First_Next_btn);
+		//wait_for_elementpresent(First_Next_btn);
+		System.out.println(checkTips.getText());
 		Actions act=new Actions(driver);
 		act.moveToElement(First_Next_btn).click().perform();
 		//First_Next_btn.click();

@@ -1,6 +1,7 @@
 package com.scenarios;
 
 import java.io.IOException;
+import java.util.concurrent.TimeUnit;
 
 import org.apache.poi.EncryptedDocumentException;
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
@@ -17,7 +18,7 @@ public class Sc_008_Verify_Register extends Action_Method
 	{
 		logger = extent.startTest("verifying Registration of an user");
 		logger.log(LogStatus.INFO, "Verify all elements,texts present in Forgot Password pop up");
-		
+		driver.manage().timeouts().implicitlyWait(1,TimeUnit.MINUTES);
 		//Launching the url
 		
 		wait_for_pageload(Variables.url);

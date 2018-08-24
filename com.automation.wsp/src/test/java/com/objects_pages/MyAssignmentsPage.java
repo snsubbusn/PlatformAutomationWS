@@ -2,6 +2,7 @@ package com.objects_pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 
 import com.controller.Action_Method;
@@ -21,7 +22,10 @@ public class MyAssignmentsPage extends Action_Method
 	@FindBy(id="search")
 	WebElement TagExisting_Search;
 	
-	@FindBy(xpath="//div[div[app-candidate-card-square-header[div[div[div[contains(text(),'Siva 1212')]]]]]]/following::a[span[contains(text(),'Tag')]]")
+	//@FindBy(xpath="//div[div[app-candidate-card-square-header[div[div[div[contains(text(),'Siva 1212')]]]]]]/following::a[span[contains(text(),'Tag')]]")
+	
+	//Tagging the first candidate
+	@FindBy(xpath="//a[span[contains(text(),'Tag')]]")
 	WebElement Tag_Button_TagRxisting;
 	
 	
@@ -38,9 +42,10 @@ public class MyAssignmentsPage extends Action_Method
 		}
 	}
 	
-	public boolean Click_Assign_Candidate(String jobid)
+	public boolean Click_Assign_Candidate(String JobId)
 	{
-		WebElement Assign_Candidate=driver.findElement(By.xpath("//mat-card[div[div[div[app-job-card-square-header[div[div[div[contains(text(),'#"+jobid+"')]]]]]]]]//button[@class='assign-cadidates hidden-xs hidden-sm mat-raised-button mat-primary']"));
+		//WebElement Assign_Candidate=driver.findElement(By.xpath("//mat-card[div[div[div[app-job-card-square-header[div[div[div[contains(text(),'#"+jobid+"')]]]]]]]]//button[@class='assign-cadidates hidden-xs hidden-sm mat-raised-button mat-primary']"));
+		WebElement Assign_Candidate=driver.findElement(By.xpath("//a[contains(@href,'job/"+JobId+"')]/following::button//div[contains(text(),'Assign Candidate')]"));
 		try 
 		{
 			Assign_Candidate.click();
@@ -54,6 +59,8 @@ public class MyAssignmentsPage extends Action_Method
 	{
 		try 
 		{
+			Actions act = new Actions(driver);
+			act.moveToElement(TagExisting_Tab).build().perform();
 			TagExisting_Tab.click();
 			return true;
 		}
@@ -66,6 +73,8 @@ public class MyAssignmentsPage extends Action_Method
 	{
 		try 
 		{
+			Actions act = new Actions(driver);
+			act.moveToElement(TagExisting_Search).build().perform();
 			TagExisting_Search.click();
 			return true;
 		} 
@@ -78,6 +87,7 @@ public class MyAssignmentsPage extends Action_Method
 	{
 		try
 		{
+			//Tagging the first candidate
 			Tag_Button_TagRxisting.click();
 			return true;
 		} 

@@ -1,68 +1,44 @@
 -------------------------------------------------------------------------------
 Test set: TestSuite
 -------------------------------------------------------------------------------
-Tests run: 15, Failures: 6, Errors: 0, Skipped: 6, Time elapsed: 259.965 s <<< FAILURE! - in TestSuite
-Scenario_005(com.controller.ScriptExecution)  Time elapsed: 23.615 s  <<< FAILURE!
-org.openqa.selenium.NoSuchElementException: 
-Unable to locate element: //span[contains(text(),'log in')]
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '3.13.0', revision: '2f0d292', time: '2018-06-25T15:24:21.231Z'
-System info: host: 'DESKTOP-L268OE3', ip: '10.7.23.187', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '10.0.2'
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 61.0.1, javascriptEnabled: true, moz:accessibilityChecks: false, moz:headless: false, moz:processID: 4820, moz:profile: C:\Users\DELL\AppData\Local..., moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: XP, platformName: XP, platformVersion: 10.0, rotatable: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}}
-Session ID: 03e82325-17aa-4203-acd7-a0d8b04600bf
-*** Element info: {Using=xpath, value=//span[contains(text(),'log in')]}
-	at com.controller.ScriptExecution.Scenario_005(ScriptExecution.java:53)
-
-Scenario_006(com.controller.ScriptExecution)  Time elapsed: 26.07 s  <<< FAILURE!
-org.openqa.selenium.NoSuchElementException: 
-Unable to locate element: //mat-error/div
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '3.13.0', revision: '2f0d292', time: '2018-06-25T15:24:21.231Z'
-System info: host: 'DESKTOP-L268OE3', ip: '10.7.23.187', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '10.0.2'
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 61.0.1, javascriptEnabled: true, moz:accessibilityChecks: false, moz:headless: false, moz:processID: 4000, moz:profile: C:\Users\DELL\AppData\Local..., moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: XP, platformName: XP, platformVersion: 10.0, rotatable: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}}
-Session ID: 5046428f-527d-49b1-939e-a1ce28d359c8
-*** Element info: {Using=xpath, value=//mat-error/div}
-	at com.controller.ScriptExecution.Scenario_006(ScriptExecution.java:60)
-
-Scenario_008(com.controller.ScriptExecution)  Time elapsed: 5.143 s  <<< FAILURE!
-java.lang.NullPointerException
+Tests run: 15, Failures: 4, Errors: 0, Skipped: 6, Time elapsed: 217.133 s <<< FAILURE! - in TestSuite
+Scenario_008(com.controller.ScriptExecution)  Time elapsed: 4.225 s  <<< FAILURE!
+java.io.FileNotFoundException: \com.automation.wsp\src\main\resources\TestData.xlsx (The system cannot find the path specified)
 	at com.controller.ScriptExecution.Scenario_008(ScriptExecution.java:68)
 
-Scenario_022(com.controller.ScriptExecution)  Time elapsed: 23.991 s  <<< FAILURE!
+Scenario_022(com.controller.ScriptExecution)  Time elapsed: 23.292 s  <<< FAILURE!
 org.openqa.selenium.NoSuchElementException: 
 Unable to locate element: //a[contains(text(),'Post Job')]
 For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
 Build info: version: '3.13.0', revision: '2f0d292', time: '2018-06-25T15:24:21.231Z'
 System info: host: 'DESKTOP-L268OE3', ip: '10.7.23.187', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '10.0.2'
 Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 61.0.1, javascriptEnabled: true, moz:accessibilityChecks: false, moz:headless: false, moz:processID: 7772, moz:profile: C:\Users\DELL\AppData\Local..., moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: XP, platformName: XP, platformVersion: 10.0, rotatable: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}}
-Session ID: d48312d0-75cc-4ea9-8489-56219c0ec23e
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 61.0.1, javascriptEnabled: true, moz:accessibilityChecks: false, moz:headless: false, moz:processID: 8268, moz:profile: C:\Users\DELL\AppData\Local..., moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: XP, platformName: XP, platformVersion: 10.0, rotatable: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}}
+Session ID: 6a0af935-d1d4-4dea-862e-91d28989d1cc
 *** Element info: {Using=xpath, value=//a[contains(text(),'Post Job')]}
 	at com.controller.ScriptExecution.Scenario_022(ScriptExecution.java:101)
 
-Scenario_023(com.controller.ScriptExecution)  Time elapsed: 24.317 s  <<< FAILURE!
+Scenario_023(com.controller.ScriptExecution)  Time elapsed: 26.32 s  <<< FAILURE!
 org.openqa.selenium.NoSuchElementException: 
 Unable to locate element: //a[contains(text(),'Post Job')]
 For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
 Build info: version: '3.13.0', revision: '2f0d292', time: '2018-06-25T15:24:21.231Z'
 System info: host: 'DESKTOP-L268OE3', ip: '10.7.23.187', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '10.0.2'
 Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 61.0.1, javascriptEnabled: true, moz:accessibilityChecks: false, moz:headless: false, moz:processID: 6572, moz:profile: C:\Users\DELL\AppData\Local..., moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: XP, platformName: XP, platformVersion: 10.0, rotatable: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}}
-Session ID: 1e1a0454-ea5a-45af-92fd-c6d60b62cb70
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 61.0.1, javascriptEnabled: true, moz:accessibilityChecks: false, moz:headless: false, moz:processID: 8424, moz:profile: C:\Users\DELL\AppData\Local..., moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: XP, platformName: XP, platformVersion: 10.0, rotatable: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}}
+Session ID: f6acd6dd-0ef4-4d92-875d-f6a5fe3ccc52
 *** Element info: {Using=xpath, value=//a[contains(text(),'Post Job')]}
 	at com.controller.ScriptExecution.Scenario_023(ScriptExecution.java:110)
 
-Scenario_028(com.controller.ScriptExecution)  Time elapsed: 25.099 s  <<< FAILURE!
+Scenario_028(com.controller.ScriptExecution)  Time elapsed: 23.662 s  <<< FAILURE!
 org.openqa.selenium.NoSuchElementException: 
 Unable to locate element: //a[contains(text(),'Post Job')]
 For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
 Build info: version: '3.13.0', revision: '2f0d292', time: '2018-06-25T15:24:21.231Z'
 System info: host: 'DESKTOP-L268OE3', ip: '10.7.23.187', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '10.0.2'
 Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 61.0.1, javascriptEnabled: true, moz:accessibilityChecks: false, moz:headless: false, moz:processID: 12168, moz:profile: C:\Users\DELL\AppData\Local..., moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: XP, platformName: XP, platformVersion: 10.0, rotatable: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}}
-Session ID: e159c104-bac5-42af-970b-aef8141e9f05
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 61.0.1, javascriptEnabled: true, moz:accessibilityChecks: false, moz:headless: false, moz:processID: 8932, moz:profile: C:\Users\DELL\AppData\Local..., moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: XP, platformName: XP, platformVersion: 10.0, rotatable: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}}
+Session ID: 4a4726a7-3b04-438d-a281-7eb27110e312
 *** Element info: {Using=xpath, value=//a[contains(text(),'Post Job')]}
 	at com.controller.ScriptExecution.Scenario_028(ScriptExecution.java:124)
 

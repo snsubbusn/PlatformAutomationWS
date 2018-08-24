@@ -1,6 +1,7 @@
 package com.scenarios;
 
 import java.io.IOException;
+import java.util.concurrent.TimeUnit;
 
 import org.apache.poi.EncryptedDocumentException;
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
@@ -16,8 +17,8 @@ public class Sc_080_Verify_Accept_ReviewSubmission extends Action_Method
 {
 	public void Accept_ReviewSubmission() throws EncryptedDocumentException, InvalidFormatException, IOException
 	{
-		logger = extent.startTest("verifying Guaranteed Submission of posted JOb");
-		
+		logger = extent.startTest("SC_080_Verifying Acceptance of Review Submission by Admin");
+		driver.manage().timeouts().implicitlyWait(1,TimeUnit.MINUTES);
 		//Launching the url
 		
 		wait_for_pageload(Variables.url);
@@ -26,7 +27,7 @@ public class Sc_080_Verify_Accept_ReviewSubmission extends Action_Method
 		//Creating object for Login class
 		loginPage lp=PageFactory.initElements(driver,loginPage.class);
 		lp.EnterValidLogin(Variables.testdata,Variables.LoginPage,"Admin Email","AdminPassword");
-		logger.log(LogStatus.INFO, "Enter valid login credential and click on Login button,Admin Landing page displayed");
+		logger.log(LogStatus.INFO, "Enter valid login credential and click on Login button, Admin Landing page displayed");
 		
 		//Creating object for manage job page
 		ManageJobPage manage=PageFactory.initElements(driver,ManageJobPage.class);

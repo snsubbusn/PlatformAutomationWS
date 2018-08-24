@@ -25,8 +25,12 @@ public class Corporate_PostVideoJD_AddVideoPage extends Action_Method
 	WebElement Save_btn;
 	@FindBy(xpath="//div[@class='col-xs-12 col-md-6 btn-margin next-align']/button/span")
 	WebElement Save_btn_text;
-	@FindBy(xpath="//a[@id='open-popup-myinterview']")
+//	@FindBy(xpath="//a[@id='open-popup-myinterview']")
+//	WebElement Thumbnail;
+	
+	@FindBy(xpath="//a/img[@class='img-responsive custom-img']")
 	WebElement Thumbnail;
+	
 	
 	public void Complete_AddvideoPage() throws InterruptedException
 	{

@@ -1,6 +1,7 @@
 package com.scenarios;
 
 import java.io.IOException;
+import java.util.concurrent.TimeUnit;
 
 import org.apache.poi.EncryptedDocumentException;
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
@@ -16,8 +17,8 @@ public class Sc_032_PerformGuaranteedSubmission extends Action_Method
 {
 	public void Verify_Guaranteed_Submission() throws InterruptedException, EncryptedDocumentException, InvalidFormatException, IOException
 	{
-		logger = extent.startTest("verifying Guaranteed Submission of posted JOb");
-		
+		logger = extent.startTest("SC_032_Verifying Guaranteed Submission of posted JOb");
+		driver.manage().timeouts().implicitlyWait(1,TimeUnit.MINUTES);
 		//Launching the url
 		
 		wait_for_pageload(Variables.url);
@@ -57,7 +58,7 @@ public class Sc_032_PerformGuaranteedSubmission extends Action_Method
 		}
 		else
 		{
-			logger.log(LogStatus.PASS,"Click On accept to pay later","Not able to click on Accept to pay later");
+			logger.log(LogStatus.FAIL,"Click On accept to pay later","Not able to click on Accept to pay later");
 		}
 		
 		

@@ -214,54 +214,73 @@ public class Corporate_PostVideoJD_AddSkillsPage extends Action_Method
 			Actions act=new Actions(driver);
 			wait_for_elementpresent(Name);
 			//Adding 5 must have skills
-			act.moveToElement(Name).click().sendKeys(Keys.chord(getExceldata(filename, sname,"skill1"),Keys.ESCAPE)).perform();
+			//act.moveToElement(Name).click().sendKeys(Keys.chord(getExceldata(filename, sname,"skill1"),Keys.ESCAPE)).perform();
+			Name.sendKeys(getExceldata(filename, sname,"skill1"));
 			MustHaveSkills.click();
 			Experience_Years.sendKeys(getExceldata(filename, sname,"Year 1"));
 			Add_Skill_Button.click();
 			
-			act.moveToElement(Name).click().sendKeys(Keys.chord(getExceldata(filename, sname,"skill2"),Keys.ESCAPE)).perform();
+			Thread.sleep(1000);
+			//act.moveToElement(Name).click().sendKeys(Keys.chord(getExceldata(filename, sname,"skill2"),Keys.ESCAPE)).perform();
+			Name.sendKeys(getExceldata(filename, sname,"skill2"));
 			MustHaveSkills.click();
 			Experience_Years.sendKeys(getExceldata(filename, sname,"Year 2"));
 			Add_Skill_Button.click();
 			
-			act.moveToElement(Name).click().sendKeys(Keys.chord(getExceldata(filename, sname,"skill3"),Keys.ESCAPE)).perform();
+			Thread.sleep(1000);
+			//act.moveToElement(Name).click().sendKeys(Keys.chord(getExceldata(filename, sname,"skill3"),Keys.ESCAPE)).perform();
+			Name.sendKeys(getExceldata(filename, sname,"skill3"));
 			MustHaveSkills.click();
 			Experience_Years.sendKeys(getExceldata(filename, sname,"Year 3"));
 			Add_Skill_Button.click();
 			
-			act.moveToElement(Name).click().sendKeys(Keys.chord(getExceldata(filename, sname,"skill4"),Keys.ESCAPE)).perform();
+			Thread.sleep(1000);
+			//act.moveToElement(Name).click().sendKeys(Keys.chord(getExceldata(filename, sname,"skill4"),Keys.ESCAPE)).perform();
+			Name.sendKeys(getExceldata(filename, sname,"skill4"));
 			MustHaveSkills.click();
 			Experience_Years.sendKeys(getExceldata(filename, sname,"Year 4"));
 			Add_Skill_Button.click();
 			
-			act.moveToElement(Name).click().sendKeys(Keys.chord(getExceldata(filename, sname,"skill5"),Keys.ESCAPE)).perform();
+			Thread.sleep(1000);
+			//act.moveToElement(Name).click().sendKeys(Keys.chord(getExceldata(filename, sname,"skill5"),Keys.ESCAPE)).perform();
+			Name.sendKeys(getExceldata(filename, sname,"skill5"));
 			MustHaveSkills.click();
 			Experience_Years.sendKeys(getExceldata(filename, sname,"Year 5"));
 			Add_Skill_Button.click();
 			
 			//Adding 5 good to have skills
 			
-			act.moveToElement(Name).click().sendKeys(Keys.chord(getExceldata(filename, sname,"skill6"),Keys.ESCAPE)).perform();
+			Thread.sleep(1000);
+			//act.moveToElement(Name).click().sendKeys(Keys.chord(getExceldata(filename, sname,"skill6"),Keys.ESCAPE)).perform();
+			Name.sendKeys(getExceldata(filename, sname,"skill6"));
 			GoodToHaveSkills.click();
 			Experience_Years.sendKeys(getExceldata(filename, sname,"Year 1"));
 			Add_Skill_Button.click();
 			
-			act.moveToElement(Name).click().sendKeys(Keys.chord(getExceldata(filename, sname,"skill7"),Keys.ESCAPE)).perform();
+			Thread.sleep(1000);
+			//act.moveToElement(Name).click().sendKeys(Keys.chord(getExceldata(filename, sname,"skill7"),Keys.ESCAPE)).perform();
+			Name.sendKeys(getExceldata(filename, sname,"skill7"));
 			GoodToHaveSkills.click();
 			Experience_Years.sendKeys(getExceldata(filename, sname,"Year 2"));
 			Add_Skill_Button.click();
 			
-			act.moveToElement(Name).click().sendKeys(Keys.chord(getExceldata(filename, sname,"skill8"),Keys.ESCAPE)).perform();
+			Thread.sleep(1000);
+			//act.moveToElement(Name).click().sendKeys(Keys.chord(getExceldata(filename, sname,"skill8"),Keys.ESCAPE)).perform();
+			Name.sendKeys(getExceldata(filename, sname,"skill8"));
 			GoodToHaveSkills.click();
 			Experience_Years.sendKeys(getExceldata(filename, sname,"Year 3"));
 			Add_Skill_Button.click();
 			
-			act.moveToElement(Name).click().sendKeys(Keys.chord(getExceldata(filename, sname,"skill9"),Keys.ESCAPE)).perform();
+			Thread.sleep(1000);
+			//act.moveToElement(Name).click().sendKeys(Keys.chord(getExceldata(filename, sname,"skill9"),Keys.ESCAPE)).perform();
+			Name.sendKeys(getExceldata(filename, sname,"skill9"));
 			GoodToHaveSkills.click();
 			Experience_Years.sendKeys(getExceldata(filename, sname,"Year 4"));
 			Add_Skill_Button.click();
 			
-			act.moveToElement(Name).click().sendKeys(Keys.chord(getExceldata(filename, sname,"skill10"),Keys.ESCAPE)).perform();
+			Thread.sleep(1000);
+			//act.moveToElement(Name).click().sendKeys(Keys.chord(getExceldata(filename, sname,"skill10"),Keys.ESCAPE)).perform();
+			Name.sendKeys(getExceldata(filename, sname,"skill10"));
 			GoodToHaveSkills.click();
 			Experience_Years.sendKeys(getExceldata(filename, sname,"Year 5"));
 			Add_Skill_Button.click();

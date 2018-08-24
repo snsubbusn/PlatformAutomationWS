@@ -43,7 +43,7 @@ public class RegisterPage extends Action_Method
 				Register_Tab.click();
 				Full_Name.sendKeys("Raghav AT");
 				Email.sendKeys(getExceldata(Variables.testdata,Variables.Update_Data,"email"));
-				Mobile_Number.sendKeys("9583955701");
+				Mobile_Number.sendKeys("8147506453");
 				Join_Us_as.click();
 				Select_Candidate.click();
 				return true;

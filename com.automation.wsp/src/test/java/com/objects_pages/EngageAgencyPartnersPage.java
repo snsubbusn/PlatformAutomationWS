@@ -16,7 +16,11 @@ public class EngageAgencyPartnersPage extends Action_Method
 {
 	//Locating all the elements in Engage Agency Partner page
 		//Locating elements present in Jd Crad
-		@FindBy(xpath="//div[div[div[contains(text(),'Engage Agency Partner')]]]/following::div/div/div/div/div[1]//div[@class='jobcode subdued']")
+/*		@FindBy(xpath="//div[div[div[contains(text(),'Engage Agency Partner')]]]/following::div/div/div/div/div[2]//div[@class='jobcode subdued']")
+		WebElement Job_Id;*/
+		
+		//changed the xpath for the job id (Siva)
+		@FindBy(xpath="(//mat-card[@class='mat-card'])[1]//div[contains(@class, 'jobcode subdued')] ")
 		WebElement Job_Id;
 		
 		@FindBy(xpath="//a[contains(text(),'Work Desk')]")
@@ -35,29 +39,31 @@ public class EngageAgencyPartnersPage extends Action_Method
 		@FindBy(xpath="//mat-option[span[contains(text(),'Easy')]]")
 		WebElement Select_Skill_Level;
 		
-		@FindBy(xpath="//button[span[b[contains(text(),'Get Estimate')]]]")
-		WebElement Get_Estimate;
+		@FindBy(xpath="//b[contains(text(),'Get Estimate')]")
+		WebElement GetEstimate;
 		
 		@FindBy(xpath="//button[span[b[contains(text(),'Accept To Pay Later')]]]")
 		WebElement Accept_To_PayLater;
 		
 		
 		
-		public String GetJobID() throws EncryptedDocumentException, InvalidFormatException, IOException
+		public String GetJobID() throws EncryptedDocumentException, InvalidFormatException, IOException, InterruptedException
 		{
+			
 			try 
 			{
 				WorkDesk_Tab.click();
+				Thread.sleep(5000);
 				String Id1=Job_Id.getText();
 				String Id="";
-				for(int i=1;i<=2;i++)
+				for(int i=1;i<Id1.length();i++)
 				{
 					char ch=Id1.charAt(i);
 					Id=Id+ch;
 				}
-				setExceldata(Variables.testdata, Variables.SetData_Excel, "Job ID", Id);
+				setExceldata(Variables.testdata, Variables.SetData_Excel, "Job ID", Id.trim());
 				
-				return Id;
+				return Id.trim();
 			} 
 			catch (NoSuchElementException e) 
 			{
@@ -71,12 +77,16 @@ public class EngageAgencyPartnersPage extends Action_Method
 		}
 		public boolean Click_On_GetGuaranteedResponse(String Job_Id)
 		{
-			WebElement Get_Guaranteed_Response=driver.findElement(By.xpath("//mat-card[div[div[div[app-job-card-square-header[div[div[di"
-					+ "v[contains(text(),'#"+Job_Id+"')]]]]]]]]//button[@class='pending-review mat-raised-button mat-primary']"));
+			/*WebElement Get_Guaranteed_Response=driver.findElement(By.xpath("//mat-card[div[div[div[app-job-card-square-header[div[div[di"
+					+ "v[contains(text(),'#"+Job_Id+"')]]]]]]]]//button[@class='mat-raised-button mat-primary']"));//pending-review mat-raised-button mat-primary
+			
+			*/			
+			//Changed the locator for Guaranteed Submission button
+			WebElement Get_Guaranteed_Response=driver.findElement((By.xpath(("(//mat-card[@class='mat-card'])[1]//div[contains(text(),"
+					+ "'"+Job_Id+"')]//following::button[2]/span[contains(text(),'Submission')]"))));
 			try
 			{
 				Get_Guaranteed_Response.click();
-				System.out.println(Job_Id);
 				return true;
 			}
 			catch (NoSuchElementException e) 
@@ -92,7 +102,7 @@ public class EngageAgencyPartnersPage extends Action_Method
 				No_Of_Positions.sendKeys("5");
 				Skill_Level_Dropdown.click();
 				Select_Skill_Level.click();
-				Get_Estimate.click();
+				GetEstimate.click();
 				return true;
 			}
 			catch (Exception e) 
@@ -105,7 +115,9 @@ public class EngageAgencyPartnersPage extends Action_Method
 		{
 			try 
 			{
-				Accept_To_PayLater.click();
+				/*Actions act = new Actions(driver);
+				act.moveToElement(Accept_To_PayLater).build().perform();
+				*/Accept_To_PayLater.click();
 				return true;
 			} 
 			catch (Exception e) 

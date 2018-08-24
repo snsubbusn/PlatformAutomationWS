@@ -1,6 +1,7 @@
 package com.scenarios;
 
 import java.io.IOException;
+import java.util.concurrent.TimeUnit;
 
 import org.apache.poi.EncryptedDocumentException;
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
@@ -8,7 +9,7 @@ import org.openqa.selenium.support.PageFactory;
 
 import com.controller.Action_Method;
 import com.controller.Variables;
-import com.objects_pages.ViewResponsesPage;
+import com.objects_pages.ManageResponsesPage;
 import com.objects_pages.loginPage;
 import com.relevantcodes.extentreports.LogStatus;
 
@@ -16,8 +17,8 @@ public class Sc_036_Verify_Shortlist_PendingReview_CorporateAdmin extends Action
 {
 	public void Shortlist_PendingReview() throws EncryptedDocumentException, InvalidFormatException, IOException
 	{
-		logger = extent.startTest("verifying Shortlist of a candidate in pending review by corporate");
-		
+		logger = extent.startTest("SC_036_verifying Shortlist of a candidate in pending review by corporate");
+		driver.manage().timeouts().implicitlyWait(1,TimeUnit.MINUTES);
 		//Launching the url
 		
 		wait_for_pageload(Variables.url);
@@ -29,8 +30,8 @@ public class Sc_036_Verify_Shortlist_PendingReview_CorporateAdmin extends Action
 		logger.log(LogStatus.INFO, "Enter valid login credential and click on Login button,Corporate Landing page displayed");
 		
 		//Creating Object for view Responses page
-		ViewResponsesPage view=PageFactory.initElements(driver,ViewResponsesPage.class);
-		if(view.Click_On_ViewResponses_Tab()==true)
+		ManageResponsesPage view=PageFactory.initElements(driver,ManageResponsesPage.class);
+		if(view.Click_On_ManageResponses_Tab()==true)
 		{
 			logger.log(LogStatus.PASS, "Click on View Responses tab","View Responses tab clicked");
 		}

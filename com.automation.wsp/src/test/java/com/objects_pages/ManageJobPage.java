@@ -21,14 +21,15 @@ public class ManageJobPage extends Action_Method
 	@FindBy(xpath="//button[contains(text(),'Align Agency Partners')]")	
 	WebElement AlignAgencyPartner_Tab;
 	
-	@FindBy(xpath="//mat-chip[contains(text(),'Recruiter One')]")	
-	WebElement Align_Agency;
+	@FindBy(xpath="//mat-chip[contains(text(),'FirstOne')]")	
+	WebElement Align_Agency_FirstOne;
 	
 	//Identifying elements present in Review Submission page
 	@FindBy(xpath="//button[contains(text(),'Review Submissions')]")	
 	WebElement ReviewSubmission_Tab;
 	
-	@FindBy(xpath="//div[div[app-candidate-card-square-header[div[div[div[contains(text(),'Siva 1212')]]]]]]/following::button[span[contains(text(),'Accept')]]")
+//	@FindBy(xpath="//div[div[app-candidate-card-square-header[div[div[div[contains(text(),'Siva 1212')]]]]]]/following::button[span[contains(text(),'Accept')]]")
+	@FindBy(xpath="//button[span[contains(text(),'Accept')]]")
 	WebElement Accept_ReviewSubmission;
 	
 	
@@ -47,8 +48,10 @@ public class ManageJobPage extends Action_Method
 	}
 	public boolean Click_Mangae_Job(String JobId)
 	{
-		WebElement Manage_Button=driver.findElement(By.xpath("//mat-card[div[div[div[app-job-card-square-header[div[div[div[contains(text(),'#"+JobId+"')]]]]]]]]//button[@class='assign-cadidates hidden-xs hidden-sm mat-raised-button mat-primary']"));
+		//WebElement Manage_Button=driver.findElement(By.xpath("//mat-card[div[div[div[app-job-card-square-header[div[div[div[contains(text(),'#"+JobId+"')]]]]]]]]//button[@class='assign-cadidates hidden-xs hidden-sm mat-raised-button mat-primary']"));
 	
+		WebElement Manage_Button=driver.findElement(By.xpath("//a[contains(@href,'job/"+JobId+"')]/following::button//div[contains(text(),'Manage')]"));
+		
 		try 
 		{
 			wait_for_elementpresent(Manage_Button);
@@ -76,8 +79,8 @@ public class ManageJobPage extends Action_Method
 	{
 		try 
 		{
-			wait_for_elementpresent(Align_Agency);
-			Align_Agency.click();
+			wait_for_elementpresent(Align_Agency_FirstOne);
+			Align_Agency_FirstOne.click();
 			return true;
 		}
 		catch (Exception e) 

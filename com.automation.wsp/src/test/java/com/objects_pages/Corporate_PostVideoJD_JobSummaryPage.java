@@ -58,7 +58,10 @@ public class Corporate_PostVideoJD_JobSummaryPage extends Action_Method
 	@FindBy(xpath="//input[@id='maxSal']")
 	WebElement Maximum_Salary;
 	
-	@FindBy(xpath="//mat-select[div[div/span[text()='Location']]]")
+//	@FindBy(xpath="//mat-select[div[div/span[text()='Location']]]")
+//	WebElement Location;
+	
+	@FindBy(id="location")
 	WebElement Location;
 	
 	@FindBy(xpath="//span[text()='Location']")

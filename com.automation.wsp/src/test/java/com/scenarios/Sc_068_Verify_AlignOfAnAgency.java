@@ -1,6 +1,7 @@
 package com.scenarios;
 
 import java.io.IOException;
+import java.util.concurrent.TimeUnit;
 
 import org.apache.poi.EncryptedDocumentException;
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
@@ -17,8 +18,8 @@ public class Sc_068_Verify_AlignOfAnAgency extends Action_Method
 	
 	public void Verify_AlignOfAnAgency() throws EncryptedDocumentException, InvalidFormatException, IOException
 	{
-		logger = extent.startTest("verifying Align of an agency by Workstreets Admin");
-		
+		logger = extent.startTest("SC_068_Verifying Align of an agency by Workstreets Admin");
+		driver.manage().timeouts().implicitlyWait(1,TimeUnit.MINUTES);
 		//Launching the url
 		
 		wait_for_pageload(Variables.url);

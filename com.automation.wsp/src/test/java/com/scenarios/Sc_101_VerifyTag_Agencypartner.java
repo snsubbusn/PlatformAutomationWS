@@ -1,6 +1,7 @@
 package com.scenarios;
 
 import java.io.IOException;
+import java.util.concurrent.TimeUnit;
 
 import org.apache.poi.EncryptedDocumentException;
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
@@ -17,8 +18,8 @@ public class Sc_101_VerifyTag_Agencypartner extends Action_Method
 	public void Tag_Candidate_AgencyPartner() throws EncryptedDocumentException, InvalidFormatException, IOException
 	{
 
-		logger = extent.startTest("verifying tag candidate by agency partner");
-		
+		logger = extent.startTest("SC_101_Verifying tag candidate by agency partner");
+		driver.manage().timeouts().implicitlyWait(1,TimeUnit.MINUTES);
 		//Launching the url
 		
 		wait_for_pageload(Variables.url);
@@ -27,7 +28,7 @@ public class Sc_101_VerifyTag_Agencypartner extends Action_Method
 		//Creating object for Login class
 		loginPage lp=PageFactory.initElements(driver,loginPage.class);
 		lp.EnterValidLogin(Variables.testdata,Variables.LoginPage,"Agency Email","Agency Password");
-		logger.log(LogStatus.INFO, "Enter valid login credential and click on Login button,Agency Partner Landing page displayed");
+		logger.log(LogStatus.INFO, "Enter valid login credential and click on Login button, Agency Partner Landing page displayed");
 		
 		//Creating object for Myassignment page
 		MyAssignmentsPage My=PageFactory.initElements(driver,MyAssignmentsPage.class);

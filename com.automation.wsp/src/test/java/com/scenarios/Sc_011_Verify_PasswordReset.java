@@ -1,5 +1,7 @@
 package com.scenarios;
 
+import java.util.concurrent.TimeUnit;
+
 import org.openqa.selenium.support.PageFactory;
 
 import com.controller.Action_Method;
@@ -13,7 +15,7 @@ public class Sc_011_Verify_PasswordReset extends Action_Method
 	{
 
 		logger = extent.startTest("verifying Password reset");
-		
+		driver.manage().timeouts().implicitlyWait(1,TimeUnit.MINUTES);
 		//Launching the url
 		
 		wait_for_pageload(Variables.url);
