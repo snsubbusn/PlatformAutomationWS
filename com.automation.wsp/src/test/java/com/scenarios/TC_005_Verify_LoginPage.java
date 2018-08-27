@@ -9,7 +9,7 @@ import com.controller.Variables;
 import com.objects_pages.loginPage;
 import com.relevantcodes.extentreports.LogStatus;
 
-public class Sc_005_Verify_LoginPage extends Action_Method
+public class TC_005_Verify_LoginPage extends Action_Method
 {
 	public void Verify_all_elements_present_in_loginPage()
 	{

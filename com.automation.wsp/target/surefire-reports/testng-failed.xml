@@ -5,13 +5,10 @@
     <classes>
       <class name="com.controller.ScriptExecution">
         <methods>
-          <include name="Scenario_008"/>
           <include name="Scenarion_087"/>
           <include name="Scenario_080"/>
           <include name="Scenario_028"/>
           <include name="Launch_Browser"/>
-          <include name="Scenario_023"/>
-          <include name="Scenario_022"/>
           <include name="Scenario_032"/>
           <include name="Close_Browser"/>
           <include name="Scenario_036"/>

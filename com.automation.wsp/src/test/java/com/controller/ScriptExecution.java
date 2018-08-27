@@ -8,7 +8,7 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
-import com.scenarios.Sc_005_Verify_LoginPage;
+import com.scenarios.TC_005_Verify_LoginPage;
 import com.scenarios.Sc_006_Verify_EmailID_Password_LoginPage;
 import com.scenarios.Sc_008_Verify_Register;
 import com.scenarios.Sc_009_Verify_ForgotPasswordPage;
@@ -49,7 +49,7 @@ public class ScriptExecution extends Action_Method
 	@Test
 	public void Scenario_005() throws EncryptedDocumentException, InvalidFormatException, IOException, InterruptedException
 	{
-		Sc_005_Verify_LoginPage s5=PageFactory.initElements(driver, Sc_005_Verify_LoginPage.class);
+		TC_005_Verify_LoginPage s5=PageFactory.initElements(driver, TC_005_Verify_LoginPage.class);
 		s5.Verify_all_elements_present_in_loginPage();
 	}
 	//Verify error message for mail id and password of Login page

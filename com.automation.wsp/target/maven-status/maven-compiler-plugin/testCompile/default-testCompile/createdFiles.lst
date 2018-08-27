@@ -4,10 +4,8 @@ com\controller\Variables.class
 com\scenarios\Sc_080_Verify_Accept_ReviewSubmission.class
 com\scenarios\Sc_008_Verify_Register.class
 com\objects_pages\Corporate_landingPage.class
-com\objects_pages\ViewResponsesPage.class
 com\scenarios\Sc_006_Verify_EmailID_Password_LoginPage.class
 com\controller\ScriptExecution.class
-com\objects_pages\GuaranteedSubmissionsPage.class
 com\scenarios\Sc_023_Verify_ErrorMessage_JobSummaryPage.class
 com\scenarios\Sc_028_Post_Video_JD.class
 com\objects_pages\EngageAgencyPartnersPage.class

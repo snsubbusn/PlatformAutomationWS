@@ -20,9 +20,10 @@ public class EngageAgencyPartnersPage extends Action_Method
 		WebElement Job_Id;*/
 		
 		//changed the xpath for the job id (Siva)
-		@FindBy(xpath="(//mat-card[@class='mat-card'])[1]//div[contains(@class, 'jobcode subdued')] ")
+		@FindBy(xpath="(//mat-card[@class='mat-card']//span[contains(text(), 'Software Regression Engineer')])[1]/following::div[contains(@class, 'jobcode subdued')][1]")
 		WebElement Job_Id;
 		
+			
 		@FindBy(xpath="//a[contains(text(),'Work Desk')]")
 		WebElement WorkDesk_Tab;
 		
