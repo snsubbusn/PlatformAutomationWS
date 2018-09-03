@@ -1,10 +1,12 @@
 -------------------------------------------------------------------------------
 Test set: TestSuite
 -------------------------------------------------------------------------------
-Tests run: 15, Failures: 1, Errors: 0, Skipped: 4, Time elapsed: 320.068 s <<< FAILURE! - in TestSuite
-Scenario_068(com.controller.ScriptExecution)  Time elapsed: 24.264 s  <<< FAILURE!
-org.openqa.selenium.NoSuchElementException: 
-no such element: Unable to locate element: {"method":"xpath","selector":"//a[contains(@href,'job/160')]/following::button//div[contains(text(),'Manage')]"}
+Tests run: 15, Failures: 1, Errors: 0, Skipped: 6, Time elapsed: 149.541 s <<< FAILURE! - in TestSuite
+Scenario_028(com.controller.ScriptExecution)  Time elapsed: 45.556 s  <<< FAILURE!
+org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of Proxy element for: DefaultElementLocator 'By.xpath: //mat-option[1]' (tried for 20 second(s) with 500 milliseconds interval)
+	at com.controller.ScriptExecution.Scenario_028(ScriptExecution.java:124)
+Caused by: org.openqa.selenium.NoSuchElementException: 
+no such element: Unable to locate element: {"method":"xpath","selector":"//mat-option[1]"}
   (Session info: chrome=68.0.3440.106)
   (Driver info: chromedriver=2.40.565498 (ea082db3280dd6843ebfb08a625e3eb905c4f5ab),platform=Windows NT 10.0.17134 x86_64) (WARNING: The server did not provide any stacktrace information)
 Command duration or timeout: 0 milliseconds
@@ -13,7 +15,7 @@ Build info: version: '3.13.0', revision: '2f0d292', time: '2018-06-25T15:24:21.2
 System info: host: 'DESKTOP-L268OE3', ip: '10.7.23.243', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '10.0.2'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
 Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 2.40.565498 (ea082db3280dd6..., userDataDir: C:\Users\DELL\AppData\Local...}, cssSelectorsEnabled: true, databaseEnabled: false, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, unexpectedAlertBehaviour: , unhandledPromptBehavior: , version: 68.0.3440.106, webStorageEnabled: true}
-Session ID: 867a78e30e5a6f39ad903855e1120de5
-*** Element info: {Using=xpath, value=//a[contains(@href,'job/160')]/following::button//div[contains(text(),'Manage')]}
-	at com.controller.ScriptExecution.Scenario_068(ScriptExecution.java:149)
+Session ID: 09e37ba1b4deb4fd113c6f228f4e42b4
+*** Element info: {Using=xpath, value=//mat-option[1]}
+	at com.controller.ScriptExecution.Scenario_028(ScriptExecution.java:124)
 

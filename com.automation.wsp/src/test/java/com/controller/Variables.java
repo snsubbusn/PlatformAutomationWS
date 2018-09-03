@@ -4,7 +4,7 @@ public interface Variables
 {
 	String url="https://testing.workstreets.com";
 	int time=20;
-	String browser="Chrome";
+	String browser="chrome";//chrome
 	String testdata="E:\\platformautomation\\com.automation.wsp\\src\\main\\resources\\TestData.xlsx";
 	//String testdata="E:\\Workstreets Platform\\WSPAutomation\\DataSheet\\TestData.xlsx";
 	String gecko_driver_path="E:\\platformautomation\\com.automation.wsp\\src\\main\\resources\\geckodriver.exe";

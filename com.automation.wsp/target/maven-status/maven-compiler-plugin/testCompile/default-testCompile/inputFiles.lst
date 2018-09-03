@@ -1,5 +1,4 @@
 E:\platformautomation\com.automation.wsp\src\test\java\com\objects_pages\Corporate_PostVideoJD_AddSkillsPage.java
-E:\platformautomation\com.automation.wsp\src\test\java\com\scenarios\Sc_005_Verify_LoginPage.java
 E:\platformautomation\com.automation.wsp\src\test\java\com\objects_pages\loginPage.java
 E:\platformautomation\com.automation.wsp\src\test\java\com\scenarios\Sc_023_Verify_ErrorMessage_JobSummaryPage.java
 E:\platformautomation\com.automation.wsp\src\test\java\com\objects_pages\Corporate_PostVideoJD_AddVideoPage.java
@@ -29,5 +28,6 @@ E:\platformautomation\com.automation.wsp\src\test\java\com\objects_pages\MyAssig
 E:\platformautomation\com.automation.wsp\src\test\java\com\controller\Variables.java
 E:\platformautomation\com.automation.wsp\src\test\java\com\scenarios\Sc_028_Post_Video_JD.java
 E:\platformautomation\com.automation.wsp\src\test\java\com\controller\ScriptExecution.java
+E:\platformautomation\com.automation.wsp\src\test\java\com\scenarios\TC_005_Verify_LoginPage.java
 E:\platformautomation\com.automation.wsp\src\test\java\com\scenarios\Sc_080_Verify_Accept_ReviewSubmission.java
 E:\platformautomation\com.automation.wsp\src\test\java\com\scenarios\Sc_006_Verify_EmailID_Password_LoginPage.java

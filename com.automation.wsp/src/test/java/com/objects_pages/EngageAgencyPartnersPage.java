@@ -83,7 +83,7 @@ public class EngageAgencyPartnersPage extends Action_Method
 			
 			*/			
 			//Changed the locator for Guaranteed Submission button
-			WebElement Get_Guaranteed_Response=driver.findElement((By.xpath(("(//mat-card[@class='mat-card'])[1]//div[contains(text(),"
+			WebElement Get_Guaranteed_Response=driver.findElement((By.xpath(("//mat-card[@class='mat-card'][1]//div[contains(text(),"
 					+ "'"+Job_Id+"')]//following::button[2]/span[contains(text(),'Submission')]"))));
 			try
 			{

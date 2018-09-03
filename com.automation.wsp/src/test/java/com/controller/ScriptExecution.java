@@ -45,6 +45,65 @@ public class ScriptExecution extends Action_Method
 	}
 
 
+
+	//Verify Post Video JD by corporate User
+	@Test
+	public void Scenario_028() throws EncryptedDocumentException, InvalidFormatException, IOException, InterruptedException
+	{
+		Sc_028_Post_Video_JD s28=PageFactory.initElements(driver, Sc_028_Post_Video_JD.class);
+		s28.Verify_Post_Video_Jd();
+	}
+
+
+	//Verify Guaranteed Submission
+	@Test(dependsOnMethods="Scenario_028")
+	public void Scenario_032() throws EncryptedDocumentException, InvalidFormatException, IOException, InterruptedException
+	{
+		Sc_032_PerformGuaranteedSubmission s32=PageFactory.initElements(driver, Sc_032_PerformGuaranteedSubmission.class);
+		s32.Verify_Guaranteed_Submission();
+	}
+
+	//Shortlist candidate in pending review page by Corporate Admin
+	@Test(dependsOnMethods="Scenario_080")
+	public void Scenario_036() throws EncryptedDocumentException, InvalidFormatException, IOException
+	{
+		Sc_036_Verify_Shortlist_PendingReview_CorporateAdmin s36=PageFactory.initElements(driver,Sc_036_Verify_Shortlist_PendingReview_CorporateAdmin.class);
+		s36.Shortlist_PendingReview();
+	}
+
+	//Verify align of an agency by workstreets Admin
+	@Test(dependsOnMethods="Scenario_032")
+	public void Scenario_068() throws EncryptedDocumentException, InvalidFormatException, IOException
+	{
+		Sc_068_Verify_AlignOfAnAgency s68=PageFactory.initElements(driver, Sc_068_Verify_AlignOfAnAgency.class);
+		s68.Verify_AlignOfAnAgency();
+	}
+
+	//verify Approve of an candidate in review Submission by workstreets Admin
+	@Test(dependsOnMethods="Scenario_101")
+	public void Scenario_080() throws EncryptedDocumentException, InvalidFormatException, IOException
+	{
+		Sc_080_Verify_Accept_ReviewSubmission s80=PageFactory.initElements(driver, Sc_080_Verify_Accept_ReviewSubmission.class);
+		s80.Accept_ReviewSubmission();
+	}
+
+	//Accept Guaranteed Submission by Agency Partner
+	@Test(dependsOnMethods="Scenario_068")
+	public void Scenarion_087() throws EncryptedDocumentException, InvalidFormatException, IOException
+	{
+		Sc_087_VerifyAccept_GS s87=PageFactory.initElements(driver, Sc_087_VerifyAccept_GS.class);
+		s87.Accept_GS();
+	}
+
+	// Tag Candidate by Agency Partner
+	@Test(dependsOnMethods="Scenarion_087")
+	public void Scenario_101() throws EncryptedDocumentException, InvalidFormatException, IOException
+	{
+		Sc_101_VerifyTag_Agencypartner s101=PageFactory.initElements(driver, Sc_101_VerifyTag_Agencypartner.class);
+		s101.Tag_Candidate_AgencyPartner();
+	}
+
+
 	//Verify all the elements present in Login page
 	@Test
 	public void Scenario_005() throws EncryptedDocumentException, InvalidFormatException, IOException, InterruptedException
@@ -113,64 +172,6 @@ public class ScriptExecution extends Action_Method
 		//Verify Error message for minimum salary greater than maximum Salary in Job summary page
 		s23.Verify_ErrorMessage_Salary();
 
-	}
-
-
-	//Verify Post Video JD by corporate User
-	@Test
-	public void Scenario_028() throws EncryptedDocumentException, InvalidFormatException, IOException, InterruptedException
-	{
-		Sc_028_Post_Video_JD s28=PageFactory.initElements(driver, Sc_028_Post_Video_JD.class);
-		s28.Verify_Post_Video_Jd();
-	}
-	
-	
-	//Verify Guaranteed Submission
-	@Test(dependsOnMethods="Scenario_028")
-	public void Scenario_032() throws EncryptedDocumentException, InvalidFormatException, IOException, InterruptedException
-	{
-		Sc_032_PerformGuaranteedSubmission s32=PageFactory.initElements(driver, Sc_032_PerformGuaranteedSubmission.class);
-		s32.Verify_Guaranteed_Submission();
-	}
-
-	//Shortlist candidate in pending review page by Corporate Admin
-	@Test(dependsOnMethods="Scenario_080")
-	public void Scenario_036() throws EncryptedDocumentException, InvalidFormatException, IOException
-	{
-		Sc_036_Verify_Shortlist_PendingReview_CorporateAdmin s36=PageFactory.initElements(driver,Sc_036_Verify_Shortlist_PendingReview_CorporateAdmin.class);
-		s36.Shortlist_PendingReview();
-	}
-
-	//Verify align of an agency by workstreets Admin
-	@Test(dependsOnMethods="Scenario_032")
-	public void Scenario_068() throws EncryptedDocumentException, InvalidFormatException, IOException
-	{
-		Sc_068_Verify_AlignOfAnAgency s68=PageFactory.initElements(driver, Sc_068_Verify_AlignOfAnAgency.class);
-		s68.Verify_AlignOfAnAgency();
-	}
-
-	//verify Approve of an candidate in review Submission by workstreets Admin
-	@Test(dependsOnMethods="Scenario_101")
-	public void Scenario_080() throws EncryptedDocumentException, InvalidFormatException, IOException
-	{
-		Sc_080_Verify_Accept_ReviewSubmission s80=PageFactory.initElements(driver, Sc_080_Verify_Accept_ReviewSubmission.class);
-		s80.Accept_ReviewSubmission();
-	}
-
-	//Accept Guaranteed Submission by Agency Partner
-	@Test(dependsOnMethods="Scenario_068")
-	public void Scenarion_087() throws EncryptedDocumentException, InvalidFormatException, IOException
-	{
-		Sc_087_VerifyAccept_GS s87=PageFactory.initElements(driver, Sc_087_VerifyAccept_GS.class);
-		s87.Accept_GS();
-	}
-
-	// Tag Candidate by Agency Partner
-	@Test(dependsOnMethods="Scenarion_087")
-	public void Scenario_101() throws EncryptedDocumentException, InvalidFormatException, IOException
-	{
-		Sc_101_VerifyTag_Agencypartner s101=PageFactory.initElements(driver, Sc_101_VerifyTag_Agencypartner.class);
-		s101.Tag_Candidate_AgencyPartner();
 	}
 
 
