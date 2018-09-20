@@ -43,7 +43,7 @@ public class Corporate_PostVideoJD_AddSkillsPage extends Action_Method
 		@FindBy(xpath="//input[@id='expYears']")
 		WebElement Experience_Years;
 		
-		@FindBy(xpath="//button[@id='next']")
+		@FindBy(xpath="//button[@id='next']/span")
 		WebElement Add_Skill_Button;
 		
 		@FindBy(xpath="//button[@id='next']/span")

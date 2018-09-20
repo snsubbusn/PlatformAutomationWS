@@ -70,7 +70,8 @@ public class Corporate_PostVideoJD_JobSummaryPage extends Action_Method
 	@FindBy(xpath="//mat-option[2]")
 	WebElement Select_Location;
 	
-	@FindBy(xpath="//mat-select[div[div/span[text()='Education']]]")
+//	@FindBy(xpath="//mat-select[div[div/span[text()='Education']]]")
+	@FindBy(id="education")
 	WebElement Eduation;
 	
 	@FindBy(xpath="//span[text()='Education']")
@@ -279,6 +280,7 @@ public class Corporate_PostVideoJD_JobSummaryPage extends Action_Method
 	public void Complete_JobSummaryPage() throws EncryptedDocumentException, InvalidFormatException, IOException, InterruptedException
 	{
 		wait_for_elementpresent(RequirementType);
+		Thread.sleep(1000);
 		RequirementType.click();
 		wait_for_elementpresent(Select_RequirementType);
 		Select_RequirementType.click();

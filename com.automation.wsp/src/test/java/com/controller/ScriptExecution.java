@@ -104,7 +104,7 @@ public class ScriptExecution extends Action_Method
 	}
 
 
-	//Verify all the elements present in Login page
+	/*//Verify all the elements present in Login page
 	@Test
 	public void Scenario_005() throws EncryptedDocumentException, InvalidFormatException, IOException, InterruptedException
 	{
@@ -174,7 +174,7 @@ public class ScriptExecution extends Action_Method
 
 	}
 
-
+*/
 	//		//Verify Corporate Landing page
 	//		@Test
 	//		public void Scenario_009() throws EncryptedDocumentException, InvalidFormatException, IOException, InterruptedException
