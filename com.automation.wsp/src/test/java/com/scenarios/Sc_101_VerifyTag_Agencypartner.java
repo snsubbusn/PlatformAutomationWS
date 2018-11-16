@@ -18,7 +18,7 @@ public class Sc_101_VerifyTag_Agencypartner extends Action_Method
 	public void Tag_Candidate_AgencyPartner() throws EncryptedDocumentException, InvalidFormatException, IOException
 	{
 
-		logger = extent.startTest("SC_101_Verifying tag candidate by agency partner");
+		logger = extent.startTest("GS05_SC_101_Verifying tag candidate by agency partner");
 		driver.manage().timeouts().implicitlyWait(1,TimeUnit.MINUTES);
 		//Launching the url
 		

@@ -17,7 +17,7 @@ public class Sc_080_Verify_Accept_ReviewSubmission extends Action_Method
 {
 	public void Accept_ReviewSubmission() throws EncryptedDocumentException, InvalidFormatException, IOException
 	{
-		logger = extent.startTest("SC_080_Verifying Acceptance of Review Submission by Admin");
+		logger = extent.startTest("GS06_SC_080_Verifying Acceptance of Review Submission by Admin");
 		driver.manage().timeouts().implicitlyWait(1,TimeUnit.MINUTES);
 		//Launching the url
 		

@@ -31,7 +31,8 @@ public class Corporate_PostVideoJD_AddSkillsPage extends Action_Method
 		WebElement Type_Text;
 		
 		
-		@FindBy(xpath="//div[contains(text(),'Must Have Skills')]")
+		//@FindBy(xpath="//div[contains(text(),'Must Have Skills')]")
+		@FindBy(id="mustSkills")
 		WebElement MustHaveSkills;
 		
 		@FindBy(xpath="//div[contains(text(),' Good to have skills')]")
@@ -216,6 +217,7 @@ public class Corporate_PostVideoJD_AddSkillsPage extends Action_Method
 			//Adding 5 must have skills
 			//act.moveToElement(Name).click().sendKeys(Keys.chord(getExceldata(filename, sname,"skill1"),Keys.ESCAPE)).perform();
 			Name.sendKeys(getExceldata(filename, sname,"skill1"));
+			Name.sendKeys(Keys.TAB);
 			MustHaveSkills.click();
 			Experience_Years.sendKeys(getExceldata(filename, sname,"Year 1"));
 			Add_Skill_Button.click();
@@ -223,6 +225,7 @@ public class Corporate_PostVideoJD_AddSkillsPage extends Action_Method
 			Thread.sleep(1000);
 			//act.moveToElement(Name).click().sendKeys(Keys.chord(getExceldata(filename, sname,"skill2"),Keys.ESCAPE)).perform();
 			Name.sendKeys(getExceldata(filename, sname,"skill2"));
+			Name.sendKeys(Keys.TAB);
 			MustHaveSkills.click();
 			Experience_Years.sendKeys(getExceldata(filename, sname,"Year 2"));
 			Add_Skill_Button.click();
@@ -230,6 +233,7 @@ public class Corporate_PostVideoJD_AddSkillsPage extends Action_Method
 			Thread.sleep(1000);
 			//act.moveToElement(Name).click().sendKeys(Keys.chord(getExceldata(filename, sname,"skill3"),Keys.ESCAPE)).perform();
 			Name.sendKeys(getExceldata(filename, sname,"skill3"));
+			Name.sendKeys(Keys.TAB);
 			MustHaveSkills.click();
 			Experience_Years.sendKeys(getExceldata(filename, sname,"Year 3"));
 			Add_Skill_Button.click();
@@ -237,6 +241,7 @@ public class Corporate_PostVideoJD_AddSkillsPage extends Action_Method
 			Thread.sleep(1000);
 			//act.moveToElement(Name).click().sendKeys(Keys.chord(getExceldata(filename, sname,"skill4"),Keys.ESCAPE)).perform();
 			Name.sendKeys(getExceldata(filename, sname,"skill4"));
+			Name.sendKeys(Keys.TAB);
 			MustHaveSkills.click();
 			Experience_Years.sendKeys(getExceldata(filename, sname,"Year 4"));
 			Add_Skill_Button.click();
@@ -244,6 +249,7 @@ public class Corporate_PostVideoJD_AddSkillsPage extends Action_Method
 			Thread.sleep(1000);
 			//act.moveToElement(Name).click().sendKeys(Keys.chord(getExceldata(filename, sname,"skill5"),Keys.ESCAPE)).perform();
 			Name.sendKeys(getExceldata(filename, sname,"skill5"));
+			Name.sendKeys(Keys.TAB);
 			MustHaveSkills.click();
 			Experience_Years.sendKeys(getExceldata(filename, sname,"Year 5"));
 			Add_Skill_Button.click();
@@ -253,6 +259,7 @@ public class Corporate_PostVideoJD_AddSkillsPage extends Action_Method
 			Thread.sleep(1000);
 			//act.moveToElement(Name).click().sendKeys(Keys.chord(getExceldata(filename, sname,"skill6"),Keys.ESCAPE)).perform();
 			Name.sendKeys(getExceldata(filename, sname,"skill6"));
+			Name.sendKeys(Keys.TAB);
 			GoodToHaveSkills.click();
 			Experience_Years.sendKeys(getExceldata(filename, sname,"Year 1"));
 			Add_Skill_Button.click();
@@ -260,6 +267,7 @@ public class Corporate_PostVideoJD_AddSkillsPage extends Action_Method
 			Thread.sleep(1000);
 			//act.moveToElement(Name).click().sendKeys(Keys.chord(getExceldata(filename, sname,"skill7"),Keys.ESCAPE)).perform();
 			Name.sendKeys(getExceldata(filename, sname,"skill7"));
+			Name.sendKeys(Keys.TAB);
 			GoodToHaveSkills.click();
 			Experience_Years.sendKeys(getExceldata(filename, sname,"Year 2"));
 			Add_Skill_Button.click();
@@ -267,6 +275,7 @@ public class Corporate_PostVideoJD_AddSkillsPage extends Action_Method
 			Thread.sleep(1000);
 			//act.moveToElement(Name).click().sendKeys(Keys.chord(getExceldata(filename, sname,"skill8"),Keys.ESCAPE)).perform();
 			Name.sendKeys(getExceldata(filename, sname,"skill8"));
+			Name.sendKeys(Keys.TAB);
 			GoodToHaveSkills.click();
 			Experience_Years.sendKeys(getExceldata(filename, sname,"Year 3"));
 			Add_Skill_Button.click();
@@ -274,6 +283,7 @@ public class Corporate_PostVideoJD_AddSkillsPage extends Action_Method
 			Thread.sleep(1000);
 			//act.moveToElement(Name).click().sendKeys(Keys.chord(getExceldata(filename, sname,"skill9"),Keys.ESCAPE)).perform();
 			Name.sendKeys(getExceldata(filename, sname,"skill9"));
+			Name.sendKeys(Keys.TAB);
 			GoodToHaveSkills.click();
 			Experience_Years.sendKeys(getExceldata(filename, sname,"Year 4"));
 			Add_Skill_Button.click();
@@ -281,12 +291,15 @@ public class Corporate_PostVideoJD_AddSkillsPage extends Action_Method
 			Thread.sleep(1000);
 			//act.moveToElement(Name).click().sendKeys(Keys.chord(getExceldata(filename, sname,"skill10"),Keys.ESCAPE)).perform();
 			Name.sendKeys(getExceldata(filename, sname,"skill10"));
+			Name.sendKeys(Keys.TAB);
 			GoodToHaveSkills.click();
 			Experience_Years.sendKeys(getExceldata(filename, sname,"Year 5"));
 			Add_Skill_Button.click();
 			
+			act.moveToElement(Next_Button).perform();
 			Next_Button.click();
 			Thread.sleep(5000);
+			
 			
 		}
 

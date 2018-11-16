@@ -15,13 +15,25 @@ public class Corporate_PostVideoJD_JobSummaryPage extends Action_Method
 	
 	//Locating all elements present in Job summary page
 	
-	@FindBy(xpath="//a[contains(text(),'Post Job')]")
-	WebElement PostVideoJD_Tab;
+	@FindBy(xpath="//div[contains(text(),'Post Job')]")
+	WebElement PostJob_Tab;
 	
-	@FindBy(xpath="//div[contains(text(),'Post Video JD')]")
+	@FindBy(xpath="//a[contains(text(),'Jobs')]")
+	WebElement Jobs_Tab;
+	
+	@FindBy(xpath="//div[contains(text(),'New Jobs')]")
+	WebElement newJobs;
+	
+	@FindBy(xpath="//div[contains(text(),'Active Jobs')]")
+	WebElement activeJobs;
+	
+	@FindBy(xpath="//div[contains(text(),'Archived Jobs')]")
+	WebElement archivedJobs;
+	
+/*	@FindBy(xpath="//div[contains(text(),'Post Video JD')]")
 	WebElement PostVideoJD_Main_PageTitle;
-	
-	@FindBy(xpath="//div[contains(text(),'Job Summary')]")
+	*/
+	@FindBy(xpath="//h2[contains(text(),'Job Summary')]")
 	WebElement JobSummary_PageTitle;
 	
 	@FindBy(xpath="//mat-select[div[div/span[text()='Requirement Type']]]")
@@ -74,7 +86,7 @@ public class Corporate_PostVideoJD_JobSummaryPage extends Action_Method
 	@FindBy(id="education")
 	WebElement Eduation;
 	
-	@FindBy(xpath="//span[text()='Education']")
+	@FindBy(xpath="//span/label[text()='Education']")
 	WebElement Education_Text;
 	
 	@FindBy(xpath="//mat-option[3]")
@@ -104,15 +116,16 @@ public class Corporate_PostVideoJD_JobSummaryPage extends Action_Method
 	
 	public void ClickOnPostVideoJD_Tab()
 	{
-		PostVideoJD_Tab.click();
-		wait_for_elementpresent(PostVideoJD_Main_PageTitle);
+		Jobs_Tab.click();
+		PostJob_Tab.click();
+		wait_for_elementpresent(JobSummary_PageTitle);
 	}
 	
 	//Verify all the elements and text for Job summary page
 	
 	//Verify Main Page title
 	
-	public boolean Verify_Main_pageTitle()
+	/*public boolean Verify_Main_pageTitle()
 	{
 		return PostVideoJD_Main_PageTitle.isDisplayed();
 	}
@@ -122,6 +135,8 @@ public class Corporate_PostVideoJD_JobSummaryPage extends Action_Method
 	{
 		return PostVideoJD_Main_PageTitle.getText();
 	}
+	*/
+	
 	//Verify Job Summary page title
 	public boolean Verify_JobSummaryPageTitle()
 	{

@@ -14,7 +14,7 @@ public class Sc_011_Verify_PasswordReset extends Action_Method
 	public void Verify_PasswordReset()
 	{
 
-		logger = extent.startTest("verifying Password reset");
+		logger = extent.startTest("Sc_011_Verify_PasswordReset");
 		driver.manage().timeouts().implicitlyWait(1,TimeUnit.MINUTES);
 		//Launching the url
 		
@@ -25,10 +25,10 @@ public class Sc_011_Verify_PasswordReset extends Action_Method
 		ForgotPasswordPage fp=PageFactory.initElements(driver,ForgotPasswordPage.class);
 		
 		logger.log(LogStatus.INFO, "Verify Password reset");
-		logger.log(LogStatus.INFO, "Verify Password reset");
 		
+		fp.clickOnLoginTab();
 		fp.Click_On_ForgotPasswordlink();
-		fp.Enter_Inputs_for_Email("dibya.shankar@workstreets.com");
+		fp.Enter_Inputs_for_Email("sivaprakash@workstreets.com");
 		logger.log(LogStatus.INFO, "Verify Submit button for Valid Mail id");
 		if(fp.Verify_SendEmail_Btn()==true) 
 		{

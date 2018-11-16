@@ -3,7 +3,7 @@ package com.controller;
 public interface Variables 
 {
 	String url="https://testing.workstreets.com";
-	int time=20;
+	int time=30;
 	String browser="chrome";//chrome
 	String testdata="E:\\platformautomation\\com.automation.wsp\\src\\main\\resources\\TestData.xlsx";
 	//String testdata="E:\\Workstreets Platform\\WSPAutomation\\DataSheet\\TestData.xlsx";

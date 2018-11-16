@@ -14,7 +14,7 @@ public class Sc_010_Verify_ErrorMessage_ForgotPasswordPopUP extends Action_Metho
 	public void Verify_ErrorMessage_ForgotPasswordPopUP()
 	{
 		
-		logger = extent.startTest("verifying Error message for Forgot Password Pop up");
+		logger = extent.startTest("Sc_010_Verify_ErrorMessage for Forgot Password Pop up");
 		driver.manage().timeouts().implicitlyWait(1,TimeUnit.MINUTES);
 		//Launching the url
 		
@@ -26,7 +26,7 @@ public class Sc_010_Verify_ErrorMessage_ForgotPasswordPopUP extends Action_Metho
 		
 		logger.log(LogStatus.INFO, "Verify Error message");
 		//Verify Error message for Invalid Mail id
-		
+		fp.clickOnLoginTab();
 		fp.Click_On_ForgotPasswordlink();
 		fp.Enter_Inputs_for_Email("as");
 		if(fp.ErrorMessage()==true) 

@@ -18,7 +18,7 @@ public class Sc_087_VerifyAccept_GS extends Action_Method
 	public void Accept_GS() throws EncryptedDocumentException, InvalidFormatException, IOException
 	{
 
-		logger = extent.startTest("SC_087_Verifying Guaranteed Submission of JOb");
+		logger = extent.startTest("GS04_SC_087_Verifying Guaranteed Submission of JOb");
 		driver.manage().timeouts().implicitlyWait(1,TimeUnit.MINUTES);
 		//Launching the url
 		
@@ -40,7 +40,7 @@ public class Sc_087_VerifyAccept_GS extends Action_Method
 		{
 			logger.log(LogStatus.FAIL, "Click on Campaigns tab","Fail,Agency Campaigns tab not clicked");
 		}
-		if(gs.Accept_Job_GuaranteedSubmission(getExceldata(Variables.testdata,Variables.SetData_Excel,"Job ID"))==true)
+		if(gs.Accept_Job(getExceldata(Variables.testdata,Variables.SetData_Excel,"Job ID"))==true)
 		{
 			logger.log(LogStatus.PASS, "Click on Accept button for job in Agency Campaigns page","Accept button clicked in job card");
 		}

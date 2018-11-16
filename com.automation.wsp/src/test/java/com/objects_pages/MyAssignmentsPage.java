@@ -6,6 +6,7 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 
 import com.controller.Action_Method;
+import com.controller.Variables;
 
 public class MyAssignmentsPage extends Action_Method
 {
@@ -28,6 +29,9 @@ public class MyAssignmentsPage extends Action_Method
 	@FindBy(xpath="//a[span[contains(text(),'Tag')]]")
 	WebElement Tag_Button_TagRxisting;
 	
+	@FindBy(id="email")
+	WebElement Email;
+	
 	
 	public boolean Click_On_MyAssignmentTab()
 	{
@@ -45,9 +49,12 @@ public class MyAssignmentsPage extends Action_Method
 	public boolean Click_Assign_Candidate(String JobId)
 	{
 		//WebElement Assign_Candidate=driver.findElement(By.xpath("//mat-card[div[div[div[app-job-card-square-header[div[div[div[contains(text(),'#"+jobid+"')]]]]]]]]//button[@class='assign-cadidates hidden-xs hidden-sm mat-raised-button mat-primary']"));
-		WebElement Assign_Candidate=driver.findElement(By.xpath("//a[contains(@href,'job/"+JobId+"')]/following::button//div[contains(text(),'Assign Candidate')]"));
 		try 
 		{
+			//driver.findElement(By.xpath("//button//i[contains(text(),'close')]")).click();
+			//Thread.sleep(3000);
+			WebElement Assign_Candidate=driver.findElement(By.xpath("//span[contains(text(),'#"+JobId+"')]/following::button[2]"));
+			
 			Assign_Candidate.click();
 			return true;
 		} catch (Exception e) 
@@ -73,6 +80,21 @@ public class MyAssignmentsPage extends Action_Method
 	{
 		try 
 		{
+			Actions act = new Actions(driver);
+			act.moveToElement(TagExisting_Search).build().perform();
+			TagExisting_Search.click();
+			return true;
+		} 
+		catch (Exception e) 
+		{
+			return false;
+		}
+	}
+	public boolean GO_Search_Candidate_TagExisting()
+	{
+		try 
+		{
+			//Email.sendKeys(getExceldata(Variables.testdata,Variables.LoginPage,"Candidate Email"));
 			Actions act = new Actions(driver);
 			act.moveToElement(TagExisting_Search).build().perform();
 			TagExisting_Search.click();

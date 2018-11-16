@@ -17,7 +17,7 @@ public class Sc_036_Verify_Shortlist_PendingReview_CorporateAdmin extends Action
 {
 	public void Shortlist_PendingReview() throws EncryptedDocumentException, InvalidFormatException, IOException
 	{
-		logger = extent.startTest("SC_036_verifying Shortlist of a candidate in pending review by corporate");
+		logger = extent.startTest("GS07_SC_036_verifying Shortlist of a candidate in pending review by corporate");
 		driver.manage().timeouts().implicitlyWait(1,TimeUnit.MINUTES);
 		//Launching the url
 		
@@ -33,11 +33,11 @@ public class Sc_036_Verify_Shortlist_PendingReview_CorporateAdmin extends Action
 		ManageResponsesPage view=PageFactory.initElements(driver,ManageResponsesPage.class);
 		if(view.Click_On_ManageResponses_Tab()==true)
 		{
-			logger.log(LogStatus.PASS, "Click on View Responses tab","View Responses tab clicked");
+			logger.log(LogStatus.PASS, "Click on View Responses tab","Active Jobs is clicked successfully");
 		}
 		else
 		{
-			logger.log(LogStatus.FAIL, "Click on View Responses tab","Fail,View Responses tab not clicked");
+			logger.log(LogStatus.FAIL, "Click on View Responses tab","Fail,Active Jobs not clicked");
 		}
 		if(view.Click_On_PendingReview_Button_ViewResponsespage(getExceldata(Variables.testdata,Variables.SetData_Excel,"Job ID"))==true)
 		{
@@ -47,7 +47,7 @@ public class Sc_036_Verify_Shortlist_PendingReview_CorporateAdmin extends Action
 		{
 			logger.log(LogStatus.FAIL, "Verify Pending review button","Fail,Unable to click on Pending review button");
 		}
-		if(view.Click_On_Shortlist_ViewResponses()==true)
+		if(view.click_On_PendingReviewShortlist()==true)
 		{
 			logger.log(LogStatus.PASS, "Verify shortlist in pending review","Candidate shortlisted");
 		}

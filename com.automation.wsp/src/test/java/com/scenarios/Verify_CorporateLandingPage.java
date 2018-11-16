@@ -5,13 +5,13 @@ import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.support.PageFactory;
 import com.controller.Action_Method;
 import com.controller.Variables;
-import com.objects_pages.Corporate_landingPage;
+import com.objects_pages.Corporate_ProfilePage;
 import com.objects_pages.loginPage;
 import com.relevantcodes.extentreports.LogStatus;
 
 public class Verify_CorporateLandingPage extends Action_Method{
 
-	public void Verify_CorporateLanding_Page() {
+	public void Verify_CorporateLanding_Page() throws InterruptedException {
 
 		logger = extent.startTest("Corporate Login Scenario Started.");
 		driver.manage().timeouts().implicitlyWait(1,TimeUnit.MINUTES);
@@ -23,14 +23,17 @@ public class Verify_CorporateLandingPage extends Action_Method{
 		logger.log(LogStatus.INFO, "Launched the URL and login page is displayed");
 		lp.EnterValidLogin(Variables.testdata,Variables.LoginPage,"Corporate Email","Corporate Password");;
 
-		Corporate_landingPage landP = PageFactory.initElements(driver, Corporate_landingPage.class);
+		Corporate_ProfilePage landP = PageFactory.initElements(driver, Corporate_ProfilePage.class);
 
 		//Verifying successful login by validating the post video JD link in the landing page		
-		if(landP.VerifyPostVideoJDLink()) {
-			logger.log(LogStatus.PASS, "Login as Corporate user", "Successfully logged in as corporate user");
+		
+		String nam = landP.clickonProfileandVerifyProfilePage(); 
+		if(!nam.isEmpty()) {
+			logger.log(LogStatus.PASS, "Verify the landing page of corporate, Corporate User successfully logged in and the company name is verified - "+nam);
 		}else {
-			logger.log(LogStatus.FAIL, "Login as Corporate user", "User credentials are invalid");
+			logger.log(LogStatus.FAIL, "Verify the landing page of corporate, Corporate User login failed and the company name is empty - "+nam);
 		}
+		
 		logger.log(LogStatus.INFO, "Corporate Landing page Verified");
 		extent.endTest(logger);
 	}

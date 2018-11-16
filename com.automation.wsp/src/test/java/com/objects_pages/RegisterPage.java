@@ -15,7 +15,7 @@ public class RegisterPage extends Action_Method
 {
 	//Locating all elements present in Register page
 
-		@FindBy(xpath="//span[contains(text(),'Register')]")
+		@FindBy(xpath="//a[contains(text(),'Register')]")
 		WebElement Register_Tab;
 		
 		@FindBy(id="name")

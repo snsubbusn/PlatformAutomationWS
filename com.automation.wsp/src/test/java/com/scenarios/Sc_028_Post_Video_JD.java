@@ -19,7 +19,7 @@ public class Sc_028_Post_Video_JD extends Action_Method
 {
 	public void Verify_Post_Video_Jd() throws EncryptedDocumentException, InvalidFormatException, IOException, InterruptedException
 	{
-		logger = extent.startTest("SC_028_Verifying video Posting by Corporate");
+		logger = extent.startTest("GS_01_SC_028_Verifying video Posting by Corporate");
 		driver.manage().timeouts().implicitlyWait(1,TimeUnit.MINUTES);
 		//Launching the url
 		
@@ -30,8 +30,8 @@ public class Sc_028_Post_Video_JD extends Action_Method
 		loginPage lp=PageFactory.initElements(driver,loginPage.class);
 		lp.EnterValidLogin(Variables.testdata,Variables.LoginPage,"Corporate Email","Corporate Password");
 		logger.log(LogStatus.INFO, "Enter valid login credential and click on Login button,Corporate Landing page displayed");
+	
 		//Creating object for Job summary page
-		
 		Corporate_PostVideoJD_JobSummaryPage Cjs=PageFactory.initElements(driver,Corporate_PostVideoJD_JobSummaryPage.class);
 		Cjs.ClickOnPostVideoJD_Tab();
 		logger.log(LogStatus.INFO, "Clicked on Post video JD tab and Job summary page displayed");

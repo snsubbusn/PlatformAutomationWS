@@ -44,6 +44,7 @@ public class Action_Method implements ITestListener {
 
 	public static ExtentReports extent;
 	public static ExtentTest logger;
+	
 
 	public void TakeScreenshot(String fname) throws IOException
 	{
@@ -294,5 +295,6 @@ public class Action_Method implements ITestListener {
 		// TODO Auto-generated method stub
 
 	}
+
 
 }

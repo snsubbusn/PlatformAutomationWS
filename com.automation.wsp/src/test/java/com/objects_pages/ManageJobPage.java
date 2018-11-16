@@ -21,8 +21,8 @@ public class ManageJobPage extends Action_Method
 	@FindBy(xpath="//button[contains(text(),'Align Agency Partners')]")	
 	WebElement AlignAgencyPartner_Tab;
 	
-	@FindBy(xpath="//mat-chip[contains(text(),'FirstOne')]")	
-	WebElement Align_Agency_FirstOne;
+	@FindBy(xpath="//mat-chip[contains(text(),'Source One')]")	
+	WebElement Align_Agency_SourceOne;
 	
 	//Identifying elements present in Review Submission page
 	@FindBy(xpath="//button[contains(text(),'Review Submissions')]")	
@@ -49,8 +49,8 @@ public class ManageJobPage extends Action_Method
 	public boolean Click_Mangae_Job(String JobId)
 	{
 		//WebElement Manage_Button=driver.findElement(By.xpath("//mat-card[div[div[div[app-job-card-square-header[div[div[div[contains(text(),'#"+JobId+"')]]]]]]]]//button[@class='assign-cadidates hidden-xs hidden-sm mat-raised-button mat-primary']"));
-	
-		WebElement Manage_Button=driver.findElement(By.xpath("//a[contains(@href,'job/"+JobId+"')]/following::button//div[contains(text(),'Manage')]"));
+		
+		WebElement Manage_Button=driver.findElement(By.xpath("//span[contains(text(),'#"+JobId+"')]/following::button[2]"));
 		
 		try 
 		{
@@ -79,8 +79,8 @@ public class ManageJobPage extends Action_Method
 	{
 		try 
 		{
-			wait_for_elementpresent(Align_Agency_FirstOne);
-			Align_Agency_FirstOne.click();
+			wait_for_elementpresent(Align_Agency_SourceOne);
+			Align_Agency_SourceOne.click();
 			return true;
 		}
 		catch (Exception e) 

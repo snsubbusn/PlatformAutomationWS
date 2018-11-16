@@ -18,7 +18,7 @@ public class Sc_023_Verify_ErrorMessage_JobSummaryPage extends Action_Method
 	//Verify error message for job summary page
 	public void Verify_ErrorMessage_Experience() throws EncryptedDocumentException, InvalidFormatException, IOException
 	{
-		logger = extent.startTest("Verifying error message for Minimum Experience greater than Maximum Experience in Job Summary Page");
+		logger = extent.startTest("Sc_023_TC01_Verify_ErrorMessage_JobSummaryPage_Verifying error message for Minimum Experience greater than Maximum Experience in Job Summary Page");
 		driver.manage().timeouts().implicitlyWait(1,TimeUnit.MINUTES);
 		//Launching the url
 		
@@ -44,7 +44,7 @@ public class Sc_023_Verify_ErrorMessage_JobSummaryPage extends Action_Method
 	}
 	public void Verify_ErrorMessage_NoInputs()
 	{
-		logger = extent.startTest("Verifying error message for No inputs in Job Summary Page");
+		logger = extent.startTest("Sc_023_TC02_Verifying error message for No inputs in Job Summary Page");
 		
 		//Launching the url
 		
@@ -78,7 +78,7 @@ public class Sc_023_Verify_ErrorMessage_JobSummaryPage extends Action_Method
 	public void Verify_ErrorMessage_Salary() throws EncryptedDocumentException, InvalidFormatException, IOException
 	{
 		
-	logger = extent.startTest("Verifying error message for Minimum Salary greater than Maximum Salary in Job Summary Page");
+	logger = extent.startTest("Sc_023_TC03_Verifying error message for Minimum Salary greater than Maximum Salary in Job Summary Page");
 	
 	driver.navigate().refresh();
 	

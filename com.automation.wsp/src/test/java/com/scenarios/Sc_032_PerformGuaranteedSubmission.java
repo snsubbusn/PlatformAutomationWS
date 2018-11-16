@@ -17,7 +17,7 @@ public class Sc_032_PerformGuaranteedSubmission extends Action_Method
 {
 	public void Verify_Guaranteed_Submission() throws InterruptedException, EncryptedDocumentException, InvalidFormatException, IOException
 	{
-		logger = extent.startTest("SC_032_Verifying Guaranteed Submission of posted JOb");
+		logger = extent.startTest("GS_02_SC_032_Verifying Guaranteed Submission of posted JOb");
 		driver.manage().timeouts().implicitlyWait(1,TimeUnit.MINUTES);
 		//Launching the url
 		
@@ -33,11 +33,11 @@ public class Sc_032_PerformGuaranteedSubmission extends Action_Method
 		//Click on "Get Guaranteed Response for particular Job
 		if(en.Click_On_GetGuaranteedResponse(en.GetJobID())==true)
 		{
-			logger.log(LogStatus.PASS, "Click on Get guaranteed responses button for particular Job","Get guaranteed responses button clicked successfully");
+			logger.log(LogStatus.PASS, "Get guaranteed responses button clicked successfully");
 		}
 		else 
 		{
-			logger.log(LogStatus.FAIL, "Click on Get guaranteed responses button for particular Job","Unable to click on Get Guaranteed Responses button of a Job");
+			logger.log(LogStatus.FAIL, "Unable to click on Get Guaranteed Responses button of a Job");
 			
 		}
 		//Calculate estimated value before guaranteed submission

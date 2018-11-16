@@ -20,6 +20,9 @@ public class Agency_CampaignsPage extends Action_Method
 	@FindBy(xpath="//mat-card[div[div[div[app-job-card-square-header[div[div[div[contains(text(),'#13')]]]]]]]]//button[@class='btn-class gs-button decline mat-raised-button']")
 	WebElement Decline_Button;
 	
+	@FindBy(xpath="//button//i[contains(text(),'close')]")
+	WebElement successMsgClose;
+	
 	public boolean Click_on_Campaigns_Tab()
 	{
 		try
@@ -32,7 +35,7 @@ public class Agency_CampaignsPage extends Action_Method
 			return false;
 		}
 	}
-	public boolean Accept_Job_GuaranteedSubmission(String JobId)
+	public boolean Accept_Job(String JobId)
 	{
 		//WebElement Accept_Button=driver.findElement(By.xpath("//mat-card[div[div[div[app-job-card-square-header[div[div[div[contains(text(),'#"+JobId+"')]]]]]]]]//button[@class='btn-class gs-button mat-raised-button mat-primary']"));
 		WebElement Accept_Button=driver.findElement(By.xpath("//a[contains(@href,'job/"+JobId+"')]/following::button[2]"));
@@ -40,6 +43,7 @@ public class Agency_CampaignsPage extends Action_Method
 		try
 		{
 			Accept_Button.click();
+			successMsgClose.click();
 			return true;
 		} 
 		catch (Exception e)
