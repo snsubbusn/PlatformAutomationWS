@@ -95,7 +95,7 @@ public class ManageResponsesPage extends Action_Method
 	public boolean clickPendingReviewBackButton() throws InterruptedException {
 		PendingReviewBackButton.click();
 		Thread.sleep(3000);
-		return ManageResponses_tab.isDisplayed();
+		return Jobs_Tab.isDisplayed();
 	}
 
 	public String clickonShortlistedofJob(String JobId) throws InterruptedException {

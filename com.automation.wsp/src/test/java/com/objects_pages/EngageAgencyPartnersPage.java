@@ -7,6 +7,7 @@ import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 
 import com.controller.Action_Method;
@@ -63,6 +64,8 @@ public class EngageAgencyPartnersPage extends Action_Method
 	@FindBy(xpath="//span[contains(text(),'Submit')]")
 	WebElement GOSubmitButton;
 
+	@FindBy(xpath="//button//i[contains(text(),'close')]")
+	WebElement successMsgClose;
 
 	public String GetJobID() throws EncryptedDocumentException, InvalidFormatException, IOException, InterruptedException
 	{
@@ -152,7 +155,7 @@ public class EngageAgencyPartnersPage extends Action_Method
 	{
 		try
 		{
-			
+			successMsgClose.click();			
 			WebElement GuaranteedOnboarding=driver.findElement((By.xpath(("//span[contains(text(),'"+Job_Id+"')]/following::span[contains(text(),'Onboarding')]"))));
 			GuaranteedOnboarding.click();
 			return true;
@@ -173,13 +176,16 @@ public class EngageAgencyPartnersPage extends Action_Method
 			No_Of_Positions.clear();
 			No_Of_Positions.sendKeys(NoOfPositions);
 			OnboardingAcceptCheckBox.click();
-			if(GOSubmitButton.isEnabled()) {
+			Actions act = new Actions(driver);
+			act.moveToElement(GOSubmitButton);
+			/*if(GOSubmitButton.isEnabled()) {
 				GOSubmitButton.click();
 			}else{
 				No_Of_Positions.sendKeys("1");
 				OnboardingAcceptCheckBox.click();
 				GOSubmitButton.click();
-			}
+			}*/
+			GOSubmitButton.click();
 			return "Pass";
 		}catch(Exception e) {
 			

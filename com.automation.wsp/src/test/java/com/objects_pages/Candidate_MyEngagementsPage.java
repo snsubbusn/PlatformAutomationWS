@@ -20,7 +20,7 @@ public class Candidate_MyEngagementsPage extends Action_Method{
 	}
 	
 	public String checkStatusofJob(String JobId) {
-		return driver.findElement(By.xpath("//mat-card[div[div[div[app-job-card-square-header[div[div[div[a[contains(@href,'job/"+JobId+"')]]]]]]]]]//button[1]/span")).getText();
+		return driver.findElement(By.xpath("(//mat-card[div[div[div[app-job-card-square-header[div[div[div[a[contains(@href,'job/"+JobId+"')]]]]]]]]]//button)[2]/span")).getText();
 
 	}
 	
@@ -28,7 +28,7 @@ public class Candidate_MyEngagementsPage extends Action_Method{
 		driver.findElement(By.xpath("//mat-card[div[div[div[app-job-card-square-header[div[div[div[a[contains(@href,'job/"+JobId+"')]]]]]]]]]//button[span[contains(text(),'Interview')]]")).click();
 		acceptButton.click();
 		Thread.sleep(2000);
-		return driver.findElement(By.xpath("//mat-card[div[div[div[app-job-card-square-header[div[div[div[a[contains(@href,'job/"+JobId+"')]]]]]]]]]//button[1]/span")).getText();
+		return driver.findElement(By.xpath("(//mat-card[div[div[div[app-job-card-square-header[div[div[div[a[contains(@href,'job/"+JobId+"')]]]]]]]]]//button)[2]/span")).getText();
 
 	}
 	

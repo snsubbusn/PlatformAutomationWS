@@ -2,18 +2,12 @@ package com.objects_pages;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.concurrent.TimeUnit;
-import java.util.function.Function;
-
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.NoSuchElementException;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.FluentWait;
-import org.openqa.selenium.support.ui.Wait;
-
 import com.controller.Action_Method;
 
 public class ShortlistedCandidate extends Action_Method {
@@ -39,6 +33,15 @@ public class ShortlistedCandidate extends Action_Method {
 
 	@FindBy(xpath="//div[@class='mat-input-infix mat-form-field-infix']/input[@id='time_Control']/following::button")
 	WebElement FixedSlotScheduleButton;
+	
+	@FindBy(id="location")
+	WebElement location;
+	
+	@FindBy(id="name")
+	WebElement spocName;
+	
+	@FindBy(id="mobileNumber")
+	WebElement mobileNumber;
 
 	@FindBy(id="interviewRequested")
 	WebElement InterviewRequested;
@@ -111,6 +114,12 @@ public class ShortlistedCandidate extends Action_Method {
 		Thread.sleep(1000);
 		FixedSlotDate.sendKeys(date);
 		FixedSlotTime.sendKeys(time);
+		Actions act = new Actions(driver);
+		location.sendKeys("WIPRO Bangalore");
+		Thread.sleep(2000);
+		act.sendKeys(Keys.ARROW_DOWN).sendKeys(Keys.ENTER).build().perform();
+		spocName.sendKeys("SIVA");
+		mobileNumber.sendKeys("8147506453");
 		FixedSlotScheduleButton.click();
 		Thread.sleep(2000);
 		return InterviewRequested.getText();
