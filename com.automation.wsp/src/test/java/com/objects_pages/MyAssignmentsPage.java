@@ -10,8 +10,11 @@ import com.controller.Variables;
 
 public class MyAssignmentsPage extends Action_Method
 {
-	@FindBy(xpath="//a[span[contains(text(),'My Assignments')]]")
-	WebElement MyAssignment_Tab;
+	@FindBy(xpath="//a//span")
+	WebElement NewAssignmentsTab;
+	
+	@FindBy(xpath="//div[contains(text(),'Active Assignments')]")
+	WebElement activeAssignments;
 	
 //	@FindBy(xpath="//mat-card[div[div[div[app-job-card-square-header[div[div[div[contains(text(),'#46')]]]]]]]]//button[@class='assign-cadidates hidden-xs hidden-sm mat-raised-button mat-primary']")
 //	WebElement Assign_Candidate;
@@ -37,7 +40,8 @@ public class MyAssignmentsPage extends Action_Method
 	{
 		try 
 		{
-			MyAssignment_Tab.click();
+			NewAssignmentsTab.click();
+			activeAssignments.click();
 			return true;
 		}
 		catch (Exception e) 

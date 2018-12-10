@@ -44,7 +44,7 @@ public class CorpAdm_User_TC012_ValidateAddUserPageErrors extends Action_Method{
 		
 		logger.log(LogStatus.INFO, "Click on Save button without entering any values in any of the fields");
 		String error = user.allErrorValidate();
-		if(error.contains("Name")&&error.contains("Email")&&error.contains("Phone")&&error.contains("password")&&error.contains("confirm")) {
+		if(error.contains("name")&&error.contains("email")&&error.contains("phone")&&error.contains("password")&&error.contains("confirm")) {
 			logger.log(LogStatus.PASS, "Verify the error, Verified the error by clicking on Save button. Ther errors displayed are - "+error);
 		}else {
 			logger.log(LogStatus.FAIL, "verify the error, The Error for all the fields are not displayed. The errors displayed are - "+error);
@@ -52,7 +52,7 @@ public class CorpAdm_User_TC012_ValidateAddUserPageErrors extends Action_Method{
 		
 		logger.log(LogStatus.INFO, "Verify the error message for invalid phone number");
 		String phoneError = user.invalidPhoneNo();
-		if(phoneError.contains("Invalid")) {
+		if(phoneError.contains("Please enter a valid phone no")) {
 			logger.log(LogStatus.PASS, "Verified the error message for invlid entry on phone number field. The error is - "+phoneError);
 		}else {
 			logger.log(LogStatus.FAIL, "The error message displayed is not relevant. The error is - "+phoneError);

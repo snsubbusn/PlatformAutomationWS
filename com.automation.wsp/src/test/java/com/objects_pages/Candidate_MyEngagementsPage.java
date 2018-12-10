@@ -38,7 +38,7 @@ public class Candidate_MyEngagementsPage extends Action_Method{
 		Thread.sleep(1000);
 		acceptButton.click();
 		Thread.sleep(1000);
-		return driver.findElement(By.xpath("//mat-card[div[div[div[app-job-card-square-header[div[div[div[a[contains(@href,'job/"+JobId+"')]]]]]]]]]//button[1]/span")).getText();
+		return driver.findElement(By.xpath("(//mat-card[div[div[div[app-job-card-square-header[div[div[div[a[contains(@href,'job/"+JobId+"')]]]]]]]]]//button)[2]/span")).getText();
 	}
 
 }

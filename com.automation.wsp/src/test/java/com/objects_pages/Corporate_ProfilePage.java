@@ -27,7 +27,7 @@ public class Corporate_ProfilePage extends Action_Method{
 	@FindBy(xpath="//div[@class='edit_profile']/mat-icon")
 	WebElement profileEditButton;
 
-	@FindBy(xpath="//h2[@class='app-header']")
+	@FindBy(xpath="//section[@id='companyInfo']//h2")
 	WebElement corporateProfileHeading;
 
 	@FindBy(id="companyName")
@@ -78,7 +78,7 @@ public class Corporate_ProfilePage extends Action_Method{
 	@FindBy(xpath="//div[contains(text(),'Success')]")
 	WebElement companyInfoSuccessMsg;
 
-	@FindBy(xpath="//div[contains(text(),' Required fields cannot be empty.')]")
+	@FindBy(xpath="//div[contains(text(),'email')]")
 	WebElement error_MandatoryFieldRequired;
 
 

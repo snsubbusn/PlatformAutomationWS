@@ -32,7 +32,7 @@ public class Sc_080_Verify_Accept_ReviewSubmission extends Action_Method
 		//Creating object for manage job page
 		ManageJobPage manage=PageFactory.initElements(driver,ManageJobPage.class);
 		
-		if(manage.click_on_Manage_Tab()==true)
+		if(manage.clickOnActiveJobs()==true)
 		{
 			logger.log(LogStatus.PASS, "Click on Manage tab","Manage tab clicked");
 		}

@@ -37,9 +37,9 @@ public class MyInterviewPage extends Action_Method
 	WebElement Stop_recording;
 	@FindBy(xpath="//div[@id='myinterview-review-btn']/div[text()='Next']")
 	WebElement Videocapture_Next;
-	@FindBy(xpath="//div[@id='myinterview-review-btn']/div[text()='Submit']")
+	@FindBy(xpath="//div[@id='myinterview-review-btn']/div[text()='Finish']")
 	WebElement Submit;
-	@FindBy(xpath="//div[contains(text(),'Finish')]")
+	@FindBy(xpath="//div[@id='validateRecording']")
 	WebElement Finish;
 	
 	public void VideoRecording_JobPost() throws InterruptedException
@@ -50,7 +50,7 @@ public class MyInterviewPage extends Action_Method
 		driver.switchTo().frame(MyInterview_Frame);
 		Thread.sleep(3000);
 		//wait_for_elementpresent(First_Next_btn);
-		System.out.println(checkTips.getText());
+		//System.out.println(checkTips.getText());
 		Actions act=new Actions(driver);
 		act.moveToElement(First_Next_btn).click().perform();
 		//First_Next_btn.click();

@@ -43,7 +43,7 @@ public class CorpAdm_Dashboard_TC003_VerifyDashafterGO extends Action_Method{
 		}
 
 		
-		if(onb.contains("Active")) {
+		if(onb.contains("Onboarded")) {
 			logger.log(LogStatus.PASS, "Navigated to Corporate Dashboard successfully");
 			
 			logger.log(LogStatus.PASS, "Details of Guaranteed Onboarding are :-"+onb);

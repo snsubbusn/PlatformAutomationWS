@@ -20,7 +20,7 @@ public class Corporate_PostVideoJD_AddVideoPage extends Action_Method
 	WebElement Previous_btn;
 	@FindBy(xpath="//div[@class='col-xs-12 col-md-6 hidden-sm hidden-xs btn-margin']/button/span")
 	WebElement Previous_btn_Text;
-	@FindBy(xpath="//button/span[contains(text(),'Save')]")
+	@FindBy(xpath="//button//span[contains(text(),'Save')]")
 	WebElement Save_btn;
 
 	//	@FindBy(xpath="//a[@id='open-popup-myinterview']")
@@ -35,17 +35,17 @@ public class Corporate_PostVideoJD_AddVideoPage extends Action_Method
 		wait_for_elementpresent(Thumbnail);
 		//Actions act=new Actions(driver);
 		//act.moveToElement(Thumbnail).click();
-		Thumbnail.click();
+		
 		//Creating object for Myinterview page
 		MyInterviewPage mip=PageFactory.initElements(driver,MyInterviewPage.class);
 		try{
-			Thread.sleep(2000);
-			mip.VideoRecording_JobPost();
+			Thumbnail.click();
+			
 		}catch(Exception e) {
 			Thumbnail.click();
-			Thread.sleep(2000);
-			mip.VideoRecording_JobPost();
 		}
+		Thread.sleep(2000);
+		mip.VideoRecording_JobPost();
 		Thread.sleep(5000);
 		wait_for_elementpresent(Save_btn);
 		Save_btn.click();

@@ -1,9 +1,11 @@
 package com.objects_pages;
 
 import java.io.IOException;
+import java.util.List;
 
 import org.apache.poi.EncryptedDocumentException;
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
@@ -18,7 +20,7 @@ public class Corporate_PostVideoJD_JobSummaryPage extends Action_Method
 	@FindBy(xpath="//div[contains(text(),'Post Job')]")
 	WebElement PostJob_Tab;
 	
-	@FindBy(xpath="//a[contains(text(),'Jobs')]")
+	@FindBy(xpath="//a/span")
 	WebElement Jobs_Tab;
 	
 	@FindBy(xpath="//div[contains(text(),'New Jobs')]")
@@ -108,7 +110,8 @@ public class Corporate_PostVideoJD_JobSummaryPage extends Action_Method
 	@FindBy(xpath="//div[contains(text(),'Minimum value is greater than maximum value')]")
 	WebElement Salary_ErrorMessage;
 	
-	@FindBy(xpath="//div[contains(text(),'Required fields cannot be empty')]")
+	//@FindBy(xpath="//div[contains(text(),'Required fields cannot be empty')]")
+	@FindBy(xpath="//mat-error/div")
 	WebElement Next_Button_ErrorMessage;
 	
 	
@@ -263,13 +266,18 @@ public class Corporate_PostVideoJD_JobSummaryPage extends Action_Method
 	
 	
 	// Verifying error message for No inputs
-	public boolean Error_Message_For_NoInputs()
+	public String Error_Message_For_NoInputs()
 	{
 		scrollingToElementofAPage(Next_button);
 		Next_button.click();
 		scrollingToBottomofAPage();
 		wait_for_elementpresent(Next_Button_ErrorMessage);
-		return Next_Button_ErrorMessage.isDisplayed();
+		List <WebElement> a = driver.findElements(By.xpath("//mat-error/div"));
+		String error = "The Errors are : ";
+		for (WebElement e : a) {
+			error = error+e.getText()+";";
+		}
+		return error; 
 	}
 	//Verifying error message for minimum Experience greater than maximum Experience
 	public boolean Error_Message_For_MinimumExperience_GreaterThan_MaximumExperience() throws EncryptedDocumentException, InvalidFormatException, IOException

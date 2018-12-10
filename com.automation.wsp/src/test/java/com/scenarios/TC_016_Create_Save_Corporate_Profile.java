@@ -41,6 +41,7 @@ public class TC_016_Create_Save_Corporate_Profile extends Action_Method {
 		logger.log(LogStatus.INFO, "Click on Edit Profile button and update the profile details");
 		//Click on Profile edit button
 		landP.clickOnProfileEditBtn();
+		
 		String prf = landP.verifyProfileEditPage();
 		
 		if(prf.contains("Corporate Profile")) {

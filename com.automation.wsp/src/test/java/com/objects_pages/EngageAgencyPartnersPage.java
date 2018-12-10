@@ -72,10 +72,10 @@ public class EngageAgencyPartnersPage extends Action_Method
 
 		try 
 		{
-			Jobs_Tab.click();
+			/*Jobs_Tab.click();
 			newJobs.click();
 			Thread.sleep(3000);			
-			String Id1=Job_Id.getText();
+			*/String Id1=Job_Id.getText();
 			String Id="";
 			for(int i=1;i<Id1.length();i++)
 			{

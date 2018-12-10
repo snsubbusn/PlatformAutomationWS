@@ -32,7 +32,7 @@ public class Sc_068_Verify_AlignOfAnAgency extends Action_Method
 		
 		//Creating object for Manage job page
 		ManageJobPage manage=PageFactory.initElements(driver,ManageJobPage.class);
-		if(manage.click_on_Manage_Tab()==true)
+		if(manage.clickOnActiveJobs()==true)
 		{
 			logger.log(LogStatus.PASS, "Click on manage tab","Manage tab clicked");
 		}

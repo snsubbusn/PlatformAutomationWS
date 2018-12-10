@@ -41,7 +41,10 @@ public class loginPage extends Action_Method {
 	//Error message present in Login page
 	@FindBy(xpath="//mat-error/div")
 	WebElement Error_Invalid_MailId;
-	@FindBy(xpath="//div[contains(text(),'Required fields cannot be empty')]")
+	
+	
+	//@FindBy(xpath="//div[contains(text(),'Required fields cannot be empty')]")
+	@FindBy(xpath="")
 	WebElement Error_MandatoryFieldRequired;
 
 
@@ -99,7 +102,12 @@ public class loginPage extends Action_Method {
 	//Verify Required fields are mandatory error message
 	public boolean Error_MandatoryField()
 	{
-		return Error_MandatoryFieldRequired.isDisplayed();
+		String em = Email.getAttribute("aria-invalid");
+		String pa = Password.getAttribute("aria-invalid");
+		if(em.contains("true"))
+			return true;
+		else
+			return false;
 	}
 
 	//Generic login method for all user

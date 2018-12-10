@@ -12,7 +12,7 @@ public class ManageResponsesPage extends Action_Method
 	//Identifying elements present in View Resposes page
 
 
-	@FindBy(xpath="//a[contains(text(),'Jobs')]")
+	@FindBy(xpath="//a//span[contains(text(),'Jobs')]")
 	WebElement Jobs_Tab;
 	
 	@FindBy(xpath="//div[contains(text(),'Active Jobs')]")

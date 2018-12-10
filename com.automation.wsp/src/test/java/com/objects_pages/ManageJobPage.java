@@ -11,6 +11,13 @@ public class ManageJobPage extends Action_Method
 {
 	@FindBy(xpath="//a[contains(text(),'Manage Jobs')]")
 	WebElement Manage_Jobs_Tab;
+	
+	@FindBy(xpath="//span[contains(text(),'Jobs')]")
+	WebElement jobs;
+	
+	@FindBy(xpath="//div[contains(text(),'Active Jobs')]")
+	WebElement activeJobs;
+	
 	//Identifying Elements present in Job card under manage job page
 //	@FindBy(xpath="//mat-card[div[div[div[app-job-card-square-header[div[div[div[contains(text(),'#55')]]]]]]]]//button[@class='assign-cadidates hidden-xs hidden-sm mat-raised-button mat-primary']")
 //	WebElement Manage_Button;
@@ -33,11 +40,12 @@ public class ManageJobPage extends Action_Method
 	WebElement Accept_ReviewSubmission;
 	
 	
-	public boolean click_on_Manage_Tab()
+	public boolean clickOnActiveJobs()
 	{
 		try 
 		{
-			Manage_Jobs_Tab.click();
+			jobs.click();
+			activeJobs.click();
 			return true;
 		} 
 		catch (NoSuchElementException e) 
@@ -49,7 +57,6 @@ public class ManageJobPage extends Action_Method
 	public boolean Click_Mangae_Job(String JobId)
 	{
 		//WebElement Manage_Button=driver.findElement(By.xpath("//mat-card[div[div[div[app-job-card-square-header[div[div[div[contains(text(),'#"+JobId+"')]]]]]]]]//button[@class='assign-cadidates hidden-xs hidden-sm mat-raised-button mat-primary']"));
-		
 		WebElement Manage_Button=driver.findElement(By.xpath("//span[contains(text(),'#"+JobId+"')]/following::button[2]"));
 		
 		try 

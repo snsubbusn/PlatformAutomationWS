@@ -56,7 +56,7 @@ public class Corporate_PostVideoJD_AddSkillsPage extends Action_Method
 		@FindBy(xpath="//span[contains(text(),'Previous')]")
 		WebElement Previous_Button_Text;
 		
-		@FindBy(xpath="//button[span[contains(text(),'Next')]]")
+		@FindBy(xpath="//button//span[contains(text(),'Next')]")
 		WebElement Next_Button;
 		
 		@FindBy(xpath="//span[contains(text(),'Next')]")

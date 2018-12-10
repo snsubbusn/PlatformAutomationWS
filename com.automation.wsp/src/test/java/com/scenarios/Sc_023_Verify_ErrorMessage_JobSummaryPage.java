@@ -27,7 +27,7 @@ public class Sc_023_Verify_ErrorMessage_JobSummaryPage extends Action_Method
 		//Creating object for Job summary page
 		Corporate_PostVideoJD_JobSummaryPage cjs=PageFactory.initElements(driver,Corporate_PostVideoJD_JobSummaryPage.class);
 		logger.log(LogStatus.INFO, "Click on \"Post Video Jd\" tab,Job summary page displayed");
-		cjs.ClickOnPostVideoJD_Tab();
+		//cjs.ClickOnPostVideoJD_Tab();
 		logger.log(LogStatus.INFO, "Verifying error message for Minimum Salary greater than mavimum salary");
 		if(cjs.Error_Message_For_MinimumExperience_GreaterThan_MaximumExperience()==true) 
 		{
@@ -62,13 +62,14 @@ public class Sc_023_Verify_ErrorMessage_JobSummaryPage extends Action_Method
 		logger.log(LogStatus.INFO, "Click on \"Post Video Jd\" tab,Job summary page displayed");
 		cjs.ClickOnPostVideoJD_Tab();
 		logger.log(LogStatus.INFO, "Verifying error message for no input");
-		if(cjs.Error_Message_For_NoInputs()==true) 
+		String error = cjs.Error_Message_For_NoInputs();
+		if(error.contains("Please enter"))
 		{
-			logger.log(LogStatus.PASS, "Verify error message in Job summary page","Error message is available for No Inputs");
+			logger.log(LogStatus.PASS, "Verify error message in Job summary page","Error message is available for No Inputs and "+error);
 		}
 		else 
 		{
-			logger.log(LogStatus.FAIL, "Verify elements present in Job summary page","Error message is not available for No Inputs");
+			logger.log(LogStatus.FAIL, "Verify elements present in Job summary page","Error message is not available for No Inputs"+error);
 		}
 		
 		
@@ -85,7 +86,7 @@ public class Sc_023_Verify_ErrorMessage_JobSummaryPage extends Action_Method
 	//Creating object for Job summary page
 	Corporate_PostVideoJD_JobSummaryPage cjs=PageFactory.initElements(driver,Corporate_PostVideoJD_JobSummaryPage.class);
 	logger.log(LogStatus.INFO, "Click on \"Post Video Jd\" tab,Job summary page displayed");
-	cjs.ClickOnPostVideoJD_Tab();
+	//cjs.ClickOnPostVideoJD_Tab();
 	logger.log(LogStatus.INFO, "Verifying error message for Minimum Salary greater than mavimum salary");
 	if(cjs.Error_Message_For_MinimumSalary_GreaterThan_MaximumSalary()==true) 
 	{

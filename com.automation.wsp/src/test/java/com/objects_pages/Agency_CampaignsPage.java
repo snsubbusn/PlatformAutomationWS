@@ -10,8 +10,8 @@ public class Agency_CampaignsPage extends Action_Method
 {
 	//@FindBy(xpath="//a[span[contains(text(),'Guaranteed Submissions')]]")
 	
-	@FindBy(xpath="//a[span[contains(text(),'Campaigns')]]")
-	WebElement Campaigns_Tab;
+	@FindBy(xpath="//a//span")
+	WebElement NewAssignments;
 	
 	
 //	@FindBy(xpath="//mat-card[div[div[div[app-job-card-square-header[div[div[div[contains(text(),'#13')]]]]]]]]//button[@class='btn-class gs-button mat-raised-button mat-primary']")
@@ -27,8 +27,10 @@ public class Agency_CampaignsPage extends Action_Method
 	{
 		try
 		{
-			Campaigns_Tab.click();
-			return true;
+			if(NewAssignments.getText().contains("New"))
+				return true;
+			else
+				return false;
 		}
 		catch (Exception e) 
 		{

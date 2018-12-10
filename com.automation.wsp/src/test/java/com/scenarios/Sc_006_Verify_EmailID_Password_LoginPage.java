@@ -30,7 +30,7 @@ public class Sc_006_Verify_EmailID_Password_LoginPage extends Action_Method
 		lp.Login_NoInputs();
 		if(lp.Error_MandatoryField()==true)
 		{
-			logger.log(LogStatus.PASS, "User is getting error message", "For No Inputs User is getting \"Required Fields are mandatory\" error message ");
+			logger.log(LogStatus.PASS, "User is getting error message", "For No Inputs User is getting \"The Mandatory Fields are turned in Red\" ");
 		}
 		else 
 		{

@@ -34,11 +34,11 @@ public class Sc_087_VerifyAccept_GS extends Action_Method
 		Agency_CampaignsPage gs=PageFactory.initElements(driver,Agency_CampaignsPage.class);
 		if(gs.Click_on_Campaigns_Tab()==true)
 		{
-			logger.log(LogStatus.PASS, "Click on Campaigns tab","Agency Campaigns tab clicked");
+			logger.log(LogStatus.PASS, "Verified the New Assignments page is displayed.");
 		}
 		else
 		{
-			logger.log(LogStatus.FAIL, "Click on Campaigns tab","Fail,Agency Campaigns tab not clicked");
+			logger.log(LogStatus.FAIL, "New Assignments page is not displayed.");
 		}
 		if(gs.Accept_Job(getExceldata(Variables.testdata,Variables.SetData_Excel,"Job ID"))==true)
 		{

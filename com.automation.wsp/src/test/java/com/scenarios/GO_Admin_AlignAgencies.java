@@ -31,7 +31,7 @@ public class GO_Admin_AlignAgencies extends Action_Method {
 		
 		//Creating object for Manage job page
 		ManageJobPage manage=PageFactory.initElements(driver,ManageJobPage.class);
-		if(manage.click_on_Manage_Tab()==true)
+		if(manage.clickOnActiveJobs()==true)
 		{
 			logger.log(LogStatus.PASS, "Click on manage jobs tab","Manage Jobs tab clicked");
 		}
