@@ -51,6 +51,10 @@ import com.scenarios.TC_004_Corporate_Delete_OfficeLocation;
 import com.scenarios.TC_005_Verify_Error_Notification_office_Location;
 import com.scenarios.TC_006_Verify_Edit_Solutions_Offered_Section;
 import com.scenarios.TC_016_Create_Save_Corporate_Profile;
+import com.scenarios.WSAdmin_TC001_VerifyAdminLogin;
+import com.scenarios.WSAdmin_TC002_VerifyInvitePage;
+import com.scenarios.WSAdmin_TC003_VerifyFilterUsingCandidate;
+import com.scenarios.WSAdmin_TC004_VerifyFilterUsingCorporateAdmin;
 
 
 
@@ -72,6 +76,8 @@ public class ScriptExecution extends Action_Method
 		close_browser();
 	}
 
+/*
+	
 	//Verify corporate profile page
 	@Test
 	public void CorpProfile1() throws EncryptedDocumentException, InvalidFormatException, IOException, InterruptedException
@@ -89,7 +95,7 @@ public class ScriptExecution extends Action_Method
 		tc_002.Verify_Corporate_Company_Info_Page_Dataisdisplayed();
 
 	}
-/*
+
 			@Test(priority=1)
 		public void TC_003() throws EncryptedDocumentException, InvalidFormatException, IOException, InterruptedException
 		{
@@ -119,7 +125,7 @@ public class ScriptExecution extends Action_Method
 
 		}
 
-*/	 
+	 
 
 
 
@@ -394,8 +400,30 @@ public class ScriptExecution extends Action_Method
 		ds.verifyCorpAdminDashboardAfterGO();
 	}
 	
+*/	
+
+	@Test
+	public void WSAdmin01() throws InterruptedException {
+		WSAdmin_TC001_VerifyAdminLogin ws = PageFactory.initElements(driver, WSAdmin_TC001_VerifyAdminLogin.class);
+		ws.VerifyAdminLogin();
+	}
+
+	@Test
+	public void WSAdmin02() throws InterruptedException {
+		WSAdmin_TC002_VerifyInvitePage ws = PageFactory.initElements(driver, WSAdmin_TC002_VerifyInvitePage.class);
+		ws.verifyWSAdminInvitePage();
+	}
 	
-
-
+	@Test
+	public void WSAdmin03() throws InterruptedException {
+		WSAdmin_TC003_VerifyFilterUsingCandidate ws = PageFactory.initElements(driver, WSAdmin_TC003_VerifyFilterUsingCandidate.class);
+		ws.verifyInvitePageFilterByCandidate();
+	}
+	
+	@Test
+	public void WSAdmin04() throws InterruptedException {
+		WSAdmin_TC004_VerifyFilterUsingCorporateAdmin ws = PageFactory.initElements(driver,WSAdmin_TC004_VerifyFilterUsingCorporateAdmin.class);
+		ws.verifytheFilterBySelectingCorporateAdmin();
+	}
 
 }
