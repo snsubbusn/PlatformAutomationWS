@@ -40,10 +40,11 @@ public class ManageJobPage extends Action_Method
 	WebElement Accept_ReviewSubmission;
 	
 	
-	public boolean clickOnActiveJobs()
+	public boolean clickOnActiveJobs() throws InterruptedException
 	{
 		try 
 		{
+			Thread.sleep(1000);
 			jobs.click();
 			activeJobs.click();
 			return true;

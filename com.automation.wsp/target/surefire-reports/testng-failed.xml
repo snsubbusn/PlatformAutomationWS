@@ -1,21 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT" verbose="0">
-  <test thread-count="5" name="Test(failed)" verbose="0">
+<suite parallel="classes" name="Failed suite [WS Suite]" guice-stage="DEVELOPMENT" verbose="0">
+  <test thread-count="5" parallel="classes" name="Normal Scripts(failed)" verbose="0">
     <classes>
       <class name="com.controller.ScriptExecution">
         <methods>
-          <include name="Scenarion_087"/>
-          <include name="Scenario_080"/>
-          <include name="Scenario_028"/>
-          <include name="Launch_Browser"/>
-          <include name="Scenario_032"/>
+          <include name="CorpUserMangement08"/>
+          <include name="CorporateDashboard03"/>
+          <include name="CorporateDashboard02"/>
           <include name="Close_Browser"/>
-          <include name="Scenario_036"/>
-          <include name="Scenario_068"/>
-          <include name="Scenario_101"/>
+          <include name="CorpUserMangement10"/>
+          <include name="Submission04"/>
+          <include name="Submission06"/>
+          <include name="onboarding2"/>
+          <include name="onboarding1"/>
+          <include name="WSAdmin08"/>
+          <include name="Submission01"/>
+          <include name="Submission02"/>
+          <include name="Launch_Browser"/>
+          <include name="CorpProfile1"/>
+          <include name="Submission03"/>
+          <include name="onboarding5"/>
+          <include name="onboarding4"/>
+          <include name="onboarding3"/>
         </methods>
       </class> <!-- com.controller.ScriptExecution -->
     </classes>
-  </test> <!-- Test(failed) -->
-</suite> <!-- Failed suite [Suite] -->
+  </test> <!-- Normal Scripts(failed) -->
+</suite> <!-- Failed suite [WS Suite] -->

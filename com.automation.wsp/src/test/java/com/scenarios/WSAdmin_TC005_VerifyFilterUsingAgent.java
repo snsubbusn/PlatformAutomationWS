@@ -10,9 +10,9 @@ import com.objects_pages.WSAdminGenPage;
 import com.objects_pages.loginPage;
 import com.relevantcodes.extentreports.LogStatus;
 
-public class WSAdmin_TC004_VerifyFilterUsingCorporateAdmin extends Action_Method{
-	public void verifytheFilterBySelectingCorporateAdmin() throws InterruptedException {
-		logger = extent.startTest("Verifying the Invite Page using Filter By Corporate Admin_TC004");
+public class WSAdmin_TC005_VerifyFilterUsingAgent extends Action_Method{
+	public void verifytheFilterBySelectingAgent() throws InterruptedException {
+		logger = extent.startTest("Verifying the Invite Page using Filter By Agent_TC005");
 		driver.manage().timeouts().implicitlyWait(1, TimeUnit.MINUTES);
 		
 		//Launching the url
@@ -31,29 +31,28 @@ public class WSAdmin_TC004_VerifyFilterUsingCorporateAdmin extends Action_Method
 		if(def.contains("All")) {
 			logger.log(LogStatus.PASS, "Verified the default value of the 'Filter By' as "+def);
 		}else {
-			logger.log(LogStatus.FAIL, "The Default value of the 'Filter By' is not 'All'. the value is "+def);
+			logger.log(LogStatus.FAIL, "The Default value of the 'Filter By' is not All. the value is "+def);
 		}
 		
-		logger.log(LogStatus.INFO, "Change the 'Filter By' value to \"Corporate Admin\"");
+		logger.log(LogStatus.INFO, "Change the 'Filter By' value to \"Agency Partner\"");
 		
-		String cor = ws.filterCorporate();
-		if(cor.contains("Corporate")) {
-			logger.log(LogStatus.PASS, "'Filter By' value has been changed to \"Corporate Admin\" successfully");
+		String cor = ws.filterAgent();
+		if(cor.contains("Agency")) {
+			logger.log(LogStatus.PASS, "'Filter By' value has been changed to \"Agency Partner\" successfully");
 		}else {
-			logger.log(LogStatus.FAIL, "Filter By did not changed to \"Corporate Admin\". the selected value is "+cor);
+			logger.log(LogStatus.FAIL, "Filter By did not changed to \"Agency Partner\". the selected value is "+cor);
 		}
 		
-		logger.log(LogStatus.INFO, "Count the no of Corporate Admin displayed in first page");
-		int coun = ws.getCountOfCorporates();
+		logger.log(LogStatus.INFO, "Count the no of Agency Partner displayed in first page");
+		int coun = ws.getCountOfAgents();
 		
-		logger.log(LogStatus.PASS,"The count of Corporate Admin in the first page is "+coun);
+		logger.log(LogStatus.PASS,"The count of Agency Partner in the first page is "+coun);
 		
-		logger.log(LogStatus.INFO, "Verified the Invite Page using Filter By \"Corporate Admin\"");
+		logger.log(LogStatus.INFO, "Verified the Invite Page using Filter By \"Agency Partner\"");
 		
 		extent.endTest(logger);
 		
 		lp.logout();
 		
 	}
-
 }

@@ -12,7 +12,7 @@ import com.relevantcodes.extentreports.LogStatus;
 
 public class WSAdmin_TC002_VerifyInvitePage extends Action_Method{
 	public void verifyWSAdminInvitePage() throws InterruptedException {
-		logger = extent.startTest("Verify the WSAdmin Invite Page_TC001");
+		logger = extent.startTest("Verify the WSAdmin Invite Page_TC002");
 		driver.manage().timeouts().implicitlyWait(1, TimeUnit.MINUTES);
 
 		//Launching the url
@@ -29,10 +29,10 @@ public class WSAdmin_TC002_VerifyInvitePage extends Action_Method{
 		logger.log(LogStatus.INFO, "Verify the details of the Invite page of WS Admin");
 		
 		String def = ws.getDefaultFilterValue();
-		if(def.contains("None")) {
+		if(def.contains("All")) {
 			logger.log(LogStatus.PASS, "Verified the default Filter By value is \""+def+"\"");
 		}else {
-			logger.log(LogStatus.FAIL, "The Default Filter By value is not 'None'. It is "+def);
+			logger.log(LogStatus.FAIL, "The Default Filter By value is not 'All'. It is "+def);
 		}
 		
 		

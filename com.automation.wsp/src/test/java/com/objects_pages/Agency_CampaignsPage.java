@@ -40,7 +40,9 @@ public class Agency_CampaignsPage extends Action_Method
 	public boolean Accept_Job(String JobId)
 	{
 		//WebElement Accept_Button=driver.findElement(By.xpath("//mat-card[div[div[div[app-job-card-square-header[div[div[div[contains(text(),'#"+JobId+"')]]]]]]]]//button[@class='btn-class gs-button mat-raised-button mat-primary']"));
-		WebElement Accept_Button=driver.findElement(By.xpath("//a[contains(@href,'job/"+JobId+"')]/following::button[2]"));
+		//WebElement Accept_Button=driver.findElement(By.xpath("//a[contains(@href,'job/"+JobId+"')]/following::button[2]"));
+		
+		WebElement Accept_Button=driver.findElement(By.xpath("//span[contains(text(),'#"+JobId+"')]/following::button[2]"));
 		
 		try
 		{

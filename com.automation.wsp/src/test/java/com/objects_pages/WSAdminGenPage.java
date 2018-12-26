@@ -44,23 +44,38 @@ public class WSAdminGenPage extends Action_Method{
 	WebElement sortSelectedValue;
 	
 	@FindBy(xpath="//div[@class='cdk-overlay-container']//span[contains(text(),'Name')]")
-	WebElement name;
+	WebElement sortName;
 	
 	@FindBy(xpath="//div[@class='cdk-overlay-container']//span[contains(text(),'Status')]")
-	WebElement status;
+	WebElement sortStatus;
 	
 	@FindBy(xpath="//div[@class='cdk-overlay-container']//span[contains(text(),'Invited On')]")
-	WebElement invitedOn;
+	WebElement sortInvitedOn;
 	
 	@FindBy(xpath="//div[@class='add-button ng-star-inserted']//button/span/mat-icon")
 	WebElement addButton;
 	
-	@FindBy(xpath="//span[contains(text(),'Select')]/ancestor::label//input")
+	@FindBy(xpath="//span[contains(text(),'Select')]/following::label//input")
 	WebElement selectAllCheckBox;
 	
 	
 	@FindBy(xpath="//span[contains(text(),'Send Rem')]")
 	WebElement sendRemainder;
+	
+	@FindBy(xpath="(//div[@class='header-div'])[1]/span")
+	WebElement firstCardHeader;
+	
+	@FindBy(xpath="(//div[@class='header-div']/following::div[@class='name-div'])[1]/span/span")
+	WebElement firstCardName;
+	
+	@FindBy(xpath="(//div[@class='header-div']/following::div[@class='name-div'])[1]//div[1]")
+	WebElement firstCardInvitedOn;
+	
+	@FindBy(xpath="(//div[@class='header-div']/following::div[@class='name-div'])[1]//div[2]")
+	WebElement firstCardInviteExpiryOn;
+	
+	@FindBy(xpath="//div[@class='row heading-block']//h2")
+	WebElement newInviteHeading;
 	
 	//Methods for WS Admin scenarios.
 	
@@ -90,13 +105,15 @@ public class WSAdminGenPage extends Action_Method{
 		return filterSelectedValue.getText();
 	}
 	
-	public String getDefaultSortValue() {
-		return sortSelectedValue.getText();
-	}
-	
-	
+		
 	public boolean checkforAddButton() {
 		return addButton.isDisplayed();
+	}
+	
+	public String verifyNewInvitesPage() throws InterruptedException {
+		addButton.click();
+		Thread.sleep(3000);
+		return newInviteHeading.getText();
 	}
 	
 	public String filterCandidate() {
@@ -110,6 +127,45 @@ public class WSAdminGenPage extends Action_Method{
 		filterCorpAdmin.click();
 		return filterSelectedValue.getText();
 	}
+	
+	public String filterAgent() {
+		filterSelectedValue.click();
+		filterAgencyPartner.click();
+		return filterSelectedValue.getText();
+	}
+	
+	public String getDefaultSortValue() {
+		return sortSelectedValue.getText();
+	}
+	
+	public String sortByName() {
+		sortSelectedValue.click();
+		sortName.click();
+		return sortSelectedValue.getText();
+	}
+	
+	public String sortByStatus() {
+		sortSelectedValue.click();
+		sortStatus.click();
+		return sortSelectedValue.getText();
+	}
+	
+	public String sortByInvitedOn() {
+		sortSelectedValue.click();
+		sortInvitedOn.click();
+		return sortSelectedValue.getText();
+	}
+	
+	public String getFirstCardDetails() {
+		
+		String head = firstCardHeader.getText();
+		String name = firstCardName.getText();
+		String inv = firstCardInvitedOn.getText();
+		String exp = firstCardInviteExpiryOn.getText();
+		String det = "Role - "+head+"; Name - "+name+"; "+inv+"; "+exp;
+		return det;
+	}
+	
 	
 	public String checkSelectAllCheckboxState() {
 		return selectAllCheckBox.getAttribute("aria-checked");

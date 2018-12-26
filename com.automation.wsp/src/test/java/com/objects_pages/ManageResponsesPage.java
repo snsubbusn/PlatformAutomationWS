@@ -18,6 +18,10 @@ public class ManageResponsesPage extends Action_Method
 	@FindBy(xpath="//div[contains(text(),'Active Jobs')]")
 	WebElement activeJobs;
 
+	@FindBy(xpath="//div[contains(text(),'Closed Jobs')]")
+	WebElement closedJobs;
+    
+  
 	@FindBy(xpath="//a[span[contains(text(),'Manage Responses')]]")
 	WebElement ManageResponses_tab;
 	//	@FindBy(xpath="//mat-card[div[div[div[app-job-card-square-header[div[div[div[contains(text(),'#53')]]]]]]]]//button[@class='pending-review mat-raised-button mat-primary']")
@@ -109,6 +113,8 @@ public class ManageResponsesPage extends Action_Method
 
 
 	public String verifyJobClosed(String JobId) {
+		Jobs_Tab.click();
+		closedJobs.click();
 		return driver.findElement(By.xpath("//mat-card[div[div[div[app-job-card-square-header[div[div[div[a[contains(@href,'job/"+JobId+"')]]]]]]]]]//button//span[contains(text(),'Reopen')]")).getText();
 	}
 

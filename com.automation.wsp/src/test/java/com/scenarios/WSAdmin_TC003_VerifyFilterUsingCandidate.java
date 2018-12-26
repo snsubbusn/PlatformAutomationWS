@@ -28,10 +28,10 @@ public class WSAdmin_TC003_VerifyFilterUsingCandidate extends Action_Method{
 		WSAdminGenPage ws = PageFactory.initElements(driver, WSAdminGenPage.class);
 		
 		String def = ws.getDefaultFilterValue();
-		if(def.contains("None")) {
+		if(def.contains("All")) {
 			logger.log(LogStatus.PASS, "Verified the default Filter By value is \""+def+"\"");
 		}else {
-			logger.log(LogStatus.FAIL, "The Default Filter By value is not 'None'. It is "+def);
+			logger.log(LogStatus.FAIL, "The Default Filter By value is not 'All'. It is "+def);
 		}
 		
 		logger.log(LogStatus.INFO, "Select the Candidate from the 'Filter By' drop down menu");

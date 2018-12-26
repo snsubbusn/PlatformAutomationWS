@@ -16,7 +16,7 @@ import com.relevantcodes.extentreports.LogStatus;
 public class Sc_068_Verify_AlignOfAnAgency extends Action_Method
 {
 	
-	public void Verify_AlignOfAnAgency() throws EncryptedDocumentException, InvalidFormatException, IOException
+	public void Verify_AlignOfAnAgency() throws EncryptedDocumentException, InvalidFormatException, IOException, InterruptedException
 	{
 		logger = extent.startTest("GS03_SC_068_Verifying Align of an agency by Workstreets Admin");
 		driver.manage().timeouts().implicitlyWait(1,TimeUnit.MINUTES);

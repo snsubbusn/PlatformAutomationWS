@@ -43,6 +43,7 @@ ExtentReports 2.0
 </div>
 <ul id='slide-out' class='side-nav fixed hide-on-med-and-down'>
 <li class='analysis waves-effect active'><a href='#!' class='test-view' onclick="_updateCurrentStage(0)"><i class='mdi-action-dashboard'></i>Test Details</a></li>
+<li class='analysis waves-effect'><a href='#!' class='exceptions-view' onclick="_updateCurrentStage(2)"><i class='mdi-action-bug-report'></i>Exceptions</a></li>
 <li class='analysis waves-effect'><a href='#!' class='dashboard-view'><i class='mdi-action-track-changes'></i></i>Analysis</a></li>
 </ul>
 <span class='report-name'>Automation Report</span> <span class='report-headline'></span>
@@ -51,7 +52,7 @@ ExtentReports 2.0
 <i class='mdi-hardware-desktop-windows'></i>
 </li>
 <li>
-<span class='suite-started-time'>2018-08-31 11:58:26</span>
+<span class='suite-started-time'>2018-12-26 14:45:33</span>
 </li>
 <li>
 <span>v2.41.0</span>
@@ -81,25 +82,25 @@ ExtentReports 2.0
 <div class='col l2 m4 s12'>
 <div class='card suite-total-time-current'> 
 <span class='panel-name'>Total Time Taken (Current Run)</span> 
-<span class='suite-total-time-current-value panel-lead'>0h 6m 7s+149ms</span> 
+<span class='suite-total-time-current-value panel-lead'>0h 0m 50s+272ms</span> 
 </div> 
 </div>
 <div class='col l2 m4 s12'>
 <div class='card suite-total-time-overall'> 
 <span class='panel-name'>Total Time Taken (Overall)</span> 
-<span class='suite-total-time-overall-value panel-lead'>0h 6m 7s+149ms</span> 
+<span class='suite-total-time-overall-value panel-lead'>0h 0m 50s+272ms</span> 
 </div> 
 </div>
 <div class='col l2 m4 s6 suite-start-time'>
 <div class='card accent green-accent'> 
 <span class='panel-name'>Start</span> 
-<span class='panel-lead suite-started-time'>2018-08-31 11:52:19</span> 
+<span class='panel-lead suite-started-time'>2018-12-26 14:44:43</span> 
 </div> 
 </div>
 <div class='col l2 m4 s6 suite-end-time'>
 <div class='card accent pink-accent'> 
 <span class='panel-name'>End</span> 
-<span class='panel-lead suite-ended-time'>2018-08-31 11:58:26</span> 
+<span class='panel-lead suite-ended-time'>2018-12-26 14:45:33</span> 
 </div> 
 </div>
 </div>
@@ -231,407 +232,17 @@ ExtentReports 2.0
 <div class='card-panel no-padding-h no-padding-v no-margin-v'>
 <div class='wrapper'>
 <ul id='test-collection' class='test-collection'>
-<li class='collection-item test displayed active pass ' extentid='755afad5-27c5-41a0-99f7-78f8b57f0f31'>
+<li class='collection-item test displayed active fail ' extentid='792b9cea-cf19-4a56-9d4d-45504e944684'>
 <div class='test-head'>
-<span class='test-name'>Verifying all elements and text present in Login page </span>
-<span class='test-status label right outline capitalize pass'>pass</span>
-<span class='category-assigned hide '></span>
-</div>
-<div class='test-body'>
-<div class='test-info'>
-<span title='Test started time' alt='Test started time' class='test-started-time label green lighten-1 text-white'>2018-08-31 11:52:25</span>
-<span title='Test ended time' alt='Test ended time' class='test-ended-time label red lighten-1 text-white'>2018-08-31 11:52:30</span>
-<span title='Time taken to finish' alt='Time taken to finish' class='test-time-taken label blue-grey lighten-3 text-white'>0h 0m 4s+479ms</span>
-</div>
-<div class='test-desc'></div>
-<div class='test-attributes'>
-</div>
-<div class='test-steps'>
-<table class='bordered table-results'>
-<thead>
-<tr>
-<th>Status</th>
-<th>Timestamp</th>
-<th>Details</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
-<td class='timestamp'>11:52:29</td>
-<td class='step-details'>Launched the URL and login page is displayed</td>
-</tr>
-<tr>
-<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
-<td class='timestamp'>11:52:29</td>
-<td class='step-details'>Verify all elements,texts present in login page</td>
-</tr>
-<tr>
-<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
-<td class='timestamp'>11:52:29</td>
-<td class='step-details'>Verifying "Workstreets Logo" in login page</td>
-</tr>
-<tr>
-<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
-<td class='timestamp'>11:52:29</td>
-<td class='step-details'>"Workstreets Logo" is available</td>
-</tr>
-<tr>
-<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
-<td class='timestamp'>11:52:29</td>
-<td class='step-details'>"Learnathon link" is available</td>
-</tr>
-<tr>
-<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
-<td class='timestamp'>11:52:29</td>
-<td class='step-details'>"About Link" is available</td>
-</tr>
-<tr>
-<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
-<td class='timestamp'>11:52:29</td>
-<td class='step-details'>"Copy right" is available</td>
-</tr>
-<tr>
-<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
-<td class='timestamp'>11:52:29</td>
-<td class='step-details'>"Privacy policy" is available</td>
-</tr>
-<tr>
-<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
-<td class='timestamp'>11:52:29</td>
-<td class='step-details'>"Terms and conditions" is available</td>
-</tr>
-<tr>
-<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
-<td class='timestamp'>11:52:29</td>
-<td class='step-details'>"On board handcraft" is available</td>
-</tr>
-<tr>
-<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
-<td class='timestamp'>11:52:29</td>
-<td class='step-details'>"Your career together live" is available</td>
-</tr>
-<tr>
-<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
-<td class='timestamp'>11:52:29</td>
-<td class='step-details'>"Login tab" is available</td>
-</tr>
-<tr>
-<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
-<td class='timestamp'>11:52:30</td>
-<td class='step-details'>"Register Tab" is available</td>
-</tr>
-<tr>
-<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
-<td class='timestamp'>11:52:30</td>
-<td class='step-details'>"Welcome back!" is available</td>
-</tr>
-<tr>
-<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
-<td class='timestamp'>11:52:30</td>
-<td class='step-details'>"Please login to access your account" is available</td>
-</tr>
-<tr>
-<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
-<td class='timestamp'>11:52:30</td>
-<td class='step-details'>"Email field" is available</td>
-</tr>
-<tr>
-<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
-<td class='timestamp'>11:52:30</td>
-<td class='step-details'>"Password field" is available</td>
-</tr>
-<tr>
-<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
-<td class='timestamp'>11:52:30</td>
-<td class='step-details'>"Login button" is available</td>
-</tr>
-<tr>
-<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
-<td class='timestamp'>11:52:30</td>
-<td class='step-details'>"Forgot password link" is available</td>
-</tr>
-<tr>
-<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
-<td class='timestamp'>11:52:30</td>
-<td class='step-details'>All elements & text present in Login page verified</td>
-</tr>
-</tbody>
-</table>
-<ul class='collapsible node-list' data-collapsible='accordion'>
-</ul>
-</div>
-</div>
-</li>
-<li class='collection-item test displayed active pass ' extentid='8a4ec119-5261-4cda-8ff8-916655024c2c'>
-<div class='test-head'>
-<span class='test-name'>verifying error message for Email Id and password </span>
-<span class='test-status label right outline capitalize pass'>pass</span>
-<span class='category-assigned hide '></span>
-</div>
-<div class='test-body'>
-<div class='test-info'>
-<span title='Test started time' alt='Test started time' class='test-started-time label green lighten-1 text-white'>2018-08-31 11:52:36</span>
-<span title='Test ended time' alt='Test ended time' class='test-ended-time label red lighten-1 text-white'>2018-08-31 11:52:40</span>
-<span title='Time taken to finish' alt='Time taken to finish' class='test-time-taken label blue-grey lighten-3 text-white'>0h 0m 3s+945ms</span>
-</div>
-<div class='test-desc'></div>
-<div class='test-attributes'>
-</div>
-<div class='test-steps'>
-<table class='bordered table-results'>
-<thead>
-<tr>
-<th>Status</th>
-<th>Timestamp</th>
-<th>Details</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
-<td class='timestamp'>11:52:38</td>
-<td class='step-details'>Launched the URL and login page is displayed</td>
-</tr>
-<tr>
-<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
-<td class='timestamp'>11:52:38</td>
-<td class='step-details'>Verifying error message for no inputs</td>
-</tr>
-<tr>
-<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
-<td class='timestamp'>11:52:39</td>
-<td class='step-details'>For No Inputs User is getting "Required Fields are mandatory" error message</td>
-</tr>
-<tr>
-<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
-<td class='timestamp'>11:52:40</td>
-<td class='step-details'>Verifying error message for Invalid mail id</td>
-</tr>
-<tr>
-<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
-<td class='timestamp'>11:52:40</td>
-<td class='step-details'>For invalid mail id User is getting "Please enter a valid email" error message</td>
-</tr>
-<tr>
-<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
-<td class='timestamp'>11:52:40</td>
-<td class='step-details'>Email id and password verification completed</td>
-</tr>
-</tbody>
-</table>
-<ul class='collapsible node-list' data-collapsible='accordion'>
-</ul>
-</div>
-</div>
-</li>
-<li class='collection-item test displayed active pass ' extentid='774202c2-d2db-4442-a860-f92754a339ae'>
-<div class='test-head'>
-<span class='test-name'>verifying Registration of an user </span>
-<span class='test-status label right outline capitalize pass'>pass</span>
-<span class='category-assigned hide '></span>
-</div>
-<div class='test-body'>
-<div class='test-info'>
-<span title='Test started time' alt='Test started time' class='test-started-time label green lighten-1 text-white'>2018-08-31 11:52:46</span>
-<span title='Test ended time' alt='Test ended time' class='test-ended-time label red lighten-1 text-white'>2018-08-31 11:52:52</span>
-<span title='Time taken to finish' alt='Time taken to finish' class='test-time-taken label blue-grey lighten-3 text-white'>0h 0m 6s+207ms</span>
-</div>
-<div class='test-desc'></div>
-<div class='test-attributes'>
-</div>
-<div class='test-steps'>
-<table class='bordered table-results'>
-<thead>
-<tr>
-<th>Status</th>
-<th>Timestamp</th>
-<th>Details</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
-<td class='timestamp'>11:52:46</td>
-<td class='step-details'>Verify all elements,texts present in Forgot Password pop up</td>
-</tr>
-<tr>
-<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
-<td class='timestamp'>11:52:49</td>
-<td class='step-details'>Launched the URL and login page is displayed</td>
-</tr>
-<tr>
-<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
-<td class='timestamp'>11:52:52</td>
-<td class='step-details'>Sucessfully Value entered for all the fields in Register page</td>
-</tr>
-<tr>
-<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
-<td class='timestamp'>11:52:52</td>
-<td class='step-details'>Request Invite successfully verified</td>
-</tr>
-<tr>
-<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
-<td class='timestamp'>11:52:52</td>
-<td class='step-details'>Register verification completed in Register page</td>
-</tr>
-</tbody>
-</table>
-<ul class='collapsible node-list' data-collapsible='accordion'>
-</ul>
-</div>
-</div>
-</li>
-<li class='collection-item test displayed active pass ' extentid='e624a9d8-453b-4eb3-834c-84219c334998'>
-<div class='test-head'>
-<span class='test-name'>verifying All elements and text present in Forgot password pop up </span>
-<span class='test-status label right outline capitalize pass'>pass</span>
-<span class='category-assigned hide '></span>
-</div>
-<div class='test-body'>
-<div class='test-info'>
-<span title='Test started time' alt='Test started time' class='test-started-time label green lighten-1 text-white'>2018-08-31 11:52:58</span>
-<span title='Test ended time' alt='Test ended time' class='test-ended-time label red lighten-1 text-white'>2018-08-31 11:53:02</span>
-<span title='Time taken to finish' alt='Time taken to finish' class='test-time-taken label blue-grey lighten-3 text-white'>0h 0m 3s+770ms</span>
-</div>
-<div class='test-desc'></div>
-<div class='test-attributes'>
-</div>
-<div class='test-steps'>
-<table class='bordered table-results'>
-<thead>
-<tr>
-<th>Status</th>
-<th>Timestamp</th>
-<th>Details</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
-<td class='timestamp'>11:52:58</td>
-<td class='step-details'>Verify all elements,texts present in Forgot Password pop up</td>
-</tr>
-<tr>
-<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
-<td class='timestamp'>11:53:01</td>
-<td class='step-details'>Launched the URL and login page is displayed</td>
-</tr>
-<tr>
-<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
-<td class='timestamp'>11:53:02</td>
-<td class='step-details'>Verifying "Forgot password" text in Forgot password pop up</td>
-</tr>
-<tr>
-<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
-<td class='timestamp'>11:53:02</td>
-<td class='step-details'>"Forgot Password" text is available</td>
-</tr>
-<tr>
-<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
-<td class='timestamp'>11:53:02</td>
-<td class='step-details'>Verifying message present in Forgot password pop up</td>
-</tr>
-<tr>
-<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
-<td class='timestamp'>11:53:02</td>
-<td class='step-details'>"Please enter your email address for the password reset link" text is available</td>
-</tr>
-<tr>
-<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
-<td class='timestamp'>11:53:02</td>
-<td class='step-details'>Verifying "Email Id" field in Forgot password pop up</td>
-</tr>
-<tr>
-<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
-<td class='timestamp'>11:53:02</td>
-<td class='step-details'>"Email id" field is available</td>
-</tr>
-<tr>
-<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
-<td class='timestamp'>11:53:02</td>
-<td class='step-details'>Verifying "Send Email" field in Forgot password pop up</td>
-</tr>
-<tr>
-<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
-<td class='timestamp'>11:53:02</td>
-<td class='step-details'>"Send Email" button is available</td>
-</tr>
-<tr>
-<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
-<td class='timestamp'>11:53:02</td>
-<td class='step-details'>Verification for Forgot Password pop up completed</td>
-</tr>
-</tbody>
-</table>
-<ul class='collapsible node-list' data-collapsible='accordion'>
-</ul>
-</div>
-</div>
-</li>
-<li class='collection-item test displayed active pass ' extentid='5971cdfc-0feb-467c-ae47-90550ef32a0c'>
-<div class='test-head'>
-<span class='test-name'>verifying Error message for Forgot Password Pop up </span>
-<span class='test-status label right outline capitalize pass'>pass</span>
-<span class='category-assigned hide '></span>
-</div>
-<div class='test-body'>
-<div class='test-info'>
-<span title='Test started time' alt='Test started time' class='test-started-time label green lighten-1 text-white'>2018-08-31 11:53:08</span>
-<span title='Test ended time' alt='Test ended time' class='test-ended-time label red lighten-1 text-white'>2018-08-31 11:53:12</span>
-<span title='Time taken to finish' alt='Time taken to finish' class='test-time-taken label blue-grey lighten-3 text-white'>0h 0m 3s+455ms</span>
-</div>
-<div class='test-desc'></div>
-<div class='test-attributes'>
-</div>
-<div class='test-steps'>
-<table class='bordered table-results'>
-<thead>
-<tr>
-<th>Status</th>
-<th>Timestamp</th>
-<th>Details</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
-<td class='timestamp'>11:53:11</td>
-<td class='step-details'>Launched the URL and login page is displayed</td>
-</tr>
-<tr>
-<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
-<td class='timestamp'>11:53:11</td>
-<td class='step-details'>Verify Error message</td>
-</tr>
-<tr>
-<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
-<td class='timestamp'>11:53:12</td>
-<td class='step-details'>"Error message" is available for invalid email</td>
-</tr>
-<tr>
-<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
-<td class='timestamp'>11:53:12</td>
-<td class='step-details'>Error message verification completed</td>
-</tr>
-</tbody>
-</table>
-<ul class='collapsible node-list' data-collapsible='accordion'>
-</ul>
-</div>
-</div>
-</li>
-<li class='collection-item test displayed active fail ' extentid='4f1bce1b-8426-4597-8dcf-0d4cda08c9a9'>
-<div class='test-head'>
-<span class='test-name'>verifying Password reset </span>
+<span class='test-name'>Guaranteed Onboarding Basic Flow - Corporate Shortlists Candidates from Pending Review <i class='tooltipped mdi-alert-error' data-position='top' data-delay='50' data-tooltip='Close was called before test could end safely using EndTest.'></i></span>
 <span class='test-status label right outline capitalize fail'>fail</span>
 <span class='category-assigned hide '></span>
 </div>
 <div class='test-body'>
 <div class='test-info'>
-<span title='Test started time' alt='Test started time' class='test-started-time label green lighten-1 text-white'>2018-08-31 11:53:18</span>
-<span title='Test ended time' alt='Test ended time' class='test-ended-time label red lighten-1 text-white'>2018-08-31 11:53:22</span>
-<span title='Time taken to finish' alt='Time taken to finish' class='test-time-taken label blue-grey lighten-3 text-white'>0h 0m 3s+638ms</span>
+<span title='Test started time' alt='Test started time' class='test-started-time label green lighten-1 text-white'>2018-12-26 14:44:48</span>
+<span title='Test ended time' alt='Test ended time' class='test-ended-time label red lighten-1 text-white'>2018-12-26 14:45:33</span>
+<span title='Time taken to finish' alt='Time taken to finish' class='test-time-taken label blue-grey lighten-3 text-white'>0h 0m 45s+426ms</span>
 </div>
 <div class='test-desc'></div>
 <div class='test-attributes'>
@@ -648,920 +259,58 @@ ExtentReports 2.0
 <tbody>
 <tr>
 <td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
-<td class='timestamp'>11:53:21</td>
+<td class='timestamp'>14:44:52</td>
 <td class='step-details'>Launched the URL and login page is displayed</td>
 </tr>
 <tr>
 <td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
-<td class='timestamp'>11:53:21</td>
-<td class='step-details'>Verify Password reset</td>
+<td class='timestamp'>14:44:53</td>
+<td class='step-details'>Enter valid login credential and click on Login button,Corporate Landing page displayed</td>
 </tr>
 <tr>
-<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
-<td class='timestamp'>11:53:21</td>
-<td class='step-details'>Verify Password reset</td>
+<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+<td class='timestamp'>14:44:55</td>
+<td class='step-details'>Click on Manage Responses tab, Manage Responses tab clicked</td>
 </tr>
 <tr>
-<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
-<td class='timestamp'>11:53:21</td>
-<td class='step-details'>Verify Submit button for Valid Mail id</td>
+<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+<td class='timestamp'>14:44:56</td>
+<td class='step-details'>Verify Pending Review Button, Pending review button clicked</td>
+</tr>
+<tr>
+<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+<td class='timestamp'>14:44:56</td>
+<td class='step-details'>Verify shortlist in pending review, Candidate shortlisted from Pending Review</td>
+</tr>
+<tr>
+<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+<td class='timestamp'>14:45:00</td>
+<td class='step-details'>Click on Back Button, Completed Pending Review and Manage Response Page is displayed Successfully</td>
 </tr>
 <tr>
 <td class='status fail' title='fail' alt='fail'><i class='mdi-navigation-cancel'></i></td>
-<td class='timestamp'>11:53:22</td>
-<td class='step-details'>"Send Email" button is disabled</td>
-</tr>
-<tr>
-<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
-<td class='timestamp'>11:53:22</td>
-<td class='step-details'>Email successfully send</td>
-</tr>
-</tbody>
-</table>
-<ul class='collapsible node-list' data-collapsible='accordion'>
-</ul>
-</div>
-</div>
-</li>
-<li class='collection-item test displayed active pass ' extentid='2e4f7d3f-286e-4a0a-978f-bf4c6c80a433'>
-<div class='test-head'>
-<span class='test-name'>Verifying all elements and text present in Job Summary Page </span>
-<span class='test-status label right outline capitalize pass'>pass</span>
-<span class='category-assigned hide '></span>
-</div>
-<div class='test-body'>
-<div class='test-info'>
-<span title='Test started time' alt='Test started time' class='test-started-time label green lighten-1 text-white'>2018-08-31 11:53:28</span>
-<span title='Test ended time' alt='Test ended time' class='test-ended-time label red lighten-1 text-white'>2018-08-31 11:53:36</span>
-<span title='Time taken to finish' alt='Time taken to finish' class='test-time-taken label blue-grey lighten-3 text-white'>0h 0m 8s+385ms</span>
-</div>
-<div class='test-desc'></div>
-<div class='test-attributes'>
-</div>
-<div class='test-steps'>
-<table class='bordered table-results'>
-<thead>
-<tr>
-<th>Status</th>
-<th>Timestamp</th>
-<th>Details</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
-<td class='timestamp'>11:53:31</td>
-<td class='step-details'>Launched the URL and login page is displayed</td>
-</tr>
-<tr>
-<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
-<td class='timestamp'>11:53:31</td>
-<td class='step-details'>Enter valid Username and password for corporate and click on login,Corporate landing page displayed</td>
-</tr>
-<tr>
-<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
-<td class='timestamp'>11:53:32</td>
-<td class='step-details'>Click on "Post Video Jd" tab,Job summary page displayed</td>
-</tr>
-<tr>
-<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
-<td class='timestamp'>11:53:34</td>
-<td class='step-details'>Verifying "Post Video JD" text in Job Summary page</td>
-</tr>
-<tr>
-<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
-<td class='timestamp'>11:53:35</td>
-<td class='step-details'>"Post Video JD" text is available</td>
-</tr>
-<tr>
-<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
-<td class='timestamp'>11:53:35</td>
-<td class='step-details'>"Post Video JD" text is as per the requirement</td>
-</tr>
-<tr>
-<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
-<td class='timestamp'>11:53:35</td>
-<td class='step-details'>Verifying "Job Summary" text in Job Summary page</td>
-</tr>
-<tr>
-<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
-<td class='timestamp'>11:53:35</td>
-<td class='step-details'>"Job Summary" text is available</td>
-</tr>
-<tr>
-<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
-<td class='timestamp'>11:53:35</td>
-<td class='step-details'>"Job Summary" text is as per the requirement</td>
-</tr>
-<tr>
-<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
-<td class='timestamp'>11:53:35</td>
-<td class='step-details'>Verifying "Requirement Type" field in Job Summary page</td>
-</tr>
-<tr>
-<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
-<td class='timestamp'>11:53:35</td>
-<td class='step-details'>"Requirement Type" field is available</td>
-</tr>
-<tr>
-<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
-<td class='timestamp'>11:53:35</td>
-<td class='step-details'>"Requirement Type" text is as per the requirement</td>
-</tr>
-<tr>
-<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
-<td class='timestamp'>11:53:35</td>
-<td class='step-details'>Verifying "JD Title" field in Job Summary page</td>
-</tr>
-<tr>
-<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
-<td class='timestamp'>11:53:36</td>
-<td class='step-details'>"JD Title" field is available</td>
-</tr>
-<tr>
-<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
-<td class='timestamp'>11:53:36</td>
-<td class='step-details'>"JD Title" text is as per the requirement</td>
-</tr>
-<tr>
-<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
-<td class='timestamp'>11:53:36</td>
-<td class='step-details'>Verifying "Description" field in Job Summary page</td>
-</tr>
-<tr>
-<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
-<td class='timestamp'>11:53:36</td>
-<td class='step-details'>"Description" field is available</td>
-</tr>
-<tr>
-<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
-<td class='timestamp'>11:53:36</td>
-<td class='step-details'>"Description" text is as per the requirement</td>
-</tr>
-<tr>
-<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
-<td class='timestamp'>11:53:36</td>
-<td class='step-details'>Verifying "Experience" text in Job Summary page</td>
-</tr>
-<tr>
-<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
-<td class='timestamp'>11:53:36</td>
-<td class='step-details'>"Experience" text is as per the requirement</td>
-</tr>
-<tr>
-<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
-<td class='timestamp'>11:53:36</td>
-<td class='step-details'>Verifying "Minimum Years" field in Job Summary page</td>
-</tr>
-<tr>
-<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
-<td class='timestamp'>11:53:36</td>
-<td class='step-details'>"Minimum Years" field is available</td>
-</tr>
-<tr>
-<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
-<td class='timestamp'>11:53:36</td>
-<td class='step-details'>"Minimum Years" text is as per the requirement</td>
-</tr>
-<tr>
-<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
-<td class='timestamp'>11:53:36</td>
-<td class='step-details'>Verifying "Maximum Years" field in Job Summary page</td>
-</tr>
-<tr>
-<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
-<td class='timestamp'>11:53:36</td>
-<td class='step-details'>"Maximum Years" field is available</td>
-</tr>
-<tr>
-<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
-<td class='timestamp'>11:53:36</td>
-<td class='step-details'>"Maximum Years" text is as per the requirement</td>
-</tr>
-<tr>
-<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
-<td class='timestamp'>11:53:36</td>
-<td class='step-details'>Verifying "Salary" text in Job Summary page</td>
-</tr>
-<tr>
-<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
-<td class='timestamp'>11:53:36</td>
-<td class='step-details'>"Salary" text is as per the requirement</td>
-</tr>
-<tr>
-<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
-<td class='timestamp'>11:53:36</td>
-<td class='step-details'>Verifying "Minimum Salary" field in Job Summary page</td>
-</tr>
-<tr>
-<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
-<td class='timestamp'>11:53:36</td>
-<td class='step-details'>"Minimum Salary" field is available</td>
-</tr>
-<tr>
-<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
-<td class='timestamp'>11:53:36</td>
-<td class='step-details'>"Minimum Salary" text is as per the requirement</td>
-</tr>
-<tr>
-<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
-<td class='timestamp'>11:53:36</td>
-<td class='step-details'>Verifying "Maximum Salary" field in Job Summary page</td>
-</tr>
-<tr>
-<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
-<td class='timestamp'>11:53:36</td>
-<td class='step-details'>"Maximum Salary" field is available</td>
-</tr>
-<tr>
-<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
-<td class='timestamp'>11:53:36</td>
-<td class='step-details'>"Maximum Salary" text is as per the requirement</td>
-</tr>
-<tr>
-<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
-<td class='timestamp'>11:53:36</td>
-<td class='step-details'>Verifying "Location" field in Job Summary page</td>
-</tr>
-<tr>
-<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
-<td class='timestamp'>11:53:36</td>
-<td class='step-details'>"Location" field is available</td>
-</tr>
-<tr>
-<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
-<td class='timestamp'>11:53:36</td>
-<td class='step-details'>Verifying "Education" field in Job Summary page</td>
-</tr>
-<tr>
-<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
-<td class='timestamp'>11:53:36</td>
-<td class='step-details'>"Education" field is available</td>
-</tr>
-<tr>
-<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
-<td class='timestamp'>11:53:36</td>
-<td class='step-details'>"Education" text is as per the requirement</td>
-</tr>
-<tr>
-<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
-<td class='timestamp'>11:53:36</td>
-<td class='step-details'>Verifying "Next" button in Job Summary page</td>
-</tr>
-<tr>
-<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
-<td class='timestamp'>11:53:36</td>
-<td class='step-details'>"Next" button is available</td>
-</tr>
-<tr>
-<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
-<td class='timestamp'>11:53:36</td>
-<td class='step-details'>All elements & text present in Job Summary page verified</td>
-</tr>
-</tbody>
-</table>
-<ul class='collapsible node-list' data-collapsible='accordion'>
-</ul>
-</div>
-</div>
-</li>
-<li class='collection-item test displayed active pass ' extentid='9fda00ff-53ef-4e7a-adcc-3ae4145be0e0'>
-<div class='test-head'>
-<span class='test-name'>Verifying error message for No inputs in Job Summary Page </span>
-<span class='test-status label right outline capitalize pass'>pass</span>
-<span class='category-assigned hide '></span>
-</div>
-<div class='test-body'>
-<div class='test-info'>
-<span title='Test started time' alt='Test started time' class='test-started-time label green lighten-1 text-white'>2018-08-31 11:53:42</span>
-<span title='Test ended time' alt='Test ended time' class='test-ended-time label red lighten-1 text-white'>2018-08-31 11:53:51</span>
-<span title='Time taken to finish' alt='Time taken to finish' class='test-time-taken label blue-grey lighten-3 text-white'>0h 0m 9s+55ms</span>
-</div>
-<div class='test-desc'></div>
-<div class='test-attributes'>
-</div>
-<div class='test-steps'>
-<table class='bordered table-results'>
-<thead>
-<tr>
-<th>Status</th>
-<th>Timestamp</th>
-<th>Details</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
-<td class='timestamp'>11:53:47</td>
-<td class='step-details'>Launched the URL and login page is displayed</td>
-</tr>
-<tr>
-<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
-<td class='timestamp'>11:53:47</td>
-<td class='step-details'>Enter valid Username and password for corporate and click on login,Corporate landing page displayed</td>
-</tr>
-<tr>
-<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
-<td class='timestamp'>11:53:48</td>
-<td class='step-details'>Click on "Post Video Jd" tab,Job summary page displayed</td>
-</tr>
-<tr>
-<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
-<td class='timestamp'>11:53:51</td>
-<td class='step-details'>Verifying error message for no input</td>
-</tr>
-<tr>
-<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
-<td class='timestamp'>11:53:51</td>
-<td class='step-details'>Error message is available for No Inputs</td>
-</tr>
-<tr>
-<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
-<td class='timestamp'>11:53:51</td>
-<td class='step-details'>Error message verified for No Inputs</td>
-</tr>
-</tbody>
-</table>
-<ul class='collapsible node-list' data-collapsible='accordion'>
-</ul>
-</div>
-</div>
-</li>
-<li class='collection-item test displayed active pass ' extentid='7efc5fe8-d9bc-496c-925f-ca84543ac3bb'>
-<div class='test-head'>
-<span class='test-name'>Verifying error message for Minimum Experience greater than Maximum Experience in Job Summary Page </span>
-<span class='test-status label right outline capitalize pass'>pass</span>
-<span class='category-assigned hide '></span>
-</div>
-<div class='test-body'>
-<div class='test-info'>
-<span title='Test started time' alt='Test started time' class='test-started-time label green lighten-1 text-white'>2018-08-31 11:53:51</span>
-<span title='Test ended time' alt='Test ended time' class='test-ended-time label red lighten-1 text-white'>2018-08-31 11:53:54</span>
-<span title='Time taken to finish' alt='Time taken to finish' class='test-time-taken label blue-grey lighten-3 text-white'>0h 0m 2s+678ms</span>
-</div>
-<div class='test-desc'></div>
-<div class='test-attributes'>
-</div>
-<div class='test-steps'>
-<table class='bordered table-results'>
-<thead>
-<tr>
-<th>Status</th>
-<th>Timestamp</th>
-<th>Details</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
-<td class='timestamp'>11:53:53</td>
-<td class='step-details'>Click on "Post Video Jd" tab,Job summary page displayed</td>
-</tr>
-<tr>
-<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
-<td class='timestamp'>11:53:53</td>
-<td class='step-details'>Verifying error message for Minimum Salary greater than mavimum salary</td>
-</tr>
-<tr>
-<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
-<td class='timestamp'>11:53:54</td>
-<td class='step-details'>Error message is available for Minimum Experience greater than Maximum Experience</td>
-</tr>
-<tr>
-<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
-<td class='timestamp'>11:53:54</td>
-<td class='step-details'>Error message verified for Minimum Experience reater than Maximum Experience</td>
-</tr>
-</tbody>
-</table>
-<ul class='collapsible node-list' data-collapsible='accordion'>
-</ul>
-</div>
-</div>
-</li>
-<li class='collection-item test displayed active pass ' extentid='6827ff89-300f-4ed2-9aaa-8609d132a191'>
-<div class='test-head'>
-<span class='test-name'>Verifying error message for Minimum Salary greater than Maximum Salary in Job Summary Page </span>
-<span class='test-status label right outline capitalize pass'>pass</span>
-<span class='category-assigned hide '></span>
-</div>
-<div class='test-body'>
-<div class='test-info'>
-<span title='Test started time' alt='Test started time' class='test-started-time label green lighten-1 text-white'>2018-08-31 11:53:54</span>
-<span title='Test ended time' alt='Test ended time' class='test-ended-time label red lighten-1 text-white'>2018-08-31 11:53:57</span>
-<span title='Time taken to finish' alt='Time taken to finish' class='test-time-taken label blue-grey lighten-3 text-white'>0h 0m 2s+619ms</span>
-</div>
-<div class='test-desc'></div>
-<div class='test-attributes'>
-</div>
-<div class='test-steps'>
-<table class='bordered table-results'>
-<thead>
-<tr>
-<th>Status</th>
-<th>Timestamp</th>
-<th>Details</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
-<td class='timestamp'>11:53:56</td>
-<td class='step-details'>Click on "Post Video Jd" tab,Job summary page displayed</td>
-</tr>
-<tr>
-<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
-<td class='timestamp'>11:53:56</td>
-<td class='step-details'>Verifying error message for Minimum Salary greater than mavimum salary</td>
-</tr>
-<tr>
-<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
-<td class='timestamp'>11:53:57</td>
-<td class='step-details'>Error message is available for Minimum Salary greater than Maximum salary</td>
-</tr>
-<tr>
-<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
-<td class='timestamp'>11:53:57</td>
-<td class='step-details'>Error message verified for Minimum Salary reater than Maximum Salary</td>
-</tr>
-</tbody>
-</table>
-<ul class='collapsible node-list' data-collapsible='accordion'>
-</ul>
-</div>
-</div>
-</li>
-<li class='collection-item test displayed active pass ' extentid='c42c8510-a722-4ead-ba1a-66321c2cd09e'>
-<div class='test-head'>
-<span class='test-name'>SC_028_Verifying video Posting by Corporate </span>
-<span class='test-status label right outline capitalize pass'>pass</span>
-<span class='category-assigned hide '></span>
-</div>
-<div class='test-body'>
-<div class='test-info'>
-<span title='Test started time' alt='Test started time' class='test-started-time label green lighten-1 text-white'>2018-08-31 11:54:03</span>
-<span title='Test ended time' alt='Test ended time' class='test-ended-time label red lighten-1 text-white'>2018-08-31 11:56:17</span>
-<span title='Time taken to finish' alt='Time taken to finish' class='test-time-taken label blue-grey lighten-3 text-white'>0h 2m 14s+674ms</span>
-</div>
-<div class='test-desc'></div>
-<div class='test-attributes'>
-</div>
-<div class='test-steps'>
-<table class='bordered table-results'>
-<thead>
-<tr>
-<th>Status</th>
-<th>Timestamp</th>
-<th>Details</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
-<td class='timestamp'>11:54:05</td>
-<td class='step-details'>Launched the URL and login page is displayed</td>
-</tr>
-<tr>
-<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
-<td class='timestamp'>11:54:06</td>
-<td class='step-details'>Enter valid login credential and click on Login button,Corporate Landing page displayed</td>
-</tr>
-<tr>
-<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
-<td class='timestamp'>11:54:08</td>
-<td class='step-details'>Clicked on Post video JD tab and Job summary page displayed</td>
-</tr>
-<tr>
-<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
-<td class='timestamp'>11:54:24</td>
-<td class='step-details'>Complete Job summary page with valid data and click on Next button ,Add skill page displayed</td>
-</tr>
-<tr>
-<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
-<td class='timestamp'>11:54:46</td>
-<td class='step-details'>Complete Add skill page with valid data and click on Next button ,Add Video page displayed</td>
-</tr>
-<tr>
-<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
-<td class='timestamp'>11:55:00</td>
-<td class='step-details'>Video recording Started for Company Back Ground</td>
-</tr>
-<tr>
-<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
-<td class='timestamp'>11:55:17</td>
-<td class='step-details'>Video recording Started for Job Role</td>
-</tr>
-<tr>
-<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
-<td class='timestamp'>11:55:35</td>
-<td class='step-details'>Video recording Started for Must Have Skills</td>
-</tr>
-<tr>
-<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
-<td class='timestamp'>11:55:52</td>
-<td class='step-details'>Video recording Started for The Career Growth</td>
-</tr>
-<tr>
-<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
-<td class='timestamp'>11:56:12</td>
-<td class='step-details'>Video recorded and submited successfully</td>
-</tr>
-<tr>
-<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
-<td class='timestamp'>11:56:17</td>
-<td class='step-details'>Complete Add Video page with complete video recording and click on save button ,Job posted successfully</td>
-</tr>
-<tr>
-<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
-<td class='timestamp'>11:56:17</td>
-<td class='step-details'>Post Video JD Test Case Completed</td>
-</tr>
-</tbody>
-</table>
-<ul class='collapsible node-list' data-collapsible='accordion'>
-</ul>
-</div>
-</div>
-</li>
-<li class='collection-item test displayed active pass ' extentid='b31aba88-3402-43d7-9a66-1fe7e675c19d'>
-<div class='test-head'>
-<span class='test-name'>SC_032_Verifying Guaranteed Submission of posted JOb </span>
-<span class='test-status label right outline capitalize pass'>pass</span>
-<span class='category-assigned hide '></span>
-</div>
-<div class='test-body'>
-<div class='test-info'>
-<span title='Test started time' alt='Test started time' class='test-started-time label green lighten-1 text-white'>2018-08-31 11:56:23</span>
-<span title='Test ended time' alt='Test ended time' class='test-ended-time label red lighten-1 text-white'>2018-08-31 11:56:42</span>
-<span title='Time taken to finish' alt='Time taken to finish' class='test-time-taken label blue-grey lighten-3 text-white'>0h 0m 18s+314ms</span>
-</div>
-<div class='test-desc'></div>
-<div class='test-attributes'>
-</div>
-<div class='test-steps'>
-<table class='bordered table-results'>
-<thead>
-<tr>
-<th>Status</th>
-<th>Timestamp</th>
-<th>Details</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
-<td class='timestamp'>11:56:26</td>
-<td class='step-details'>Launched the URL and login page is displayed</td>
-</tr>
-<tr>
-<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
-<td class='timestamp'>11:56:27</td>
-<td class='step-details'>Enter valid login credential and click on Login button,Corporate Landing page displayed</td>
-</tr>
-<tr>
-<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
-<td class='timestamp'>11:56:35</td>
-<td class='step-details'>Get guaranteed responses button clicked successfully</td>
-</tr>
-<tr>
-<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
-<td class='timestamp'>11:56:37</td>
-<td class='step-details'>Successfully estimation done for GS</td>
-</tr>
-<tr>
-<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
-<td class='timestamp'>11:56:42</td>
-<td class='step-details'>Accept to pay later successfully verified</td>
-</tr>
-<tr>
-<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
-<td class='timestamp'>11:56:42</td>
-<td class='step-details'>Perform Guaranteed Submissions scenario completed</td>
-</tr>
-</tbody>
-</table>
-<ul class='collapsible node-list' data-collapsible='accordion'>
-</ul>
-</div>
-</div>
-</li>
-<li class='collection-item test displayed active pass ' extentid='97eda05d-4623-44ea-b778-a891afd0e1ff'>
-<div class='test-head'>
-<span class='test-name'>SC_068_Verifying Align of an agency by Workstreets Admin </span>
-<span class='test-status label right outline capitalize pass'>pass</span>
-<span class='category-assigned hide '></span>
-</div>
-<div class='test-body'>
-<div class='test-info'>
-<span title='Test started time' alt='Test started time' class='test-started-time label green lighten-1 text-white'>2018-08-31 11:56:48</span>
-<span title='Test ended time' alt='Test ended time' class='test-ended-time label red lighten-1 text-white'>2018-08-31 11:57:11</span>
-<span title='Time taken to finish' alt='Time taken to finish' class='test-time-taken label blue-grey lighten-3 text-white'>0h 0m 22s+422ms</span>
-</div>
-<div class='test-desc'></div>
-<div class='test-attributes'>
-</div>
-<div class='test-steps'>
-<table class='bordered table-results'>
-<thead>
-<tr>
-<th>Status</th>
-<th>Timestamp</th>
-<th>Details</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
-<td class='timestamp'>11:56:50</td>
-<td class='step-details'>Launched the URL and login page is displayed</td>
-</tr>
-<tr>
-<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
-<td class='timestamp'>11:56:51</td>
-<td class='step-details'>Enter valid login credential and click on Login button,Admin Landing page displayed</td>
-</tr>
-<tr>
-<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
-<td class='timestamp'>11:56:52</td>
-<td class='step-details'>Manage tab clicked</td>
-</tr>
-<tr>
-<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
-<td class='timestamp'>11:57:10</td>
-<td class='step-details'>Manage button clicked for particular job</td>
-</tr>
-<tr>
-<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
-<td class='timestamp'>11:57:10</td>
-<td class='step-details'>Align agency tab clicked</td>
-</tr>
-<tr>
-<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
-<td class='timestamp'>11:57:11</td>
-<td class='step-details'>Agency partner successfully aligned</td>
-</tr>
-<tr>
-<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
-<td class='timestamp'>11:57:11</td>
-<td class='step-details'>Align of an agency by workstreets admin completed</td>
-</tr>
-</tbody>
-</table>
-<ul class='collapsible node-list' data-collapsible='accordion'>
-</ul>
-</div>
-</div>
-</li>
-<li class='collection-item test displayed active pass ' extentid='902f2112-dc5b-46a8-b575-d47236c68a47'>
-<div class='test-head'>
-<span class='test-name'>SC_087_Verifying Guaranteed Submission of JOb </span>
-<span class='test-status label right outline capitalize pass'>pass</span>
-<span class='category-assigned hide '></span>
-</div>
-<div class='test-body'>
-<div class='test-info'>
-<span title='Test started time' alt='Test started time' class='test-started-time label green lighten-1 text-white'>2018-08-31 11:57:17</span>
-<span title='Test ended time' alt='Test ended time' class='test-ended-time label red lighten-1 text-white'>2018-08-31 11:57:22</span>
-<span title='Time taken to finish' alt='Time taken to finish' class='test-time-taken label blue-grey lighten-3 text-white'>0h 0m 4s+934ms</span>
-</div>
-<div class='test-desc'></div>
-<div class='test-attributes'>
-</div>
-<div class='test-steps'>
-<table class='bordered table-results'>
-<thead>
-<tr>
-<th>Status</th>
-<th>Timestamp</th>
-<th>Details</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
-<td class='timestamp'>11:57:19</td>
-<td class='step-details'>Launched the URL and login page is displayed</td>
-</tr>
-<tr>
-<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
-<td class='timestamp'>11:57:20</td>
-<td class='step-details'>Enter valid login credential and click on Login button,Agency Partner Landing page displayed</td>
-</tr>
-<tr>
-<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
-<td class='timestamp'>11:57:20</td>
-<td class='step-details'>Agency Campaigns tab clicked</td>
-</tr>
-<tr>
-<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
-<td class='timestamp'>11:57:22</td>
-<td class='step-details'>Accept button clicked in job card</td>
-</tr>
-<tr>
-<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
-<td class='timestamp'>11:57:22</td>
-<td class='step-details'>Accept Agency Campaigns verification completed</td>
-</tr>
-</tbody>
-</table>
-<ul class='collapsible node-list' data-collapsible='accordion'>
-</ul>
-</div>
-</div>
-</li>
-<li class='collection-item test displayed active pass ' extentid='0b5c86cc-92a5-463b-b83a-c72cf854e03f'>
-<div class='test-head'>
-<span class='test-name'>SC_101_Verifying tag candidate by agency partner </span>
-<span class='test-status label right outline capitalize pass'>pass</span>
-<span class='category-assigned hide '></span>
-</div>
-<div class='test-body'>
-<div class='test-info'>
-<span title='Test started time' alt='Test started time' class='test-started-time label green lighten-1 text-white'>2018-08-31 11:57:28</span>
-<span title='Test ended time' alt='Test ended time' class='test-ended-time label red lighten-1 text-white'>2018-08-31 11:57:39</span>
-<span title='Time taken to finish' alt='Time taken to finish' class='test-time-taken label blue-grey lighten-3 text-white'>0h 0m 11s+257ms</span>
-</div>
-<div class='test-desc'></div>
-<div class='test-attributes'>
-</div>
-<div class='test-steps'>
-<table class='bordered table-results'>
-<thead>
-<tr>
-<th>Status</th>
-<th>Timestamp</th>
-<th>Details</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
-<td class='timestamp'>11:57:30</td>
-<td class='step-details'>Launched the URL and login page is displayed</td>
-</tr>
-<tr>
-<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
-<td class='timestamp'>11:57:31</td>
-<td class='step-details'>Enter valid login credential and click on Login button, Agency Partner Landing page displayed</td>
-</tr>
-<tr>
-<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
-<td class='timestamp'>11:57:31</td>
-<td class='step-details'>Myassigment tab clicked</td>
-</tr>
-<tr>
-<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
-<td class='timestamp'>11:57:37</td>
-<td class='step-details'>Assign candidate button clicked</td>
-</tr>
-<tr>
-<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
-<td class='timestamp'>11:57:38</td>
-<td class='step-details'>Tagexisting tab clicked</td>
-</tr>
-<tr>
-<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
-<td class='timestamp'>11:57:39</td>
-<td class='step-details'>Search button clicked</td>
-</tr>
-<tr>
-<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
-<td class='timestamp'>11:57:39</td>
-<td class='step-details'>Candidate tagged successfully</td>
-</tr>
-<tr>
-<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
-<td class='timestamp'>11:57:39</td>
-<td class='step-details'>Candidate tag verification completed</td>
-</tr>
-</tbody>
-</table>
-<ul class='collapsible node-list' data-collapsible='accordion'>
-</ul>
-</div>
-</div>
-</li>
-<li class='collection-item test displayed active pass ' extentid='0d6e835f-1417-45e6-9f77-8fb226fb2ad2'>
-<div class='test-head'>
-<span class='test-name'>SC_080_Verifying Acceptance of Review Submission by Admin </span>
-<span class='test-status label right outline capitalize pass'>pass</span>
-<span class='category-assigned hide '></span>
-</div>
-<div class='test-body'>
-<div class='test-info'>
-<span title='Test started time' alt='Test started time' class='test-started-time label green lighten-1 text-white'>2018-08-31 11:57:45</span>
-<span title='Test ended time' alt='Test ended time' class='test-ended-time label red lighten-1 text-white'>2018-08-31 11:58:07</span>
-<span title='Time taken to finish' alt='Time taken to finish' class='test-time-taken label blue-grey lighten-3 text-white'>0h 0m 21s+898ms</span>
-</div>
-<div class='test-desc'></div>
-<div class='test-attributes'>
-</div>
-<div class='test-steps'>
-<table class='bordered table-results'>
-<thead>
-<tr>
-<th>Status</th>
-<th>Timestamp</th>
-<th>Details</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
-<td class='timestamp'>11:57:48</td>
-<td class='step-details'>Launched the URL and login page is displayed</td>
-</tr>
-<tr>
-<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
-<td class='timestamp'>11:57:48</td>
-<td class='step-details'>Enter valid login credential and click on Login button, Admin Landing page displayed</td>
-</tr>
-<tr>
-<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
-<td class='timestamp'>11:57:49</td>
-<td class='step-details'>Manage tab clicked</td>
-</tr>
-<tr>
-<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
-<td class='timestamp'>11:58:06</td>
-<td class='step-details'>Manage job button clicked</td>
-</tr>
-<tr>
-<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
-<td class='timestamp'>11:58:07</td>
-<td class='step-details'>Review Submission tab clicked</td>
-</tr>
-<tr>
-<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
-<td class='timestamp'>11:58:07</td>
-<td class='step-details'>Accept button clicked in Review submission</td>
-</tr>
-<tr>
-<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
-<td class='timestamp'>11:58:07</td>
-<td class='step-details'>Accept candidate in Review submission completed</td>
-</tr>
-</tbody>
-</table>
-<ul class='collapsible node-list' data-collapsible='accordion'>
-</ul>
-</div>
-</div>
-</li>
-<li class='collection-item test displayed active pass ' extentid='a993d810-f4bc-46a3-a7d6-6b31fe5641ab'>
-<div class='test-head'>
-<span class='test-name'>SC_036_verifying Shortlist of a candidate in pending review by corporate </span>
-<span class='test-status label right outline capitalize pass'>pass</span>
-<span class='category-assigned hide '></span>
-</div>
-<div class='test-body'>
-<div class='test-info'>
-<span title='Test started time' alt='Test started time' class='test-started-time label green lighten-1 text-white'>2018-08-31 11:58:13</span>
-<span title='Test ended time' alt='Test ended time' class='test-ended-time label red lighten-1 text-white'>2018-08-31 11:58:23</span>
-<span title='Time taken to finish' alt='Time taken to finish' class='test-time-taken label blue-grey lighten-3 text-white'>0h 0m 9s+773ms</span>
-</div>
-<div class='test-desc'></div>
-<div class='test-attributes'>
-</div>
-<div class='test-steps'>
-<table class='bordered table-results'>
-<thead>
-<tr>
-<th>Status</th>
-<th>Timestamp</th>
-<th>Details</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
-<td class='timestamp'>11:58:15</td>
-<td class='step-details'>Launched the URL and login page is displayed</td>
-</tr>
-<tr>
-<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
-<td class='timestamp'>11:58:16</td>
-<td class='step-details'>Enter valid login credential and click on Login button,Corporate Landing page displayed</td>
-</tr>
-<tr>
-<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
-<td class='timestamp'>11:58:17</td>
-<td class='step-details'>View Responses tab clicked</td>
-</tr>
-<tr>
-<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
-<td class='timestamp'>11:58:23</td>
-<td class='step-details'>Pending review button clicked</td>
-</tr>
-<tr>
-<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
-<td class='timestamp'>11:58:23</td>
-<td class='step-details'>Candidate shortlisted</td>
-</tr>
-<tr>
-<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
-<td class='timestamp'>11:58:23</td>
-<td class='step-details'>Shortlist candidate in pending review page completed</td>
+<td class='timestamp'>14:45:33</td>
+<td class='step-details'><pre>com.relevantcodes.extentreports.ExtentTestInterruptedException: Close was called before test could end safely using EndTest.
+	at com.relevantcodes.extentreports.Report.terminate(Report.java:421)
+	at com.relevantcodes.extentreports.ExtentReports.close(ExtentReports.java:919)
+	at com.controller.Action_Method.onFinish(Action_Method.java:249)
+	at org.testng.TestRunner.fireEvent(TestRunner.java:772)
+	at org.testng.TestRunner.afterRun(TestRunner.java:741)
+	at org.testng.TestRunner.run(TestRunner.java:509)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:364)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
+	at org.testng.TestNG.runSuites(TestNG.java:1049)
+	at org.testng.TestNG.run(TestNG.java:1017)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+</pre></td>
 </tr>
 </tbody>
 </table>
@@ -1601,6 +350,86 @@ ExtentReports 2.0
 <!-- /categories -->
 
 <!-- exceptions -->
+<div id='exceptions-view' class='row _addedTable hide'>
+<div class='col _addedCell1'>
+<div class='contents'>
+<div class='card-panel heading'>
+<h5>Defects</h5>
+</div>
+<div class='card-panel filters'>
+<div class='search' alt='Search tests' title='Search tests'>
+<div class='input-field left'>
+<input id='searchTests' type='text' class='validate' placeholder='Search tests...'>
+</div>
+<i class='mdi-action-search icon'></i>
+</div>
+</div>
+<div class='card-panel no-padding-h no-padding-v'>
+<div class='wrapper'>
+<ul id='exception-collection' class='exception-collection'>
+<li class='exception-item displayed'>
+<div class='exception-head'>
+<span class='exception-name'>com.relevantcodes.extentreports.ExtentTestInterruptedException</span>
+</div>
+<div class='exception-test-count'>
+<span class='fail label'>1</span>
+</div>
+<div class='exception-body'>
+<div class='exception-tests'>
+<table class='bordered'>
+<thead>
+<tr>
+<th>RunDate</th>
+<th>Test Name</th>
+<th>Exception</th>
+</tr>
+</thead>
+<tbody>
+<tr class='fail'>
+<td>2018-12-26 14:44:48</td>
+<td><span class='exception-link linked' extentid='792b9cea-cf19-4a56-9d4d-45504e944684'>Guaranteed Onboarding Basic Flow - Corporate Shortlists Candidates from Pending Review</span></td>
+<td><pre class='exception-message'>com.relevantcodes.extentreports.ExtentTestInterruptedException: Close was called before test could end safely using EndTest.
+	at com.relevantcodes.extentreports.Report.terminate(Report.java:421)
+	at com.relevantcodes.extentreports.ExtentReports.close(ExtentReports.java:919)
+	at com.controller.Action_Method.onFinish(Action_Method.java:249)
+	at org.testng.TestRunner.fireEvent(TestRunner.java:772)
+	at org.testng.TestRunner.afterRun(TestRunner.java:741)
+	at org.testng.TestRunner.run(TestRunner.java:509)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:364)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
+	at org.testng.TestNG.runSuites(TestNG.java:1049)
+	at org.testng.TestNG.run(TestNG.java:1017)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+</pre></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div> 
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div id='exception-details-wrapper' class='col _addedCell2'>
+<div class='contents'>
+<div class='card-panel details-view'>
+<h5 class='exception-name'></h5>
+<div class='exception-container'>
+</div>
+</div>
+</div>
+</div>
+</div>
 <!-- /exceptions -->
 
 <!-- testrunner logs -->

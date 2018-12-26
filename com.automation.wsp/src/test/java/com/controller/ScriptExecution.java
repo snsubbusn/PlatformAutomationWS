@@ -55,10 +55,12 @@ import com.scenarios.WSAdmin_TC001_VerifyAdminLogin;
 import com.scenarios.WSAdmin_TC002_VerifyInvitePage;
 import com.scenarios.WSAdmin_TC003_VerifyFilterUsingCandidate;
 import com.scenarios.WSAdmin_TC004_VerifyFilterUsingCorporateAdmin;
+import com.scenarios.WSAdmin_TC005_VerifyFilterUsingAgent;
+import com.scenarios.WSAdmin_TC006_VerifySortByName;
+import com.scenarios.WSAdmin_TC007_VerifySortByStatus;
+import com.scenarios.WSAdmin_TC008_VerifySortByInvitedOn;
+import com.scenarios.WSAdmin_TC009_VerifyAddNewUserPage;
 
-
-
-//update all the existing test scripts for post a job.
 
 @Listeners(com.controller.Action_Method.class)
 public class ScriptExecution extends Action_Method
@@ -76,7 +78,7 @@ public class ScriptExecution extends Action_Method
 		close_browser();
 	}
 
-/*
+
 	
 	//Verify corporate profile page
 	@Test
@@ -96,7 +98,7 @@ public class ScriptExecution extends Action_Method
 
 	}
 
-			@Test(priority=1)
+		/*	@Test(priority=1)
 		public void TC_003() throws EncryptedDocumentException, InvalidFormatException, IOException, InterruptedException
 		{
 			TC_003_Verify_Corporate_Company_Edit_OfficeLocations_Solutions_offered tc_003 = PageFactory.initElements(driver, TC_003_Verify_Corporate_Company_Edit_OfficeLocations_Solutions_offered.class);
@@ -124,7 +126,7 @@ public class ScriptExecution extends Action_Method
 			tc_006.Verify_Edit_Solutions_Offered();
 
 		}
-
+		 */
 	 
 
 
@@ -309,7 +311,7 @@ public class ScriptExecution extends Action_Method
 
 	//Verify align of an agency by workstreets Admin
 	@Test//(dependsOnMethods="gS2")
-	public void Submission03() throws EncryptedDocumentException, InvalidFormatException, IOException
+	public void Submission03() throws EncryptedDocumentException, InvalidFormatException, IOException, InterruptedException
 	{
 		Sc_068_Verify_AlignOfAnAgency s68=PageFactory.initElements(driver, Sc_068_Verify_AlignOfAnAgency.class);
 		s68.Verify_AlignOfAnAgency();
@@ -337,7 +339,7 @@ public class ScriptExecution extends Action_Method
 
 	//verify Approve of an candidate in review submission by workstreets Admin
 	@Test//(dependsOnMethods="gS5")
-	public void Submission06() throws EncryptedDocumentException, InvalidFormatException, IOException
+	public void Submission06() throws EncryptedDocumentException, InvalidFormatException, IOException, InterruptedException
 	{
 		Sc_080_Verify_Accept_ReviewSubmission s80=PageFactory.initElements(driver, Sc_080_Verify_Accept_ReviewSubmission.class);
 		s80.Accept_ReviewSubmission();
@@ -400,7 +402,7 @@ public class ScriptExecution extends Action_Method
 		ds.verifyCorpAdminDashboardAfterGO();
 	}
 	
-*/	
+
 
 	@Test
 	public void WSAdmin01() throws InterruptedException {
@@ -425,5 +427,34 @@ public class ScriptExecution extends Action_Method
 		WSAdmin_TC004_VerifyFilterUsingCorporateAdmin ws = PageFactory.initElements(driver,WSAdmin_TC004_VerifyFilterUsingCorporateAdmin.class);
 		ws.verifytheFilterBySelectingCorporateAdmin();
 	}
+	
+	@Test
+	public void WSAdmin05() throws InterruptedException {
+		WSAdmin_TC005_VerifyFilterUsingAgent ws = PageFactory.initElements(driver,WSAdmin_TC005_VerifyFilterUsingAgent.class);
+		ws.verifytheFilterBySelectingAgent();
+	}
+	
+	@Test
+	public void WSAdmin06() throws InterruptedException {
+		WSAdmin_TC006_VerifySortByName ws = PageFactory.initElements(driver, WSAdmin_TC006_VerifySortByName.class);
+		ws.verifyWSAdminSortByName();
+	}
+	
+	@Test
+	public void WSAdmin07() throws InterruptedException {
+		WSAdmin_TC007_VerifySortByStatus ws = PageFactory.initElements(driver, WSAdmin_TC007_VerifySortByStatus.class);
+		ws.verifyWSAdminSortByStatus();
+	}
+	
+	@Test
+	public void WSAdmin08() throws InterruptedException {
+		WSAdmin_TC008_VerifySortByInvitedOn ws = PageFactory.initElements(driver, WSAdmin_TC008_VerifySortByInvitedOn.class);
+		ws.verifyWSAdminSortByInvitedOn();
+	}
 
+	@Test
+	public void WSAdmin09() throws InterruptedException {
+		WSAdmin_TC009_VerifyAddNewUserPage ws = PageFactory.initElements(driver, WSAdmin_TC009_VerifyAddNewUserPage.class);
+		ws.verifyAddNewUserPage();
+	}
 }
