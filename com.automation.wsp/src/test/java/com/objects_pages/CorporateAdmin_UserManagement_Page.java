@@ -14,10 +14,13 @@ public class CorporateAdmin_UserManagement_Page extends Action_Method {
 	@FindBy(xpath="//a[contains(text(),'Users')]")
 	WebElement Users;
 
-	@FindBy(xpath="//div[@class='licence_info ng-star-inserted']")
+	//Changing the Xpath due to additional changes in the system by Siva 11-Jan-19
+//	@FindBy(xpath="//div[@class='licence_info ng-star-inserted']")
+//	WebElement licensecount;
+
+	@FindBy(xpath="//div[contains(@class,'licence_info ng-star-inserted')]")
 	WebElement licensecount;
-
-
+	
 	@FindBy(xpath="//div[@class='no-img-wrapper ng-star-inserted']/img")
 	WebElement UsersEmptyPage;
 

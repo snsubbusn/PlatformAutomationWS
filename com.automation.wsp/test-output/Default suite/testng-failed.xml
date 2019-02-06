@@ -6,8 +6,8 @@
       <class name="com.controller.ScriptExecution">
         <methods>
           <include name="Launch_Browser"/>
+          <include name="WSAdmin06"/>
           <include name="Close_Browser"/>
-          <include name="onboarding5"/>
         </methods>
       </class> <!-- com.controller.ScriptExecution -->
     </classes>

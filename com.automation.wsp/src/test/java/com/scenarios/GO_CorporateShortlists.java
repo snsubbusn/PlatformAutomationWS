@@ -282,7 +282,7 @@ public class GO_CorporateShortlists extends Action_Method {
 		
 		String jobCl = view.verifyJobClosed(JobId);
 		
-		if(jobCl.contains("Reopen")) {
+		if(jobCl.contains("Re")) {
 			logger.log(LogStatus.PASS, "GO has been successfully processed and onboarded a candidate. The Status of the Job is "+jobCl);
 		}else {
 			logger.log(LogStatus.FAIL, "GO has been processed but the Job is not closed. the Status is "+jobCl);

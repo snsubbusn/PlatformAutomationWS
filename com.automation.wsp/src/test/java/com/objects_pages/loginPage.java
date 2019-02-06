@@ -41,8 +41,8 @@ public class loginPage extends Action_Method {
 	//Error message present in Login page
 	@FindBy(xpath="//mat-error/div")
 	WebElement Error_Invalid_MailId;
-	
-	
+
+
 	//@FindBy(xpath="//div[contains(text(),'Required fields cannot be empty')]")
 	@FindBy(xpath="")
 	WebElement Error_MandatoryFieldRequired;
@@ -74,9 +74,12 @@ public class loginPage extends Action_Method {
 	WebElement logoutArrow;
 
 	//@FindBy(xpath="//button/mat-icon[@class='menu-icon mat-icon']")
-	@FindBy(xpath="//button[@class='logout-btn mat-menu-item']")
+	@FindBy(xpath="//div[@class='mat-menu-content']/button")
 	WebElement Logout;
-
+	
+/*	@FindBy(css="mat-icon:contains( Logout )")
+	WebElement Logout;
+*/
 	//Actionable methods to be created 
 
 
@@ -229,14 +232,14 @@ public class loginPage extends Action_Method {
 			return false;
 		}
 	}
-	
+
 	public void clickOnLoginTab() {
 		Login_Tab.click();
 	}
 	public boolean Login_Text1()
 	{
 		try {
-			
+
 			return Text1_Under_LoginSection.isDisplayed();
 		}catch(Exception e) {
 			return false;
@@ -245,7 +248,7 @@ public class loginPage extends Action_Method {
 	public boolean Login_Text2()
 	{
 		try {
-			
+
 			return Text2_Under_LoginSection.isDisplayed();
 		}catch(Exception e) {
 			return false;
@@ -254,7 +257,7 @@ public class loginPage extends Action_Method {
 	public boolean Email()
 	{
 		try {
-			
+
 			return Email.isDisplayed();
 		}catch(Exception e) {
 			return false;
@@ -263,7 +266,7 @@ public class loginPage extends Action_Method {
 	public boolean Password()
 	{
 		try {
-			
+
 			return Password.isDisplayed();
 		}catch(Exception e) {
 			return false;
@@ -272,7 +275,7 @@ public class loginPage extends Action_Method {
 	public boolean Login_Button()
 	{
 		try {
-			
+
 			return LoginBtn.isDisplayed();
 		}catch(Exception e) {
 			return false;
@@ -281,7 +284,7 @@ public class loginPage extends Action_Method {
 	public boolean ForgotPasswordLink()
 	{
 		try {
-			
+
 			return ForgotPwd.isDisplayed();
 		}catch(Exception e) {
 			return false;
@@ -289,12 +292,13 @@ public class loginPage extends Action_Method {
 	}
 
 
-	public void logout() throws InterruptedException {
+	public void logout() throws InterruptedException{
+		//Thread.sleep(1000);
 		logoutArrow.click();
 		Thread.sleep(2000);
 		Actions act = new Actions(driver);
-		act.moveToElement(Logout);
-		Logout.click();
+		act.moveToElement(Logout).click().perform();
+		//Logout.click();
 	}
 
 

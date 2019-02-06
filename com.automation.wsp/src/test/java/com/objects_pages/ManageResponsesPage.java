@@ -103,7 +103,7 @@ public class ManageResponsesPage extends Action_Method
 	}
 
 	public String clickonShortlistedofJob(String JobId) throws InterruptedException {
-		WebElement shorlist = driver.findElement(By.xpath("//mat-card[div[div[div[app-job-card-square-header[div[div[div[a[contains(@href,'job/"+JobId+"')]]]]]]]]]//a[contains(text(),'Shortlisted')]"));
+		WebElement shorlist = driver.findElement(By.xpath("//mat-card[div[div[div[app-job-card-square-header[div[div[div[div[span[contains(text(),'"+JobId+"')]]]]]]]]]]//a[contains(text(),'Shortlisted')]"));
 		Thread.sleep(3000);
 		Actions ac = new Actions(driver);
 		ac.moveToElement(shorlist);
@@ -115,7 +115,7 @@ public class ManageResponsesPage extends Action_Method
 	public String verifyJobClosed(String JobId) {
 		Jobs_Tab.click();
 		closedJobs.click();
-		return driver.findElement(By.xpath("//mat-card[div[div[div[app-job-card-square-header[div[div[div[a[contains(@href,'job/"+JobId+"')]]]]]]]]]//button//span[contains(text(),'Reopen')]")).getText();
+		return driver.findElement(By.xpath("//mat-card[div[div[div[app-job-card-square-header[div[div[div[div[span[contains(text(),'#"+JobId+"')]]]]]]]]]]//button//span[contains(text(),'Replicate')]")).getText();
 	}
 
 

@@ -11,6 +11,7 @@ C:\Users\DELL\git\platformautomation\com.automation.wsp\src\test\java\com\scenar
 C:\Users\DELL\git\platformautomation\com.automation.wsp\src\test\java\com\scenarios\CorpAdm_User_TC010_AddDeletedUser.java
 C:\Users\DELL\git\platformautomation\com.automation.wsp\src\test\java\com\objects_pages\Corporate_PostVideoJD_AddVideoPage.java
 C:\Users\DELL\git\platformautomation\com.automation.wsp\src\test\java\com\objects_pages\MyInterviewPage.java
+C:\Users\DELL\git\platformautomation\com.automation.wsp\src\test\java\com\scenarios\WSAdmin_TC010_VerifyEditingCorpAdminUnderInvite.java
 C:\Users\DELL\git\platformautomation\com.automation.wsp\src\test\java\com\objects_pages\ManageJobPage.java
 C:\Users\DELL\git\platformautomation\com.automation.wsp\src\test\java\com\scenarios\CorpAdm_Dashboard_TC001_VerifyDashboard.java
 C:\Users\DELL\git\platformautomation\com.automation.wsp\src\test\java\com\objects_pages\ShortlistedCandidate.java
@@ -63,6 +64,7 @@ C:\Users\DELL\git\platformautomation\com.automation.wsp\src\test\java\com\scenar
 C:\Users\DELL\git\platformautomation\com.automation.wsp\src\test\java\com\scenarios\GO_AgentAcceptandTagCandidates.java
 C:\Users\DELL\git\platformautomation\com.automation.wsp\src\test\java\com\scenarios\TC_001_Verify_LoginPage.java
 C:\Users\DELL\git\platformautomation\com.automation.wsp\src\test\java\com\objects_pages\Corporate_Profile_Media.java
+C:\Users\DELL\git\platformautomation\com.automation.wsp\src\test\java\com\scenarios\WSAdmin_TC011_VerifyJobsTabandCountsofJobs.java
 C:\Users\DELL\git\platformautomation\com.automation.wsp\src\test\java\com\objects_pages\Corporate_Profile_OfficeLocations_Page.java
 C:\Users\DELL\git\platformautomation\com.automation.wsp\src\test\java\com\scenarios\TC_002_Verify_Corporate_Company_Info_Error_Notification.java
 C:\Users\DELL\git\platformautomation\com.automation.wsp\src\test\java\com\scenarios\WSAdmin_TC007_VerifySortByStatus.java

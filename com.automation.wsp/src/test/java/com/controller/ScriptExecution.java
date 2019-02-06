@@ -60,6 +60,8 @@ import com.scenarios.WSAdmin_TC006_VerifySortByName;
 import com.scenarios.WSAdmin_TC007_VerifySortByStatus;
 import com.scenarios.WSAdmin_TC008_VerifySortByInvitedOn;
 import com.scenarios.WSAdmin_TC009_VerifyAddNewUserPage;
+import com.scenarios.WSAdmin_TC010_VerifyEditingCorpAdminUnderInvite;
+import com.scenarios.WSAdmin_TC011_VerifyJobsTabandCountsofJobs;
 
 
 @Listeners(com.controller.Action_Method.class)
@@ -456,5 +458,17 @@ public class ScriptExecution extends Action_Method
 	public void WSAdmin09() throws InterruptedException {
 		WSAdmin_TC009_VerifyAddNewUserPage ws = PageFactory.initElements(driver, WSAdmin_TC009_VerifyAddNewUserPage.class);
 		ws.verifyAddNewUserPage();
+	}
+	
+	@Test
+	public void WSAdmin10() throws EncryptedDocumentException, InvalidFormatException, IOException, InterruptedException {
+		WSAdmin_TC010_VerifyEditingCorpAdminUnderInvite ws = PageFactory.initElements(driver, WSAdmin_TC010_VerifyEditingCorpAdminUnderInvite.class);
+		ws.verifyEditInvitedCorporateAdminUser();
+	}
+	
+	@Test
+	public void WSAdmin11() throws InterruptedException {
+		WSAdmin_TC011_VerifyJobsTabandCountsofJobs ws = PageFactory.initElements(driver, WSAdmin_TC011_VerifyJobsTabandCountsofJobs.class);
+		ws.verifytheJobsTabandGetTheCountOfJobsInEachSection();
 	}
 }

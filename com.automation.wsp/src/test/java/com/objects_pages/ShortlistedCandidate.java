@@ -25,13 +25,13 @@ public class ShortlistedCandidate extends Action_Method {
 	@FindBy(xpath="//mat-radio-button[2]")
 	WebElement FixedSlot;
 
-	@FindBy(xpath="//div[@class='mat-input-infix mat-form-field-infix']/input[@formcontrolname='fromDate']")
+	@FindBy(xpath="//div[@class='mat-form-field-infix']/input[@formcontrolname='fromDate']")
 	WebElement FixedSlotDate;
 
-	@FindBy(xpath="//div[@class='mat-input-infix mat-form-field-infix']/input[@id='time_Control']")
+	@FindBy(xpath="//div[@class='mat-form-field-infix']/input[@id='time_Control']")
 	WebElement FixedSlotTime;
 
-	@FindBy(xpath="//div[@class='mat-input-infix mat-form-field-infix']/input[@id='time_Control']/following::button")
+	@FindBy(xpath="//div[@class='mat-form-field-infix']/input[@id='time_Control']/following::button")
 	WebElement FixedSlotScheduleButton;
 	
 	@FindBy(id="location")
@@ -63,7 +63,7 @@ public class ShortlistedCandidate extends Action_Method {
 	WebElement makeOffer;
 
 	
-	@FindBy(xpath="//div[@class='mat-input-infix mat-form-field-infix']/input[@formcontrolname='joiningDate']")
+	@FindBy(xpath="//div[@class='mat-form-field-infix']/input[@formcontrolname='joiningDate']")
 	WebElement joiningDate;
 	
 	@FindBy(id="billedCTC")

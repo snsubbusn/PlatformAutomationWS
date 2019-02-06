@@ -5,21 +5,29 @@
     <classes>
       <class name="com.controller.ScriptExecution">
         <methods>
-          <include name="CorpUserMangement08"/>
           <include name="CorporateDashboard03"/>
           <include name="CorporateDashboard02"/>
           <include name="Close_Browser"/>
           <include name="CorpUserMangement10"/>
-          <include name="Submission04"/>
-          <include name="Submission06"/>
+          <include name="CorpUserMangement12"/>
           <include name="onboarding2"/>
+          <include name="WSAdmin09"/>
+          <include name="WSAdmin06"/>
+          <include name="CorpUserMangement07"/>
+          <include name="CorporateJob2"/>
+          <include name="CorpUserMangement08"/>
+          <include name="CorpUserMangement03"/>
+          <include name="CorpUserMangement02"/>
+          <include name="CorpUserMangement05"/>
+          <include name="CorpUserMangement04"/>
+          <include name="CorpUserMangement01"/>
           <include name="onboarding1"/>
-          <include name="WSAdmin08"/>
           <include name="Submission01"/>
           <include name="Submission02"/>
           <include name="Launch_Browser"/>
+          <include name="CorpUserMangement06"/>
           <include name="CorpProfile1"/>
-          <include name="Submission03"/>
+          <include name="WSAdmin11"/>
           <include name="onboarding5"/>
           <include name="onboarding4"/>
           <include name="onboarding3"/>

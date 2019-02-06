@@ -26,6 +26,8 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
+import org.openqa.selenium.remote.CapabilityType;
+import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.events.EventFiringWebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -217,9 +219,12 @@ public class Action_Method implements ITestListener {
 			co.addArguments("disable-infobars");
 			co.addArguments("use-fake-ui-for-media-stream");
 			//co.addArguments("user-data-dir=/path/to/the/saved/profileDir");
-			/*DesiredCapabilities capbility=DesiredCapabilities.chrome();
-				capbility.setCapability(CapabilityType.ACCEPT_SSL_CERTS,true);
-				capbility.setCapability(ChromeOptions.CAPABILITY,co);*/
+			DesiredCapabilities capbility=DesiredCapabilities.chrome();
+				capbility.setCapability("acceptSslCerts",true);
+				capbility.setCapability("acceptInsecureCerts", true);
+				capbility.setCapability("browserConnectionEnabled", true);
+				capbility.setCapability(ChromeOptions.CAPABILITY,co);
+				co.merge(capbility);
 			driver=new ChromeDriver(co);
 			driver.manage().window().maximize();
 
