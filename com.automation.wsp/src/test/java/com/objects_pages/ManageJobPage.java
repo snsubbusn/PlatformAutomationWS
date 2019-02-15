@@ -1,5 +1,8 @@
 package com.objects_pages;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
@@ -17,6 +20,13 @@ public class ManageJobPage extends Action_Method
 	
 	@FindBy(xpath="//div[contains(text(),'Active Jobs')]")
 	WebElement activeJobs;
+	
+	@FindBy(xpath="//div[contains(text(),'On Hold Jobs')]")
+	WebElement onHoldJobs; 
+	 
+	@FindBy(xpath="//div[contains(text(),'Closed Jobs')]")
+	WebElement closedJobs; 
+	
 	
 	//Identifying Elements present in Job card under manage job page
 //	@FindBy(xpath="//mat-card[div[div[div[app-job-card-square-header[div[div[div[contains(text(),'#55')]]]]]]]]//button[@class='assign-cadidates hidden-xs hidden-sm mat-raised-button mat-primary']")
@@ -38,6 +48,11 @@ public class ManageJobPage extends Action_Method
 //	@FindBy(xpath="//div[div[app-candidate-card-square-header[div[div[div[contains(text(),'Siva 1212')]]]]]]/following::button[span[contains(text(),'Accept')]]")
 	@FindBy(xpath="//button[span[contains(text(),'Accept')]]")
 	WebElement Accept_ReviewSubmission;
+	
+	@FindBy(xpath="//app-pagination/span[@class='pagination-bottom']")
+	WebElement paginationBottom;
+	
+	
 	
 	
 	public boolean clickOnActiveJobs() throws InterruptedException
@@ -71,6 +86,40 @@ public class ManageJobPage extends Action_Method
 			return false;
 		}
 	}
+	
+	public boolean clickOnOnHoldJobs() throws InterruptedException
+	{
+		try 
+		{
+			Thread.sleep(1000);
+			jobs.click();
+			onHoldJobs.click();
+			return true;
+		} 
+		catch (NoSuchElementException e) 
+		{
+			return false;
+		}
+		
+	}
+	
+	public boolean clickOnClosedJobs() throws InterruptedException
+	{
+		try 
+		{
+			Thread.sleep(1000);
+			jobs.click();
+			closedJobs.click();
+			return true;
+		} 
+		catch (NoSuchElementException e) 
+		{
+			return false;
+		}
+		
+	}
+	
+	
 	public boolean Click_On_AlignAgency_Tab()
 	{
 		try 
@@ -121,6 +170,22 @@ public class ManageJobPage extends Action_Method
 		}
 	}
 	
+	
+	public String getTotalRecordsofthePage() {
+		String rec = paginationBottom.getText();
+		String [] recd = rec.split(" ");
+		return recd[5];
+		/*System.out.println(rec);
+		String pattern = "(?<=of)([0-9]+)(?=items)";
+		Pattern r = Pattern.compile(pattern);
+		Matcher m = r.matcher(rec);
+		if(m.find()) {
+			System.out.println("reg"+m.group(0));
+			//System.out.println(m);
+			//System.out.println(m.group(2));
+		}
+		*/		
+	}
 	
 	
 	

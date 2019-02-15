@@ -101,6 +101,7 @@ public class WSAdminGenPage extends Action_Method{
 	@FindBy(xpath="//div/button[contains(text(),'Update')]")
 	WebElement updateLicenseButton;
 	
+	
 
 	//Methods for WS Admin scenarios.
 

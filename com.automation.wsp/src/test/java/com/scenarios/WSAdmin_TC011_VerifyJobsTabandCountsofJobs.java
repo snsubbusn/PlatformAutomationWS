@@ -34,8 +34,49 @@ public class WSAdmin_TC011_VerifyJobsTabandCountsofJobs extends Action_Method{
 		}
 		
 		logger.log(LogStatus.INFO, "Get the total count of records present in the Active Jobs page");
-	
+			
+		String rec = mp.getTotalRecordsofthePage();
+		if(!rec.isEmpty()) {
+			logger.log(LogStatus.PASS, "Threr are "+rec+" Jobs in the \"Active Jobs\" Page");
+		}else {
+			logger.log(LogStatus.FAIL, "There are no records in the \"Active Jobs\" page");
+		}
    
+		logger.log(LogStatus.INFO, "Click on On Hold Job and get the count of records present in the 'On Hold Jobs' page");
+		
+		if(mp.clickOnOnHoldJobs()) {
+			logger.log(LogStatus.PASS, "Navigated to \"On Hold Jobs\" page successfully");
+		}else {
+			logger.log(LogStatus.FAIL, "Failed to navigate to \"On Hold Jobs\" page page");
+		}
+		
+		logger.log(LogStatus.INFO, "Get the total count of records present in the \"On Hold Jobs\" page");
+			
+		String recOnHold = mp.getTotalRecordsofthePage();
+		if(!recOnHold.isEmpty()) {
+			logger.log(LogStatus.PASS, "Threr are "+recOnHold+" Jobs in the \"OnHold Jobs\" Page");
+		}else {
+			logger.log(LogStatus.FAIL, "There are no records in the \"OnHold Jobs\" page");
+		}
+		
+		logger.log(LogStatus.INFO, "Click on Closed Job and get the count of records present in the 'Closed Jobs' page");
+		
+		if(mp.clickOnClosedJobs()) {
+			logger.log(LogStatus.PASS, "Navigated to \"Closed Jobs\" page successfully");
+		}else {
+			logger.log(LogStatus.FAIL, "Failed to navigate to \"Closed Jobs\" page page");
+		}
+		
+		logger.log(LogStatus.INFO, "Get the total count of records present in the \"Closed Jobs\" page");
+			
+		String recClosed = mp.getTotalRecordsofthePage();
+		if(!recClosed.isEmpty()) {
+			logger.log(LogStatus.PASS, "Threr are "+recClosed+" Jobs in the \"Closed Jobs\" Page");
+		}else {
+			logger.log(LogStatus.FAIL, "There are no records in the \"Closed Jobs\" page");
+		}
+		
+		
 		extent.endTest(logger);
 		lp.logout();
 	}
