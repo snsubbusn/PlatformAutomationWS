@@ -62,6 +62,10 @@ import com.scenarios.WSAdmin_TC008_VerifySortByInvitedOn;
 import com.scenarios.WSAdmin_TC009_VerifyAddNewUserPage;
 import com.scenarios.WSAdmin_TC010_VerifyEditingCorpAdminUnderInvite;
 import com.scenarios.WSAdmin_TC011_VerifyJobsTabandCountsofJobs;
+import com.scenarios.WSAdmin_TC012_VerifyUsersTab;
+import com.scenarios.WSAdmin_TC014_VerifyAddUserPageValidation;
+import com.scenarios.WSAdmin_TC015_AddNewAdminUser;
+import com.scenarios.WSAdmin_TC013_VerifyUsersAddUser;
 
 
 @Listeners(com.controller.Action_Method.class)
@@ -471,4 +475,30 @@ public class ScriptExecution extends Action_Method
 		WSAdmin_TC011_VerifyJobsTabandCountsofJobs ws = PageFactory.initElements(driver, WSAdmin_TC011_VerifyJobsTabandCountsofJobs.class);
 		ws.verifytheJobsTabandGetTheCountOfJobsInEachSection();
 	}
+	
+	@Test
+	public void WSAdmin12() throws InterruptedException {
+		WSAdmin_TC012_VerifyUsersTab ws = PageFactory.initElements(driver, WSAdmin_TC012_VerifyUsersTab.class);
+		ws.verifyUsersTabOfWSAdmin();
+	}
+	
+	@Test
+	public void WSAdmin13() throws InterruptedException {
+		WSAdmin_TC013_VerifyUsersAddUser ws = PageFactory.initElements(driver, WSAdmin_TC013_VerifyUsersAddUser.class);
+		ws.verifyUsersTabAddNewUser();
+	}
+	
+	@Test
+	public void WSAdmin14() throws InterruptedException {
+		WSAdmin_TC014_VerifyAddUserPageValidation ws = PageFactory.initElements(driver, WSAdmin_TC014_VerifyAddUserPageValidation.class);
+		ws.verifyUsersTabAddNewUser();
+	}
+	
+	@Test
+	public void WSAdmin15() throws InterruptedException {
+		WSAdmin_TC015_AddNewAdminUser ws = PageFactory.initElements(driver, WSAdmin_TC015_AddNewAdminUser.class);
+		ws.verifyAddingNewUser();
+	}
+	
+	
 }

@@ -233,7 +233,6 @@ public class WSAdminGenPage extends Action_Method{
 				}
 			}
 			paginationNext.click();
-
 		}
 
 		return false;
