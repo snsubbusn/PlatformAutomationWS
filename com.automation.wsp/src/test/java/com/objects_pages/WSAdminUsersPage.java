@@ -54,6 +54,8 @@ public class WSAdminUsersPage extends Action_Method {
 	@FindBy(xpath="//div[contains(text(),'User')]")
 	WebElement addUserHeading;
 	
+	@FindBy(xpath="//div[@class='heading']")
+	WebElement editUserHeading;
 	
 	@FindBy(xpath="//button[contains(text(),'Save')]")
 	WebElement saveButton;
@@ -93,6 +95,14 @@ public class WSAdminUsersPage extends Action_Method {
 
 	@FindBy(xpath="//div[contains(text(),'Password Updated Successfully')]")
 	WebElement changePwdSuccessMsg;
+	
+	@FindBy(xpath="//div[contains(text(),'already')]")
+	WebElement alreadyInUseError;
+	
+	@FindBy(xpath="//button[contains(text(),'Update')]")
+	WebElement updateButton;
+	
+	
 	
 	//Methods
 	public void clickOnUsersTab() throws InterruptedException {
@@ -143,5 +153,47 @@ public class WSAdminUsersPage extends Action_Method {
 	public String getFirstUserCardPhone() {
 		return firstUserCardPhoneNo.getText();
 	}
+	
+	public String alreadyInvitedUserError() {
+		return alreadyInUseError.getText();
+	}
 
+	
+	public String clickOnFirstUserCardEdit() {
+		firstUserCardEditIcon.click();
+		return editUserHeading.getText();
+	}
+	
+	
+	public String editName() {
+		name.clear();
+		name.sendKeys("EditedUser");
+		updateButton.click();
+		return successMsgUserDetails.getText();
+	}
+
+	public String editEmailId() {
+		email.clear();
+		email.sendKeys("edituser@mailinator.com");
+		updateButton.click();
+		return successMsgUserDetails.getText();
+	}
+
+	public String editPhone() {
+		phoneNum.clear();
+		phoneNum.sendKeys("9952845872");
+		updateButton.click();
+		return successMsgUserDetails.getText();
+	}
+	
+	
+	public String deleteFirstUser() {
+		firstUserCardDelete.click();
+		confirmProceedButton.click();
+		String r = deleteSuccessMsg.getText();
+		successMsgClose.click();
+		return r;
+	}
+
+	
 }

@@ -12,7 +12,7 @@ import com.relevantcodes.extentreports.LogStatus;
 
 public class WSAdmin_TC009_VerifyAddNewUserPage extends Action_Method{
 	public void verifyAddNewUserPage() throws InterruptedException {
-		logger = extent.startTest("Verify the WS Admin Add New Page_TC009");
+		logger = extent.startTest("Verify the WS Admin Add New User Page_TC009");
 		driver.manage().timeouts().implicitlyWait(1, TimeUnit.MINUTES);
 
 		//Launching the URL
