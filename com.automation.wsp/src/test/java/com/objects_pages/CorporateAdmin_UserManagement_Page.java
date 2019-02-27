@@ -175,8 +175,8 @@ public class CorporateAdmin_UserManagement_Page extends Action_Method {
 		name.sendKeys("Automate"+userno);
 		email.sendKeys("automate"+userno+"@mailinator.com");
 		phoneNum.sendKeys("8147506453");
-		password.sendKeys("admin@123");
-		confirmPassword.sendKeys("admin@123");
+		//password.sendKeys("admin@123");
+		//confirmPassword.sendKeys("admin@123");
 		saveButton.click();			
 	}
 
@@ -187,11 +187,11 @@ public class CorporateAdmin_UserManagement_Page extends Action_Method {
 		email.sendKeys(Email);
 		phoneNum.clear();
 		phoneNum.sendKeys(Phone);
-		password.clear();
+		/*password.clear();
 		password.sendKeys("admin@123");
 		confirmPassword.clear();
 		confirmPassword.sendKeys("admin@123");
-		saveButton.click();			
+		*/saveButton.click();			
 	}
 
 	public String getErrorforAllLicenseUsed() {
@@ -224,7 +224,7 @@ public class CorporateAdmin_UserManagement_Page extends Action_Method {
 
 	public String editEmailId() {
 		email.clear();
-		email.sendKeys("edituser@mailinator.com");
+		email.sendKeys("editeduser@mailinator.com");
 		updateButton.click();
 		return successMsgUserDetails.getText();
 	}
@@ -236,6 +236,9 @@ public class CorporateAdmin_UserManagement_Page extends Action_Method {
 		return successMsgUserDetails.getText();
 	}
 
+	//changePassword is a redundant method as the password related changes have 
+	// been removed as part of 
+	//https://otpinternet.atlassian.net/browse/W1O2-1734
 	public String changePassword() {
 		password.sendKeys("admin@123");
 		confirmPassword.sendKeys("admin@123");
@@ -257,10 +260,10 @@ public class CorporateAdmin_UserManagement_Page extends Action_Method {
 		String name = errorName.getText();
 		String email = errorEmail.getText();
 		String phone = errorPhone.getText();
-		String pass = errorpassword.getText();
+	/*	String pass = errorpassword.getText();
 		String confirm = errorconfirmPassword.getText();
-
-		String a = "'"+name+"'; '"+email+"'; '"+phone+"'; '"+pass+"'; '"+confirm+"';";
+*/
+		String a = "'"+name+"'; '"+email+"'; '"+phone+"';";
 		return a;
 	}
 
@@ -270,7 +273,7 @@ public class CorporateAdmin_UserManagement_Page extends Action_Method {
 		return errorPhone.getText();
 	}
 
-	public String invlaidPassword() {
+/*	public String invlaidPassword() {
 		password.sendKeys("abds");
 		return errorpassword.getText();
 	}
@@ -281,7 +284,7 @@ public class CorporateAdmin_UserManagement_Page extends Action_Method {
 		confirmPassword.sendKeys("adm@123432");
 		return errorconfirmPassword.getText();
 	}
-
+*/
 	public String alreadyInvitedUserError() {
 		return alreadyInvitedError.getText();
 	}

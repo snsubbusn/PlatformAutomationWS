@@ -65,6 +65,11 @@ import com.scenarios.WSAdmin_TC011_VerifyJobsTabandCountsofJobs;
 import com.scenarios.WSAdmin_TC012_VerifyUsersTab;
 import com.scenarios.WSAdmin_TC014_VerifyAddUserPageValidation;
 import com.scenarios.WSAdmin_TC015_AddNewAdminUser;
+import com.scenarios.WSAdmin_TC016_AddingExistingUser;
+import com.scenarios.WSAdmin_TC017_EditExistingAdminUserName;
+import com.scenarios.WSAdmin_TC018_EditExistingAdminUserEmail;
+import com.scenarios.WSAdmin_TC019_EditExistingAdminUserPhone;
+import com.scenarios.WSAdmin_TC020_DeleteFirstAdminUser;
 import com.scenarios.WSAdmin_TC013_VerifyUsersAddUser;
 
 
@@ -164,18 +169,21 @@ public class ScriptExecution extends Action_Method
 		corp.editCorpUsersforEmailField();
 	}
 
-	@Test
+	@Test 
 	public void CorpUserMangement05() throws InterruptedException {
 		CorpAdm_User_TC006_EditPhone corp = PageFactory.initElements(driver, CorpAdm_User_TC006_EditPhone.class);
 		corp.editCorpUsersforPhoneNumber();
 	}
 
-	@Test 
+	//This test case has been removed as part of Sprint 24 Since the password
+	//field has been removed and the password is auto generated. 
+	//https://otpinternet.atlassian.net/browse/W1O2-1734
+	/*@Test 
 	public void CorpUserMangement06() throws InterruptedException {
 		CorpAdm_User_TC007_EditPasswordChange corp = PageFactory.initElements(driver, CorpAdm_User_TC007_EditPasswordChange.class);
 		corp.editCorpUsersforPasswordChange();
 	}	
-
+*/
 
 	@Test 
 	public void CorpUserMangement07() throws InterruptedException {
@@ -500,5 +508,35 @@ public class ScriptExecution extends Action_Method
 		ws.verifyAddingNewUser();
 	}
 	
+	
+	@Test
+	public void WSAdmin16() throws InterruptedException {
+		WSAdmin_TC016_AddingExistingUser ws = PageFactory.initElements(driver, WSAdmin_TC016_AddingExistingUser.class);
+		ws.verifyAddingExistingAdminUser();
+	}
+	
+	@Test
+	public void WSAdmin17() throws InterruptedException {
+		WSAdmin_TC017_EditExistingAdminUserName ws = PageFactory.initElements(driver, WSAdmin_TC017_EditExistingAdminUserName.class);
+		ws.verifyEditingExistingAdminUserName();
+	}
+	
+	@Test
+	public void WSAdmin18() throws InterruptedException {
+		WSAdmin_TC018_EditExistingAdminUserEmail ws = PageFactory.initElements(driver, WSAdmin_TC018_EditExistingAdminUserEmail.class);
+		ws.verifyEditingExistingAdminUserEmail();
+	}
+	
+	@Test
+	public void WSAdmin19() throws InterruptedException {
+		WSAdmin_TC019_EditExistingAdminUserPhone ws = PageFactory.initElements(driver, WSAdmin_TC019_EditExistingAdminUserPhone.class);
+		ws.verifyEditingExistingAdminUserPhone();
+	}
+	
+	@Test
+	public void WSAdmin20() throws InterruptedException {
+		WSAdmin_TC020_DeleteFirstAdminUser ws = PageFactory.initElements(driver, WSAdmin_TC020_DeleteFirstAdminUser.class);
+		ws.verifyDeletingFirstAdminUser();
+	}
 	
 }

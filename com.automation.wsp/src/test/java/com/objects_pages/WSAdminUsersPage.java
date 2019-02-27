@@ -129,16 +129,15 @@ public class WSAdminUsersPage extends Action_Method {
 	
 	public String verifyErrorMessageforAllField() {
 		saveButton.click();
-		return nameError.getText()+"; "+emailError.getText()+"; "+phoneNoError.getText()+"; "+
-				passwordError.getText()+"; "+confirmPasswordError.getText();
+		return nameError.getText()+"; "+emailError.getText()+"; "+phoneNoError.getText();
 	}
 	
 	public void addAdminUser(){
 		name.sendKeys("RegressionAdminUser");
 		email.sendKeys("Regress@mailinator.com");
 		phoneNum.sendKeys("8147506453");
-		password.sendKeys("admin@123");
-		confirmPassword.sendKeys("admin@123");
+		//password.sendKeys("admin@123");
+		//confirmPassword.sendKeys("admin@123");
 		saveButton.click();			
 	}
 	

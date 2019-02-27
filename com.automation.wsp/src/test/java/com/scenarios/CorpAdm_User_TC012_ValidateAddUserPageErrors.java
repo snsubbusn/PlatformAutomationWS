@@ -58,7 +58,7 @@ public class CorpAdm_User_TC012_ValidateAddUserPageErrors extends Action_Method{
 			logger.log(LogStatus.FAIL, "The error message displayed is not relevant. The error is - "+phoneError);
 		}
 		
-		logger.log(LogStatus.INFO, "Verify the error message for invalid password");
+/*		logger.log(LogStatus.INFO, "Verify the error message for invalid password");
 		String passError = user.invlaidPassword();
 		if(passError.contains("combination")) {
 			logger.log(LogStatus.PASS, "Verified the error message for invlid password. The error is - "+passError);
@@ -74,7 +74,7 @@ public class CorpAdm_User_TC012_ValidateAddUserPageErrors extends Action_Method{
 		}else {
 			logger.log(LogStatus.FAIL, "The error message displayed is not relevant. The error is - "+notMatchError);
 		}
-		
+*/		
 		logger.log(LogStatus.INFO, "Verify the error message for adding the existing user");
 		user.addDeletedCorporateUser("NewUser", "new@mailinator.com", "8147506453");
 		user.clickonAddButton();

@@ -30,7 +30,13 @@ public class MyAssignmentsPage extends Action_Method
 	
 	//Tagging the first candidate
 	@FindBy(xpath="//a[span[contains(text(),'Tag')]]")
-	WebElement Tag_Button_TagRxisting;
+	WebElement Tag_Button_TagExisting;
+	
+	@FindBy(xpath="//div[contains(text(), 'Salary')]/preceding-sibling::div")
+	WebElement salaryHikeReasonRadioBtn;
+	
+	@FindBy(xpath="//button//span[contains(text(), 'Done')]")
+	WebElement doneButton;
 	
 	@FindBy(id="email")
 	WebElement Email;
@@ -114,7 +120,9 @@ public class MyAssignmentsPage extends Action_Method
 		try
 		{
 			//Tagging the first candidate
-			Tag_Button_TagRxisting.click();
+			Tag_Button_TagExisting.click();
+			salaryHikeReasonRadioBtn.click();
+			doneButton.click();
 			return true;
 		} 
 		catch (Exception e) 

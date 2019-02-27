@@ -49,6 +49,27 @@ public class ManageJobPage extends Action_Method
 	@FindBy(xpath="//button[span[contains(text(),'Accept')]]")
 	WebElement Accept_ReviewSubmission;
 	
+	@FindBy(xpath="//mat-radio-group[@id='skillRating']/descendant::div[contains(text(),'High')]")
+	WebElement skillRatingHigh;
+	
+	@FindBy(xpath="//mat-radio-group[@id='jobChangeRating']/descendant::div[contains(text(),'High')]")
+	WebElement jobChangeRatingHigh;
+	
+	@FindBy(xpath="//mat-radio-group[@id='jobFitmentRating']/descendant::div[contains(text(),'High')]")
+	WebElement jobFitmentRatingHigh;
+	
+	@FindBy(xpath="//mat-radio-button[@ng-reflect-value='Video']/descendant::div[@class='mat-radio-container']")
+	WebElement video;
+	
+	@FindBy(xpath="//mat-radio-button[@ng-reflect-value='Telephone']/descendant::div[@class='mat-radio-container']")
+	WebElement telephone;
+	
+	@FindBy(xpath="//mat-radio-group[@id='candidateCommunicationRating']/descendant::div[contains(text(),'Excellent')]")
+	WebElement excellentCommunication;
+	
+	@FindBy(xpath="//button/span[text()='Submit']")
+	WebElement submitInsights;
+	
 	@FindBy(xpath="//app-pagination/span[@class='pagination-bottom']")
 	WebElement paginationBottom;
 	
@@ -162,6 +183,13 @@ public class ManageJobPage extends Action_Method
 		try
 		{
 			Accept_ReviewSubmission.click();
+			wait_for_elementpresent_Clickable(skillRatingHigh);
+			skillRatingHigh.click();
+			jobChangeRatingHigh.click();
+			jobFitmentRatingHigh.click();
+			video.click();
+			excellentCommunication.click();
+			submitInsights.click();
 			return true;
 		}
 		catch (Exception e)

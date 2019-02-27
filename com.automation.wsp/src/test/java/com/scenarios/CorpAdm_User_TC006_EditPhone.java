@@ -84,7 +84,7 @@ public class CorpAdm_User_TC006_EditPhone extends Action_Method{
 		if(used==used1&& editphone.contains("9952845872")) {
 			logger.log(LogStatus.PASS, "Verify the edited Phone No, Verified the edited Phone Number and the Used User count "+used1+" has not changed. \nThe updated name of the user is "+editphone);
 		}else {
-			logger.log(LogStatus.FAIL, "Verify the edited Phone No, Failed in verifying the updates. Either the user count has changed or the phone number is not edited");
+			logger.log(LogStatus.FAIL, "Verify the edited Phone No, Failed in verifying the updates. Either the user count has changed or the phone number is not edited"+used1+" "+editphone);
 		}
 	}
 
