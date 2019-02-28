@@ -37,6 +37,7 @@ import org.testng.ITestResult;
 
 import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
+import com.relevantcodes.extentreports.LogStatus;
 
 
 public class Action_Method implements ITestListener {
@@ -250,8 +251,9 @@ public class Action_Method implements ITestListener {
 	public void onFinish(ITestContext arg0) {
 
 		// TODO Auto-generated method stub
-		extent.flush();
-		extent.close();
+		//extent.flush();
+		//extent.close();
+		//driver.close();
 
 	}
 
@@ -285,12 +287,32 @@ public class Action_Method implements ITestListener {
 		{
 
 		}
-
+		
+		if(t.getStatus()==ITestResult.FAILURE) {
+			String reason = t.getThrowable().toString();
+			if(!reason.isEmpty()&&reason.length()>200) {
+				logger.log(LogStatus.FAIL, "Failed Reason : "+reason.substring(0, 200));
+			}else {
+				logger.log(LogStatus.FAIL, reason);
+			}
+			
+			extent.endTest(logger);
+		}
+	
 	}
 
-	public void onTestSkipped(ITestResult arg0) {
+	public void onTestSkipped(ITestResult t) {
 		// TODO Auto-generated method stub
-
+		if(t.getStatus()==ITestResult.SKIP) {
+			String reason = t.getThrowable().toString();
+			if(!reason.isEmpty()&&reason.length()>200) {
+				logger.log(LogStatus.SKIP, "Skipped Reason : "+reason.substring(0, 200));
+			}else {
+				logger.log(LogStatus.SKIP, reason);
+			}
+			
+			extent.endTest(logger);
+		}
 	}
 	public void onTestStart(ITestResult arg0) {
 		// TODO Auto-generated method stub
@@ -298,6 +320,7 @@ public class Action_Method implements ITestListener {
 	}
 	public void onTestSuccess(ITestResult arg0) {
 		// TODO Auto-generated method stub
+		
 
 	}
 

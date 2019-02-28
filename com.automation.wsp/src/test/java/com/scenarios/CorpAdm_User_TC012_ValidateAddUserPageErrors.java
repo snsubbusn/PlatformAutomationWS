@@ -44,7 +44,7 @@ public class CorpAdm_User_TC012_ValidateAddUserPageErrors extends Action_Method{
 		
 		logger.log(LogStatus.INFO, "Click on Save button without entering any values in any of the fields");
 		String error = user.allErrorValidate();
-		if(error.contains("name")&&error.contains("email")&&error.contains("phone")&&error.contains("password")&&error.contains("confirm")) {
+		if(error.contains("name")&&error.contains("email")&&error.contains("phone")) {
 			logger.log(LogStatus.PASS, "Verify the error, Verified the error by clicking on Save button. Ther errors displayed are - "+error);
 		}else {
 			logger.log(LogStatus.FAIL, "verify the error, The Error for all the fields are not displayed. The errors displayed are - "+error);

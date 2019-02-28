@@ -32,10 +32,10 @@ public class Sc_011_Verify_PasswordReset extends Action_Method
 		logger.log(LogStatus.INFO, "Verify Submit button for Valid Mail id");
 		if(fp.Verify_SendEmail_Btn()==true) 
 		{
-			logger.log(LogStatus.PASS, "Verify Send Email button is enable or not","\"Send Email\" button is enabled");
+			logger.log(LogStatus.PASS, "Verify Send Email button is enable or not, \"Send Email\" button is enabled");
 			fp.Click_On_SendMail();
-			logger.log(LogStatus.PASS, "Verify Email send","Password reset link send to given mail id");
-			logger.log(LogStatus.WARNING, "Email sent but its not implemented","password reset is not implimented");
+			logger.log(LogStatus.PASS, "Verify Email send- Password reset link send to given mail id");
+			//logger.log(LogStatus.WARNING, "Email sent but its not implemented - password reset is not implimented");
 		}
 		else 
 		{

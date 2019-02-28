@@ -6,6 +6,7 @@ import org.apache.poi.EncryptedDocumentException;
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.AfterMethod;
+import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
@@ -88,6 +89,14 @@ public class ScriptExecution extends Action_Method
 		Thread.sleep(2000);
 		close_browser();
 	}
+	
+	@AfterSuite
+	public void afterSuite() {
+
+		extent.flush();
+		extent.close();
+		
+	}
 
 
 	
@@ -98,7 +107,7 @@ public class ScriptExecution extends Action_Method
 		TC_016_Create_Save_Corporate_Profile tc_016 = PageFactory.initElements(driver, TC_016_Create_Save_Corporate_Profile.class);
 		tc_016.VerifyEditandSaveCorporateCompanyProfilePage();
 
-	}
+	} 
 
 
 	@Test
@@ -183,7 +192,7 @@ public class ScriptExecution extends Action_Method
 		CorpAdm_User_TC007_EditPasswordChange corp = PageFactory.initElements(driver, CorpAdm_User_TC007_EditPasswordChange.class);
 		corp.editCorpUsersforPasswordChange();
 	}	
-*/
+	 */
 
 	@Test 
 	public void CorpUserMangement07() throws InterruptedException {
@@ -538,5 +547,7 @@ public class ScriptExecution extends Action_Method
 		WSAdmin_TC020_DeleteFirstAdminUser ws = PageFactory.initElements(driver, WSAdmin_TC020_DeleteFirstAdminUser.class);
 		ws.verifyDeletingFirstAdminUser();
 	}
+	
+	
 	
 }
