@@ -20,6 +20,7 @@ import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.ss.usermodel.WorkbookFactory;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -291,7 +292,8 @@ public class Action_Method implements ITestListener {
 		if(t.getStatus()==ITestResult.FAILURE) {
 			String reason = t.getThrowable().toString();
 			if(!reason.isEmpty()&&reason.length()>200) {
-				logger.log(LogStatus.FAIL, "Failed Reason : "+reason.substring(0, 200));
+				logger.log(LogStatus.FAIL, logger.addBase64ScreenShot(Variables.Screenshot+filename+".png")+"Failed Reason : \""+reason.substring(0, 200));
+				
 			}else {
 				logger.log(LogStatus.FAIL, reason);
 			}
