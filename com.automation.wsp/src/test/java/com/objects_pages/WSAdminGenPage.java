@@ -23,6 +23,8 @@ public class WSAdminGenPage extends Action_Method{
 	@FindBy(xpath="//a[contains(text(),'Proxy')]")
 	WebElement proxyTab;
 
+	@FindBy(xpath="//a[contains(text(),'SPOC')]")
+	WebElement spocTab;
 
 	@FindBy(xpath="//div[div[contains(text(),'Filter')]]//span/span")
 	WebElement filterSelectedValue;
@@ -109,19 +111,22 @@ public class WSAdminGenPage extends Action_Method{
 		String a=null;
 		try {
 			if(inviteTab.isDisplayed()) {
-				a="\""+inviteTab.getText()+"\"";
+				a="\""+inviteTab.getText()+"\", ";
 			}
 			if(jobsTab.isDisplayed()) {
-				a=a+"\""+jobsTab.getText()+"\"";
+				a=a+"\""+jobsTab.getText()+"\", ";
 			}
 			if(usersTab.isDisplayed()) {
-				a=a+"\""+usersTab.getText()+"\"";
+				a=a+"\""+usersTab.getText()+"\", ";
 			}
 			if(proxyTab.isDisplayed()) {
-				a=a+"\""+proxyTab.getText()+"\"";
+				a=a+"\""+proxyTab.getText()+"\", ";
+			}
+			if(spocTab.isDisplayed()) {
+				a=a+"\""+spocTab.getText()+"\"";
 			}
 		}catch(Exception e) {
-			a="Either 'Invite' or 'Jobs' or 'Users' or 'Proxy' tab is missing";
+			a="Either 'Invite' or 'Jobs' or 'Users' or 'Proxy' or'SPOC' tab is missing";
 		}		
 		return a;
 	}

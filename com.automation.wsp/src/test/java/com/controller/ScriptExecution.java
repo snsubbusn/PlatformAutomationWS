@@ -9,8 +9,17 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Listeners;
-import org.testng.annotations.Test;
-
+import com.scenarios.Agent_TC001_VerifyAgentLogin;
+import com.scenarios.Agent_TC002_VerifyNewAssignmentsPage;
+import com.scenarios.Agent_TC003_VerifyActiveAssignmentsPage;
+import com.scenarios.Agent_TC004_VerifyOnHoldAssignmentsPage;
+import com.scenarios.Agent_TC005_VerifyClosedAssignmentsPage;
+import com.scenarios.Agent_TC006_VerifyInvitedCandidatePage;
+import com.scenarios.Agent_TC007_VerifyInvitedCandidateSortByInvitedOn;
+import com.scenarios.Agent_TC008_VerifyInvitedCandidateSortByName;
+import com.scenarios.Agent_TC009_VerifyInvitedCandidateSortByStatus;
+import com.scenarios.Agent_TC010_VerifySendReminderForInvitedCandidate;
+import com.scenarios.Agent_TC011_VerifyJoinedCandidateProfile;
 import com.scenarios.CorpAdm_Dashboard_TC001_VerifyDashboard;
 import com.scenarios.CorpAdm_Dashboard_TC002_VerifyDashafterGS;
 import com.scenarios.CorpAdm_Dashboard_TC003_VerifyDashafterGO;
@@ -20,7 +29,6 @@ import com.scenarios.CorpAdm_User_TC003_AddUserforAllLicenses;
 import com.scenarios.CorpAdm_User_TC004_EditUserName;
 import com.scenarios.CorpAdm_User_TC005_EditEmailId;
 import com.scenarios.CorpAdm_User_TC006_EditPhone;
-import com.scenarios.CorpAdm_User_TC007_EditPasswordChange;
 import com.scenarios.CorpAdm_User_TC008_DeleteUser;
 import com.scenarios.CorpAdm_User_TC009_DeleteAllUser;
 import com.scenarios.CorpAdm_User_TC010_AddDeletedUser;
@@ -47,10 +55,6 @@ import com.scenarios.Sc_087_VerifyAccept_GS;
 import com.scenarios.Sc_101_VerifyTag_Agencypartner;
 import com.scenarios.TC_001_Verify_LoginPage;
 import com.scenarios.TC_002_Verify_Corporate_Company_Info_Error_Notification;
-import com.scenarios.TC_003_Verify_Corporate_Company_Edit_OfficeLocations_Solutions_offered;
-import com.scenarios.TC_004_Corporate_Delete_OfficeLocation;
-import com.scenarios.TC_005_Verify_Error_Notification_office_Location;
-import com.scenarios.TC_006_Verify_Edit_Solutions_Offered_Section;
 import com.scenarios.TC_016_Create_Save_Corporate_Profile;
 import com.scenarios.WSAdmin_TC001_VerifyAdminLogin;
 import com.scenarios.WSAdmin_TC002_VerifyInvitePage;
@@ -549,5 +553,72 @@ public class ScriptExecution extends Action_Method
 	}
 	
 	
+	//Agency Partner Test Cases
 	
+	@Test
+	public void WsAgent01() throws InterruptedException {
+		Agent_TC001_VerifyAgentLogin ag = PageFactory.initElements(driver, Agent_TC001_VerifyAgentLogin.class);
+		ag.verifyAgencyPartnerLogin();
+	}
+	
+	@Test
+	public void WsAgent02() throws InterruptedException {
+		Agent_TC002_VerifyNewAssignmentsPage ag = PageFactory.initElements(driver, Agent_TC002_VerifyNewAssignmentsPage.class);
+		ag.verifyNewAssignmentsPage();
+	}
+	
+	@Test
+	public void WsAgent03() throws InterruptedException {
+		Agent_TC003_VerifyActiveAssignmentsPage ag = PageFactory.initElements(driver, Agent_TC003_VerifyActiveAssignmentsPage.class);
+		ag.verifyActiveAssignmentsPage();
+	}
+	
+	
+	@Test
+	public void WsAgent04() throws InterruptedException {
+		Agent_TC004_VerifyOnHoldAssignmentsPage ag = PageFactory.initElements(driver, Agent_TC004_VerifyOnHoldAssignmentsPage.class);
+		ag.verifyOnHoldAssignmentsPage();
+	}
+	
+	@Test
+	public void WsAgent05() throws InterruptedException {
+		Agent_TC005_VerifyClosedAssignmentsPage ag = PageFactory.initElements(driver, Agent_TC005_VerifyClosedAssignmentsPage.class);
+		ag.verifyClosedAssignmentsPage();
+	}
+	
+	@Test
+	public void WsAgent06() throws InterruptedException {
+		Agent_TC006_VerifyInvitedCandidatePage ag = PageFactory.initElements(driver, Agent_TC006_VerifyInvitedCandidatePage.class);
+		ag.verifyInvitedCandidatePageofAgencyPartner();
+	}
+	
+	@Test
+	public void WsAgent07() throws InterruptedException {
+		Agent_TC007_VerifyInvitedCandidateSortByInvitedOn ag = PageFactory.initElements(driver, Agent_TC007_VerifyInvitedCandidateSortByInvitedOn.class);
+		ag.verifySortByInvitedOnofInvitedCandidatePageofAgencyPartner();
+	}
+	
+	@Test
+	public void WsAgent08() throws InterruptedException {
+		Agent_TC008_VerifyInvitedCandidateSortByName ag = PageFactory.initElements(driver, Agent_TC008_VerifyInvitedCandidateSortByName.class);
+		ag.verifySortByNameofInvitedCandidatePageofAgencyPartner();
+	}
+	
+	@Test
+	public void WsAgent09() throws InterruptedException {
+		Agent_TC009_VerifyInvitedCandidateSortByStatus ag = PageFactory.initElements(driver, Agent_TC009_VerifyInvitedCandidateSortByStatus.class);
+		ag.verifySortByStatusofInvitedCandidatePageofAgencyPartner();
+	}
+	
+	@Test
+	public void WsAgent10() throws InterruptedException {
+		Agent_TC010_VerifySendReminderForInvitedCandidate ag = PageFactory.initElements(driver, Agent_TC010_VerifySendReminderForInvitedCandidate.class);
+		ag.verifySendReminderForInvitedCandidateOfAgencyPartner();
+	}
+	
+	@Test
+	public void WsAgent11() throws InterruptedException {
+		Agent_TC011_VerifyJoinedCandidateProfile ag = PageFactory.initElements(driver, Agent_TC011_VerifyJoinedCandidateProfile.class);
+		ag.verifyAgencyPartnerAbletoViewJoinedCandidateProfile();
+	}
 }
