@@ -1,9 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite thread-count="5" name="WS Suite" parallel ="classes">
-  <test name="Normal Scripts">
+  <listeners>
+        <listener class-name="com.controller.Action_Method"/>
+  </listeners>
+  <test name="FunctionalTests">
+  	<groups>
+  		<define name = "Functional">
+      		<include name="Corporate General"/>
+      		<include name="CorporateAdmin UserManagement"/>
+      		<include name="WSAdmin General"/>
+      		<include name="General"/>
+      		<include name="WSAdmin UserManagement"/>
+      		<include name="AgencyPartner General"/>
+      		<include name="WSAdmin General"/>
+     	</define>
+     	<define name = "GO Basic Flow">
+      		<include name="GO"/>
+     	</define> 
+	 	<define name = "GS Basic Flow">
+      		<include name="GS"/>
+     	</define>
+		<run>
+    		<include name="Functional"/>
+    		<include name="GS Basic Flow"/>
+    		<include name="GO Basic Flow"/>
+		</run>
+	</groups>
+	
     <classes>
       <class name="com.controller.ScriptExecution"/>
     </classes>
-  </test> <!-- Test -->
+  </test><!-- Test -->
 </suite> <!-- Suite -->
