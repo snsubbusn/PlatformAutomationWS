@@ -1,7 +1,5 @@
 package com.scenarios;
 
-import java.sql.Date;
-import java.text.DateFormat;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.support.PageFactory;
@@ -17,11 +15,9 @@ public class WSAdmin_TC001_VerifyAdminLogin extends Action_Method {
 	public void VerifyAdminLogin() throws InterruptedException {
 		//logger = extent.startTest("Verify the WSAdmin Login_TC001");
 		logger = extent.startTest(this.getClass().getSimpleName());
-		logger.addBase64ScreenShot(Variables.Screenshot);
 		logger.assignAuthor("Sivaprakash");
-		logger.assignCategory("WS Admin Scenarios - Functional Test");
-		logger.getRunStatus();
-		logger.setDescription("This is to check the set description method under extent report");
+		logger.assignCategory("WSAdmin General");
+		logger.setDescription("Login as WS Admin and verify the landing page");
 		
 		driver.manage().timeouts().implicitlyWait(1, TimeUnit.MINUTES);
 

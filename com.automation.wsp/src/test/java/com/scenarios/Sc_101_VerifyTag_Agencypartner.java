@@ -20,6 +20,10 @@ public class Sc_101_VerifyTag_Agencypartner extends Action_Method
 
 		logger = extent.startTest("GS05_SC_101_Verifying tag candidate by agency partner");
 		driver.manage().timeouts().implicitlyWait(1,TimeUnit.MINUTES);
+		logger.assignAuthor("Sivaprakash");
+		logger.assignCategory("Guaranteed Submission - BasicFlow");
+		logger.setDescription("Login as Agency partner and verify the campaign is accepted and tag the candidates to the GS Campaign");
+	
 		//Launching the url
 		
 		wait_for_pageload(Variables.url);

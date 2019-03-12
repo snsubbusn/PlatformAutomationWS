@@ -13,9 +13,12 @@ import com.relevantcodes.extentreports.LogStatus;
 public class WSAdmin_TC008_VerifySortByInvitedOn extends Action_Method{
 
 	public void verifyWSAdminSortByInvitedOn() throws InterruptedException {
-		logger = extent.startTest("Verify the WS Admin able to sort the Invited users by Invited On_TC008");
+		logger = extent.startTest("WSAdmin_TC008_VerifySortByInvitedOn");
 		driver.manage().timeouts().implicitlyWait(1, TimeUnit.MINUTES);
-
+		logger.assignAuthor("Sivaprakash");
+		logger.assignCategory("WSAdmin General");
+		logger.setDescription("Login as WS Admin, Verify the Sort by Invited On in the Invite Page");
+		
 		//Launching the URL
 
 		wait_for_pageload(Variables.url);

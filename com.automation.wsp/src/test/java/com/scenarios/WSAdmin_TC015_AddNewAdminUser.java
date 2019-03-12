@@ -1,7 +1,5 @@
 package com.scenarios;
 
-import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.support.PageFactory;
@@ -14,9 +12,12 @@ import com.relevantcodes.extentreports.LogStatus;
 
 public class WSAdmin_TC015_AddNewAdminUser extends Action_Method{
 	public void verifyAddingNewUser() throws InterruptedException {
-		logger = extent.startTest("WS Admin Users Tab - Verifying Adding new WS Admin user in Add User Page.");
+		logger = extent.startTest("WSAdmin_TC015_AddNewAdminUser");
 		driver.manage().timeouts().implicitlyWait(1, TimeUnit.MINUTES);
-
+		logger.assignAuthor("Sivaprakash");
+		logger.assignCategory("WSAdmin UserManagement");
+		logger.setDescription("Login as WS Admin, Verify the user is able to add a new WS Admin under User Management");
+		
 		//Launching the url
 		wait_for_pageload(Variables.url);
 		logger.log(LogStatus.PASS, "Launched the URL and login page is displayed");

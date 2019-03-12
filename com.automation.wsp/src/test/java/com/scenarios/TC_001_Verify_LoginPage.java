@@ -16,6 +16,10 @@ public class TC_001_Verify_LoginPage extends Action_Method
 
 		logger = extent.startTest("TC_001_Verifying all elements and text present in Login page");
 		driver.manage().timeouts().implicitlyWait(1,TimeUnit.MINUTES);
+		logger.assignAuthor("Sivaprakash");
+		logger.assignCategory("General");
+		logger.setDescription("Launch the URL and verify the login page elements are displayed and validate the login page");
+	
 		//Launching the url
 
 		wait_for_pageload(Variables.url);

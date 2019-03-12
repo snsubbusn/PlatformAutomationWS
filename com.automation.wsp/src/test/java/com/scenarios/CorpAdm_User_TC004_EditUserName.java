@@ -13,8 +13,11 @@ import com.relevantcodes.extentreports.LogStatus;
 
 public class CorpAdm_User_TC004_EditUserName extends Action_Method{
 	public void editCorpUsersforNameField() throws InterruptedException {
-		logger=extent.startTest("Edit Corp User name__CorporateAdminUserManagement_TC004", "Corporate Admin edits the Corporate User to update the UserName");
+		logger=extent.startTest("CorporateAdminUserManagement_TC004_EditUserName");
 		driver.manage().timeouts().implicitlyWait(1, TimeUnit.MINUTES);
+		logger.assignAuthor("Sivaprakash");
+		logger.assignCategory("CorporateAdmin UserManagement");
+		logger.setDescription("Corporate Admin edits the Corporate User to update the UserName");
 
 		//Launching the URL
 		wait_for_pageload(Variables.url);

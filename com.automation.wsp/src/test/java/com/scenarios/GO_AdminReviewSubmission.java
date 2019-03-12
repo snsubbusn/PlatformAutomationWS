@@ -16,8 +16,13 @@ import com.relevantcodes.extentreports.LogStatus;
 public class GO_AdminReviewSubmission  extends Action_Method {
 	
 	public void goAdminReviewSubmission() throws EncryptedDocumentException, InvalidFormatException, IOException, InterruptedException{
-		logger = extent.startTest("Guaranteed Onboarding Basic Flow - Admin Shortlists the candidate under Review Submission for the campaign");
+		logger = extent.startTest("GO_AdminReviewSubmission_04");
 		driver.manage().timeouts().implicitlyWait(1,TimeUnit.MINUTES);
+		logger.assignAuthor("Sivaprakash");
+		logger.assignCategory("Guaranteed Onboarding-BasicFlow");
+		logger.setDescription("Guaranteed Onboarding Basic Flow - Admin Shortlists the candidate under Review Submission for the campaign");
+		
+		
 		//Launching the url
 		
 		wait_for_pageload(Variables.url);

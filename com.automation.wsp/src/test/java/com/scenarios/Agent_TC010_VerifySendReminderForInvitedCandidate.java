@@ -14,7 +14,7 @@ public class Agent_TC010_VerifySendReminderForInvitedCandidate extends Action_Me
 	public void verifySendReminderForInvitedCandidateOfAgencyPartner() throws InterruptedException {
 		logger = extent.startTest("Agent_TC010_VerifySendReminderForInvitedCandidatePageofAgencyPartner");
 		logger.assignAuthor("Sivaprakash");
-		logger.assignCategory("Agency Partner Validation");
+		logger.assignCategory("Agency Partner General");
 
 		logger.setDescription("Agency Logs in and click on \"Invited Candidates\" tab. Verifies if there are any Pending status sending Reminder to that candidate through Send Reminder");
 

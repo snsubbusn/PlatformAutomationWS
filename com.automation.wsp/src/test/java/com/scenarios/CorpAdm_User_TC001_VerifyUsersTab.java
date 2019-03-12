@@ -13,8 +13,11 @@ import com.relevantcodes.extentreports.LogStatus;
 
 public class CorpAdm_User_TC001_VerifyUsersTab extends Action_Method{
 	public void checkUserTabandLicenseofCorpAdmin() throws InterruptedException {
-		logger = extent.startTest("Corp Admin Check for the user tab and License count_CorporateAdminUserManagement_TC001");
+		logger = extent.startTest("CorporateAdminUserManagement_TC001_VerifyUsersTab");
 		driver.manage().timeouts().implicitlyWait(1, TimeUnit.MINUTES);
+		logger.assignAuthor("Sivaprakash");
+		logger.assignCategory("CorporateAdmin UserManagement");
+		logger.setDescription("Corp Admin Log in and verify for the user tab and License count");
 
 		//Launching the url
 		wait_for_pageload(Variables.url);

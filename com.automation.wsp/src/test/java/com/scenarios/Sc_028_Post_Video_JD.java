@@ -21,6 +21,10 @@ public class Sc_028_Post_Video_JD extends Action_Method
 	{
 		logger = extent.startTest("GS_01_SC_028_Verifying video Posting by Corporate");
 		driver.manage().timeouts().implicitlyWait(1,TimeUnit.MINUTES);
+		logger.assignAuthor("Sivaprakash");
+		logger.assignCategory("Guaranteed Submission - BasicFlow");
+		logger.setDescription("Login as Corporate and Post Job by entering the Job Summary, Skills and capture the Job Description Video");
+	
 		//Launching the url
 		
 		wait_for_pageload(Variables.url);

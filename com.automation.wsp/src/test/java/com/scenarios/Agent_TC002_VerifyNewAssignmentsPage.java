@@ -14,7 +14,7 @@ public class Agent_TC002_VerifyNewAssignmentsPage extends Action_Method{
 	public void verifyNewAssignmentsPage() throws InterruptedException {
 		logger = extent.startTest("Agent_TC002_VerifyNewAssignmentsPage");
 		logger.assignAuthor("Sivaprakash");
-		logger.assignCategory("Agency Partner Validation");
+		logger.assignCategory("Agency Partner General");
 		
 		logger.setDescription("Agency Logs in and click on New Assignments and verify the total count of Jobs present in the New Assignments Page");
 

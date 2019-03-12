@@ -15,9 +15,12 @@ import com.relevantcodes.extentreports.LogStatus;
 
 public class WSAdmin_TC010_VerifyEditingCorpAdminUnderInvite extends Action_Method{
 	public void verifyEditInvitedCorporateAdminUser() throws EncryptedDocumentException, InvalidFormatException, IOException, InterruptedException {
-		logger = extent.startTest("Verifying the Editing of Invited Corporate Admin User_TC010");
+		logger = extent.startTest("WSAdmin_TC010_VerifyEditingCorpAdminUnderInvite");
 		driver.manage().timeouts().implicitlyWait(1, TimeUnit.MINUTES);
-
+		logger.assignAuthor("Sivaprakash");
+		logger.assignCategory("WSAdmin General");
+		logger.setDescription("Login as WS Admin, Search for the Corporate admin in the Invite Page and edit the License of the corporate admin");
+		
 		//Launching the url
 		wait_for_pageload(Variables.url);
 		logger.log(LogStatus.PASS, "Launched the URL and login page is displayed");

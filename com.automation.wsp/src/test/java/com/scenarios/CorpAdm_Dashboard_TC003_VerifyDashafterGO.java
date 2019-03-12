@@ -16,8 +16,11 @@ import com.relevantcodes.extentreports.LogStatus;
 public class CorpAdm_Dashboard_TC003_VerifyDashafterGO extends Action_Method{
 	
 	public void verifyCorpAdminDashboardAfterGO() throws InterruptedException, EncryptedDocumentException, InvalidFormatException, IOException {
-		logger = extent.startTest("Verifying the Dashboard of Corporate Admin after GO__CorpAdm_Dashboard_TC003_VerifyDashafterGO", "Corporate Admin verfies the dashboard after processing GO");
+		logger = extent.startTest("Verifying the Dashboard of Corporate Admin after GO__CorpAdm_Dashboard_TC003_VerifyDashafterGO");
 		driver.manage().timeouts().implicitlyWait(1, TimeUnit.MINUTES);
+		logger.assignAuthor("Sivaprakash");
+		logger.assignCategory("Corporate General");
+		logger.setDescription("Corporate Admin verfies the dashboard after processing GO");
 
 		//Launcing the URL
 		wait_for_pageload(Variables.url);

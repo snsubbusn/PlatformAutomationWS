@@ -12,8 +12,12 @@ import com.relevantcodes.extentreports.LogStatus;
 
 public class WSAdmin_TC020_DeleteFirstAdminUser extends Action_Method{
 	public void verifyDeletingFirstAdminUser() throws InterruptedException {
-		logger = extent.startTest("WS Admin Users Tab - Verifying Deleting the first WS Admin user");
+		logger = extent.startTest("WSAdmin_TC020_DeleteFirstAdminUser");
 		driver.manage().timeouts().implicitlyWait(1, TimeUnit.MINUTES);
+		logger.assignAuthor("Sivaprakash");
+		logger.assignCategory("WSAdmin UserManagement");
+		logger.setDescription("Login as WS Admin, WS Admin Users Tab - Verifying Deleting the first WS Admin user");
+		
 
 		//Launching the url
 		wait_for_pageload(Variables.url);

@@ -13,8 +13,11 @@ import com.relevantcodes.extentreports.LogStatus;
 
 public class CorpAdm_User_TC012_ValidateAddUserPageErrors extends Action_Method{
 	public void validateAddUserPageErrors() throws InterruptedException {
-		logger = extent.startTest("Validating Add Users Page Errors of Corp Admin__CorporateAdminUserManagement_TC012", "Corporate Admin validates the error messages displayed in the 'Add Users' Page");
+		logger = extent.startTest("CorporateAdminUserManagement_TC012_ValidateAddUserPageErrors");
 		driver.manage().timeouts().implicitlyWait(1, TimeUnit.MINUTES);
+		logger.assignAuthor("Sivaprakash");
+		logger.assignCategory("CorporateAdmin UserManagement");
+		logger.setDescription("Corporate Admin validates the error messages displayed in the 'Add Users' Page");
 
 		//Launcing the URL
 		wait_for_pageload(Variables.url);

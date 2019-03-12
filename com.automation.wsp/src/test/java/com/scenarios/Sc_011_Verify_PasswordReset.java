@@ -16,6 +16,10 @@ public class Sc_011_Verify_PasswordReset extends Action_Method
 
 		logger = extent.startTest("Sc_011_Verify_PasswordReset");
 		driver.manage().timeouts().implicitlyWait(1,TimeUnit.MINUTES);
+		logger.assignAuthor("Sivaprakash");
+		logger.assignCategory("General");
+		logger.setDescription("Verify Forgot Password pop up for sending forgot password link");
+	
 		//Launching the url
 		
 		wait_for_pageload(Variables.url);

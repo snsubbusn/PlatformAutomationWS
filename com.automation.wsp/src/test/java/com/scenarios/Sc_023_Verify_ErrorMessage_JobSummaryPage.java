@@ -18,8 +18,12 @@ public class Sc_023_Verify_ErrorMessage_JobSummaryPage extends Action_Method
 	//Verify error message for job summary page
 	public void Verify_ErrorMessage_Experience() throws EncryptedDocumentException, InvalidFormatException, IOException
 	{
-		logger = extent.startTest("Sc_023_TC01_Verify_ErrorMessage_JobSummaryPage_Verifying error message for Minimum Experience greater than Maximum Experience in Job Summary Page");
+		logger = extent.startTest("Sc_023_TC01_Verify_ErrorMessage_JobSummaryPage");
 		driver.manage().timeouts().implicitlyWait(1,TimeUnit.MINUTES);
+		logger.assignAuthor("Sivaprakash");
+		logger.assignCategory("Corporate General");
+		logger.setDescription("Verifying error message for Minimum Experience greater than Maximum Experience in Job Summary Page");
+	
 		//Launching the url
 		
 		driver.navigate().refresh();

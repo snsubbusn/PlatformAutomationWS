@@ -14,7 +14,7 @@ public class Agent_TC006_VerifyInvitedCandidatePage extends Action_Method{
 	public void verifyInvitedCandidatePageofAgencyPartner() throws InterruptedException {
 		logger = extent.startTest("Agent_TC006_VerifyInvitedCandidatePageofAgencyPartner");
 		logger.assignAuthor("Sivaprakash");
-		logger.assignCategory("Agency Partner Validation");
+		logger.assignCategory("Agency Partner General");
 		
 		logger.setDescription("Agency Logs in and click on \"Invited Candidates\" tab and verify the number of candidates invited by that Agent");
 

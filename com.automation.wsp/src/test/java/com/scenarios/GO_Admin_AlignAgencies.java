@@ -17,10 +17,13 @@ public class GO_Admin_AlignAgencies extends Action_Method {
 	
 	public void AlignAgentforGO() throws EncryptedDocumentException, InvalidFormatException, IOException, InterruptedException
 	{
-		logger = extent.startTest("Guaranteed Onboarding Basic Flow - Admin Aligning Agencies for the campaign");
+		logger = extent.startTest("GO_Admin_AlignAgencies_02");
 		driver.manage().timeouts().implicitlyWait(1,TimeUnit.MINUTES);
-		//Launching the url
+		logger.assignAuthor("Sivaprakash");
+		logger.assignCategory("Guaranteed Onboarding-BasicFlow");
+		logger.setDescription("Guaranteed Onboarding Basic Flow - WS Admin Aligning Agencies for the campaign");
 		
+		//Launching the url
 		wait_for_pageload(Variables.url);
 		logger.log(LogStatus.PASS, "Launched the URL and login page is displayed");
 		

@@ -20,9 +20,12 @@ import com.relevantcodes.extentreports.LogStatus;
 
 public class GO_CorporateShortlists extends Action_Method {
 	public void corporateShortlist() throws EncryptedDocumentException, InvalidFormatException, IOException, InterruptedException {
-		logger = extent.startTest("Guaranteed Onboarding Basic Flow - Corporate Shortlists Candidates from Pending Review");
+		logger = extent.startTest("GO_CorporateShortlistsAndOnboardCandidate_05");
 		driver.manage().timeouts().implicitlyWait(1, TimeUnit.MINUTES);
-
+		logger.assignAuthor("Sivaprakash");
+		logger.assignCategory("Guaranteed Onboarding-BasicFlow");
+		logger.setDescription("Guaranteed Onboarding Basic Flow - Corporate Shortlists Candidates from Pending Review, Schedules Interview, Submit Feedback, Shortlist, Make Offer and Onboard candidate");
+		
 		String JobId = getExceldata(Variables.testdata,Variables.SetData_Excel,"Job ID");
 
 		//Launching the url

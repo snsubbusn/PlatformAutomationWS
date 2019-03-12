@@ -15,8 +15,12 @@ public class Sc_022_Verify_JobSummaryPage extends Action_Method
 	public void Verify_AllElements_JobSummaryPage()
 	{
 
-		logger = extent.startTest("Sc_022_Verify_JobSummaryPage_Verifying all elements and text present in Job Summary Page");
+		logger = extent.startTest("Sc_022_Verify_JobSummaryPage");
 		driver.manage().timeouts().implicitlyWait(1,TimeUnit.MINUTES);
+		logger.assignAuthor("Sivaprakash");
+		logger.assignCategory("Corporate General");
+		logger.setDescription("Verifying all elements and text present in Job Summary Page");
+	
 		//Launching the url
 
 		wait_for_pageload(Variables.url);

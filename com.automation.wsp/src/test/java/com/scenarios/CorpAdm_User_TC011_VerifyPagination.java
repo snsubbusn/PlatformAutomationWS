@@ -13,8 +13,11 @@ import com.relevantcodes.extentreports.LogStatus;
 
 public class CorpAdm_User_TC011_VerifyPagination extends Action_Method {
 	public void verifyPagination() throws InterruptedException {
-		logger = extent.startTest("Verify Pagination of User Management__CorporateAdminUserManagement_TC011", "Corporate Admin verifies the pagination after checking the licenses used");
+		logger = extent.startTest("CorporateAdminUserManagement_TC011_VerifyPagination");
 		driver.manage().timeouts().implicitlyWait(1, TimeUnit.MINUTES);
+		logger.assignAuthor("Sivaprakash");
+		logger.assignCategory("CorporateAdmin UserManagement");
+		logger.setDescription("Corporate Admin verifies the pagination after checking the licenses used");
 
 		//Launcing the URL
 		wait_for_pageload(Variables.url);

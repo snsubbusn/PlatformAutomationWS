@@ -21,7 +21,10 @@ public class TC_016_Create_Save_Corporate_Profile extends Action_Method {
 		
 		logger = extent.startTest("Edit Corporate Profile Details_TC001", "Corporate Admin Logs in, edits the corporate profile and update the profile");
 		driver.manage().timeouts().implicitlyWait(1,TimeUnit.MINUTES);
-		
+		logger.assignAuthor("Sivaprakash");
+		logger.assignCategory("Corporate General");
+		logger.setDescription("Login as Corporate Admin edit profile and save the changes");
+	
 		wait_for_pageload(Variables.url);
 
 		//Creating instance of login page

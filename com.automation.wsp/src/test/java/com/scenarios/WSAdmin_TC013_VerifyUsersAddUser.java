@@ -12,9 +12,12 @@ import com.relevantcodes.extentreports.LogStatus;
 
 public class WSAdmin_TC013_VerifyUsersAddUser extends Action_Method{
 	public void verifyUsersTabAddNewUser() throws InterruptedException {
-		logger = extent.startTest("WS Admin Users Tab - Verifying the 'Add Button' functionality");
+		logger = extent.startTest("WSAdmin_TC013_VerifyUsersAddUser");
 		driver.manage().timeouts().implicitlyWait(1, TimeUnit.MINUTES);
-
+		logger.assignAuthor("Sivaprakash");
+		logger.assignCategory("WSAdmin UserManagement");
+		logger.setDescription("Login as WS Admin, Verify the \"Add Button\" in the Users page takes to the \"Add New User\" page");
+		
 		//Launching the url
 		wait_for_pageload(Variables.url);
 		logger.log(LogStatus.PASS, "Launched the URL and login page is displayed");

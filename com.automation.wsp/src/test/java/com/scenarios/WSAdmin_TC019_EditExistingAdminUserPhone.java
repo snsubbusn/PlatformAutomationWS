@@ -12,8 +12,12 @@ import com.relevantcodes.extentreports.LogStatus;
 
 public class WSAdmin_TC019_EditExistingAdminUserPhone extends Action_Method{
 	public void verifyEditingExistingAdminUserPhone() throws InterruptedException {
-		logger = extent.startTest("WS Admin Users Tab - Verifying Editing Existing WS Admin user Phone No in Edit User Page.");
+		logger = extent.startTest("WSAdmin_TC019_EditExistingAdminUserPhone");
 		driver.manage().timeouts().implicitlyWait(1, TimeUnit.MINUTES);
+		logger.assignAuthor("Sivaprakash");
+		logger.assignCategory("WSAdmin UserManagement");
+		logger.setDescription("Login as WS Admin, WS Admin Users Tab - Verifying Editing Existing WS Admin user Phone No in Edit User Page.");
+		
 
 		//Launching the url
 		wait_for_pageload(Variables.url);

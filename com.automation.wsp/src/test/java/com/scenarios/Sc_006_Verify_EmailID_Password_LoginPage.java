@@ -16,8 +16,13 @@ public class Sc_006_Verify_EmailID_Password_LoginPage extends Action_Method
 {
 	public void Verify_MailId_Password() throws EncryptedDocumentException, InvalidFormatException, IOException, InterruptedException
 	{
-		logger = extent.startTest("Sc_006_Verify_EmailID_Password_LoginPage_Report Started");
+		logger = extent.startTest("Sc_006_Verify_EmailID_Password_LoginPage_Report");
 		driver.manage().timeouts().implicitlyWait(1,TimeUnit.MINUTES);
+		logger.assignAuthor("Sivaprakash");
+		logger.assignCategory("General");
+		logger.setDescription("Test to verify the Login page error validations by providing no inputs and invalid credentials");
+		
+		
 		//Launching the url
 
 		wait_for_pageload(Variables.url);

@@ -15,6 +15,11 @@ public class Verify_CorporateLandingPage extends Action_Method{
 
 		logger = extent.startTest("Corporate Login Scenario Started.");
 		driver.manage().timeouts().implicitlyWait(1,TimeUnit.MINUTES);
+		logger.assignAuthor("Sivaprakash");
+		logger.assignCategory("Corporate General");
+		logger.setDescription("Login as Corporate Admin and verify landing page");
+	
+		
 		//Launching the URL
 		wait_for_pageload(Variables.url);
 

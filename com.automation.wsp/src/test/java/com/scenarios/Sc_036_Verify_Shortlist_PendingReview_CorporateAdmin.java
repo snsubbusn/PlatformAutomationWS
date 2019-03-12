@@ -19,6 +19,10 @@ public class Sc_036_Verify_Shortlist_PendingReview_CorporateAdmin extends Action
 	{
 		logger = extent.startTest("GS07_SC_036_verifying Shortlist of a candidate in pending review by corporate");
 		driver.manage().timeouts().implicitlyWait(1,TimeUnit.MINUTES);
+		logger.assignAuthor("Sivaprakash");
+		logger.assignCategory("Guaranteed Submission - BasicFlow");
+		logger.setDescription("Login as Corporate and Shortlist one candidate under Pending Review");
+	
 		//Launching the url
 		
 		wait_for_pageload(Variables.url);

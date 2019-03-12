@@ -18,7 +18,7 @@ public class Agent_TC001_VerifyAgentLogin extends Action_Method{
 	public void verifyAgencyPartnerLogin() throws InterruptedException {
 		logger = extent.startTest("Agent_TC001_VerifyAgencyPartnerLogin");
 		logger.assignAuthor("Sivaprakash");
-		logger.assignCategory("Agency Partner Validation");
+		logger.assignCategory("Agency Partner General");
 		logger.setDescription("Agency Logs in and Verifies the details of tabs displayed for his view.");
 
 		//Launching URL

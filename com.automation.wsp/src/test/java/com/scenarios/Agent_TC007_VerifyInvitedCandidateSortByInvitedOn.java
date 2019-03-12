@@ -14,7 +14,7 @@ public class Agent_TC007_VerifyInvitedCandidateSortByInvitedOn extends Action_Me
 	public void verifySortByInvitedOnofInvitedCandidatePageofAgencyPartner() throws InterruptedException {
 		logger = extent.startTest("Agent_TC007_VerifySortByInvitedOnofInvitedCandidatePageofAgencyPartner");
 		logger.assignAuthor("Sivaprakash");
-		logger.assignCategory("Agency Partner Validation");
+		logger.assignCategory("Agency Partner General");
 
 		logger.setDescription("Agency Logs in and click on \"Invited Candidates\" tab and verify the Candidates are sorted by \"Invited On\"");
 

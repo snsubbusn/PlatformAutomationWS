@@ -19,6 +19,10 @@ public class Sc_032_PerformGuaranteedSubmission extends Action_Method
 	{
 		logger = extent.startTest("GS_02_SC_032_Verifying Guaranteed Submission of posted JOb");
 		driver.manage().timeouts().implicitlyWait(1,TimeUnit.MINUTES);
+		logger.assignAuthor("Sivaprakash");
+		logger.assignCategory("Guaranteed Submission - BasicFlow");
+		logger.setDescription("Login as corporate and select \"Guranteed Submission\" and submit the required details and accept payment");
+	
 		//Launching the url
 		
 		wait_for_pageload(Variables.url);

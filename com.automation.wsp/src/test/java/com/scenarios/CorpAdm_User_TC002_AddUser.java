@@ -13,8 +13,11 @@ import com.relevantcodes.extentreports.LogStatus;
 
 public class CorpAdm_User_TC002_AddUser extends Action_Method{
 	public void addCorporateUser() throws InterruptedException {
-		logger = extent.startTest("Adding Corporate Users_CorporateAdminUserManagement_TC002", "Corporate Admin Adds the corporate users after verifying the available licenses");
+		logger = extent.startTest("CorporateAdminUserManagement_TC002_AddUser");
 		driver.manage().timeouts().implicitlyWait(1, TimeUnit.MINUTES);
+		logger.assignAuthor("Sivaprakash");
+		logger.assignCategory("CorporateAdmin UserManagement");
+		logger.setDescription("Corporate Admin Adds the corporate users after verifying the available licenses");
 
 		//Launcing the URL
 		wait_for_pageload(Variables.url);

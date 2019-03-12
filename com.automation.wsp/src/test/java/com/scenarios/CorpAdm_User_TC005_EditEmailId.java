@@ -13,8 +13,11 @@ import com.relevantcodes.extentreports.LogStatus;
 
 public class CorpAdm_User_TC005_EditEmailId extends Action_Method {
 	public void editCorpUsersforEmailField() throws InterruptedException {
-		logger=extent.startTest("Editing Corp User Email__CorporateAdminUserManagement_TC005", "Corporate Admin edits the Corporate User to update the Email ID");
+		logger=extent.startTest("CorporateAdminUserManagement_TC005_EditEmailId");
 		driver.manage().timeouts().implicitlyWait(1, TimeUnit.MINUTES);
+		logger.assignAuthor("Sivaprakash");
+		logger.assignCategory("CorporateAdmin UserManagement");
+		logger.setDescription("Corporate Admin edits the Corporate User to update the Email ID");
 
 		//Launching the URL
 		wait_for_pageload(Variables.url);

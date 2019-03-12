@@ -12,9 +12,12 @@ import com.relevantcodes.extentreports.LogStatus;
 
 public class WSAdmin_TC017_EditExistingAdminUserName extends Action_Method{
 	public void verifyEditingExistingAdminUserName() throws InterruptedException {
-		logger = extent.startTest("WS Admin Users Tab - Verifying Editing Existing WS Admin user Name in Edit User Page.");
+		logger = extent.startTest("WSAdmin_TC017_EditExistingAdminUserName");
 		driver.manage().timeouts().implicitlyWait(1, TimeUnit.MINUTES);
-
+		logger.assignAuthor("Sivaprakash");
+		logger.assignCategory("WSAdmin UserManagement");
+		logger.setDescription("Login as WS Admin, Verifying Editing Existing WS Admin user Name in Edit User Page.");
+		
 		//Launching the url
 		wait_for_pageload(Variables.url);
 		logger.log(LogStatus.PASS, "Launched the URL and login page is displayed");

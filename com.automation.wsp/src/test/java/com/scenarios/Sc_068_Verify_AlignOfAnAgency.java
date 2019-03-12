@@ -20,6 +20,10 @@ public class Sc_068_Verify_AlignOfAnAgency extends Action_Method
 	{
 		logger = extent.startTest("GS03_SC_068_Verifying Align of an agency by Workstreets Admin");
 		driver.manage().timeouts().implicitlyWait(1,TimeUnit.MINUTES);
+		logger.assignAuthor("Sivaprakash");
+		logger.assignCategory("Guaranteed Submission - BasicFlow");
+		logger.setDescription("Login as WS Admin and Align an Agency partner to the GS Campaign");
+	
 		//Launching the url
 		
 		wait_for_pageload(Variables.url);

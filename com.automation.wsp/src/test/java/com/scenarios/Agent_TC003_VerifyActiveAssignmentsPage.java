@@ -13,7 +13,7 @@ public class Agent_TC003_VerifyActiveAssignmentsPage extends Action_Method{
 	public void verifyActiveAssignmentsPage() throws InterruptedException {
 		logger = extent.startTest("Agent_TC003_VerifyActiveAssignmentsPage");
 		logger.assignAuthor("Sivaprakash");
-		logger.assignCategory("Agency Partner Validation");
+		logger.assignCategory("Agency Partner General");
 		
 		logger.setDescription("Agency Logs in and click on Active Assignments and verify the total count of Jobs present in the Active Assignments Page");
 

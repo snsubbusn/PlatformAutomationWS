@@ -13,7 +13,7 @@ public class Agent_TC004_VerifyOnHoldAssignmentsPage extends Action_Method{
 	public void verifyOnHoldAssignmentsPage() throws InterruptedException {
 		logger = extent.startTest("Agent_TC004_VerifyOnHoldAssignmentsPage");
 		logger.assignAuthor("Sivaprakash");
-		logger.assignCategory("Agency Partner Validation");
+		logger.assignCategory("Agency Partner General");
 		
 		logger.setDescription("Agency Logs in and click on OnHold Assignments and verify the total count of Jobs present in the OnHold Assignments Page");
 

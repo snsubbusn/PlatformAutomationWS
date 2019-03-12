@@ -21,8 +21,11 @@ public class GOCampaignCreation extends Action_Method {
 
 	public void guaranteedOnboardingCampaignCreation() throws EncryptedDocumentException, InvalidFormatException, IOException, InterruptedException{
 		
-		logger = extent.startTest("Guaranteed Onboarding Basic Flow - Corporate Campaign Creation");
+		logger = extent.startTest("GOCampaignCreation_01");
 		driver.manage().timeouts().implicitlyWait(1,TimeUnit.MINUTES);
+		logger.assignAuthor("Sivaprakash");
+		logger.assignCategory("Guaranteed Onboarding-BasicFlow");
+		logger.setDescription("Guaranteed Onboarding Basic Flow - Corporate Campaign Creation");
 		
 		// Launching the URL
 		wait_for_pageload(Variables.url);

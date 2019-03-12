@@ -13,9 +13,12 @@ import com.relevantcodes.extentreports.LogStatus;
 public class WSAdmin_TC007_VerifySortByStatus extends Action_Method{
 
 	public void verifyWSAdminSortByStatus() throws InterruptedException {
-		logger = extent.startTest("Verify the WS Admin able to sort the Invited users by Status_TC007");
+		logger = extent.startTest("WSAdmin_TC007_VerifySortByStatus");
 		driver.manage().timeouts().implicitlyWait(1, TimeUnit.MINUTES);
-
+		logger.assignAuthor("Sivaprakash");
+		logger.assignCategory("WSAdmin General");
+		logger.setDescription("Login as WS Admin, Verify the Sort by Status in the Invite Page");
+		
 		//Launching the URL
 
 		wait_for_pageload(Variables.url);

@@ -14,7 +14,7 @@ public class Agent_TC009_VerifyInvitedCandidateSortByStatus extends Action_Metho
 	public void verifySortByStatusofInvitedCandidatePageofAgencyPartner() throws InterruptedException {
 		logger = extent.startTest("Agent_TC009_VerifySortByStatusofInvitedCandidatePageofAgencyPartner");
 		logger.assignAuthor("Sivaprakash");
-		logger.assignCategory("Agency Partner Validation");
+		logger.assignCategory("Agency Partner General");
 
 		logger.setDescription("Agency Logs in and click on \"Invited Candidates\" tab and verify the Candidates are sorted by \"Status\"");
 

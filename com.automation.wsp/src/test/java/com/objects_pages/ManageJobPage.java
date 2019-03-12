@@ -184,6 +184,7 @@ public class ManageJobPage extends Action_Method
 		{
 			Accept_ReviewSubmission.click();
 			wait_for_elementpresent_Clickable(skillRatingHigh);
+			Thread.sleep(2000);
 			skillRatingHigh.click();
 			jobChangeRatingHigh.click();
 			jobFitmentRatingHigh.click();

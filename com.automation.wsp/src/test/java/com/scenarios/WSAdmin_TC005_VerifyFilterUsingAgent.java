@@ -12,8 +12,11 @@ import com.relevantcodes.extentreports.LogStatus;
 
 public class WSAdmin_TC005_VerifyFilterUsingAgent extends Action_Method{
 	public void verifytheFilterBySelectingAgent() throws InterruptedException {
-		logger = extent.startTest("Verifying the Invite Page using Filter By Agent_TC005");
+		logger = extent.startTest("WSAdmin_TC005_VerifyFilterUsingAgent");
 		driver.manage().timeouts().implicitlyWait(1, TimeUnit.MINUTES);
+		logger.assignAuthor("Sivaprakash");
+		logger.assignCategory("WSAdmin General");
+		logger.setDescription("Login as WS Admin, Verify the filter using Agency Partner in the Invite Page");
 		
 		//Launching the url
 		wait_for_pageload(Variables.url);

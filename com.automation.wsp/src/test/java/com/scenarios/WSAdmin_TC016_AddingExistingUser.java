@@ -12,9 +12,12 @@ import com.relevantcodes.extentreports.LogStatus;
 
 public class WSAdmin_TC016_AddingExistingUser extends Action_Method{
 	public void verifyAddingExistingAdminUser() throws InterruptedException {
-		logger = extent.startTest("WS Admin Users Tab - Verifying Adding Existing WS Admin user in Add User Page.");
+		logger = extent.startTest("WSAdmin_TC016_AddingExistingUser");
 		driver.manage().timeouts().implicitlyWait(1, TimeUnit.MINUTES);
-
+		logger.assignAuthor("Sivaprakash");
+		logger.assignCategory("WSAdmin UserManagement");
+		logger.setDescription("Login as WS Admin, Verifying Adding Existing WS Admin user in Add User Page");
+		
 		//Launching the url
 		wait_for_pageload(Variables.url);
 		logger.log(LogStatus.PASS, "Launched the URL and login page is displayed");

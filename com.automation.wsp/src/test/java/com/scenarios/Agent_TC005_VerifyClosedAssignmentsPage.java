@@ -13,7 +13,7 @@ public class Agent_TC005_VerifyClosedAssignmentsPage extends Action_Method{
 	public void verifyClosedAssignmentsPage() throws InterruptedException {
 		logger = extent.startTest("Agent_TC005_VerifyClosedAssignmentsPage");
 		logger.assignAuthor("Sivaprakash");
-		logger.assignCategory("Agency Partner Validation");
+		logger.assignCategory("Agency Partner General");
 		
 		logger.setDescription("Agency Logs in and click on Closed Assignments and verify the total count of Jobs present in the Closed Assignments Page");
 

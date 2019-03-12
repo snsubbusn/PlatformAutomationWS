@@ -12,9 +12,12 @@ import com.relevantcodes.extentreports.LogStatus;
 
 public class WSAdmin_TC002_VerifyInvitePage extends Action_Method{
 	public void verifyWSAdminInvitePage() throws InterruptedException {
-		logger = extent.startTest("Verify the WSAdmin Invite Page_TC002");
+		logger = extent.startTest("WSAdmin_TC002_VerifyInvitePage");
 		driver.manage().timeouts().implicitlyWait(1, TimeUnit.MINUTES);
-
+		logger.assignAuthor("Sivaprakash");
+		logger.assignCategory("WSAdmin General");
+		logger.setDescription("Login as WS Admin and verify the Details of the Invite Page");
+		
 		//Launching the url
 		wait_for_pageload(Variables.url);
 		logger.log(LogStatus.PASS, "Launched the URL and login page is displayed");

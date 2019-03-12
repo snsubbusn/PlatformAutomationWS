@@ -20,7 +20,10 @@ public class TC_002_Verify_Corporate_Company_Info_Error_Notification extends Act
 		
 		logger = extent.startTest("TC_002_Verify_Corporate_Company_Info_Error_Notification");
 		driver.manage().timeouts().implicitlyWait(1,TimeUnit.MINUTES);
-		
+		logger.assignAuthor("Sivaprakash");
+		logger.assignCategory("Corporate General");
+		logger.setDescription("Login as Corporate Admin and verify the landing page.");
+	
 		wait_for_pageload(Variables.url);
 		logger.log(LogStatus.INFO, "Launched the URL and login page is displayed");
 		

@@ -13,8 +13,11 @@ import com.relevantcodes.extentreports.LogStatus;
 
 public class CorpAdm_User_TC010_AddDeletedUser extends Action_Method{
 	public void addDeletedUser() throws InterruptedException {
-		logger = extent.startTest("Add the Deleted Corporate User__CorporateAdminUserManagement_TC010", "Corporate Admin Deletes the corporate user and add the same user again. Verify the user is added and license count is not changed");
+		logger = extent.startTest("CorporateAdminUserManagement_TC010_AddDeletedUser");
 		driver.manage().timeouts().implicitlyWait(1, TimeUnit.MINUTES);
+		logger.assignAuthor("Sivaprakash");
+		logger.assignCategory("CorporateAdmin UserManagement");
+		logger.setDescription("Corporate Admin Deletes the corporate user and add the same user again. \nVerify the user is added and license count is not changed");
 
 		//Launcing the URL
 		wait_for_pageload(Variables.url);

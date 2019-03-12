@@ -14,7 +14,7 @@ public class Agent_TC011_VerifyJoinedCandidateProfile extends Action_Method{
 	public void verifyAgencyPartnerAbletoViewJoinedCandidateProfile() throws InterruptedException {
 		logger = extent.startTest("Agent_TC011_VerifyAgencyPartnerAbletoViewJoinedCandidateProfile");
 		logger.assignAuthor("Sivaprakash");
-		logger.assignCategory("Agency Partner Validation");
+		logger.assignCategory("Agency Partner General");
 
 		logger.setDescription("Agency Logs in and click on \"Invited Candidates\" tab. Verifies if there are any Joined status and click on Name of the candidate to view the profile.");
 

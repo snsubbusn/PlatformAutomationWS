@@ -13,8 +13,11 @@ import com.relevantcodes.extentreports.LogStatus;
 
 public class CorpAdm_User_TC009_DeleteAllUser extends Action_Method{
 	public void deleteAllCorporateUser() throws InterruptedException {
-		logger = extent.startTest("Deleting All the Corporate Users__CorporateAdminUserManagement_TC009", "Corporate Admin Deletes all the available corporate users and verify the license count");
+		logger = extent.startTest("CorporateAdminUserManagement_TC009_DeleteAllUser");
 		driver.manage().timeouts().implicitlyWait(1, TimeUnit.MINUTES);
+		logger.assignAuthor("Sivaprakash");
+		logger.assignCategory("CorporateAdmin UserManagement");
+		logger.setDescription("Corporate Admin Deletes all the available corporate users and verify the license count");
 
 		//Launcing the URL
 		wait_for_pageload(Variables.url);

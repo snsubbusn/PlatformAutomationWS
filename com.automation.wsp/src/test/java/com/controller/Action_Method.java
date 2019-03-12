@@ -4,6 +4,8 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.lang.reflect.Constructor;
+import java.lang.reflect.Method;
 import java.util.Iterator;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
@@ -20,35 +22,38 @@ import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.ss.usermodel.WorkbookFactory;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
-import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.events.EventFiringWebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.IRetryAnalyzer;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
+import org.testng.ITestNGMethod;
 import org.testng.ITestResult;
+import org.testng.annotations.ITestAnnotation;
+import org.testng.internal.annotations.IAnnotationTransformer;
+
 
 import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
 
 
-public class Action_Method implements ITestListener {
+public class Action_Method implements ITestListener, IRetryAnalyzer, IAnnotationTransformer{
 	public static WebDriver driver;
 
 	public static Logger log;
 
 	public static ExtentReports extent;
 	public static ExtentTest logger;
-	
+
 
 	public void TakeScreenshot(String fname) throws IOException
 	{
@@ -70,7 +75,7 @@ public class Action_Method implements ITestListener {
 		return data;
 	}
 
-	
+
 	public static void setExceldata(String filename,String sname,String word,String New_data) throws EncryptedDocumentException, InvalidFormatException, IOException
 	{
 		//String Ex_Data = "";
@@ -96,7 +101,7 @@ public class Action_Method implements ITestListener {
 				break;
 			}
 		}
-		
+
 	}
 
 	public static String getExceldata(String filename,String sname,String word) throws EncryptedDocumentException, IOException, InvalidFormatException
@@ -222,11 +227,11 @@ public class Action_Method implements ITestListener {
 			co.addArguments("use-fake-ui-for-media-stream");
 			//co.addArguments("user-data-dir=/path/to/the/saved/profileDir");
 			DesiredCapabilities capbility=DesiredCapabilities.chrome();
-				capbility.setCapability("acceptSslCerts",true);
-				capbility.setCapability("acceptInsecureCerts", true);
-				capbility.setCapability("browserConnectionEnabled", true);
-				capbility.setCapability(ChromeOptions.CAPABILITY,co);
-				co.merge(capbility);
+			capbility.setCapability("acceptSslCerts",true);
+			capbility.setCapability("acceptInsecureCerts", true);
+			capbility.setCapability("browserConnectionEnabled", true);
+			capbility.setCapability(ChromeOptions.CAPABILITY,co);
+			co.merge(capbility);
 			driver=new ChromeDriver(co);
 			driver.manage().window().maximize();
 
@@ -249,12 +254,23 @@ public class Action_Method implements ITestListener {
 		driver.quit();
 	}
 
-	public void onFinish(ITestContext arg0) {
+	public void onFinish(ITestContext context) {
 
 		// TODO Auto-generated method stub
 		//extent.flush();
 		//extent.close();
 		//driver.close();
+		Set<ITestResult> failedTests = context.getFailedTests().getAllResults();
+		for (ITestResult temp : failedTests) {
+			ITestNGMethod method = temp.getMethod();
+			if (context.getFailedTests().getResults(method).size() > 1) {
+				failedTests.remove(temp);
+			} else {
+				if (context.getPassedTests().getResults(method).size() > 0) {
+					failedTests.remove(temp);
+				}
+			}
+		}
 
 	}
 
@@ -288,19 +304,19 @@ public class Action_Method implements ITestListener {
 		{
 
 		}
-		
+
 		if(t.getStatus()==ITestResult.FAILURE) {
 			String reason = t.getThrowable().toString();
 			if(!reason.isEmpty()&&reason.length()>200) {
 				logger.log(LogStatus.FAIL, logger.addBase64ScreenShot(Variables.Screenshot+filename+".png")+"Failed Reason : \""+reason.substring(0, 200));
-				
+
 			}else {
 				logger.log(LogStatus.FAIL, reason);
 			}
-			
+
 			extent.endTest(logger);
 		}
-	
+
 	}
 
 	public void onTestSkipped(ITestResult t) {
@@ -310,9 +326,9 @@ public class Action_Method implements ITestListener {
 			if(!reason.isEmpty()&&reason.length()>200) {
 				logger.log(LogStatus.SKIP, "Skipped Reason : "+reason.substring(0, 200));
 			}else {
-				logger.log(LogStatus.SKIP, reason);
+				logger.log(LogStatus.SKIP, "Skipped Reason : "+reason);
 			}
-			
+
 			extent.endTest(logger);
 		}
 	}
@@ -322,9 +338,64 @@ public class Action_Method implements ITestListener {
 	}
 	public void onTestSuccess(ITestResult arg0) {
 		// TODO Auto-generated method stub
-		
+
 
 	}
+
+	
+	//Retry class which implements IRetryAnalyzer
+
+	private int retryCount = 0;
+	private int maxRetryCount = 1;
+	// Below method returns 'true' if the test method has to be retried else 'false' 
+	//and it takes the 'Result' as parameter of the test method that just ran
+	public boolean retry(ITestResult result) {
+		if (retryCount < maxRetryCount) {
+			System.out.println("Retrying test " + result.getName() + " with status "
+					+ getResultStatusName(result.getStatus()) + " for the " + (retryCount+1) + " time(s).");
+			
+			logger.log(LogStatus.FAIL, "Test case Failed. Retrying test " + result.getName() + " with status "
+					+ getResultStatusName(result.getStatus()) + " for the " + (retryCount+1) + " time(s).");
+			retryCount++;
+			return true;
+		}
+		return false;
+	}
+
+	public String getResultStatusName(int status) {
+		String resultName = null;
+		if(status==1)
+			resultName = "SUCCESS";
+		if(status==2)
+			resultName = "FAILURE";
+		if(status==3)
+			resultName = "SKIP";
+		return resultName;
+	}
+
+	/*@Override
+	public boolean retry(ITestResult result) {
+		// TODO Auto-generated method stub
+		return false;
+	}*/
+
+	
+	//RetryListener class implements IAnnotationTransformer 
+	 @Override
+	    public void transform(ITestAnnotation testannotation, Class testClass,
+	            Constructor testConstructor, Method testMethod) {
+	        IRetryAnalyzer retry = testannotation.getRetryAnalyzer();
+
+	        if (retry == null)  {
+	            testannotation.setRetryAnalyzer(Action_Method.class);
+	        }
+
+	    }
+	/*@Override
+	public void transform(ITestAnnotation annotation, Class testClass, Constructor testConstructor, Method testMethod) {
+		// TODO Auto-generated method stub
+
+	}*/
 
 
 }

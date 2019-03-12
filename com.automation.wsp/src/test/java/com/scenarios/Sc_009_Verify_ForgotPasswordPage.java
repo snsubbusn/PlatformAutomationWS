@@ -14,9 +14,13 @@ public class Sc_009_Verify_ForgotPasswordPage extends Action_Method
 	
 	public void Verify_ForgotPasswordPage()
 	{
-		logger = extent.startTest("Sc_009_Verify_ForgotPasswordPage_verifying All elements and text present in Forgot password pop up");
-		logger.log(LogStatus.INFO, "Verify all elements, texts present in Forgot Password pop up");
+		logger = extent.startTest("Sc_009_Verify_ForgotPasswordPage");
 		driver.manage().timeouts().implicitlyWait(1,TimeUnit.MINUTES);
+		logger.assignAuthor("Sivaprakash");
+		logger.assignCategory("General");
+		logger.setDescription("Verify all elements,texts present in Forgot Password pop up");
+		
+		
 		//Launching the url
 		
 		wait_for_pageload(Variables.url);

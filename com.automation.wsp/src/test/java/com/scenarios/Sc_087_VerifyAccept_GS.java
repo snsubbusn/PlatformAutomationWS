@@ -18,8 +18,12 @@ public class Sc_087_VerifyAccept_GS extends Action_Method
 	public void Accept_GS() throws EncryptedDocumentException, InvalidFormatException, IOException
 	{
 
-		logger = extent.startTest("GS04_SC_087_Verifying Guaranteed Submission of JOb");
+		logger = extent.startTest("GS04_SC_087_Verifying Agent accepting Guaranteed Submission of JOb");
 		driver.manage().timeouts().implicitlyWait(1,TimeUnit.MINUTES);
+		logger.assignAuthor("Sivaprakash");
+		logger.assignCategory("Guaranteed Submission - BasicFlow");
+		logger.setDescription("Login as Agency Partner and accept the New Assignment aligned to him.");
+	
 		//Launching the url
 		
 		wait_for_pageload(Variables.url);

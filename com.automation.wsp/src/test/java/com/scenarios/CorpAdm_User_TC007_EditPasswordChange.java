@@ -13,8 +13,11 @@ import com.relevantcodes.extentreports.LogStatus;
 
 public class CorpAdm_User_TC007_EditPasswordChange extends Action_Method {
 	public void editCorpUsersforPasswordChange() throws InterruptedException {
-		logger=extent.startTest("Edit Corporate user Password Change__CorporateAdminUserManagement_TC007", "Corporate Admin edits the Corporate User to change the password");
+		logger=extent.startTest("CorporateAdminUserManagement_TC007_EditPasswordChange");
 		driver.manage().timeouts().implicitlyWait(1, TimeUnit.MINUTES);
+		logger.assignAuthor("Sivaprakash");
+		logger.assignCategory("CorporateAdmin UserManagement");
+		logger.setDescription("Corporate Admin edits the Corporate User to change the password");
 
 		//Launching the URL
 		wait_for_pageload(Variables.url);

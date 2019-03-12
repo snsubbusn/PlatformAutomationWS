@@ -16,6 +16,11 @@ public class Sc_010_Verify_ErrorMessage_ForgotPasswordPopUP extends Action_Metho
 		
 		logger = extent.startTest("Sc_010_Verify_ErrorMessage for Forgot Password Pop up");
 		driver.manage().timeouts().implicitlyWait(1,TimeUnit.MINUTES);
+		logger.assignAuthor("Sivaprakash");
+		logger.assignCategory("General");
+		logger.setDescription("Verify error validations for Forgot Password pop up");
+	
+		
 		//Launching the url
 		
 		wait_for_pageload(Variables.url);

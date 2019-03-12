@@ -12,8 +12,11 @@ import com.relevantcodes.extentreports.LogStatus;
 
 public class WSAdmin_TC003_VerifyFilterUsingCandidate extends Action_Method{
 	public void verifyInvitePageFilterByCandidate() throws InterruptedException {
-		logger = extent.startTest("Verifying the Invite Page using Filter By Candidate_TC003");
+		logger = extent.startTest("WSAdmin_TC003_VerifyFilterUsingCandidate");
 		driver.manage().timeouts().implicitlyWait(1, TimeUnit.MINUTES);
+		logger.assignAuthor("Sivaprakash");
+		logger.assignCategory("WSAdmin General");
+		logger.setDescription("Login as WS Admin, Verify the filter using Candidate in the Invite Page");
 		
 
 		//Launching the url

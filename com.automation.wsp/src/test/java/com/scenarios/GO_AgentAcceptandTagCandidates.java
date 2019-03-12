@@ -17,8 +17,13 @@ import com.relevantcodes.extentreports.LogStatus;
 public class GO_AgentAcceptandTagCandidates extends Action_Method {
 
 	public void agentAcceptandTagCandidates() throws EncryptedDocumentException, InvalidFormatException, IOException, InterruptedException {
-		logger = extent.startTest("Guaranteed Onboarding Basic Flow - Agent Accepts and Tag Candidates for the campaign");
+		logger = extent.startTest("GO_AgentAcceptandTagCandidates_03");
 		driver.manage().timeouts().implicitlyWait(1,TimeUnit.MINUTES);
+		logger.assignAuthor("Sivaprakash");
+		logger.assignCategory("Guaranteed Onboarding-BasicFlow");
+		logger.setDescription("Guaranteed Onboarding Basic Flow - Agent Accepts and Tag Candidates for the campaign");
+		
+		
 		//Launching the url
 
 		wait_for_pageload(Variables.url);
