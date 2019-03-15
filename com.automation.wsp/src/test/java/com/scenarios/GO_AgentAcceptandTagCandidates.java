@@ -56,7 +56,7 @@ public class GO_AgentAcceptandTagCandidates extends Action_Method {
 
 		//Creating object for Myassignment page
 		MyAssignmentsPage My=PageFactory.initElements(driver,MyAssignmentsPage.class);
-		if(My.Click_On_MyAssignmentTab()==true)
+		if(My.click_On_ActiveAssignmentTab()==true)
 		{
 			logger.log(LogStatus.PASS, "Click on Myassignment tab","Myassigment tab clicked");
 		}

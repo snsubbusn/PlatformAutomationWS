@@ -20,6 +20,12 @@ import com.scenarios.Agent_TC008_VerifyInvitedCandidateSortByName;
 import com.scenarios.Agent_TC009_VerifyInvitedCandidateSortByStatus;
 import com.scenarios.Agent_TC010_VerifySendReminderForInvitedCandidate;
 import com.scenarios.Agent_TC011_VerifyJoinedCandidateProfile;
+import com.scenarios.Agent_TC012_VerifyAgencyPartnerAbletoAcceptNewAssignment;
+import com.scenarios.Agent_TC013_VerifyAgencyPartnerAbletoDeclineNewAssignment;
+import com.scenarios.Agent_TC014_VerifyAgencyPartnerAbletoViewJobDetailsfromNewAssignment;
+import com.scenarios.Agent_TC015_VerifyAgencyPartnerAbletoViewJobDetailsfromActiveAssignment;
+import com.scenarios.Agent_TC016_VerifyAgencyPartnerAbletoViewJobDetailsfromOnHoldAssignment;
+import com.scenarios.Agent_TC017_VerifyAgencyPartnerAbletoViewJobDetailsfromClosedAssignment;
 import com.scenarios.CorpAdm_Dashboard_TC001_VerifyDashboard;
 import com.scenarios.CorpAdm_Dashboard_TC002_VerifyDashafterGS;
 import com.scenarios.CorpAdm_Dashboard_TC003_VerifyDashafterGO;
@@ -590,4 +596,43 @@ public class ScriptExecution extends Action_Method
 		Agent_TC011_VerifyJoinedCandidateProfile ag = PageFactory.initElements(driver, Agent_TC011_VerifyJoinedCandidateProfile.class);
 		ag.verifyAgencyPartnerAbletoViewJoinedCandidateProfile();
 	}
+	
+	@Test(groups= {"AgencyPartner General"})
+	public void WSAgent12() throws InterruptedException {
+		Agent_TC012_VerifyAgencyPartnerAbletoAcceptNewAssignment ag = PageFactory.initElements(driver, Agent_TC012_VerifyAgencyPartnerAbletoAcceptNewAssignment.class);
+		ag.verifyAgencyPartnerAbletoAcceptNewAssignment();
+	}
+	
+	@Test(groups= {"AgencyPartner General"})
+	public void WSAgent13() throws InterruptedException {
+		Agent_TC013_VerifyAgencyPartnerAbletoDeclineNewAssignment ag = PageFactory.initElements(driver, Agent_TC013_VerifyAgencyPartnerAbletoDeclineNewAssignment.class);
+		ag.verifyAgencyPartnerAbletoDeclineNewAssignment();
+	}
+	
+	@Test(groups= {"AgencyPartner General"})
+	public void WSAgent14() throws InterruptedException {
+		Agent_TC014_VerifyAgencyPartnerAbletoViewJobDetailsfromNewAssignment ag = PageFactory.initElements(driver, Agent_TC014_VerifyAgencyPartnerAbletoViewJobDetailsfromNewAssignment.class);
+		ag.verifyAgencyPartnerAbletoViewJobDetailsfromNewAssignment();
+	}
+		
+	@Test(groups= {"AgencyPartner General"})
+	public void WSAgent15() throws InterruptedException {
+		Agent_TC015_VerifyAgencyPartnerAbletoViewJobDetailsfromActiveAssignment ag = PageFactory.initElements(driver, Agent_TC015_VerifyAgencyPartnerAbletoViewJobDetailsfromActiveAssignment.class);
+		ag.verifyAgencyPartnerAbletoViewJobDetailsfromActiveAssignment();
+	}
+		
+	
+	@Test(groups= {"AgencyPartner General"})
+	public void WSAgent16() throws InterruptedException {
+		Agent_TC016_VerifyAgencyPartnerAbletoViewJobDetailsfromOnHoldAssignment ag = PageFactory.initElements(driver, Agent_TC016_VerifyAgencyPartnerAbletoViewJobDetailsfromOnHoldAssignment.class);
+		ag.verifyAgencyPartnerAbletoViewJobDetailsfromOnHoldAssignment();
+	}
+	
+	@Test(groups= {"AgencyPartner General"})
+	public void WSAgent17() throws InterruptedException {
+		Agent_TC017_VerifyAgencyPartnerAbletoViewJobDetailsfromClosedAssignment ag = PageFactory.initElements(driver, Agent_TC017_VerifyAgencyPartnerAbletoViewJobDetailsfromClosedAssignment.class);
+		ag.verifyAgencyPartnerAbletoViewJobDetailsfromClosedAssignment();
+	}
+	
+	
 }

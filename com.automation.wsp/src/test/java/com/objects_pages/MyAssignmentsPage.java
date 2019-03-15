@@ -15,6 +15,12 @@ public class MyAssignmentsPage extends Action_Method
 	
 	@FindBy(xpath="//div[contains(text(),'Active Assignments')]")
 	WebElement activeAssignments;
+
+	@FindBy(xpath="//div[contains(text(),'On Hold Assignments')]")
+	WebElement onHoldAssignments;
+
+	@FindBy(xpath="//div[contains(text(),'Closed Assignments')]")
+	WebElement closedAssignments;
 	
 //	@FindBy(xpath="//mat-card[div[div[div[app-job-card-square-header[div[div[div[contains(text(),'#46')]]]]]]]]//button[@class='assign-cadidates hidden-xs hidden-sm mat-raised-button mat-primary']")
 //	WebElement Assign_Candidate;
@@ -42,7 +48,27 @@ public class MyAssignmentsPage extends Action_Method
 	WebElement Email;
 	
 	
-	public boolean Click_On_MyAssignmentTab()
+	@FindBy(xpath="//div[text()='Items Per Page']/following::mat-select")
+	WebElement selectedItemsPerPage;
+
+	@FindBy(xpath="//a[@title='Go to next page']")
+	WebElement paginationNext;
+	
+	@FindBy(xpath="(//mat-card//a)[1]")
+	WebElement firstJobCardJobTitle;
+
+	@FindBy(xpath="(//mat-card//span)[1]")
+	WebElement firstJobCardCompanyName;
+
+	@FindBy(xpath="(//mat-card//span)[2]")
+	WebElement firstJobCardJobId;
+
+	@FindBy(xpath="//div[contains(@class,'pull-left')]")
+	WebElement jobDetailBackButton;
+	
+	
+	
+	public boolean click_On_ActiveAssignmentTab()
 	{
 		try 
 		{
@@ -55,6 +81,36 @@ public class MyAssignmentsPage extends Action_Method
 			return false;
 		}
 	}
+	
+	public boolean click_On_OnHoldAssignment()
+	{
+		try 
+		{
+			NewAssignmentsTab.click();
+			onHoldAssignments.click();
+			return true;
+		}
+		catch (Exception e) 
+		{
+			return false;
+		}
+	}
+	
+	
+	public boolean click_On_ClosedAssignment()
+	{
+		try 
+		{
+			NewAssignmentsTab.click();
+			closedAssignments.click();
+			return true;
+		}
+		catch (Exception e) 
+		{
+			return false;
+		}
+	}
+	
 	
 	public boolean Click_Assign_Candidate(String JobId)
 	{
@@ -131,6 +187,45 @@ public class MyAssignmentsPage extends Action_Method
 		}
 	}
 	
+		
+	public String findJobCardMatchesAcdeptedJobCard(String jobId) {
+		String page = driver.findElement(By.tagName("app-pagination")).getAttribute("ng-reflect-size");
+		String item = selectedItemsPerPage.getAttribute("ng-reflect-model");
+		for(int k=1; k<=Integer.parseInt(page); k++) {
+			for(int i=1; i<=Integer.parseInt(item); i++) {
+				if(driver.findElement(By.xpath("(//mat-card//div[@class='job-description']/span[2])["+i+"]")).getText().equals(jobId)) {
+					String title = driver.findElement(By.xpath("(//mat-card//a)["+i+"]")).getText();
+					String companyName = driver.findElement(By.xpath("(//mat-card//div[@class='job-description']/span[1])["+i+"]")).getText();
+					String JobId = driver.findElement(By.xpath("(//mat-card//div[@class='job-description']/span[2])["+i+"]")).getText();
+					return title+"; "+companyName+"; "+JobId;
+				}
+			}
+			paginationNext.click();
+		}
+
+		return "Job Not Matched";
+	}
 	
+	public String getFirstJobCardDetails() {
+		return firstJobCardJobTitle.getText()+"; "+firstJobCardCompanyName.getText()+"; "+firstJobCardJobId.getText();
+	}
+	
+	public boolean clickOnFirstJobDetail() {
+		try {
+			firstJobCardJobTitle.click();
+			return jobDetailBackButton.isDisplayed();
+		}catch(Exception e) {
+			return false;
+		}
+	}
+	
+	public boolean clickOnBackButtonfromJobDetail() {
+		try {
+			jobDetailBackButton.click();
+			return true;
+		}catch(Exception e) {
+			return false;
+		}
+	}
 
 }

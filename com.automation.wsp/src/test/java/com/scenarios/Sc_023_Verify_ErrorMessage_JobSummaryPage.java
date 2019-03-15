@@ -49,7 +49,10 @@ public class Sc_023_Verify_ErrorMessage_JobSummaryPage extends Action_Method
 	public void Verify_ErrorMessage_NoInputs()
 	{
 		logger = extent.startTest("Sc_023_TC02_Verifying error message for No inputs in Job Summary Page");
-		
+		logger.assignAuthor("Sivaprakash");
+		logger.assignCategory("Corporate General");
+		logger.setDescription("Verifying error message for No inputs in Job Summary Page");
+	
 		//Launching the url
 		
 		wait_for_pageload(Variables.url);
@@ -84,7 +87,10 @@ public class Sc_023_Verify_ErrorMessage_JobSummaryPage extends Action_Method
 	{
 		
 	logger = extent.startTest("Sc_023_TC03_Verifying error message for Minimum Salary greater than Maximum Salary in Job Summary Page");
-	
+	logger.assignAuthor("Sivaprakash");
+	logger.assignCategory("Corporate General");
+	logger.setDescription("Verifying error message for Minimum Salary greater than Maximum Salary in Job Summary Page");
+
 	driver.navigate().refresh();
 	
 	//Creating object for Job summary page

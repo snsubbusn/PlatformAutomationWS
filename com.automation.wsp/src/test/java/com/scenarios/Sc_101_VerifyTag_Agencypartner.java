@@ -36,7 +36,7 @@ public class Sc_101_VerifyTag_Agencypartner extends Action_Method
 		
 		//Creating object for Myassignment page
 		MyAssignmentsPage My=PageFactory.initElements(driver,MyAssignmentsPage.class);
-		if(My.Click_On_MyAssignmentTab()==true)
+		if(My.click_On_ActiveAssignmentTab()==true)
 		{
 			logger.log(LogStatus.PASS, "Navigated to Active Assignments");
 		}
