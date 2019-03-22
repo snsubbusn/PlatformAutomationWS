@@ -68,6 +68,28 @@ public class MyAssignmentsPage extends Action_Method
 	
 	
 	
+	//Assign Candidate - My Assignments Page Elements
+	@FindBy(xpath="//span[text()='My Assignments']")
+	WebElement myAssignmentsHeading;
+	
+	@FindBy(xpath="//a[@class='ng-star-inserted']/span[1]")
+	WebElement jobDescription;
+	
+	@FindBy(xpath="//a[@class='ng-star-inserted']/span[2]")
+	WebElement companyName;
+	
+	@FindBy(xpath="//button[text()='Invite New']")
+	WebElement inviteNewTab;
+	
+	@FindBy(xpath="//button[text()='Invited']")
+	WebElement invitedTab;
+	
+	@FindBy(xpath="//button[text()='Tagged']")
+	WebElement taggedTab;
+	
+	
+	
+	
 	public boolean click_On_ActiveAssignmentTab()
 	{
 		try 
@@ -227,5 +249,32 @@ public class MyAssignmentsPage extends Action_Method
 			return false;
 		}
 	}
+	
+	public String verifyNavigatedtoMyAssignmentsPage() {
+		return myAssignmentsHeading.getText();
+	}
 
+	public String getJobDetailsinMyAssignmentsPage() {
+		return jobDescription.getText()+"; Company Name- "+companyName.getText()+"; \n Tab Details are - "+inviteNewTab.getText()+"; "+invitedTab.getText()+"; "+TagExisting_Tab.getText()+"; "+taggedTab.getText();
+	}
+	
+	public boolean clickOnInviteNewTab() {
+		try {
+			inviteNewTab.click();
+			return true;
+		}catch(Exception e) {
+			return false;
+		}
+	}
+	
+	public boolean clickOnInvitedTab() {
+		try {
+			invitedTab.click();
+			return true;
+		}catch(Exception e) {
+			return false;
+		}
+	}
+	
+	
 }
