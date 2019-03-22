@@ -26,6 +26,10 @@ import com.scenarios.Agent_TC014_VerifyAgencyPartnerAbletoViewJobDetailsfromNewA
 import com.scenarios.Agent_TC015_VerifyAgencyPartnerAbletoViewJobDetailsfromActiveAssignment;
 import com.scenarios.Agent_TC016_VerifyAgencyPartnerAbletoViewJobDetailsfromOnHoldAssignment;
 import com.scenarios.Agent_TC017_VerifyAgencyPartnerAbletoViewJobDetailsfromClosedAssignment;
+import com.scenarios.Agent_TC018_VerifyAssignCandidateDetailsForJob;
+import com.scenarios.Agent_TC019_VerifyValidationOfInviteNewCandidateForJob;
+import com.scenarios.Agent_TC020_VerifyInviteNewCandidateForJob;
+import com.scenarios.Agent_TC021_VerifyInvitedTabofaJob;
 import com.scenarios.CorpAdm_Dashboard_TC001_VerifyDashboard;
 import com.scenarios.CorpAdm_Dashboard_TC002_VerifyDashafterGS;
 import com.scenarios.CorpAdm_Dashboard_TC003_VerifyDashafterGO;
@@ -635,4 +639,30 @@ public class ScriptExecution extends Action_Method
 	}
 	
 	
+	
+	@Test(groups= {"AgencyPartner General"})
+	public void WSAgent18() throws InterruptedException {
+		Agent_TC018_VerifyAssignCandidateDetailsForJob ag = PageFactory.initElements(driver, Agent_TC018_VerifyAssignCandidateDetailsForJob.class);
+		ag.verifyAssignCandidateDetailsForJob();
+	}
+	
+	
+	@Test(groups= {"AgencyPartner General"})
+	public void WSAgent19() throws InterruptedException {
+		Agent_TC019_VerifyValidationOfInviteNewCandidateForJob ag = PageFactory.initElements(driver, Agent_TC019_VerifyValidationOfInviteNewCandidateForJob.class);
+		ag.verifyValidationOfInviteNewCandidateForJob();
+	}
+	
+	@Test(groups= {"AgencyPartner General"})
+	public void WSAgent20() throws InterruptedException {
+		Agent_TC020_VerifyInviteNewCandidateForJob ag = PageFactory.initElements(driver, Agent_TC020_VerifyInviteNewCandidateForJob.class);
+		ag.verifyInviteNewCandidateForJob();
+	}
+	
+	
+	@Test(groups= {"AgencyPartner General"})
+	public void WSAgent21() throws InterruptedException {
+		Agent_TC021_VerifyInvitedTabofaJob ag = PageFactory.initElements(driver, Agent_TC021_VerifyInvitedTabofaJob.class);
+		ag.verifyInviteNewCandidateForJob();
+	}
 }

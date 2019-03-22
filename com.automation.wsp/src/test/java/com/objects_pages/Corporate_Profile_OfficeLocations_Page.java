@@ -137,6 +137,7 @@ public class Corporate_Profile_OfficeLocations_Page extends Action_Method{
 		Title.sendKeys("Internatonal Bussiness Machine");
 		Description.sendKeys("Description is the pattern of narrative development that aims to make vivid a place, object, character, or group. Description is one of four rhetorical modes, "
 				+ "along with exposition, argumentation, and narration.");
+		Description.sendKeys(Keys.TAB);
 		solAddbutton.click();
 		successMsgClose.click();
 		return addedSolution.getText();
