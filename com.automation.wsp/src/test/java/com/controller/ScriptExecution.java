@@ -402,7 +402,7 @@ public class ScriptExecution extends Action_Method
 		ds.verifyCorpAdminDashboardAfterGS();
 	}
 
-	@Test(dependsOnMethods = "onboarding5", groups = {"GO","Corporate General"})
+	@Test(/*dependsOnMethods = "onboarding5",*/ groups = {"GO","Corporate General"})
 	public void CorporateDashboard03() throws InterruptedException, EncryptedDocumentException, InvalidFormatException, IOException {
 		CorpAdm_Dashboard_TC003_VerifyDashafterGO ds = PageFactory.initElements(driver, CorpAdm_Dashboard_TC003_VerifyDashafterGO.class);
 		ds.verifyCorpAdminDashboardAfterGO();

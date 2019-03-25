@@ -49,7 +49,7 @@ public class Agent_TC013_VerifyAgencyPartnerAbletoDeclineNewAssignment extends A
 				logger.log(LogStatus.FAIL, "Failed to Decline the Job. The Error is :"+msg);
 			}
 		}else {
-			logger.log(LogStatus.FAIL, "No Jobs aligned to the agent. So could not verify the Agent able to Decline the job in New Assignments");
+			logger.log(LogStatus.WARNING, "No Jobs aligned to the agent. So could not verify the Agent able to Decline the job in New Assignments");
 		}
 
 		logger.log(LogStatus.INFO, "Completed verification of job aligned agency able to Decline the aligned job");

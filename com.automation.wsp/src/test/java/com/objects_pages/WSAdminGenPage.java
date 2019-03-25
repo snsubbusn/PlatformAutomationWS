@@ -23,8 +23,8 @@ public class WSAdminGenPage extends Action_Method{
 	@FindBy(xpath="//a[contains(text(),'Proxy')]")
 	WebElement proxyTab;
 
-	@FindBy(xpath="//a[contains(text(),'SPOC')]")
-	WebElement spocTab;
+	@FindBy(xpath="//a[contains(text(),'Account Management')]")
+	WebElement accoungtManagementTab;
 
 	@FindBy(xpath="//div[div[contains(text(),'Filter')]]//span/span")
 	WebElement filterSelectedValue;
@@ -70,7 +70,7 @@ public class WSAdminGenPage extends Action_Method{
 	@FindBy(xpath="(//div[@class='header-div']/following::div[@class='name-div'])[1]/span/span")
 	WebElement firstCardName;
 	
-	@FindBy(xpath="(//div[@class='header-div']/following::div[@class='name-div'])[1]/span/a")
+	@FindBy(xpath="(//div[@class='header-div']/following::div[@class='name-div'])[1]/a")
 	WebElement firstCardCorName;
 
 	@FindBy(xpath="(//div[@class='header-div']/following::div[@class='name-div'])[1]//div[1]")
@@ -122,8 +122,8 @@ public class WSAdminGenPage extends Action_Method{
 			if(proxyTab.isDisplayed()) {
 				a=a+"\""+proxyTab.getText()+"\", ";
 			}
-			if(spocTab.isDisplayed()) {
-				a=a+"\""+spocTab.getText()+"\"";
+			if(accoungtManagementTab.isDisplayed()) {
+				a=a+"\""+accoungtManagementTab.getText()+"\"";
 			}
 		}catch(Exception e) {
 			a="Either 'Invite' or 'Jobs' or 'Users' or 'Proxy' or'SPOC' tab is missing";
