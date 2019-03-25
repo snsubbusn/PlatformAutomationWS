@@ -68,7 +68,7 @@ public class Agent_TC012_VerifyAgencyPartnerAbletoAcceptNewAssignment extends Ac
 				logger.log(LogStatus.FAIL, "Failed to navigate to \"Active Assignments\" page.");
 			}
 		}else {
-			logger.log(LogStatus.FAIL, "No Jobs aligned to the agent. So could not verify the Agent able to accept the job in New Assignments");
+			logger.log(LogStatus.WARNING, "No Jobs aligned to the agent. So could not verify the Agent able to accept the job in New Assignments");
 		}
 
 		logger.log(LogStatus.INFO, "Completed verification of job aligned agency able to accept the aligned job");
