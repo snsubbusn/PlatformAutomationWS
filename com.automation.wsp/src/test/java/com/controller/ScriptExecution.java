@@ -30,6 +30,13 @@ import com.scenarios.Agent_TC018_VerifyAssignCandidateDetailsForJob;
 import com.scenarios.Agent_TC019_VerifyValidationOfInviteNewCandidateForJob;
 import com.scenarios.Agent_TC020_VerifyInviteNewCandidateForJob;
 import com.scenarios.Agent_TC021_VerifyInvitedTabofaJob;
+import com.scenarios.Agent_TC022_VerifyTagExistingTabofaJob;
+import com.scenarios.Agent_TC023_VerifySearchResultsForNoFiltersandTagCandidate;
+import com.scenarios.Agent_TC024_VerifySearchResultsForNameFilterandTagCandidate;
+import com.scenarios.Agent_TC025_VerifySearchResultsForEmailFilterandTagCandidate;
+import com.scenarios.Agent_TC026_VerifySearchResultsForSkillsFilterandTagCandidate;
+import com.scenarios.Agent_TC027_VerifySearchResultsForExperienceFilterandTagCandidate;
+import com.scenarios.Agent_TC028_VeriifyTaggedTabofaJob;
 import com.scenarios.CorpAdm_Dashboard_TC001_VerifyDashboard;
 import com.scenarios.CorpAdm_Dashboard_TC002_VerifyDashafterGS;
 import com.scenarios.CorpAdm_Dashboard_TC003_VerifyDashafterGO;
@@ -665,4 +672,53 @@ public class ScriptExecution extends Action_Method
 		Agent_TC021_VerifyInvitedTabofaJob ag = PageFactory.initElements(driver, Agent_TC021_VerifyInvitedTabofaJob.class);
 		ag.verifyInviteNewCandidateForJob();
 	}
+	
+	@Test(groups= {"AgencyPartner General"})
+	public void WSAgent22() throws InterruptedException {
+		Agent_TC022_VerifyTagExistingTabofaJob ag = PageFactory.initElements(driver, Agent_TC022_VerifyTagExistingTabofaJob.class);
+		ag.verifyTagExistingTabOfJob();
+	}
+	
+	
+	@Test(groups= {"AgencyPartner General"})
+	public void WSAgent23() throws InterruptedException {
+		Agent_TC023_VerifySearchResultsForNoFiltersandTagCandidate ag = PageFactory.initElements(driver, Agent_TC023_VerifySearchResultsForNoFiltersandTagCandidate.class);
+		ag.verifySearchResultsForNoFiltersandTagCandidate();
+	}
+	
+	
+	@Test(groups= {"AgencyPartner General"})
+	public void WSAgent24() throws InterruptedException {
+		Agent_TC024_VerifySearchResultsForNameFilterandTagCandidate ag = PageFactory.initElements(driver, Agent_TC024_VerifySearchResultsForNameFilterandTagCandidate.class);
+		ag.verifySearchResultsForNameFilterandTagCandidate();
+	}
+	
+	
+	@Test(groups= {"AgencyPartner General"})
+	public void WSAgent25() throws InterruptedException {
+		Agent_TC025_VerifySearchResultsForEmailFilterandTagCandidate ag = PageFactory.initElements(driver, Agent_TC025_VerifySearchResultsForEmailFilterandTagCandidate.class);
+		ag.verifySearchResultsForEmailFilterandTagCandidate();
+	}
+	
+	
+	@Test(groups= {"AgencyPartner General"})
+	public void WSAgent26() throws InterruptedException {
+		Agent_TC026_VerifySearchResultsForSkillsFilterandTagCandidate ag = PageFactory.initElements(driver, Agent_TC026_VerifySearchResultsForSkillsFilterandTagCandidate.class);
+		ag.verifySearchResultsForSkillsFilterandTagCandidate();
+	}
+	
+	
+	@Test(groups= {"AgencyPartner General"})
+	public void WSAgent27() throws InterruptedException {
+		Agent_TC027_VerifySearchResultsForExperienceFilterandTagCandidate ag = PageFactory.initElements(driver, Agent_TC027_VerifySearchResultsForExperienceFilterandTagCandidate.class);
+		ag.verifySearchResultsForExperienceFilterandTagCandidate();
+	}
+	
+	
+	@Test(groups= {"AgencyPartner General"})
+	public void WSAgent28() throws InterruptedException {
+		Agent_TC028_VeriifyTaggedTabofaJob ag = PageFactory.initElements(driver, Agent_TC028_VeriifyTaggedTabofaJob.class);
+		ag.veriifyTaggedTabofaJob();;
+	}
+	
 }
