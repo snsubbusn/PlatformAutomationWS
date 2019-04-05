@@ -26,6 +26,9 @@ import com.scenarios.Agent_TC014_VerifyAgencyPartnerAbletoViewJobDetailsfromNewA
 import com.scenarios.Agent_TC015_VerifyAgencyPartnerAbletoViewJobDetailsfromActiveAssignment;
 import com.scenarios.Agent_TC016_VerifyAgencyPartnerAbletoViewJobDetailsfromOnHoldAssignment;
 import com.scenarios.Agent_TC017_VerifyAgencyPartnerAbletoViewJobDetailsfromClosedAssignment;
+import com.scenarios.Candidate_TC001_VerifyCandidateLoginandProfilePage;
+import com.scenarios.Candidate_TC002_VerifyEditingCandidateProfilePage;
+import com.scenarios.Candidate_TC005_VerifyValidationOfUploadingCV;
 import com.scenarios.CorpAdm_Dashboard_TC001_VerifyDashboard;
 import com.scenarios.CorpAdm_Dashboard_TC002_VerifyDashafterGS;
 import com.scenarios.CorpAdm_Dashboard_TC003_VerifyDashafterGO;
@@ -108,8 +111,6 @@ public class ScriptExecution extends Action_Method
 		
 	}
 
-
-	
 	//Verify corporate profile page
 	@Test(groups = {"Corporate General"})
 	public void CorpProfile1() throws EncryptedDocumentException, InvalidFormatException, IOException, InterruptedException
@@ -166,12 +167,12 @@ public class ScriptExecution extends Action_Method
 	//This test case has been removed as part of Sprint 24 Since the password
 	//field has been removed and the password is auto generated. 
 	//https://otpinternet.atlassian.net/browse/W1O2-1734
-	/*@Test 
-	public void CorpUserMangement06() throws InterruptedException {
-		CorpAdm_User_TC007_EditPasswordChange corp = PageFactory.initElements(driver, CorpAdm_User_TC007_EditPasswordChange.class);
-		corp.editCorpUsersforPasswordChange();
-	}	
-	 */
+	//@Test 
+	//public void CorpUserMangement06() throws InterruptedException {
+	//	CorpAdm_User_TC007_EditPasswordChange corp = PageFactory.initElements(driver, CorpAdm_User_TC007_EditPasswordChange.class);
+	//	corp.editCorpUsersforPasswordChange();
+	//}	
+	 
 
 	@Test (groups = {"CorporateAdmin UserManagement"})
 	public void CorpUserMangement07() throws InterruptedException {
@@ -301,7 +302,6 @@ public class ScriptExecution extends Action_Method
 		Sc_028_Post_Video_JD s28=PageFactory.initElements(driver, Sc_028_Post_Video_JD.class);
 		s28.Verify_Post_Video_Jd();
 	}
-
 
 	//Verify Guaranteed Submission
 	@Test(/*dependsOnMethods= "Submission01",*/ groups = {"GS"})
@@ -632,7 +632,26 @@ public class ScriptExecution extends Action_Method
 	public void WSAgent17() throws InterruptedException {
 		Agent_TC017_VerifyAgencyPartnerAbletoViewJobDetailsfromClosedAssignment ag = PageFactory.initElements(driver, Agent_TC017_VerifyAgencyPartnerAbletoViewJobDetailsfromClosedAssignment.class);
 		ag.verifyAgencyPartnerAbletoViewJobDetailsfromClosedAssignment();
+	} 
+	
+	@Test(groups = {"Candidate General"})
+	public void Candidate_TC001() throws InterruptedException, EncryptedDocumentException, InvalidFormatException, IOException{
+	Candidate_TC001_VerifyCandidateLoginandProfilePage lp = PageFactory.initElements(driver, Candidate_TC001_VerifyCandidateLoginandProfilePage.class);
+	lp.VerifyingCandidateProfileViewPage();
 	}
+	
+	@Test(groups= {"Candidate General"})
+	public void Candidate_TC002() throws InterruptedException {
+		Candidate_TC002_VerifyEditingCandidateProfilePage vc = PageFactory.initElements(driver,Candidate_TC002_VerifyEditingCandidateProfilePage.class);
+		vc.candidateProfileEditVerification();
+	}
+	
+	@Test(groups= {"Candidate General"})
+	public void Candidate_TC005() throws InterruptedException {
+		Candidate_TC005_VerifyValidationOfUploadingCV cu = PageFactory.initElements(driver, Candidate_TC005_VerifyValidationOfUploadingCV.class);
+		cu.VerifyCandidateResumeEdit();
+	}
+	
 	
 	
 }
