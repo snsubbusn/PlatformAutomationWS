@@ -111,6 +111,8 @@ public class ScriptExecution extends Action_Method
 		
 	}
 
+	
+	
 	//Verify corporate profile page
 	@Test(groups = {"Corporate General"})
 	public void CorpProfile1() throws EncryptedDocumentException, InvalidFormatException, IOException, InterruptedException
@@ -167,11 +169,12 @@ public class ScriptExecution extends Action_Method
 	//This test case has been removed as part of Sprint 24 Since the password
 	//field has been removed and the password is auto generated. 
 	//https://otpinternet.atlassian.net/browse/W1O2-1734
-	//@Test 
-	//public void CorpUserMangement06() throws InterruptedException {
-	//	CorpAdm_User_TC007_EditPasswordChange corp = PageFactory.initElements(driver, CorpAdm_User_TC007_EditPasswordChange.class);
-	//	corp.editCorpUsersforPasswordChange();
-	//}	
+	/*@Test 
+	public void CorpUserMangement06() throws InterruptedException {
+		CorpAdm_User_TC007_EditPasswordChange corp = PageFactory.initElements(driver, CorpAdm_User_TC007_EditPasswordChange.class);
+		corp.editCorpUsersforPasswordChange();
+	}
+	*/	
 	 
 
 	@Test (groups = {"CorporateAdmin UserManagement"})
@@ -303,6 +306,7 @@ public class ScriptExecution extends Action_Method
 		s28.Verify_Post_Video_Jd();
 	}
 
+	
 	//Verify Guaranteed Submission
 	@Test(/*dependsOnMethods= "Submission01",*/ groups = {"GS"})
 	public void Submission02() throws EncryptedDocumentException, InvalidFormatException, IOException, InterruptedException
