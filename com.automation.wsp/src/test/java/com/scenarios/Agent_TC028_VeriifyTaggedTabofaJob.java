@@ -68,7 +68,7 @@ public class Agent_TC028_VeriifyTaggedTabofaJob extends Action_Method{
 			my.clickOnSearchButton();
 			logger.log(LogStatus.PASS, "Clicked on Search button");
 			
-			String result = my.getResultsDetails();
+			//String result = my.getResultsDetails();
 			if(my.Tag_Candidate()) {
 				logger.log(LogStatus.PASS, "Successfully Tagged the candidate");
 			}else {

@@ -40,12 +40,15 @@ import com.scenarios.Agent_TC028_VeriifyTaggedTabofaJob;
 import com.scenarios.CorpAdm_Dashboard_TC001_VerifyDashboard;
 import com.scenarios.CorpAdm_Dashboard_TC002_VerifyDashafterGS;
 import com.scenarios.CorpAdm_Dashboard_TC003_VerifyDashafterGO;
+import com.scenarios.CorpAdm_TC010_VerifyActiveJobMovedtoOnHoldJob;
+import com.scenarios.CorpAdm_TC011_VerifyOnHoldJobResumedtoActiveJob;
 import com.scenarios.CorpAdm_User_TC001_VerifyUsersTab;
 import com.scenarios.CorpAdm_User_TC002_AddUser;
 import com.scenarios.CorpAdm_User_TC003_AddUserforAllLicenses;
 import com.scenarios.CorpAdm_User_TC004_EditUserName;
 import com.scenarios.CorpAdm_User_TC005_EditEmailId;
 import com.scenarios.CorpAdm_User_TC006_EditPhone;
+import com.scenarios.CorpAdm_User_TC007_EditPasswordChange;
 import com.scenarios.CorpAdm_User_TC008_DeleteUser;
 import com.scenarios.CorpAdm_User_TC009_DeleteAllUser;
 import com.scenarios.CorpAdm_User_TC010_AddDeletedUser;
@@ -113,10 +116,8 @@ public class ScriptExecution extends Action_Method
 	
 	@AfterSuite(alwaysRun = true)
 	public void afterSuite() {
-
 		extent.flush();
 		extent.close();
-		
 	}
 
 
@@ -177,12 +178,12 @@ public class ScriptExecution extends Action_Method
 	//This test case has been removed as part of Sprint 24 Since the password
 	//field has been removed and the password is auto generated. 
 	//https://otpinternet.atlassian.net/browse/W1O2-1734
-	/*@Test 
+	@Test 
 	public void CorpUserMangement06() throws InterruptedException {
 		CorpAdm_User_TC007_EditPasswordChange corp = PageFactory.initElements(driver, CorpAdm_User_TC007_EditPasswordChange.class);
 		corp.editCorpUsersforPasswordChange();
 	}	
-	 */
+	 
 
 	@Test (groups = {"CorporateAdmin UserManagement"})
 	public void CorpUserMangement07() throws InterruptedException {
@@ -253,6 +254,20 @@ public class ScriptExecution extends Action_Method
 	}
 	
 	
+	@Test (groups = {"Corporate General"})
+	public void CorpAdmTC010() throws EncryptedDocumentException, InvalidFormatException, IOException, InterruptedException
+	{
+		CorpAdm_TC010_VerifyActiveJobMovedtoOnHoldJob cor=PageFactory.initElements(driver,CorpAdm_TC010_VerifyActiveJobMovedtoOnHoldJob.class);
+		cor.verifyActiveJobMovedtoOnHoldJob();
+	}
+	
+	@Test (groups = {"Corporate General"})
+	public void CorpAdmTC011() throws EncryptedDocumentException, InvalidFormatException, IOException, InterruptedException
+	{
+		CorpAdm_TC011_VerifyOnHoldJobResumedtoActiveJob cor=PageFactory.initElements(driver,CorpAdm_TC011_VerifyOnHoldJobResumedtoActiveJob.class);
+		cor.verifyOnHoldJobResumedtoActiveJob();
+	}
+	
 	//Verify all the elements present in Login page
 	@Test (groups = {"General"})
 	public void Login1() throws EncryptedDocumentException, InvalidFormatException, IOException, InterruptedException
@@ -315,7 +330,7 @@ public class ScriptExecution extends Action_Method
 
 
 	//Verify Guaranteed Submission
-	@Test(/*dependsOnMethods= "Submission01",*/ groups = {"GS"})
+	@Test(dependsOnMethods= "Submission01", groups = {"GS"})
 	public void Submission02() throws EncryptedDocumentException, InvalidFormatException, IOException, InterruptedException
 	{
 		Sc_032_PerformGuaranteedSubmission s32=PageFactory.initElements(driver, Sc_032_PerformGuaranteedSubmission.class);
@@ -323,7 +338,7 @@ public class ScriptExecution extends Action_Method
 	}
 
 	//Verify align of an agency by workstreets Admin
-	@Test(/*dependsOnMethods="Submission02",*/ groups = {"GS"})
+	@Test(dependsOnMethods="Submission02", groups = {"GS"})
 	public void Submission03() throws EncryptedDocumentException, InvalidFormatException, IOException, InterruptedException
 	{
 		Sc_068_Verify_AlignOfAnAgency s68=PageFactory.initElements(driver, Sc_068_Verify_AlignOfAnAgency.class);
@@ -332,7 +347,7 @@ public class ScriptExecution extends Action_Method
 
 
 	//Accept Guaranteed submission by Agency Partner
-	@Test(/*dependsOnMethods="Submission03",*/ groups = {"GS"})
+	@Test(dependsOnMethods="Submission03", groups = {"GS"})
 	public void Submission04() throws EncryptedDocumentException, InvalidFormatException, IOException
 	{
 		Sc_087_VerifyAccept_GS s87=PageFactory.initElements(driver, Sc_087_VerifyAccept_GS.class);
@@ -341,7 +356,7 @@ public class ScriptExecution extends Action_Method
 
 
 	// Tag Candidate by Agency Partner
-	@Test(/*dependsOnMethods="Submission04",*/ groups = {"GS"})
+	@Test(dependsOnMethods="Submission04", groups = {"GS"})
 	public void Submission05() throws EncryptedDocumentException, InvalidFormatException, IOException
 	{
 		Sc_101_VerifyTag_Agencypartner s101=PageFactory.initElements(driver, Sc_101_VerifyTag_Agencypartner.class);
@@ -351,7 +366,7 @@ public class ScriptExecution extends Action_Method
 
 
 	//verify Approve of an candidate in review submission by workstreets Admin
-	@Test(/*dependsOnMethods="Submission05",*/ groups = {"GS"})
+	@Test(dependsOnMethods="Submission05", groups = {"GS"})
 	public void Submission06() throws EncryptedDocumentException, InvalidFormatException, IOException, InterruptedException
 	{
 		Sc_080_Verify_Accept_ReviewSubmission s80=PageFactory.initElements(driver, Sc_080_Verify_Accept_ReviewSubmission.class);
@@ -361,7 +376,7 @@ public class ScriptExecution extends Action_Method
 
 
 	//Shortlist candidate in pending review page by Corporate Admin
-	@Test(/*dependsOnMethods="Submission06",*/ groups = {"GS"})
+	@Test(dependsOnMethods="Submission06", groups = {"GS"})
 	public void Submission07() throws EncryptedDocumentException, InvalidFormatException, IOException
 	{
 		Sc_036_Verify_Shortlist_PendingReview_CorporateAdmin s36=PageFactory.initElements(driver,Sc_036_Verify_Shortlist_PendingReview_CorporateAdmin.class);
@@ -378,25 +393,25 @@ public class ScriptExecution extends Action_Method
 		GO.guaranteedOnboardingCampaignCreation();
 	}
 
-	@Test(/*dependsOnMethods="onboarding1",*/ groups = {"GO"})
+	@Test(dependsOnMethods="onboarding1", groups = {"GO"})
 	public void onboarding2() throws EncryptedDocumentException, InvalidFormatException, IOException, InterruptedException {
 		GO_Admin_AlignAgencies align=PageFactory.initElements(driver, GO_Admin_AlignAgencies.class);
 		align.AlignAgentforGO();
 	}
 
-	@Test(/*dependsOnMethods="onboarding2",*/ groups = {"GO"})
+	@Test(dependsOnMethods="onboarding2", groups = {"GO"})
 	public void onboarding3() throws EncryptedDocumentException, InvalidFormatException, IOException, InterruptedException {
 		GO_AgentAcceptandTagCandidates agent = PageFactory.initElements(driver, GO_AgentAcceptandTagCandidates.class);
 		agent.agentAcceptandTagCandidates();
 	}
 
-	@Test(/*dependsOnMethods="onboarding3", */groups = {"GO"})
+	@Test(dependsOnMethods="onboarding3", groups = {"GO"})
 	public void onboarding4() throws EncryptedDocumentException, InvalidFormatException, IOException, InterruptedException {
 		GO_AdminReviewSubmission adminreview = PageFactory.initElements(driver, GO_AdminReviewSubmission.class);
 		adminreview.goAdminReviewSubmission();
 	}
 
-	@Test (/*dependsOnMethods="onboarding4", */groups = {"GO"})
+	@Test (dependsOnMethods="onboarding4", groups = {"GO"})
 	public void onboarding5() throws EncryptedDocumentException, InvalidFormatException, IOException, InterruptedException {
 		GO_CorporateShortlists corshor = PageFactory.initElements(driver, GO_CorporateShortlists.class);
 		corshor.corporateShortlist();
@@ -409,7 +424,7 @@ public class ScriptExecution extends Action_Method
 		ds.verifyCorpAdminDashboardAfterGS();
 	}
 
-	@Test(/*dependsOnMethods = "onboarding5",*/ groups = {"GO","Corporate General"})
+	@Test(dependsOnMethods = "onboarding5", groups = {"GO","Corporate General"})
 	public void CorporateDashboard03() throws InterruptedException, EncryptedDocumentException, InvalidFormatException, IOException {
 		CorpAdm_Dashboard_TC003_VerifyDashafterGO ds = PageFactory.initElements(driver, CorpAdm_Dashboard_TC003_VerifyDashafterGO.class);
 		ds.verifyCorpAdminDashboardAfterGO();

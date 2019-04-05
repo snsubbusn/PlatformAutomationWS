@@ -143,6 +143,9 @@ public class MyAssignmentsPage extends Action_Method
 
 	@FindBy(xpath="//mat-option[1]")
 	WebElement firstDropDownValue;
+	
+	@FindBy(xpath="(//button//i[contains(text(),'close')])[1]")
+	WebElement successMsgClose;
 
 	public boolean click_On_ActiveAssignmentTab()
 	{
@@ -410,6 +413,9 @@ public class MyAssignmentsPage extends Action_Method
 	
 	public boolean clickOnFirstCandidateSearchResult() {
 		try {
+			Actions act = new Actions(driver);
+			act.moveToElement(firstSearchResult).build().perform();
+			
 			firstSearchResult.click();
 			return true;
 		}catch(Exception e) {
@@ -445,9 +451,11 @@ public class MyAssignmentsPage extends Action_Method
 	}
 	
 	
-	public void clickOnTaggedTab() {
+	public void clickOnTaggedTab() throws InterruptedException {
+		//successMsgClose.click();
 		Actions act = new Actions(driver);
 		act.moveToElement(taggedTab).build().perform();
+		//Thread.sleep(6000);
 		taggedTab.click();
 	}
 	
