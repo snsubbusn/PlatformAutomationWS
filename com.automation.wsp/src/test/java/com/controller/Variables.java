@@ -17,6 +17,7 @@ public interface Variables
 	String Corporate_AddSkillsPage="Add Skills page";
 	String Update_Data="Update Before Execution";
 	String SetData_Excel="Write data";
+	String ResumeWithoutContact = "E:\\PlatformAutomation\\com.automation.wsp\\src\\main\\resources\\ResumeWithoutContact.docx";
 	
 	
 /*	String testdata="C:\\Users\\DELL\\git\\platformautomation\\com.automation.wsp\\src\\main\\resources\\TestData.xlsx";

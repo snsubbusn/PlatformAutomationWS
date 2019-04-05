@@ -14,14 +14,16 @@ public class ManageResponsesPage extends Action_Method
 
 	@FindBy(xpath="//a//span[contains(text(),'Jobs')]")
 	WebElement Jobs_Tab;
-	
+
 	@FindBy(xpath="//div[contains(text(),'Active Jobs')]")
 	WebElement activeJobs;
 
 	@FindBy(xpath="//div[contains(text(),'Closed Jobs')]")
 	WebElement closedJobs;
-    
-  
+
+	@FindBy(xpath="//div[contains(text(),'On Hold Jobs')]")
+	WebElement onHoldJobs;
+
 	@FindBy(xpath="//a[span[contains(text(),'Manage Responses')]]")
 	WebElement ManageResponses_tab;
 	//	@FindBy(xpath="//mat-card[div[div[div[app-job-card-square-header[div[div[div[contains(text(),'#53')]]]]]]]]//button[@class='pending-review mat-raised-button mat-primary']")
@@ -42,14 +44,57 @@ public class ManageResponsesPage extends Action_Method
 	@FindBy(xpath="//mat-icon[contains(text(),'close')]")
 	WebElement closeSideBar;
 
-	public boolean Click_On_ManageResponses_Tab()
+
+	//Elements of ActiveJobs page
+
+	@FindBy(xpath="(//div[@class='job-description']//span[2])[1]")
+	WebElement jobIdFirstCard;
+	
+	
+	@FindBy(xpath="(//div[@class='job-description']//span[2])[2]")
+	WebElement jobIdSecondCard;
+
+	@FindBy(xpath="//button/span[text()='Yes']")
+	WebElement confirmYesBtn;
+
+	@FindBy(xpath="//div[@class='message-holder']")
+	WebElement successMsgDetails;
+
+
+	public boolean Click_On_ActiveJobs()
 	{
 		try
 		{
 			Jobs_Tab.click();
 			activeJobs.click();
-			//wait_for_elementpresent(ManageResponses_tab);
-			//ManageResponses_tab.click();
+			return true;
+		}
+		catch (Exception e)
+		{
+			return false;
+		}
+	}
+
+	public boolean Click_On_OnHoldJobs()
+	{
+		try
+		{
+			Jobs_Tab.click();
+			onHoldJobs.click();
+			return true;
+		}
+		catch (Exception e)
+		{
+			return false;
+		}
+	}
+
+	public boolean Click_On_closedJobs()
+	{
+		try
+		{
+			Jobs_Tab.click();
+			closedJobs.click();
 			return true;
 		}
 		catch (Exception e)
@@ -118,8 +163,54 @@ public class ManageResponsesPage extends Action_Method
 		return driver.findElement(By.xpath("//mat-card[div[div[div[app-job-card-square-header[div[div[div[div[span[contains(text(),'#"+JobId+"')]]]]]]]]]]//button//span[contains(text(),'Replicate')]")).getText();
 	}
 
+	public String getSecondJobId() {
+		return jobIdSecondCard.getText();
+	}
+	
+	public String getFirstJobId() {
+		return jobIdFirstCard.getText();
+	}
 
+	public String clickOnOnHoldandVerifySuccessMsg(String jobId) {
+		try{
+			driver.findElement(By.xpath("//div//span[contains(text(),'"+jobId+"')]/following::button[2]")).click();
+			wait_for_elementpresent(confirmYesBtn);
+			confirmYesBtn.click();
+			return successMsgDetails.getText();
+		}catch(Exception e) {
+			return e.toString();
+		}
 
+	}
+	
+	public String clickOnResumeandVerifySuccessMsg(String jobId) {
+		try{
+			driver.findElement(By.xpath("//div//span[contains(text(),'"+jobId+"')]/following::button[3]")).click();
+			return successMsgDetails.getText();
+		}catch(Exception e) {
+			return e.toString();
+		}
 
+	}
+	
+	public String clickOnCloseandVerifySuccessMsg(String jobId) {
+		try{
+			driver.findElement(By.xpath("//div//span[contains(text(),'"+jobId+"')]/following::button[2]")).click();
+			wait_for_elementpresent(confirmYesBtn);
+			confirmYesBtn.click();
+			return successMsgDetails.getText();
+		}catch(Exception e) {
+			return e.toString();
+		}
+
+	}
+	
+	public boolean verifyJobisPresent(String jobId) {
+		try {
+			return driver.findElement(By.xpath("//div//span[contains(text(),'"+jobId+"')]")).isDisplayed();
+		}catch(Exception e) {
+			return false;
+		}
+	}
 }
 

@@ -37,7 +37,7 @@ public class WSAdmin_TC001_VerifyAdminLogin extends Action_Method {
 		String tab = ws.verifyWSAdminHomePagebyGettingTabDetails();
 		
 		if(tab.contains("Either")) {
-			logger.log(LogStatus.FAIL, "The Tabs are missing"+tab);
+			logger.log(LogStatus.FAIL, "The Tabs are missing: "+tab);
 		}else {
 			logger.log(LogStatus.PASS, "Verified the home page of the WS Admin. The Tabs present for Admin are "+tab);
 		}

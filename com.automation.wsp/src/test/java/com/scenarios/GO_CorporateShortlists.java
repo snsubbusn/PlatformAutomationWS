@@ -40,7 +40,7 @@ public class GO_CorporateShortlists extends Action_Method {
 
 		//Creating Object for view Responses page
 		ManageResponsesPage view=PageFactory.initElements(driver,ManageResponsesPage.class);
-		if(view.Click_On_ManageResponses_Tab()==true)
+		if(view.Click_On_ActiveJobs()==true)
 		{
 			logger.log(LogStatus.PASS, "Click on Manage Responses tab, Manage Responses tab clicked");
 		}else{
@@ -171,7 +171,7 @@ public class GO_CorporateShortlists extends Action_Method {
 		lp.EnterValidLogin(Variables.testdata,Variables.LoginPage,"Corporate Email","Corporate Password");
 
 		logger.log(LogStatus.INFO, "Logged in as corporate and subumits the feedback and offer");
-		if(view.Click_On_ManageResponses_Tab()==true){
+		if(view.Click_On_ActiveJobs()==true){
 			logger.log(LogStatus.PASS, "Click on Manage Responses tab, Manage Responses tab clicked");
 		}else{
 			logger.log(LogStatus.FAIL, "Click on Manage Responses tab, Fail,Manage Responses tab not clicked");
@@ -259,7 +259,7 @@ public class GO_CorporateShortlists extends Action_Method {
 		logger.log(LogStatus.INFO, "Corporate Log in to onboard the offer accepted candidate");
 		lp.EnterValidLogin(Variables.testdata,Variables.LoginPage,"Corporate Email","Corporate Password");
 
-		if(view.Click_On_ManageResponses_Tab()==true){
+		if(view.Click_On_ActiveJobs()==true){
 			logger.log(LogStatus.PASS, "Click on Manage Responses tab, Manage Responses tab clicked");
 		}else{
 			logger.log(LogStatus.FAIL, "Click on Manage Responses tab, Fail,Manage Responses tab not clicked");

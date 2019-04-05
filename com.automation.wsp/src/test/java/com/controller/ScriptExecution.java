@@ -29,9 +29,22 @@ import com.scenarios.Agent_TC017_VerifyAgencyPartnerAbletoViewJobDetailsfromClos
 import com.scenarios.Candidate_TC001_VerifyCandidateLoginandProfilePage;
 import com.scenarios.Candidate_TC002_VerifyEditingCandidateProfilePage;
 import com.scenarios.Candidate_TC005_VerifyValidationOfUploadingCV;
+import com.scenarios.Agent_TC018_VerifyAssignCandidateDetailsForJob;
+import com.scenarios.Agent_TC019_VerifyValidationOfInviteNewCandidateForJob;
+import com.scenarios.Agent_TC020_VerifyInviteNewCandidateForJob;
+import com.scenarios.Agent_TC021_VerifyInvitedTabofaJob;
+import com.scenarios.Agent_TC022_VerifyTagExistingTabofaJob;
+import com.scenarios.Agent_TC023_VerifySearchResultsForNoFiltersandTagCandidate;
+import com.scenarios.Agent_TC024_VerifySearchResultsForNameFilterandTagCandidate;
+import com.scenarios.Agent_TC025_VerifySearchResultsForEmailFilterandTagCandidate;
+import com.scenarios.Agent_TC026_VerifySearchResultsForSkillsFilterandTagCandidate;
+import com.scenarios.Agent_TC027_VerifySearchResultsForExperienceFilterandTagCandidate;
+import com.scenarios.Agent_TC028_VeriifyTaggedTabofaJob;
 import com.scenarios.CorpAdm_Dashboard_TC001_VerifyDashboard;
 import com.scenarios.CorpAdm_Dashboard_TC002_VerifyDashafterGS;
 import com.scenarios.CorpAdm_Dashboard_TC003_VerifyDashafterGO;
+import com.scenarios.CorpAdm_TC010_VerifyActiveJobMovedtoOnHoldJob;
+import com.scenarios.CorpAdm_TC011_VerifyOnHoldJobResumedtoActiveJob;
 import com.scenarios.CorpAdm_User_TC001_VerifyUsersTab;
 import com.scenarios.CorpAdm_User_TC002_AddUser;
 import com.scenarios.CorpAdm_User_TC003_AddUserforAllLicenses;
@@ -105,10 +118,8 @@ public class ScriptExecution extends Action_Method
 	
 	@AfterSuite(alwaysRun = true)
 	public void afterSuite() {
-
 		extent.flush();
 		extent.close();
-		
 	}
 
 	
@@ -173,6 +184,7 @@ public class ScriptExecution extends Action_Method
 	public void CorpUserMangement06() throws InterruptedException {
 		CorpAdm_User_TC007_EditPasswordChange corp = PageFactory.initElements(driver, CorpAdm_User_TC007_EditPasswordChange.class);
 		corp.editCorpUsersforPasswordChange();
+
 	}
 	*/	
 	 
@@ -246,6 +258,20 @@ public class ScriptExecution extends Action_Method
 	}
 	
 	
+	@Test (groups = {"Corporate General"})
+	public void CorpAdmTC010() throws EncryptedDocumentException, InvalidFormatException, IOException, InterruptedException
+	{
+		CorpAdm_TC010_VerifyActiveJobMovedtoOnHoldJob cor=PageFactory.initElements(driver,CorpAdm_TC010_VerifyActiveJobMovedtoOnHoldJob.class);
+		cor.verifyActiveJobMovedtoOnHoldJob();
+	}
+	
+	@Test (groups = {"Corporate General"})
+	public void CorpAdmTC011() throws EncryptedDocumentException, InvalidFormatException, IOException, InterruptedException
+	{
+		CorpAdm_TC011_VerifyOnHoldJobResumedtoActiveJob cor=PageFactory.initElements(driver,CorpAdm_TC011_VerifyOnHoldJobResumedtoActiveJob.class);
+		cor.verifyOnHoldJobResumedtoActiveJob();
+	}
+	
 	//Verify all the elements present in Login page
 	@Test (groups = {"General"})
 	public void Login1() throws EncryptedDocumentException, InvalidFormatException, IOException, InterruptedException
@@ -308,7 +334,7 @@ public class ScriptExecution extends Action_Method
 
 	
 	//Verify Guaranteed Submission
-	@Test(/*dependsOnMethods= "Submission01",*/ groups = {"GS"})
+	@Test(/*dependsOnMethods= "Submission01", */groups = {"GS"})
 	public void Submission02() throws EncryptedDocumentException, InvalidFormatException, IOException, InterruptedException
 	{
 		Sc_032_PerformGuaranteedSubmission s32=PageFactory.initElements(driver, Sc_032_PerformGuaranteedSubmission.class);
@@ -344,7 +370,7 @@ public class ScriptExecution extends Action_Method
 
 
 	//verify Approve of an candidate in review submission by workstreets Admin
-	@Test(/*dependsOnMethods="Submission05",*/ groups = {"GS"})
+	@Test(/*dependsOnMethods="Submission05", */groups = {"GS"})
 	public void Submission06() throws EncryptedDocumentException, InvalidFormatException, IOException, InterruptedException
 	{
 		Sc_080_Verify_Accept_ReviewSubmission s80=PageFactory.initElements(driver, Sc_080_Verify_Accept_ReviewSubmission.class);
@@ -377,7 +403,7 @@ public class ScriptExecution extends Action_Method
 		align.AlignAgentforGO();
 	}
 
-	@Test(/*dependsOnMethods="onboarding2",*/ groups = {"GO"})
+	@Test(/*dependsOnMethods="onboarding2", */groups = {"GO"})
 	public void onboarding3() throws EncryptedDocumentException, InvalidFormatException, IOException, InterruptedException {
 		GO_AgentAcceptandTagCandidates agent = PageFactory.initElements(driver, GO_AgentAcceptandTagCandidates.class);
 		agent.agentAcceptandTagCandidates();
@@ -389,20 +415,20 @@ public class ScriptExecution extends Action_Method
 		adminreview.goAdminReviewSubmission();
 	}
 
-	@Test (/*dependsOnMethods="onboarding4", */groups = {"GO"})
+	@Test (/*dependsOnMethods="onboarding4",*/ groups = {"GO"})
 	public void onboarding5() throws EncryptedDocumentException, InvalidFormatException, IOException, InterruptedException {
 		GO_CorporateShortlists corshor = PageFactory.initElements(driver, GO_CorporateShortlists.class);
 		corshor.corporateShortlist();
 	}
 
 
-	@Test(dependsOnMethods ="onboarding5", groups = {"GS","Corporate General"})
+	@Test(/*dependsOnMethods ="onboarding5",*/ groups = {"GS","Corporate General"})
 	public void CorporateDashboard02() throws InterruptedException, EncryptedDocumentException, InvalidFormatException, IOException {
 		CorpAdm_Dashboard_TC002_VerifyDashafterGS ds = PageFactory.initElements(driver, CorpAdm_Dashboard_TC002_VerifyDashafterGS.class);
 		ds.verifyCorpAdminDashboardAfterGS();
 	}
 
-	@Test(dependsOnMethods = "onboarding5", groups = {"GO","Corporate General"})
+	@Test(/*dependsOnMethods = "onboarding5",*/ groups = {"GO","Corporate General"})
 	public void CorporateDashboard03() throws InterruptedException, EncryptedDocumentException, InvalidFormatException, IOException {
 		CorpAdm_Dashboard_TC003_VerifyDashafterGO ds = PageFactory.initElements(driver, CorpAdm_Dashboard_TC003_VerifyDashafterGO.class);
 		ds.verifyCorpAdminDashboardAfterGO();
@@ -657,5 +683,80 @@ public class ScriptExecution extends Action_Method
 	}
 	
 	
+	
+	
+	@Test(groups= {"AgencyPartner General"})
+	public void WSAgent18() throws InterruptedException {
+		Agent_TC018_VerifyAssignCandidateDetailsForJob ag = PageFactory.initElements(driver, Agent_TC018_VerifyAssignCandidateDetailsForJob.class);
+		ag.verifyAssignCandidateDetailsForJob();
+	}
+	
+	
+	@Test(groups= {"AgencyPartner General"})
+	public void WSAgent19() throws InterruptedException {
+		Agent_TC019_VerifyValidationOfInviteNewCandidateForJob ag = PageFactory.initElements(driver, Agent_TC019_VerifyValidationOfInviteNewCandidateForJob.class);
+		ag.verifyValidationOfInviteNewCandidateForJob();
+	}
+	
+	@Test(groups= {"AgencyPartner General"})
+	public void WSAgent20() throws InterruptedException {
+		Agent_TC020_VerifyInviteNewCandidateForJob ag = PageFactory.initElements(driver, Agent_TC020_VerifyInviteNewCandidateForJob.class);
+		ag.verifyInviteNewCandidateForJob();
+	}
+	
+	
+	@Test(groups= {"AgencyPartner General"})
+	public void WSAgent21() throws InterruptedException {
+		Agent_TC021_VerifyInvitedTabofaJob ag = PageFactory.initElements(driver, Agent_TC021_VerifyInvitedTabofaJob.class);
+		ag.verifyInviteNewCandidateForJob();
+	}
+	
+	@Test(groups= {"AgencyPartner General"})
+	public void WSAgent22() throws InterruptedException {
+		Agent_TC022_VerifyTagExistingTabofaJob ag = PageFactory.initElements(driver, Agent_TC022_VerifyTagExistingTabofaJob.class);
+		ag.verifyTagExistingTabOfJob();
+	}
+	
+	
+	@Test(groups= {"AgencyPartner General"})
+	public void WSAgent23() throws InterruptedException {
+		Agent_TC023_VerifySearchResultsForNoFiltersandTagCandidate ag = PageFactory.initElements(driver, Agent_TC023_VerifySearchResultsForNoFiltersandTagCandidate.class);
+		ag.verifySearchResultsForNoFiltersandTagCandidate();
+	}
+	
+	
+	@Test(groups= {"AgencyPartner General"})
+	public void WSAgent24() throws InterruptedException {
+		Agent_TC024_VerifySearchResultsForNameFilterandTagCandidate ag = PageFactory.initElements(driver, Agent_TC024_VerifySearchResultsForNameFilterandTagCandidate.class);
+		ag.verifySearchResultsForNameFilterandTagCandidate();
+	}
+	
+	
+	@Test(groups= {"AgencyPartner General"})
+	public void WSAgent25() throws InterruptedException {
+		Agent_TC025_VerifySearchResultsForEmailFilterandTagCandidate ag = PageFactory.initElements(driver, Agent_TC025_VerifySearchResultsForEmailFilterandTagCandidate.class);
+		ag.verifySearchResultsForEmailFilterandTagCandidate();
+	}
+	
+	
+	@Test(groups= {"AgencyPartner General"})
+	public void WSAgent26() throws InterruptedException {
+		Agent_TC026_VerifySearchResultsForSkillsFilterandTagCandidate ag = PageFactory.initElements(driver, Agent_TC026_VerifySearchResultsForSkillsFilterandTagCandidate.class);
+		ag.verifySearchResultsForSkillsFilterandTagCandidate();
+	}
+	
+	
+	@Test(groups= {"AgencyPartner General"})
+	public void WSAgent27() throws InterruptedException {
+		Agent_TC027_VerifySearchResultsForExperienceFilterandTagCandidate ag = PageFactory.initElements(driver, Agent_TC027_VerifySearchResultsForExperienceFilterandTagCandidate.class);
+		ag.verifySearchResultsForExperienceFilterandTagCandidate();
+	}
+	
+	
+	@Test(groups= {"AgencyPartner General"})
+	public void WSAgent28() throws InterruptedException {
+		Agent_TC028_VeriifyTaggedTabofaJob ag = PageFactory.initElements(driver, Agent_TC028_VeriifyTaggedTabofaJob.class);
+		ag.veriifyTaggedTabofaJob();;
+	}
 	
 }

@@ -107,7 +107,7 @@ public class Corporate_PostVideoJD_JobSummaryPage extends Action_Method
 	@FindBy(xpath="//div[contains(text(),'Minimum value is greater than maximum value')]")
 	WebElement Experience_ErrorMessage;
 	
-	@FindBy(xpath="//div[contains(text(),'Minimum value is greater than maximum value')]")
+	@FindBy(xpath="//div[contains(text(),'Minimum salary is greater than maximum salary')]")
 	WebElement Salary_ErrorMessage;
 	
 	//@FindBy(xpath="//div[contains(text(),'Required fields cannot be empty')]")

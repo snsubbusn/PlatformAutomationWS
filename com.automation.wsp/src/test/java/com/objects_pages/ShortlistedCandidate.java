@@ -40,6 +40,9 @@ public class ShortlistedCandidate extends Action_Method {
 	@FindBy(id="name")
 	WebElement spocName;
 	
+	@FindBy(id="email")
+	WebElement spocEmail;
+	
 	@FindBy(id="mobileNumber")
 	WebElement mobileNumber;
 
@@ -90,8 +93,9 @@ public class ShortlistedCandidate extends Action_Method {
 	
 	
 	
-	public String getEmailOfFirstCandidate() {
+	public String getEmailOfFirstCandidate() throws InterruptedException {
 		driver.findElement(By.xpath("//a[contains(@href,'candidate/profile')][1]")).click();
+		Thread.sleep(1000);
 		String email = driver.findElement(By.xpath("//div[contains(text(),'Email')]/following::div[2]")).getText();
 		CandidateProfileHeadlineBackButton.click();
 		return email;
@@ -119,6 +123,7 @@ public class ShortlistedCandidate extends Action_Method {
 		Thread.sleep(2000);
 		act.sendKeys(Keys.ARROW_DOWN).sendKeys(Keys.ENTER).build().perform();
 		spocName.sendKeys("SIVA");
+		spocEmail.sendKeys("siva@nada.email");
 		mobileNumber.sendKeys("8147506453");
 		FixedSlotScheduleButton.click();
 		Thread.sleep(2000);

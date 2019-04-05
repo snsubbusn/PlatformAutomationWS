@@ -24,7 +24,7 @@ public class Corporate_ProfilePage extends Action_Method{
 	@FindBy(xpath="//section//div/h2")
 	WebElement companyNameProfilePage;
 
-	@FindBy(xpath="//div[@class='edit_profile']/mat-icon")
+	@FindBy(xpath="//div[@class='pull-right']//mat-icon[contains(text(),'mode_edit')]")
 	WebElement profileEditButton;
 
 	@FindBy(xpath="//section[@id='companyInfo']//h2")

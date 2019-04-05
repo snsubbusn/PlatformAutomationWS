@@ -47,7 +47,7 @@ public class Agent_TC002_VerifyNewAssignmentsPage extends Action_Method{
 		
 		String count = ag.getTotalRecordsofthePage();
 		if(count.contains("exception")) {
-			logger.log(LogStatus.FAIL, "There are no \"New Assignments\" aligned to the agent."+count);
+			logger.log(LogStatus.WARNING, "There are no \"New Assignments\" aligned to the agent.");
 		}else {
 			logger.log(LogStatus.PASS, "There are "+count+" \"New Assignments\" aligned to the agent");
 		}

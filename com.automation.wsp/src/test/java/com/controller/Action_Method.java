@@ -40,7 +40,7 @@ import org.testng.ITestResult;
 import org.testng.annotations.ITestAnnotation;
 import org.testng.internal.annotations.IAnnotationTransformer;
 
-
+import com.controller.Variables;
 import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
@@ -271,7 +271,6 @@ public class Action_Method implements ITestListener, IRetryAnalyzer, IAnnotation
 				}
 			}
 		}
-
 	}
 
 	public void onStart(ITestContext arg0) {
@@ -299,23 +298,32 @@ public class Action_Method implements ITestListener, IRetryAnalyzer, IAnnotation
 		try
 		{
 			am.TakeScreenshot(filename);
+			if(t.getStatus()==ITestResult.FAILURE) {
+				String reason = t.getThrowable().toString();
+				if(!reason.isEmpty()&&reason.length()>200) {
+					logger.log(LogStatus.FAIL, logger.addBase64ScreenShot(Variables.Screenshot+filename+".png")+"Failed Reason : \""+reason.substring(0, 190));
+					
+				}else {
+					logger.log(LogStatus.FAIL, reason);
+				}
+			}
 		}
 		catch(Exception e)
 		{
+			if(t.getStatus()==ITestResult.FAILURE) {
+				String reason = t.getThrowable().toString();
+				if(!reason.isEmpty()&&reason.length()>200) {
+					logger.log(LogStatus.FAIL, "Failed Reason : \""+reason.substring(0, 200));
 
-		}
-
-		if(t.getStatus()==ITestResult.FAILURE) {
-			String reason = t.getThrowable().toString();
-			if(!reason.isEmpty()&&reason.length()>200) {
-				logger.log(LogStatus.FAIL, logger.addBase64ScreenShot(Variables.Screenshot+filename+".png")+"Failed Reason : \""+reason.substring(0, 200));
-
-			}else {
-				logger.log(LogStatus.FAIL, reason);
+				}else {
+					logger.log(LogStatus.FAIL, reason);
+				}				
 			}
-
+		}finally{
 			extent.endTest(logger);
 		}
+
+		
 
 	}
 

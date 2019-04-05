@@ -206,13 +206,13 @@ public class Sc_022_Verify_JobSummaryPage extends Action_Method
 		{
 			logger.log(LogStatus.FAIL, "Verify elements present in Job summary page","\"Minimum Salary\" field is not available");
 		}
-		if(cjs.MinimumSalary_Text().trim().equals("Min. Salary (Lacs)")) 
+		if(cjs.MinimumSalary_Text().trim().equals("Min. Salary (In Lakhs)")) 
 		{
 			logger.log(LogStatus.PASS, "Verify text of Minimum Salary field in Job summary page","\"Minimum Salary\" text is as per the requirement");
 		}
 		else 
 		{
-			logger.log(LogStatus.FAIL, "Verify text of Minimum Salary field in Job summary page","Text is not as per the requirement,Expected-\"Min. Salary (Lacs)\" ,Actual-\""+cjs.MinimumSalary_Text().trim()+"\"");
+			logger.log(LogStatus.FAIL, "Verify text of Minimum Salary field in Job summary page","Text is not as per the requirement,Expected-\"Min. Salary (In Lakhs)\" ,Actual-\""+cjs.MinimumSalary_Text().trim()+"\"");
 		}
 
 
@@ -226,13 +226,13 @@ public class Sc_022_Verify_JobSummaryPage extends Action_Method
 		{
 			logger.log(LogStatus.FAIL, "Verify elements present in Job summary page","\"Maximum Salary\" field is not available");
 		}
-		if(cjs.MaximumSalary_Text().trim().equals("Max. Salary (Lacs)")) 
+		if(cjs.MaximumSalary_Text().trim().equals("Max. Salary (In Lakhs)")) 
 		{
 			logger.log(LogStatus.PASS, "Verify text of Maximum Salary field in Job summary page","\"Maximum Salary\" text is as per the requirement");
 		}
 		else 
 		{
-			logger.log(LogStatus.FAIL, "Verify text of Maximum Salary field in Job summary page","Text is not as per the requirement,Expected-\"Max. Salary (Lacs)\" ,Actual-\""+cjs.MaximumSalary_Text().trim()+"\"");
+			logger.log(LogStatus.FAIL, "Verify text of Maximum Salary field in Job summary page","Text is not as per the requirement,Expected-\"Max. Salary (In Lakhs)\" ,Actual-\""+cjs.MaximumSalary_Text().trim()+"\"");
 		}
 
 		//Verifying Location field in Job Summary page
