@@ -23,8 +23,8 @@
      	</define>
 		<run>
     		<include name="Functional"/>
-    		<include name="GS Basic Flow"/>
-    		<include name="GO Basic Flow"/>
+    		<exclude name="GS Basic Flow"/>
+    		<exclude name="GO Basic Flow"/>
 		</run>
 	</groups>
 	
