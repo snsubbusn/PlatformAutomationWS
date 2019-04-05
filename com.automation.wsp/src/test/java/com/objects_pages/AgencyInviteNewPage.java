@@ -5,6 +5,8 @@ import java.util.ArrayList;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+import com.controller.Variables;
+
 public class AgencyInviteNewPage {
 
 	//Elements of Invite New Page under My Assignements of Agency partner
@@ -174,7 +176,7 @@ public class AgencyInviteNewPage {
 
 	public void enterCandidateDetailstoInvite() {
 		headLine.sendKeys("An Experienced Candidate with 5 years of Experience in all relevant field");
-		uploadResume.sendKeys("E:\\PlatformAutomation\\com.automation.wsp\\src\\main\\resources\\ResumeWithoutContact.docx");
+		uploadResume.sendKeys(Variables.ResumeWithoutContact);
 		name.sendKeys("AutomationCandidate");
 		currentLocation.click();
 		dropDownOption1.click();

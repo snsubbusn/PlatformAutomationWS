@@ -35,7 +35,7 @@ public class Sc_036_Verify_Shortlist_PendingReview_CorporateAdmin extends Action
 		
 		//Creating Object for view Responses page
 		ManageResponsesPage view=PageFactory.initElements(driver,ManageResponsesPage.class);
-		if(view.Click_On_ManageResponses_Tab()==true)
+		if(view.Click_On_ActiveJobs()==true)
 		{
 			logger.log(LogStatus.PASS, "Click on View Responses tab","Active Jobs is clicked successfully");
 		}
