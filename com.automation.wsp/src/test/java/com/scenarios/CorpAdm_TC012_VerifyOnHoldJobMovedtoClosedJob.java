@@ -8,14 +8,14 @@ import com.objects_pages.ManageResponsesPage;
 import com.objects_pages.loginPage;
 import com.relevantcodes.extentreports.LogStatus;
 
-public class CorpAdm_TC011_VerifyOnHoldJobResumedtoActiveJob extends Action_Method{
-	public void verifyOnHoldJobResumedtoActiveJob() throws InterruptedException {
+public class CorpAdm_TC012_VerifyOnHoldJobMovedtoClosedJob extends Action_Method{
+	public void verifyOnHoldJobMovedtoClosedJob() throws InterruptedException {
 		logger = extent.startTest(this.getClass().getSimpleName());
 		logger.assignAuthor("Sivaprakash");
 		logger.assignCategory("Corporate General");
-		logger.setDescription("Corporate Logs in and clicks on OnHold Jobs. Select any job and click on 'Resume'. "
-				+ "Confirms the movement of job to Active Jobs Page. Verify the success msg and navigates to Active Jobs."
-				+ "Verify the job has been moved to Active Job");
+		logger.setDescription("Corporate Logs in and clicks on OnHold Jobs. Select any job and click on 'Close Job'. "
+				+ "Confirms the movement of job to Closed Jobs Page. Verify the success msg and navigates to Closed Jobs."
+				+ "Verify the job has been moved to Closed Job");
 
 		//Launching URL
 		wait_for_pageload(Variables.url);
@@ -39,26 +39,33 @@ public class CorpAdm_TC011_VerifyOnHoldJobResumedtoActiveJob extends Action_Meth
 		if(!firstJob.equals("NoJob")) {
 			logger.log(LogStatus.PASS, "The First Job card under OnHold Job is - "+firstJob);
 
-			String msg = man.clickOnResumeandVerifySuccessMsg(firstJob);
+
+			String msg = man.clickOnCloseandVerifySuccessMsg(firstJob);
 
 			if(msg.contains("success")) {
-				logger.log(LogStatus.PASS, "Job Resumed and navigated to Active Jobs. and the message is - "+msg);
+				logger.log(LogStatus.PASS, "Job Closed successfully and the message is - "+msg);
 			}else {
-				logger.log(LogStatus.FAIL, "Failed to resume the job. Msg is - "+msg);
+				logger.log(LogStatus.FAIL, "Failed to close the job. Msg is - "+msg);
+			}
+			
+			if(man.Click_On_closedJobs()) {
+				logger.log(LogStatus.PASS, "Navigated to Closed Jobs");
+			}else {
+				logger.log(LogStatus.FAIL, "Failed to navigate to Closed Jobs");
 			}
 
-			logger.log(LogStatus.INFO, "Verify the job card is present in the Active Jobs Page");
+			logger.log(LogStatus.INFO, "Verify the job card is present in the Closed Jobs Page");
 
 
 			if(man.verifyJobisPresent(firstJob)) {
-				logger.log(LogStatus.PASS, "Job card is verified under Active Jobs Page");
+				logger.log(LogStatus.PASS, "Job card is verified under Closed Jobs Page");
 			}else {
-				logger.log(LogStatus.FAIL, "Job card is not under Active Jobs Page");
+				logger.log(LogStatus.FAIL, "Job card is not under Closed Jobs Page");
 			}
 		}else {
-			logger.log(LogStatus.WARNING, "No Job in OnHold Job Page");
+			logger.log(LogStatus.WARNING, "No Job in OnHold Job Page."+firstJob);
 		}
-		logger.log(LogStatus.INFO, "Completed verifying the Job Resumed from On hold Jobs and moved to Active Jobs page");
+		logger.log(LogStatus.INFO, "Completed verifying the Job Closed from On hold Jobs and moved to Closed Jobs page");
 
 		lp.logout();
 		extent.endTest(logger);

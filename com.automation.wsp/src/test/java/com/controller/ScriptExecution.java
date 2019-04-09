@@ -1,7 +1,7 @@
 package com.controller;
 
-import org.testng.annotations.Test;
 import java.io.IOException;
+
 import org.apache.poi.EncryptedDocumentException;
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 import org.openqa.selenium.support.PageFactory;
@@ -9,6 +9,8 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Listeners;
+import org.testng.annotations.Test;
+
 import com.scenarios.Agent_TC001_VerifyAgentLogin;
 import com.scenarios.Agent_TC002_VerifyNewAssignmentsPage;
 import com.scenarios.Agent_TC003_VerifyActiveAssignmentsPage;
@@ -26,9 +28,6 @@ import com.scenarios.Agent_TC014_VerifyAgencyPartnerAbletoViewJobDetailsfromNewA
 import com.scenarios.Agent_TC015_VerifyAgencyPartnerAbletoViewJobDetailsfromActiveAssignment;
 import com.scenarios.Agent_TC016_VerifyAgencyPartnerAbletoViewJobDetailsfromOnHoldAssignment;
 import com.scenarios.Agent_TC017_VerifyAgencyPartnerAbletoViewJobDetailsfromClosedAssignment;
-import com.scenarios.Candidate_TC001_VerifyCandidateLoginandProfilePage;
-import com.scenarios.Candidate_TC002_VerifyEditingCandidateProfilePage;
-import com.scenarios.Candidate_TC005_VerifyValidationOfUploadingCV;
 import com.scenarios.Agent_TC018_VerifyAssignCandidateDetailsForJob;
 import com.scenarios.Agent_TC019_VerifyValidationOfInviteNewCandidateForJob;
 import com.scenarios.Agent_TC020_VerifyInviteNewCandidateForJob;
@@ -40,11 +39,18 @@ import com.scenarios.Agent_TC025_VerifySearchResultsForEmailFilterandTagCandidat
 import com.scenarios.Agent_TC026_VerifySearchResultsForSkillsFilterandTagCandidate;
 import com.scenarios.Agent_TC027_VerifySearchResultsForExperienceFilterandTagCandidate;
 import com.scenarios.Agent_TC028_VeriifyTaggedTabofaJob;
+import com.scenarios.Candidate_TC001_VerifyCandidateLoginandProfilePage;
+import com.scenarios.Candidate_TC002_VerifyEditingCandidateProfilePage;
+import com.scenarios.Candidate_TC005_VerifyValidationOfUploadingCV;
 import com.scenarios.CorpAdm_Dashboard_TC001_VerifyDashboard;
 import com.scenarios.CorpAdm_Dashboard_TC002_VerifyDashafterGS;
 import com.scenarios.CorpAdm_Dashboard_TC003_VerifyDashafterGO;
 import com.scenarios.CorpAdm_TC010_VerifyActiveJobMovedtoOnHoldJob;
 import com.scenarios.CorpAdm_TC011_VerifyOnHoldJobResumedtoActiveJob;
+import com.scenarios.CorpAdm_TC012_VerifyOnHoldJobMovedtoClosedJob;
+import com.scenarios.CorpAdm_TC013_VerifyClosedJobisRestartedforGS;
+import com.scenarios.CorpAdm_TC014_VerifyClosedJobisRestartedforGO;
+import com.scenarios.CorpAdm_TC015_VerifyClosedJobisReplicatedtoNewJob;
 import com.scenarios.CorpAdm_User_TC001_VerifyUsersTab;
 import com.scenarios.CorpAdm_User_TC002_AddUser;
 import com.scenarios.CorpAdm_User_TC003_AddUserforAllLicenses;
@@ -90,6 +96,7 @@ import com.scenarios.WSAdmin_TC009_VerifyAddNewUserPage;
 import com.scenarios.WSAdmin_TC010_VerifyEditingCorpAdminUnderInvite;
 import com.scenarios.WSAdmin_TC011_VerifyJobsTabandCountsofJobs;
 import com.scenarios.WSAdmin_TC012_VerifyUsersTab;
+import com.scenarios.WSAdmin_TC013_VerifyUsersAddUser;
 import com.scenarios.WSAdmin_TC014_VerifyAddUserPageValidation;
 import com.scenarios.WSAdmin_TC015_AddNewAdminUser;
 import com.scenarios.WSAdmin_TC016_AddingExistingUser;
@@ -97,7 +104,6 @@ import com.scenarios.WSAdmin_TC017_EditExistingAdminUserName;
 import com.scenarios.WSAdmin_TC018_EditExistingAdminUserEmail;
 import com.scenarios.WSAdmin_TC019_EditExistingAdminUserPhone;
 import com.scenarios.WSAdmin_TC020_DeleteFirstAdminUser;
-import com.scenarios.WSAdmin_TC013_VerifyUsersAddUser;
 
 
 @Listeners(com.controller.Action_Method.class)
@@ -270,6 +276,34 @@ public class ScriptExecution extends Action_Method
 	{
 		CorpAdm_TC011_VerifyOnHoldJobResumedtoActiveJob cor=PageFactory.initElements(driver,CorpAdm_TC011_VerifyOnHoldJobResumedtoActiveJob.class);
 		cor.verifyOnHoldJobResumedtoActiveJob();
+	}
+		
+	@Test (groups = {"Corporate General"})
+	public void CorpAdmTC012() throws EncryptedDocumentException, InvalidFormatException, IOException, InterruptedException
+	{
+		CorpAdm_TC012_VerifyOnHoldJobMovedtoClosedJob cor=PageFactory.initElements(driver,CorpAdm_TC012_VerifyOnHoldJobMovedtoClosedJob.class);
+		cor.verifyOnHoldJobMovedtoClosedJob();
+	}
+	
+	@Test (groups = {"Corporate General"})
+	public void CorpAdmTC013() throws EncryptedDocumentException, InvalidFormatException, IOException, InterruptedException
+	{
+		CorpAdm_TC013_VerifyClosedJobisRestartedforGS cor=PageFactory.initElements(driver,CorpAdm_TC013_VerifyClosedJobisRestartedforGS.class);
+		cor.verifyClosedJobisRestartedforGS();
+	}
+	
+	@Test (groups = {"Corporate General"})
+	public void CorpAdmTC014() throws EncryptedDocumentException, InvalidFormatException, IOException, InterruptedException
+	{
+		CorpAdm_TC014_VerifyClosedJobisRestartedforGO cor=PageFactory.initElements(driver,CorpAdm_TC014_VerifyClosedJobisRestartedforGO.class);
+		cor.verifyClosedJobisRestartedforGO();
+	}
+	
+	@Test (groups = {"Corporate General"})
+	public void CorpAdmTC015() throws EncryptedDocumentException, InvalidFormatException, IOException, InterruptedException
+	{
+		CorpAdm_TC015_VerifyClosedJobisReplicatedtoNewJob cor=PageFactory.initElements(driver,CorpAdm_TC015_VerifyClosedJobisReplicatedtoNewJob.class);
+		cor.verifyClosedJobisReplicatedtoNewJob();
 	}
 	
 	//Verify all the elements present in Login page
