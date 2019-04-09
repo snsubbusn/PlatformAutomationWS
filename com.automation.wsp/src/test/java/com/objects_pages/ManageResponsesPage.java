@@ -1,6 +1,7 @@
 package com.objects_pages;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
@@ -45,6 +46,29 @@ public class ManageResponsesPage extends Action_Method
 	WebElement closeSideBar;
 
 
+	//Pagination
+	@FindBy(xpath="//app-pagination/span[@class='pagination-bottom']")
+	WebElement paginationBottom;
+	
+	@FindBy(xpath="//app-pagination")
+	WebElement pagination;
+	
+	@FindBy(xpath="//span[contains(text(),'9')]/ancestor::div[@class='mat-select-trigger']")
+	WebElement itemsPerPageDropDowm;
+
+	@FindBy(xpath="//div[text()='Items Per Page']/following::mat-select")
+	WebElement selectedItemsPerPage;
+
+	@FindBy(xpath="//div[contains(@class,'mat-select-content')]//span[contains(text(),'60')]")
+	WebElement items60PerPage;
+
+	@FindBy(xpath="//a[@title='Go to next page']")
+	WebElement paginationNext;
+
+
+	@FindBy(xpath="//button//i[contains(text(),'close')]")
+	WebElement successMsgClose;
+
 	//Elements of ActiveJobs page
 
 	@FindBy(xpath="(//div[@class='job-description']//span[2])[1]")
@@ -61,6 +85,14 @@ public class ManageResponsesPage extends Action_Method
 	WebElement successMsgDetails;
 
 
+	//Elements of Closed Jobs
+	
+	@FindBy(id="1")
+	WebElement closeReason1;
+	
+	@FindBy(id="undefined")
+	WebElement submitButton;
+	
 	public boolean Click_On_ActiveJobs()
 	{
 		try
@@ -164,11 +196,19 @@ public class ManageResponsesPage extends Action_Method
 	}
 
 	public String getSecondJobId() {
-		return jobIdSecondCard.getText();
+		try{
+			return jobIdSecondCard.getText();
+		}catch(Exception e) {
+			return "NoJob";
+		}
 	}
 	
 	public String getFirstJobId() {
-		return jobIdFirstCard.getText();
+		try{
+			return jobIdFirstCard.getText();
+		}catch(Exception e) {
+			return "NoJob"+e.toString();
+		}
 	}
 
 	public String clickOnOnHoldandVerifySuccessMsg(String jobId) {
@@ -196,6 +236,8 @@ public class ManageResponsesPage extends Action_Method
 	public String clickOnCloseandVerifySuccessMsg(String jobId) {
 		try{
 			driver.findElement(By.xpath("//div//span[contains(text(),'"+jobId+"')]/following::button[2]")).click();
+			closeReason1.click();
+			submitButton.click();
 			wait_for_elementpresent(confirmYesBtn);
 			confirmYesBtn.click();
 			return successMsgDetails.getText();
@@ -212,5 +254,53 @@ public class ManageResponsesPage extends Action_Method
 			return false;
 		}
 	}
+	
+	
+	public String findJobIdofFirstGSorGO(String gsgo) {
+		int pageSize = Integer.parseInt(pagination.getAttribute("ng-reflect-size"));
+		for(int i=0; i<=pageSize; i++) {
+			for(int j =1; j<=12; j++) {
+				String src = driver.findElement(By.xpath("(//div[@class='icon-container']//button/following::img[1])["+j+"]")).getAttribute("src");
+				if(src.contains(gsgo)) {
+					return driver.findElement(By.xpath("(//div[@class='job-description']//span[2])["+j+"]")).getText();
+				}
+			}
+			paginationNext.click();
+		}
+		return "NoJob";
+	}
+	
+	
+	public boolean clickOnRestartGSorGOCampaign(String Job_Id)
+	{
+		try
+		{
+			WebElement arrow =driver.findElement((By.xpath(("(//span[contains(text(),'"+Job_Id+"')]/following::span/mat-icon[contains(text(),'keyboard_arrow_down')])[1]"))));
+			arrow.click();
+			WebElement Restart=driver.findElement((By.xpath(("(//span[contains(text(),'"+Job_Id+"')]/following::button/span[contains(text(),'Restart')])[1]"))));
+			Restart.click();
+			return true;
+		}
+		catch (NoSuchElementException e) 
+		{
+			return false;
+		}
+	}
+	
+	
+	public String clickOnReplicateofCampaign(String Job_Id)
+	{
+		try
+		{
+			WebElement Replicate=driver.findElement((By.xpath(("(//span[contains(text(),'"+Job_Id+"')]/following::button//span[contains(text(),'Replicate')])[1]"))));
+			Replicate.click();
+			return successMsgDetails.getText();
+		}
+		catch (NoSuchElementException e) 
+		{
+			return "Failed"+e.toString();
+		}
+	}
+	
 }
 
