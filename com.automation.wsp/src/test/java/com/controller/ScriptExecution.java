@@ -698,27 +698,6 @@ public class ScriptExecution extends Action_Method
 		ag.verifyAgencyPartnerAbletoViewJobDetailsfromClosedAssignment();
 	} 
 	
-	@Test(groups = {"Candidate General"})
-	public void Candidate_TC001() throws InterruptedException, EncryptedDocumentException, InvalidFormatException, IOException{
-	Candidate_TC001_VerifyCandidateLoginandProfilePage lp = PageFactory.initElements(driver, Candidate_TC001_VerifyCandidateLoginandProfilePage.class);
-	lp.VerifyingCandidateProfileViewPage();
-	}
-	
-	@Test(groups= {"Candidate General"})
-	public void Candidate_TC002() throws InterruptedException {
-		Candidate_TC002_VerifyEditingCandidateProfilePage vc = PageFactory.initElements(driver,Candidate_TC002_VerifyEditingCandidateProfilePage.class);
-		vc.candidateProfileEditVerification();
-	}
-	
-	@Test(groups= {"Candidate General"})
-	public void Candidate_TC005() throws InterruptedException {
-		Candidate_TC005_VerifyValidationOfUploadingCV cu = PageFactory.initElements(driver, Candidate_TC005_VerifyValidationOfUploadingCV.class);
-		cu.VerifyCandidateResumeEdit();
-	}
-	
-	
-	
-	
 	@Test(groups= {"AgencyPartner General"})
 	public void WSAgent18() throws InterruptedException {
 		Agent_TC018_VerifyAssignCandidateDetailsForJob ag = PageFactory.initElements(driver, Agent_TC018_VerifyAssignCandidateDetailsForJob.class);
@@ -792,5 +771,25 @@ public class ScriptExecution extends Action_Method
 		Agent_TC028_VeriifyTaggedTabofaJob ag = PageFactory.initElements(driver, Agent_TC028_VeriifyTaggedTabofaJob.class);
 		ag.veriifyTaggedTabofaJob();;
 	}
+	
+	
+	@Test(groups = {"Candidate General"})
+	public void Candidate_TC001() throws InterruptedException, EncryptedDocumentException, InvalidFormatException, IOException{
+	Candidate_TC001_VerifyCandidateLoginandProfilePage lp = PageFactory.initElements(driver, Candidate_TC001_VerifyCandidateLoginandProfilePage.class);
+	lp.VerifyingCandidateProfileViewPage();
+	}
+	
+	@Test(groups= {"Candidate General"})
+	public void Candidate_TC002() throws InterruptedException {
+		Candidate_TC002_VerifyEditingCandidateProfilePage vc = PageFactory.initElements(driver,Candidate_TC002_VerifyEditingCandidateProfilePage.class);
+		vc.candidateProfileEditVerification();
+	}
+	
+	@Test(groups= {"Candidate General"})
+	public void Candidate_TC005() throws InterruptedException {
+		Candidate_TC005_VerifyValidationOfUploadingCV cu = PageFactory.initElements(driver, Candidate_TC005_VerifyValidationOfUploadingCV.class);
+		cu.VerifyCandidateResumeEdit();
+	}
+	
 	
 }
