@@ -42,6 +42,8 @@ import com.scenarios.Agent_TC028_VeriifyTaggedTabofaJob;
 import com.scenarios.Candidate_TC001_VerifyCandidateLoginandProfilePage;
 import com.scenarios.Candidate_TC002_VerifyEditingCandidateProfilePage;
 import com.scenarios.Candidate_TC005_VerifyValidationOfUploadingCV;
+import com.scenarios.Candidate_TC011_VerifyMyEngagementsofCandidate;
+import com.scenarios.Candidate_TC012_VerifyItemsPerPage;
 import com.scenarios.CorpAdm_Dashboard_TC001_VerifyDashboard;
 import com.scenarios.CorpAdm_Dashboard_TC002_VerifyDashafterGS;
 import com.scenarios.CorpAdm_Dashboard_TC003_VerifyDashafterGO;
@@ -152,7 +154,7 @@ public class ScriptExecution extends Action_Method
 
 	//Corporate User Management Test Cases
 
-	@Test (groups = {"CorporateAdmin UserManagement"})
+	@Test (groups = {"CorporateAdmin UserManagement","SmokeTest"})
 	public void CorpUserMangement01() throws InterruptedException {
 		CorpAdm_User_TC001_VerifyUsersTab corp = PageFactory.initElements(driver, CorpAdm_User_TC001_VerifyUsersTab.class);
 		corp.checkUserTabandLicenseofCorpAdmin();
@@ -233,7 +235,7 @@ public class ScriptExecution extends Action_Method
 	 
 
 
-	@Test(groups = {"GO","GS","Corporate General"})
+	@Test(groups = {"GO","GS","Corporate General","SmokeTest"})
 	public void CorporateDashboard01() throws InterruptedException, EncryptedDocumentException, InvalidFormatException, IOException {
 		CorpAdm_Dashboard_TC001_VerifyDashboard ds = PageFactory.initElements(driver, CorpAdm_Dashboard_TC001_VerifyDashboard.class);
 		ds.verifyCorpAdminDashboard();
@@ -242,7 +244,7 @@ public class ScriptExecution extends Action_Method
 	
 
 	//Verify All elements present in Job summary page
-	@Test(groups = {"Corporate General"})
+	@Test(groups = {"Corporate General","SmokeTest"})
 	public void CorporateJob1() throws EncryptedDocumentException, InvalidFormatException, IOException, InterruptedException
 	{
 		Sc_022_Verify_JobSummaryPage s22=PageFactory.initElements(driver,Sc_022_Verify_JobSummaryPage.class);
@@ -307,14 +309,14 @@ public class ScriptExecution extends Action_Method
 	}
 	
 	//Verify all the elements present in Login page
-	@Test (groups = {"General"})
+	@Test (groups = {"General","SmokeTest"})
 	public void Login1() throws EncryptedDocumentException, InvalidFormatException, IOException, InterruptedException
 	{
 		TC_001_Verify_LoginPage s5=PageFactory.initElements(driver, TC_001_Verify_LoginPage.class);
 		s5.Verify_all_elements_present_in_loginPage();
 	}
 	//Verify error message for mail id and password of Login page
-	@Test (groups = {"General"})
+	@Test (groups = {"General","SmokeTest"})
 	public void Login2() throws EncryptedDocumentException, InvalidFormatException, IOException, InterruptedException
 	{
 		Sc_006_Verify_EmailID_Password_LoginPage s6=PageFactory.initElements(driver, Sc_006_Verify_EmailID_Password_LoginPage.class);
@@ -322,7 +324,7 @@ public class ScriptExecution extends Action_Method
 	}
 
 	//Verify Register
-	@Test (groups = {"General"})
+	@Test (groups = {"General","SmokeTest"})
 	public void Login3() throws EncryptedDocumentException, InvalidFormatException, IOException
 	{
 		Sc_008_Verify_Register s08=PageFactory.initElements(driver,Sc_008_Verify_Register.class);
@@ -330,7 +332,7 @@ public class ScriptExecution extends Action_Method
 	}
 
 	//Verify All elements and text present in Forgot Password Pop up
-	@Test (groups = {"General"})
+	@Test (groups = {"General","SmokeTest"})
 	public void Login4() throws EncryptedDocumentException, InvalidFormatException, IOException, InterruptedException
 	{
 		Sc_009_Verify_ForgotPasswordPage s9=PageFactory.initElements(driver, Sc_009_Verify_ForgotPasswordPage.class);
@@ -470,31 +472,31 @@ public class ScriptExecution extends Action_Method
 	
 
 
-	@Test (groups = {"WSAdmin General"})
+	@Test (groups = {"WSAdmin General","SmokeTest"})
 	public void WSAdmin01() throws InterruptedException {
 		WSAdmin_TC001_VerifyAdminLogin ws = PageFactory.initElements(driver, WSAdmin_TC001_VerifyAdminLogin.class);
 		ws.VerifyAdminLogin();
 	}
 
-	@Test (groups = {"WSAdmin General"})
+	@Test (groups = {"WSAdmin General","SmokeTest"})
 	public void WSAdmin02() throws InterruptedException {
 		WSAdmin_TC002_VerifyInvitePage ws = PageFactory.initElements(driver, WSAdmin_TC002_VerifyInvitePage.class);
 		ws.verifyWSAdminInvitePage();
 	}
 	
-	@Test (groups = {"WSAdmin General"})
+	@Test (groups = {"WSAdmin General","SmokeTest"})
 	public void WSAdmin03() throws InterruptedException {
 		WSAdmin_TC003_VerifyFilterUsingCandidate ws = PageFactory.initElements(driver, WSAdmin_TC003_VerifyFilterUsingCandidate.class);
 		ws.verifyInvitePageFilterByCandidate();
 	}
 	
-	@Test (groups = {"WSAdmin General"})
+	@Test (groups = {"WSAdmin General","SmokeTest"})
 	public void WSAdmin04() throws InterruptedException {
 		WSAdmin_TC004_VerifyFilterUsingCorporateAdmin ws = PageFactory.initElements(driver,WSAdmin_TC004_VerifyFilterUsingCorporateAdmin.class);
 		ws.verifytheFilterBySelectingCorporateAdmin();
 	}
 	
-	@Test (groups = {"WSAdmin General"})
+	@Test (groups = {"WSAdmin General","SmokeTest"})
 	public void WSAdmin05() throws InterruptedException {
 		WSAdmin_TC005_VerifyFilterUsingAgent ws = PageFactory.initElements(driver,WSAdmin_TC005_VerifyFilterUsingAgent.class);
 		ws.verifytheFilterBySelectingAgent();
@@ -518,7 +520,7 @@ public class ScriptExecution extends Action_Method
 		ws.verifyWSAdminSortByInvitedOn();
 	}
 
-	@Test (groups = {"WSAdmin General"})
+	@Test (groups = {"WSAdmin General","SmokeTest"})
 	public void WSAdmin09() throws InterruptedException {
 		WSAdmin_TC009_VerifyAddNewUserPage ws = PageFactory.initElements(driver, WSAdmin_TC009_VerifyAddNewUserPage.class);
 		ws.verifyAddNewUserPage();
@@ -530,19 +532,19 @@ public class ScriptExecution extends Action_Method
 		ws.verifyEditInvitedCorporateAdminUser();
 	}
 	
-	@Test (groups = {"WSAdmin General"})
+	@Test (groups = {"WSAdmin General","SmokeTest"})
 	public void WSAdmin11() throws InterruptedException {
 		WSAdmin_TC011_VerifyJobsTabandCountsofJobs ws = PageFactory.initElements(driver, WSAdmin_TC011_VerifyJobsTabandCountsofJobs.class);
 		ws.verifytheJobsTabandGetTheCountOfJobsInEachSection();
 	}
 	
-	@Test (groups = {"WSAdmin UserManagement"})
+	@Test (groups = {"WSAdmin UserManagement","SmokeTest"})
 	public void WSAdmin12() throws InterruptedException {
 		WSAdmin_TC012_VerifyUsersTab ws = PageFactory.initElements(driver, WSAdmin_TC012_VerifyUsersTab.class);
 		ws.verifyUsersTabOfWSAdmin();
 	}
 	
-	@Test (groups = {"WSAdmin UserManagement"})
+	@Test (groups = {"WSAdmin UserManagement","SmokeTest"})
 	public void WSAdmin13() throws InterruptedException {
 		WSAdmin_TC013_VerifyUsersAddUser ws = PageFactory.initElements(driver, WSAdmin_TC013_VerifyUsersAddUser.class);
 		ws.verifyUsersTabAddNewUser();
@@ -594,38 +596,38 @@ public class ScriptExecution extends Action_Method
 	
 	//Agency Partner Test Cases
 	
-	@Test (groups = {"AgencyPartner General"})
+	@Test (groups = {"AgencyPartner General","SmokeTest"})
 	public void WsAgent01() throws InterruptedException {
 		Agent_TC001_VerifyAgentLogin ag = PageFactory.initElements(driver, Agent_TC001_VerifyAgentLogin.class);
 		ag.verifyAgencyPartnerLogin();
 	}
 	
-	@Test (groups = {"AgencyPartner General"})
+	@Test (groups = {"AgencyPartner General","SmokeTest"})
 	public void WsAgent02() throws InterruptedException {
 		Agent_TC002_VerifyNewAssignmentsPage ag = PageFactory.initElements(driver, Agent_TC002_VerifyNewAssignmentsPage.class);
 		ag.verifyNewAssignmentsPage();
 	}
 	
-	@Test (groups = {"AgencyPartner General"})
+	@Test (groups = {"AgencyPartner General","SmokeTest"})
 	public void WsAgent03() throws InterruptedException {
 		Agent_TC003_VerifyActiveAssignmentsPage ag = PageFactory.initElements(driver, Agent_TC003_VerifyActiveAssignmentsPage.class);
 		ag.verifyActiveAssignmentsPage();
 	}
 	
 	
-	@Test (groups = {"AgencyPartner General"})
+	@Test (groups = {"AgencyPartner General","SmokeTest"})
 	public void WsAgent04() throws InterruptedException {
 		Agent_TC004_VerifyOnHoldAssignmentsPage ag = PageFactory.initElements(driver, Agent_TC004_VerifyOnHoldAssignmentsPage.class);
 		ag.verifyOnHoldAssignmentsPage();
 	}
 	
-	@Test (groups = {"AgencyPartner General"})
+	@Test (groups = {"AgencyPartner General","SmokeTest"})
 	public void WsAgent05() throws InterruptedException {
 		Agent_TC005_VerifyClosedAssignmentsPage ag = PageFactory.initElements(driver, Agent_TC005_VerifyClosedAssignmentsPage.class);
 		ag.verifyClosedAssignmentsPage();
 	}
 	
-	@Test (groups = {"AgencyPartner General"})
+	@Test (groups = {"AgencyPartner General","SmokeTest"})
 	public void WsAgent06() throws InterruptedException {
 		Agent_TC006_VerifyInvitedCandidatePage ag = PageFactory.initElements(driver, Agent_TC006_VerifyInvitedCandidatePage.class);
 		ag.verifyInvitedCandidatePageofAgencyPartner();
@@ -718,13 +720,13 @@ public class ScriptExecution extends Action_Method
 	}
 	
 	
-	@Test(groups= {"AgencyPartner General"})
+	@Test(groups= {"AgencyPartner General","SmokeTest"})
 	public void WSAgent21() throws InterruptedException {
 		Agent_TC021_VerifyInvitedTabofaJob ag = PageFactory.initElements(driver, Agent_TC021_VerifyInvitedTabofaJob.class);
 		ag.verifyInviteNewCandidateForJob();
 	}
 	
-	@Test(groups= {"AgencyPartner General"})
+	@Test(groups= {"AgencyPartner General","SmokeTest"})
 	public void WSAgent22() throws InterruptedException {
 		Agent_TC022_VerifyTagExistingTabofaJob ag = PageFactory.initElements(driver, Agent_TC022_VerifyTagExistingTabofaJob.class);
 		ag.verifyTagExistingTabOfJob();
@@ -773,7 +775,7 @@ public class ScriptExecution extends Action_Method
 	}
 	
 	
-	@Test(groups = {"Candidate General"})
+	@Test(groups = {"Candidate General","SmokeTest"})
 	public void Candidate_TC001() throws InterruptedException, EncryptedDocumentException, InvalidFormatException, IOException{
 	Candidate_TC001_VerifyCandidateLoginandProfilePage lp = PageFactory.initElements(driver, Candidate_TC001_VerifyCandidateLoginandProfilePage.class);
 	lp.VerifyingCandidateProfileViewPage();
@@ -791,5 +793,15 @@ public class ScriptExecution extends Action_Method
 		cu.VerifyCandidateResumeEdit();
 	}
 	
-	
+	@Test(groups= {"Candidate General","SmokeTest"})
+	public void Candidate_TC011() throws InterruptedException {
+		Candidate_TC011_VerifyMyEngagementsofCandidate cu = PageFactory.initElements(driver, Candidate_TC011_VerifyMyEngagementsofCandidate.class);
+		cu.VerifyMyEngagementsPage();
+	}
+		
+	@Test(groups= {"Candidate General"})
+	public void Candidate_TC012() throws InterruptedException {
+		Candidate_TC012_VerifyItemsPerPage cu = PageFactory.initElements(driver, Candidate_TC012_VerifyItemsPerPage.class);
+		cu.VerifyItemsPerPage();
+	}
 }
