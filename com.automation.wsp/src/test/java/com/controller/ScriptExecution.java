@@ -29,6 +29,7 @@ import com.scenarios.Agent_TC017_VerifyAgencyPartnerAbletoViewJobDetailsfromClos
 import com.scenarios.Candidate_TC001_VerifyCandidateLoginandProfilePage;
 import com.scenarios.Candidate_TC002_VerifyEditingCandidateProfilePage;
 import com.scenarios.Candidate_TC005_VerifyValidationOfUploadingCV;
+import com.scenarios.Candidate_TC007_VerifyAddingandDeletingEducationDetailsofCandidate;
 import com.scenarios.Agent_TC018_VerifyAssignCandidateDetailsForJob;
 import com.scenarios.Agent_TC019_VerifyValidationOfInviteNewCandidateForJob;
 import com.scenarios.Agent_TC020_VerifyInviteNewCandidateForJob;
@@ -683,6 +684,12 @@ public class ScriptExecution extends Action_Method
 	}
 	
 	
+
+	@Test(groups= {"Candidate General"})
+	public void Candidate_TC007() throws InterruptedException {
+		Candidate_TC007_VerifyAddingandDeletingEducationDetailsofCandidate ca = PageFactory.initElements(driver, Candidate_TC007_VerifyAddingandDeletingEducationDetailsofCandidate.class);
+		ca.VerifyAddingandDeletingEducationDetailsofCandidate();
+	}
 	
 	
 	@Test(groups= {"AgencyPartner General"})
