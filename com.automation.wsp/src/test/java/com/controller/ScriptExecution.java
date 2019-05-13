@@ -42,6 +42,7 @@ import com.scenarios.Agent_TC028_VeriifyTaggedTabofaJob;
 import com.scenarios.Candidate_TC001_VerifyCandidateLoginandProfilePage;
 import com.scenarios.Candidate_TC002_VerifyEditingCandidateProfilePage;
 import com.scenarios.Candidate_TC005_VerifyValidationOfUploadingCV;
+import com.scenarios.Candidate_TC007_VerifyAddingandDeletingEducationDetailsofCandidate;
 import com.scenarios.Candidate_TC011_VerifyMyEngagementsofCandidate;
 import com.scenarios.Candidate_TC012_VerifyItemsPerPage;
 import com.scenarios.CorpAdm_Dashboard_TC001_VerifyDashboard;
@@ -803,5 +804,11 @@ public class ScriptExecution extends Action_Method
 	public void Candidate_TC012() throws InterruptedException {
 		Candidate_TC012_VerifyItemsPerPage cu = PageFactory.initElements(driver, Candidate_TC012_VerifyItemsPerPage.class);
 		cu.VerifyItemsPerPage();
+	}
+		
+	@Test(groups= {"Candidate General"})
+	public void Candidate_TC007() throws InterruptedException {
+		Candidate_TC007_VerifyAddingandDeletingEducationDetailsofCandidate cu = PageFactory.initElements(driver, Candidate_TC007_VerifyAddingandDeletingEducationDetailsofCandidate.class);
+		cu.VerifyAddingandDeletingEducationDetailsofCandidate();
 	}
 }
