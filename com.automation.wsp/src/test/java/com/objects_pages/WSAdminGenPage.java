@@ -142,7 +142,7 @@ public class WSAdminGenPage extends Action_Method{
 	}
 
 	public String verifyNewInvitesPage() throws InterruptedException {
-		addButton.click();
+		Thread.sleep(1000);addButton.click();
 		Thread.sleep(3000);
 		return newInviteHeading.getText();
 	}
