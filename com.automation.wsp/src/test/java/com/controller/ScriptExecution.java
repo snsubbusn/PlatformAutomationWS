@@ -28,7 +28,12 @@ import com.scenarios.Agent_TC016_VerifyAgencyPartnerAbletoViewJobDetailsfromOnHo
 import com.scenarios.Agent_TC017_VerifyAgencyPartnerAbletoViewJobDetailsfromClosedAssignment;
 import com.scenarios.Candidate_TC001_VerifyCandidateLoginandProfilePage;
 import com.scenarios.Candidate_TC002_VerifyEditingCandidateProfilePage;
+import com.scenarios.Candidate_TC003_VerifyErrorValidationofCandidateProfileEdit;
+import com.scenarios.Candidate_TC004_VerifyAddingandDeletingSkillsofCandidate;
 import com.scenarios.Candidate_TC005_VerifyValidationOfUploadingCV;
+import com.scenarios.Candidate_TC015_VerifyErrorValidationofCandidateProfileEditForEducationPage;
+import com.scenarios.Candidate_TC016_VerifyErrorValidationofCandidateProfileEditForWorkExperiencePage;
+import com.scenarios.Candidate_TC017_VerifyAddingDeletingAndUpdatingSkillsofCandidate;
 import com.scenarios.Agent_TC018_VerifyAssignCandidateDetailsForJob;
 import com.scenarios.Agent_TC019_VerifyValidationOfInviteNewCandidateForJob;
 import com.scenarios.Agent_TC020_VerifyInviteNewCandidateForJob;
@@ -677,13 +682,41 @@ public class ScriptExecution extends Action_Method
 	}
 	
 	@Test(groups= {"Candidate General"})
+	public void Candidate_TC003() throws InterruptedException, EncryptedDocumentException, InvalidFormatException, IOException{
+		Candidate_TC003_VerifyErrorValidationofCandidateProfileEdit ce = PageFactory.initElements(driver,Candidate_TC003_VerifyErrorValidationofCandidateProfileEdit.class);
+	    ce.errorValidation();
+	}
+	
+	@Test(groups = {"Candidate General"})
+	public void Candidate_TC004() throws InterruptedException, EncryptedDocumentException, InvalidFormatException, IOException{
+		Candidate_TC004_VerifyAddingandDeletingSkillsofCandidate vc = PageFactory.initElements(driver,Candidate_TC004_VerifyAddingandDeletingSkillsofCandidate.class);
+		vc.validatingSkillsField();
+	}
+	
+	
+	@Test(groups= {"Candidate General"})
 	public void Candidate_TC005() throws InterruptedException {
 		Candidate_TC005_VerifyValidationOfUploadingCV cu = PageFactory.initElements(driver, Candidate_TC005_VerifyValidationOfUploadingCV.class);
 		cu.VerifyCandidateResumeEdit();
 	}
 	
+	@Test(groups= {"Candidate General"})
+	public void Candidate_TC015() throws InterruptedException {
+		Candidate_TC015_VerifyErrorValidationofCandidateProfileEditForEducationPage ee = PageFactory.initElements(driver, Candidate_TC015_VerifyErrorValidationofCandidateProfileEditForEducationPage.class);
+		ee.errorValidationForEducation();
+	}
 	
+	@Test(groups= {"Candidate General"})
+	public void Candidate_TC016() throws InterruptedException {
+		Candidate_TC016_VerifyErrorValidationofCandidateProfileEditForWorkExperiencePage vp = PageFactory.initElements(driver, Candidate_TC016_VerifyErrorValidationofCandidateProfileEditForWorkExperiencePage.class);
+		vp.errorValidationWorkExperienceAndProjectShowcase();
+	}
 	
+	@Test(groups= {"CandidateGeneral"})
+	public void Candidate_TC017() throws InterruptedException, EncryptedDocumentException, InvalidFormatException, IOException {
+		Candidate_TC017_VerifyAddingDeletingAndUpdatingSkillsofCandidate vc =PageFactory.initElements(driver,Candidate_TC017_VerifyAddingDeletingAndUpdatingSkillsofCandidate.class);
+		vc.validatingAddDelAndUpdateSkillsField();
+	}
 	
 	@Test(groups= {"AgencyPartner General"})
 	public void WSAgent18() throws InterruptedException {
