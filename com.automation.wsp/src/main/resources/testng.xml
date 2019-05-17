@@ -6,6 +6,9 @@
   </listeners>
   <test name="FunctionalTests">
   	<groups>
+  		<define name = "Smoke">
+  			<include name = "SmokeTest"/>
+  		</define>
   		<define name = "Functional">
       		<include name="Corporate General"/>
       		<include name="CorporateAdmin UserManagement"/>
@@ -14,6 +17,7 @@
       		<include name="WSAdmin UserManagement"/>
       		<include name="AgencyPartner General"/>
       		<include name="WSAdmin General"/>
+      		<include name="Candidate General"/>
      	</define>
      	<define name = "GO Basic Flow">
       		<include name="GO"/>
@@ -22,10 +26,11 @@
       		<include name="GS"/>
      	</define>
 		<run>
+			<include name="Smoke"/>
     		<include name="Functional"/>
-    		<exclude name="GS Basic Flow"/>
-    		<exclude name="GO Basic Flow"/>
-		</run>
+    		<include name="GS Basic Flow"/>
+    		<include name="GO Basic Flow"/>
+    	</run>
 	</groups>
 	
     <classes>
