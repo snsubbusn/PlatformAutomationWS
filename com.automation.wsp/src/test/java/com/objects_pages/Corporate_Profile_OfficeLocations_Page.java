@@ -14,29 +14,9 @@ import com.controller.Action_Method;
 
 public class Corporate_Profile_OfficeLocations_Page extends Action_Method{
 
-	//Add Inputs in the Office Locations 
-	@FindBy(id="location")
-	WebElement locationAddress;
 
-
-	@FindBy(xpath="//section[@id='officeLocations']//div[@class='body ng-star-inserted']")
-	WebElement addedLocation;
-
-	@FindBy(xpath="//section[@id='officeLocations']//i[contains(text(),'delete')]")
-	WebElement locationsDelete;
-	
 	@FindBy(xpath="//span[text()='Proceed']")
 	WebElement confirmProceed;
-
-	@FindBy(xpath="//span[contains(text(),'Yes')]")
-	WebElement alertbutton;
-
-	@FindBy(xpath="//app-list-view-box-row[@ng-reflect-body='Bengaluru, Karnataka, India']//i[@class='material-icons'][contains(text(),'edit')]")
-	WebElement LocEdit;
-
-	@FindBy(xpath="//button[@id='addOffice']//span")
-	WebElement AddButton;
-
 
 	
 	@FindBy(xpath="//section[@id='solutionsOffered']//i[contains(text(),'delete')]")
@@ -81,6 +61,9 @@ public class Corporate_Profile_OfficeLocations_Page extends Action_Method{
 
 	@FindBy(xpath="//span[contains(text(),'Next')]")
 	WebElement NextButton;
+	
+	@FindBy(xpath="//span[contains(text(),'Done')]")
+	WebElement doneButton;
 
 	@FindBy(xpath="//span[contains(text(),'Previous')]")
 	WebElement PreviousButton;
@@ -90,35 +73,7 @@ public class Corporate_Profile_OfficeLocations_Page extends Action_Method{
 
 	Actions action = new Actions(driver);
 
-	public boolean verifyLocationsPresent() {
-		try {
-			return locationsDelete.isDisplayed();
-		}catch(Exception e) {
-			return false;
-		}
-	}
-
-	public String deleteOfficeLocationandAddNew() throws InterruptedException {
-		locationsDelete.click();
-		confirmProceed.click();
-		locationAddress.sendKeys("WIPRO Bengaluru");
-		Thread.sleep(3000);
-		action.sendKeys(Keys.ARROW_DOWN).sendKeys(Keys.ENTER).build().perform();
-		Thread.sleep(2000);
-		AddButton.click();
-		Thread.sleep(2000);
-		return addedLocation.getText();
-	}
-
-	public String addNewOfficeLocation() throws InterruptedException {
-		locationAddress.sendKeys("WIPRO Bengaluru");
-		Thread.sleep(3000);
-		action.sendKeys(Keys.ARROW_DOWN).sendKeys(Keys.ENTER).build().perform();
-		Thread.sleep(2000);
-		AddButton.click();
-		Thread.sleep(2000);
-		return addedLocation.getText();
-	}
+	
 
 	
 	public boolean verifySolutionsPresent() {
@@ -131,13 +86,13 @@ public class Corporate_Profile_OfficeLocations_Page extends Action_Method{
 	
 	public String deleteSolutionandAddNew() throws InterruptedException {
 		solutionsDelete.click();
-		confirmProceed.click();
-		typeDropDown.click();
-		typeDropDownValue3.click();
+		confirmProceed.click();		
 		Title.sendKeys("Internatonal Bussiness Machine");
 		Description.sendKeys("Description is the pattern of narrative development that aims to make vivid a place, object, character, or group. Description is one of four rhetorical modes, "
 				+ "along with exposition, argumentation, and narration.");
 		Description.sendKeys(Keys.TAB);
+		typeDropDown.click();
+		typeDropDownValue3.click();
 		solAddbutton.click();
 		successMsgClose.click();
 		return addedSolution.getText();
@@ -161,41 +116,8 @@ public class Corporate_Profile_OfficeLocations_Page extends Action_Method{
 		NextButton.click();
 	}
 	
-	
-	
-
-	public boolean Verify_Edit_Office_Locations_Section() throws EncryptedDocumentException, InvalidFormatException, IOException, InterruptedException {
-
-
-		LocEdit.click();
-		locationAddress.clear();
-		locationAddress.sendKeys("Bengaluru");
-		Thread.sleep(2000);
-		action.sendKeys(Keys.ARROW_DOWN).sendKeys(Keys.ENTER).build().perform();
-		Thread.sleep(5000);
-		wait_for_elementpresent_Clickable(AddButton);
-		AddButton.click();
-		return false;
-
-	}
-
-	public boolean Verify_Delete_Office_Locations_Section() throws EncryptedDocumentException, InvalidFormatException, IOException, InterruptedException
-	{
-		locationsDelete.click();
-		locationAddress.sendKeys("Bengaluru");
-		action.sendKeys(Keys.ARROW_DOWN).sendKeys(Keys.ENTER).build().perform();
-		Thread.sleep(3000);
-		AddButton.click();
-		return false;
-
-	}
-
-	public boolean Verify_Office_Locations_Error_Message() throws EncryptedDocumentException, InvalidFormatException, IOException, InterruptedException
-	{	
-		locationAddress.sendKeys("Bengaluru");
-		AddButton.click();
-		return false;
-
+	public void clickDoneButton() {
+		doneButton.click();
 	}
 
 	public boolean Verify_Edit_Solutions_Offered() throws EncryptedDocumentException, InvalidFormatException, IOException, InterruptedException

@@ -10,7 +10,7 @@ import com.controller.Variables;
 public class AgencyInviteNewPage {
 
 	//Elements of Invite New Page under My Assignements of Agency partner
-	@FindBy(xpath="//button[text()='Invite']")
+	@FindBy(xpath="//button[text()=' Invite ']")
 	WebElement inviteButton;
 
 	@FindBy(xpath="//mat-error/span[contains(text(),'Resume')]")
