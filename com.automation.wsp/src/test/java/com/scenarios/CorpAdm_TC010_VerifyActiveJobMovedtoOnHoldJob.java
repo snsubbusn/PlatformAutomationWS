@@ -26,7 +26,7 @@ public class CorpAdm_TC010_VerifyActiveJobMovedtoOnHoldJob extends Action_Method
 
 		lp.EnterValidLogin(Variables.testdata,Variables.LoginPage,"Corporate Email","Corporate Password");
 		logger.log(LogStatus.INFO, "Enter valid login credential and click on Login button, Corporate Landing page displayed");
-		
+
 		ManageResponsesPage man = PageFactory.initElements(driver, ManageResponsesPage.class);
 
 		if(man.Click_On_ActiveJobs()) {
@@ -34,34 +34,37 @@ public class CorpAdm_TC010_VerifyActiveJobMovedtoOnHoldJob extends Action_Method
 		}else{
 			logger.log(LogStatus.FAIL, "Failed to navigate to Active Jobs Page");
 		}
-		
+
 		String secJob = man.getSecondJobId();
-		logger.log(LogStatus.PASS, "The Second Job card under Active Job is - "+secJob);
-		
-		String msg = man.clickOnOnHoldandVerifySuccessMsg(secJob);
-		
-		if(msg.contains("success")) {
-			logger.log(LogStatus.PASS, "Moved the Job to OnHold and the message is - "+msg);
+		if(!secJob.equals("NoJob")) {
+			logger.log(LogStatus.PASS, "The Second Job card under Active Job is - "+secJob);
+
+			String msg = man.clickOnOnHoldandVerifySuccessMsg(secJob);
+
+			if(msg.contains("success")) {
+				logger.log(LogStatus.PASS, "Moved the Job to OnHold and the message is - "+msg);
+			}else {
+				logger.log(LogStatus.FAIL, "Failed to move the job to on hold. Msg is - "+msg);
+			}
+
+			logger.log(LogStatus.INFO, "Verify the job card is present in the On Hold Jobs Page");
+
+			if(man.Click_On_OnHoldJobs()) {
+				logger.log(LogStatus.PASS, "Navigated to On Hold Jobs");
+			}else {
+				logger.log(LogStatus.FAIL, "Failed to navigate to ON Hold Jobs page");
+			}
+
+			if(man.verifyJobisPresent(secJob)) {
+				logger.log(LogStatus.PASS, "Job card is verified under On Hold Jobs Page");
+			}else {
+				logger.log(LogStatus.FAIL, "Job card is not under On Hold Jobs Page");
+			}
 		}else {
-			logger.log(LogStatus.FAIL, "Failed to move the job to on hold. Msg is - "+msg);
+			logger.log(LogStatus.FAIL, "No Job under Active Jobs Page");
 		}
-		
-		logger.log(LogStatus.INFO, "Verify the job card is present in the On Hold Jobs Page");
-		
-		if(man.Click_On_OnHoldJobs()) {
-			logger.log(LogStatus.PASS, "Navigated to On Hold Jobs");
-		}else {
-			logger.log(LogStatus.FAIL, "Failed to navigate to ON Hold Jobs page");
-		}
-		
-		if(man.verifyJobisPresent(secJob)) {
-			logger.log(LogStatus.PASS, "Job card is verified under On Hold Jobs Page");
-		}else {
-			logger.log(LogStatus.FAIL, "Job card is not under On Hold Jobs Page");
-		}
-		
 		logger.log(LogStatus.INFO, "Completed verifying the Job moved to On hold Jobs page");
-		
+
 		lp.logout();
 		extent.endTest(logger);
 	}

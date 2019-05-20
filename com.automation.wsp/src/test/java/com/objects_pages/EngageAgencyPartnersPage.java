@@ -23,22 +23,22 @@ public class EngageAgencyPartnersPage extends Action_Method
 	//changed the xpath for the job id (Siva)
 	@FindBy(xpath="(//a[contains(text(), 'Software Regression Engineer')]/following::span[2])[1]")
 	WebElement Job_Id;
-	
+
 	@FindBy(xpath="//div[contains(text(),'Post Job')]")
 	WebElement PostJob_Tab;
-	
+
 	@FindBy(xpath="//a[contains(text(),'Jobs')]")
 	WebElement Jobs_Tab;
-	
+
 	@FindBy(xpath="//div[contains(text(),'New Jobs')]")
 	WebElement newJobs;
-	
+
 	@FindBy(xpath="//div[contains(text(),'Active Jobs')]")
 	WebElement activeJobs;
-	
+
 	@FindBy(xpath="//div[contains(text(),'Archived Jobs')]")
 	WebElement archivedJobs;
-	
+
 	//locatring Elements present in Payment page
 	@FindBy(xpath="//input[@id='noOfPositions']") 
 	WebElement No_Of_Positions;
@@ -75,16 +75,16 @@ public class EngageAgencyPartnersPage extends Action_Method
 			/*Jobs_Tab.click();
 			newJobs.click();
 			Thread.sleep(3000);			
-			*/String Id1=Job_Id.getText();
-			String Id="";
-			for(int i=1;i<Id1.length();i++)
-			{
-				char ch=Id1.charAt(i);
-				Id=Id+ch;
-			}
-			setExceldata(Variables.testdata, Variables.SetData_Excel, "Job ID", Id.trim());
+			 */String Id1=Job_Id.getText();
+			 String Id="";
+			 for(int i=1;i<Id1.length();i++)
+			 {
+				 char ch=Id1.charAt(i);
+				 Id=Id+ch;
+			 }
+			 setExceldata(Variables.testdata, Variables.SetData_Excel, "Job ID", Id.trim());
 
-			return Id.trim();
+			 return Id.trim();
 		} 
 		catch (NoSuchElementException e) 
 		{
@@ -103,13 +103,13 @@ public class EngageAgencyPartnersPage extends Action_Method
 
 		 */			
 		//Changed the locator for Guaranteed Submission button
-		
+
 		try
 		{
 			WebElement arrow =driver.findElement((By.xpath(("(//span[contains(text(),'"+Job_Id+"')]/following::span/mat-icon[contains(text(),'keyboard_arrow_down')])[1]"))));
 			arrow.click();
 			WebElement Get_Guaranteed_Response=driver.findElement((By.xpath(("(//span[contains(text(),'"+Job_Id+"')]/following::button/span[contains(text(),'Submission')])[1]"))));
-			
+
 			Get_Guaranteed_Response.click();
 			return true;
 		}
@@ -139,10 +139,9 @@ public class EngageAgencyPartnersPage extends Action_Method
 	{
 		try 
 		{
-			/*Actions act = new Actions(driver);
-				act.moveToElement(Accept_To_PayLater).build().perform();
-			 */Accept_To_PayLater.click();
-			 return true;
+			Thread.sleep(1000);
+			Accept_To_PayLater.click();
+			return true;
 		} 
 		catch (Exception e) 
 		{
@@ -165,10 +164,10 @@ public class EngageAgencyPartnersPage extends Action_Method
 			// TODO: handle exception
 			return false;
 		}
-		
-		
+
+
 	}
-	
+
 
 	//Method to update the Guaranteed onboarding payment options.
 	public String EnterPaymentForGuaranteedOnboarding(String NoOfPositions) {
@@ -188,10 +187,10 @@ public class EngageAgencyPartnersPage extends Action_Method
 			GOSubmitButton.click();
 			return "Pass";
 		}catch(Exception e) {
-			
+
 			return "Fail"+e;
 		}
-	
+
 	}
 
 
