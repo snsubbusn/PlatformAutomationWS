@@ -20,7 +20,7 @@ public class Corporate_ProfilePage extends Action_Method{
 
 	@FindBy(xpath="//a[contains(text(),'Profile')]")
 	WebElement profileTab;
-	
+
 	@FindBy(xpath="//section//div/h2")
 	WebElement companyNameProfilePage;
 
@@ -81,6 +81,38 @@ public class Corporate_ProfilePage extends Action_Method{
 	@FindBy(xpath="//div[contains(text(),'email')]")
 	WebElement error_MandatoryFieldRequired;
 
+	@FindBy(xpath="//button//i[contains(text(),'close')]")
+	WebElement successMsgClose;
+
+	//location
+
+	//Add Inputs in the Office Locations 
+	@FindBy(id="location")
+	WebElement locationAddress;
+
+
+	@FindBy(xpath="//div[@class='body ng-star-inserted']")
+	WebElement addedLocation;
+
+	@FindBy(xpath="//i[contains(text(),'delete')]")
+	WebElement locationsDelete;
+
+	@FindBy(xpath="//span[text()='Proceed']/ancestor::button")
+	WebElement confirmProceed;
+
+	@FindBy(xpath="//span[contains(text(),'Yes')]")
+	WebElement alertbutton;
+
+	@FindBy(xpath="//app-list-view-box-row[@ng-reflect-body='Bengaluru, Karnataka, India']//i[@class='material-icons'][contains(text(),'edit')]")
+	WebElement LocEdit;
+
+	@FindBy(xpath="//button[@id='addOffice']//span")
+	WebElement AddButton;
+
+	@FindBy(xpath="//section[text()=' View/Edit Company Details ']")
+	WebElement viewEditCompanyDetailsSection;
+
+
 
 	public String clickonProfileandVerifyProfilePage() throws InterruptedException {
 		profileTab.click();
@@ -88,6 +120,9 @@ public class Corporate_ProfilePage extends Action_Method{
 		return companyNameProfilePage.getText();
 	}
 
+	public String getCompanyName() {
+		return companyNameProfilePage.getText();
+	}
 
 	public void clickOnProfileEditBtn() {
 		profileEditButton.click();
@@ -99,41 +134,49 @@ public class Corporate_ProfilePage extends Action_Method{
 
 	public String enterCompanyInfoDetailsandClickNextButton() throws InterruptedException {
 		//try{
-			companyName.clear();
-			companyName.sendKeys("WIPRO");
-			foundedYear.clear();
-			foundedYear.sendKeys("2000");
-			website.clear();
-			website.sendKeys("www.wipro.com");
-			industry.clear();
-			industry.sendKeys("Software and Services");
-			email.clear();
-			email.sendKeys("wipro@mailinator.com");
-			companySize.click();
-			wait_for_elementpresent(size51_100);
-			size51_100.click();
-			address.clear();
-			address.sendKeys("wipro bangalore");
-			Thread.sleep(3000);
-			Actions action = new Actions(driver);
-			action.sendKeys(Keys.ARROW_DOWN).sendKeys(Keys.ENTER).build().perform();
-			aboutUs.clear();
-			aboutUs.sendKeys("Wipro deliver you optimized business processes, enriched insights, smart applications and intelligent infrastructure by leveraging our expertise in integrating software, infrastructure, business processes, professional services, and industry ecosystems.");
-			mobCancel.click();
-			mobileNo.sendKeys("9952845872");
-			mobAddButton.click();
-			nextButton.click();
-			return companyInfoSuccessMsg.getText();
+		companyName.clear();
+		companyName.sendKeys("WIPRO");
+		foundedYear.clear();
+		foundedYear.sendKeys("2000");
+		website.clear();
+		website.sendKeys("www.wipro.com");
+		industry.clear();
+		industry.sendKeys("Software and Services");
+		email.clear();
+		email.sendKeys("wipro@mailinator.com");
+		companySize.click();
+		wait_for_elementpresent(size51_100);
+		size51_100.click();
+		address.clear();
+		address.sendKeys("wipro bangalore");
+		Thread.sleep(3000);
+		Actions action = new Actions(driver);
+		action.sendKeys(Keys.ARROW_DOWN).sendKeys(Keys.ENTER).build().perform();
+		aboutUs.clear();
+		aboutUs.sendKeys("Wipro deliver you optimized business processes, enriched insights, smart applications and intelligent infrastructure by leveraging our expertise in integrating software, infrastructure, business processes, professional services, and industry ecosystems.");
+		mobCancel.click();
+		mobileNo.sendKeys("9952845872");
+		mobAddButton.click();
+		nextButton.click();
+		return companyInfoSuccessMsg.getText();
 		/*}catch(Exception e) {
 			return "failure";
 		}*/
 	}
 
+	public void clickOnEditCompanyDetailsSection() {
+		viewEditCompanyDetailsSection.click();
+	}
+	
+	public void clickOnNextButton() {
+		nextButton.click();
+	}
 
 	public String Error_Message_For_NoInputs() throws EncryptedDocumentException, InvalidFormatException, IOException, InterruptedException
 	{	
 		try {
 			profileEditButton.click();
+			Thread.sleep(2000);
 			wait_for_elementpresent_Clickable(companyName);
 			companyName.clear();
 			companyName.sendKeys(" ");
@@ -145,10 +188,11 @@ public class Corporate_ProfilePage extends Action_Method{
 			//scrollingToElementofAPage(NextButton);
 			scrollingToBottomofAPage();
 			nextButton.click();
+			companyName.sendKeys(" ");
 			//wait_for_elementpresent(Error_MandatoryFieldRequired);
 			return error_MandatoryFieldRequired.getText();
 		} catch (Exception e) {
-			return "NoError";
+			return "NoError"+e.toString();
 		}
 	}
 
@@ -161,7 +205,74 @@ public class Corporate_ProfilePage extends Action_Method{
 	}
 
 
+	//Office Locations
+	Actions action = new Actions(driver);
 
 
+	public boolean verifyLocationsPresent() {
+		try {
+			return locationsDelete.isDisplayed();
+		}catch(Exception e) {
+			return false;
+		}
+	}
+
+	public String deleteOfficeLocationandAddNew() throws InterruptedException {
+		successMsgClose.click();
+		locationsDelete.click();
+		Thread.sleep(1000);
+		confirmProceed.sendKeys(Keys.TAB);
+		confirmProceed.sendKeys(Keys.ENTER);
+		Thread.sleep(1000);
+		locationAddress.sendKeys("WIPRO Bengaluru");
+		Thread.sleep(3000);
+		action.sendKeys(Keys.ARROW_DOWN).sendKeys(Keys.ENTER).build().perform();
+		Thread.sleep(2000);
+		AddButton.click();
+		Thread.sleep(2000);
+		return addedLocation.getText();
+	}
+
+	public String addNewOfficeLocation() throws InterruptedException {
+		locationAddress.sendKeys("WIPRO Bengaluru");
+		Thread.sleep(3000);
+		action.sendKeys(Keys.ARROW_DOWN).sendKeys(Keys.ENTER).build().perform();
+		Thread.sleep(2000);
+		AddButton.click();
+		Thread.sleep(2000);
+		return addedLocation.getText();
+	}
+
+	public boolean Verify_Edit_Office_Locations_Section() throws EncryptedDocumentException, InvalidFormatException, IOException, InterruptedException {
+		LocEdit.click();
+		locationAddress.clear();
+		locationAddress.sendKeys("Bengaluru");
+		Thread.sleep(2000);
+		action.sendKeys(Keys.ARROW_DOWN).sendKeys(Keys.ENTER).build().perform();
+		Thread.sleep(5000);
+		wait_for_elementpresent_Clickable(AddButton);
+		AddButton.click();
+		return false;
+
+	}
+
+	public boolean Verify_Delete_Office_Locations_Section() throws EncryptedDocumentException, InvalidFormatException, IOException, InterruptedException
+	{
+		locationsDelete.click();
+		locationAddress.sendKeys("Bengaluru");
+		action.sendKeys(Keys.ARROW_DOWN).sendKeys(Keys.ENTER).build().perform();
+		Thread.sleep(3000);
+		AddButton.click();
+		return false;
+
+	}
+
+	public boolean Verify_Office_Locations_Error_Message() throws EncryptedDocumentException, InvalidFormatException, IOException, InterruptedException
+	{	
+		locationAddress.sendKeys("Bengaluru");
+		AddButton.click();
+		return false;
+
+	}
 
 }

@@ -36,7 +36,7 @@ public class CorpAdm_TC014_VerifyClosedJobisRestartedforGO extends Action_Method
 		}
 
 		String firstgoJob = man.findJobIdofFirstGSorGO("go");
-		if(!firstgoJob.equals("NoJob")) {
+		if(!firstgoJob.contains("NoJob")) {
 			logger.log(LogStatus.PASS, "The first GO job under Closed job is - "+firstgoJob);
 
 			if(man.clickOnRestartGSorGOCampaign(firstgoJob)) {
