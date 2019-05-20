@@ -729,9 +729,9 @@ public class ScriptExecution extends Action_Method
 		cv.errorValidationWorkExperienceAndProjectShowcase();
 	}
 		
-	@Test(groups= {"Candidate General"})
+	/*@Test(groups= {"Candidate General"})
 	public void Candidate_TC007() throws InterruptedException {
 		Candidate_TC007_VerifyAddingandDeletingEducationDetailsofCandidate cu = PageFactory.initElements(driver, Candidate_TC007_VerifyAddingandDeletingEducationDetailsofCandidate.class);
 		cu.VerifyAddingandDeletingEducationDetailsofCandidate();
-	}
+	}*/
 }
