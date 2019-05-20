@@ -36,7 +36,7 @@ public class CorpAdm_TC013_VerifyClosedJobisRestartedforGS extends Action_Method
 		}
 
 		String firstgsJob = man.findJobIdofFirstGSorGO("gs");
-		if(!firstgsJob.equals("NoJob")) {
+		if(!firstgsJob.contains("NoJob")) {
 			logger.log(LogStatus.PASS, "The first GS job under Closed job is - "+firstgsJob);
 
 			if(man.clickOnRestartGSorGOCampaign(firstgsJob)) {

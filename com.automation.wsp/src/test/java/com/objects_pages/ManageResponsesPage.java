@@ -207,7 +207,7 @@ public class ManageResponsesPage extends Action_Method
 		try{
 			return jobIdFirstCard.getText();
 		}catch(Exception e) {
-			return "NoJob"+e.toString();
+			return "NoJob :- "+e.toString();
 		}
 	}
 
@@ -257,7 +257,8 @@ public class ManageResponsesPage extends Action_Method
 	
 	
 	public String findJobIdofFirstGSorGO(String gsgo) {
-		int pageSize = Integer.parseInt(pagination.getAttribute("ng-reflect-size"));
+		try{
+			int pageSize = Integer.parseInt(pagination.getAttribute("ng-reflect-size"));
 		for(int i=0; i<=pageSize; i++) {
 			for(int j =1; j<=12; j++) {
 				String src = driver.findElement(By.xpath("(//div[@class='icon-container']//button/following::img[1])["+j+"]")).getAttribute("src");
@@ -268,6 +269,9 @@ public class ManageResponsesPage extends Action_Method
 			paginationNext.click();
 		}
 		return "NoJob";
+		}catch(Exception e) {
+			return "NoJob :- "+e.toString();
+		}
 	}
 	
 	

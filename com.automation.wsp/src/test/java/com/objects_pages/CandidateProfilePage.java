@@ -1148,7 +1148,6 @@ public class CandidateProfilePage extends Action_Method
 		int count = skill.size();
 		for(int i=count; i>1; i--) 
 		{
-			System.out.println(count);
 			driver.findElement(By.xpath("//div//mat-icon[2]")).click();
 			Thread.sleep(2000);
 			ProceedDel.click();
@@ -1177,7 +1176,6 @@ public class CandidateProfilePage extends Action_Method
 			SkillExpMonths.sendKeys("0");
 			AddSkill_Button.click();
 			MsgContent = MsgBar.getText();
-			System.out.println(" "+MsgContent);
 			//Check if max met	
 			if(MsgContent.contains("Skill Added Successfully"))
 			{
@@ -1222,6 +1220,8 @@ public class CandidateProfilePage extends Action_Method
 			String title = getExceldata(Variables.testdata,Variables.AddSkillsPage,a,b);
 			Thread.sleep(3000);
 			wait_for_elementpresent(Skills_Title);
+			//scrollingToElementofAPage(Skills_Title);
+			scrollingToTopofAPage();
 			Skills_Title.click();
 			Skills_Title.sendKeys(title);
 			Skills_Title.sendKeys(Keys.TAB);
@@ -1231,7 +1231,6 @@ public class CandidateProfilePage extends Action_Method
 			SkillExpMonths.sendKeys("0");
 			AddSkill_Button.click();
 			String MsgContent = MsgBar.getText();
-			System.out.println(" "+MsgContent);
 			//Check if max met	
 			if(MsgContent.contains("Skill Added Successfully"))
 			{
@@ -1302,6 +1301,7 @@ public class CandidateProfilePage extends Action_Method
 			title = getExceldata(Variables.testdata,Variables.AddSkillsPage,m,n);
 			Thread.sleep(2000);
 			wait_for_elementpresent(Skills_Title);
+			scrollingToTopofAPage();
 			Skills_Title.click();
 			Skills_Title.sendKeys(title);
 			SkillExpYears.sendKeys("0");
@@ -1340,7 +1340,7 @@ public class CandidateProfilePage extends Action_Method
 		System.out.println(" "+p);
 		Edit_Button.click();
 		Thread.sleep(2000);
-		driver.findElement(By.xpath("//mat-list-item["+(p)+"]//mat-icon[@class='skill-icon mat-icon material-icons'][1]")).click();
+		driver.findElement(By.xpath("//mat-list-item["+(p-1)+"]//mat-icon[@class='skill-icon mat-icon material-icons'][1]")).click();
 		Skills_Title.clear();
 		Skills_Title.sendKeys("Updated Skill");
 		Thread.sleep(2000);
