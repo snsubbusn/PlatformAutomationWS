@@ -293,7 +293,7 @@ public class loginPage extends Action_Method {
 
 
 	public void logout() throws InterruptedException{
-		//Thread.sleep(1000);
+		Thread.sleep(1000);
 		wait_for_elementpresent(logoutArrow);
 		logoutArrow.click();
 		Thread.sleep(2000);

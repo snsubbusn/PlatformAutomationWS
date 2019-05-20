@@ -26,7 +26,7 @@ public class CorpAdm_TC011_VerifyOnHoldJobResumedtoActiveJob extends Action_Meth
 
 		lp.EnterValidLogin(Variables.testdata,Variables.LoginPage,"Corporate Email","Corporate Password");
 		logger.log(LogStatus.INFO, "Enter valid login credential and click on Login button, Corporate Landing page displayed");
-		
+
 		ManageResponsesPage man = PageFactory.initElements(driver, ManageResponsesPage.class);
 
 		if(man.Click_On_OnHoldJobs()) {
@@ -34,29 +34,32 @@ public class CorpAdm_TC011_VerifyOnHoldJobResumedtoActiveJob extends Action_Meth
 		}else{
 			logger.log(LogStatus.FAIL, "Failed to navigate to OnHold Jobs Page");
 		}
-		
+
 		String firstJob = man.getFirstJobId();
-		logger.log(LogStatus.PASS, "The First Job card under OnHold Job is - "+firstJob);
-		
-		String msg = man.clickOnResumeandVerifySuccessMsg(firstJob);
-		
-		if(msg.contains("success")) {
-			logger.log(LogStatus.PASS, "Job Resumed and navigated to Active Jobs. and the message is - "+msg);
+		if(!firstJob.equals("NoJob")) {
+			logger.log(LogStatus.PASS, "The First Job card under OnHold Job is - "+firstJob);
+
+			String msg = man.clickOnResumeandVerifySuccessMsg(firstJob);
+
+			if(msg.contains("success")) {
+				logger.log(LogStatus.PASS, "Job Resumed and navigated to Active Jobs. and the message is - "+msg);
+			}else {
+				logger.log(LogStatus.FAIL, "Failed to resume the job. Msg is - "+msg);
+			}
+
+			logger.log(LogStatus.INFO, "Verify the job card is present in the Active Jobs Page");
+
+
+			if(man.verifyJobisPresent(firstJob)) {
+				logger.log(LogStatus.PASS, "Job card is verified under Active Jobs Page");
+			}else {
+				logger.log(LogStatus.FAIL, "Job card is not under Active Jobs Page");
+			}
 		}else {
-			logger.log(LogStatus.FAIL, "Failed to resume the job. Msg is - "+msg);
+			logger.log(LogStatus.WARNING, "No Job in OnHold Job Page");
 		}
-		
-		logger.log(LogStatus.INFO, "Verify the job card is present in the Active Jobs Page");
-	
-		
-		if(man.verifyJobisPresent(firstJob)) {
-			logger.log(LogStatus.PASS, "Job card is verified under Active Jobs Page");
-		}else {
-			logger.log(LogStatus.FAIL, "Job card is not under Active Jobs Page");
-		}
-		
 		logger.log(LogStatus.INFO, "Completed verifying the Job Resumed from On hold Jobs and moved to Active Jobs page");
-		
+
 		lp.logout();
 		extent.endTest(logger);
 	}

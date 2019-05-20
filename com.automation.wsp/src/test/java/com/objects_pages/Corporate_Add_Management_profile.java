@@ -28,6 +28,9 @@ public class Corporate_Add_Management_profile extends Action_Method {
 	@FindBy(xpath="//i[contains(text(),'delete')]")
 	WebElement Delete;
 	
+	@FindBy(xpath="//i[contains(text(),'delete')]")
+	List<WebElement> deleteList;
+	
 	@FindBy(xpath="//span[text()='Proceed']")
 	WebElement confirmProceed;
 	
@@ -39,10 +42,12 @@ public class Corporate_Add_Management_profile extends Action_Method {
 	WebElement addedManagementName;
 	
 	
+	@FindBy(xpath="//a/span[contains(text(),'View Profile')]")
+	WebElement finalPageViewProfile;
+	
 	public int getNoOfManagementProfiles() {
 		try {
-			List<WebElement> s = driver.findElements(By.xpath("//i[contains(text(),'delete')]"));
-			return s.size();
+			return deleteList.size();
 		}catch(Exception e) {
 			return 0;
 		}
@@ -51,22 +56,19 @@ public class Corporate_Add_Management_profile extends Action_Method {
 	public String Corp_AddManagement_Profile() throws InterruptedException
 	{
 		try {
-			List<WebElement> s = driver.findElements(By.xpath("//i[contains(text(),'delete')]"));
-			
-			System.out.println(s.size());
-			if(s.size()>1) {
+			if(deleteList.size()>1) {
 				Delete.click();
 				confirmProceed.click();
 				Name.sendKeys("CompanyName");
 				Designation.sendKeys("HR Manager");
-				EmailId.sendKeys("com@mailinator.com");
-				PhoneNum.sendKeys("8147506453");
+				//EmailId.sendKeys("com@mailinator.com");
+				//PhoneNum.sendKeys("8147506453");
 				Addbutton.click();
 			}else {
 				Name.sendKeys("CompanyName");
 				Designation.sendKeys("HR Manager");
-				EmailId.sendKeys("com@mailinator.com");
-				PhoneNum.sendKeys("8147506453");
+				//EmailId.sendKeys("com@mailinator.com");
+				//PhoneNum.sendKeys("8147506453");
 				Addbutton.click();
 			}
 			Thread.sleep(2000);
@@ -74,8 +76,8 @@ public class Corporate_Add_Management_profile extends Action_Method {
 		}catch(Exception e) {
 			Name.sendKeys("CompanyName");
 			Designation.sendKeys("HR Manager");
-			EmailId.sendKeys("com@mailinator.com");
-			PhoneNum.sendKeys("8147506453");
+			//EmailId.sendKeys("com@mailinator.com");
+			//PhoneNum.sendKeys("8147506453");
 			Addbutton.click();
 			Thread.sleep(2000);
 			return addedManagementName.getText();
@@ -86,4 +88,7 @@ public class Corporate_Add_Management_profile extends Action_Method {
 		DoneButton.click();
 	}
 
+	public void clickOnViewProfile() {
+		finalPageViewProfile.click();
+	}
 }
