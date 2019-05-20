@@ -499,6 +499,11 @@ public class ScriptExecution extends Action_Method
 		ws.verifyDeletingFirstAdminUser();
 	}
 	
+	@Test (groups = {"WSAdmin UserManagement"})
+	public void WSAdmin30() throws InterruptedException {
+		WSAdmin_TC30_VerifyAccountManagementTab ws = PageFactory.initElements(driver, WSAdmin_TC30_VerifyAccountManagementTab.class);
+		ws.VerifyAccountManagement();
+	}
 	
 	//Agency Partner Test Cases
 	
@@ -705,6 +710,12 @@ public class ScriptExecution extends Action_Method
 		cu.VerifyCandidateResumeEdit();
 	}
 	
+	@Test(groups= {"Candidate General"})
+	public void Candidate_TC006() throws InterruptedException {
+		Candidate_TC006_VerifyVideoCapturingOfCandidateProfile cu = PageFactory.initElements(driver, Candidate_TC006_VerifyVideoCapturingOfCandidateProfile.class);
+		cu.CandidateVideoCapture();
+	}
+	
 	@Test(groups= {"Candidate General","SmokeTest"})
 	public void Candidate_TC011() throws InterruptedException {
 		Candidate_TC011_VerifyMyEngagementsofCandidate cu = PageFactory.initElements(driver, Candidate_TC011_VerifyMyEngagementsofCandidate.class);
@@ -715,6 +726,18 @@ public class ScriptExecution extends Action_Method
 	public void Candidate_TC012() throws InterruptedException {
 		Candidate_TC012_VerifyItemsPerPage cu = PageFactory.initElements(driver, Candidate_TC012_VerifyItemsPerPage.class);
 		cu.VerifyItemsPerPage();
+	}
+	
+	@Test(groups= {"Candidate General"})
+	public void Candidate_TC013() throws InterruptedException {
+		Candidate_TC013_VerifyPaginationofMyEngagements cu = PageFactory.initElements(driver, Candidate_TC013_VerifyPaginationofMyEngagements.class);
+		cu.VerifyPagination();
+	}
+	
+	@Test(groups= {"Candidate General"})
+	public void Candidate_TC014() throws InterruptedException {
+		Candidate_TC014_VerifyJobCardsFromMyEngagements cu = PageFactory.initElements(driver, Candidate_TC014_VerifyJobCardsFromMyEngagements.class);
+		cu.VerifyJobCards();
 	}
 	
 	@Test(groups= {"Candidate General"})
@@ -734,4 +757,6 @@ public class ScriptExecution extends Action_Method
 		Candidate_TC007_VerifyAddingandDeletingEducationDetailsofCandidate cu = PageFactory.initElements(driver, Candidate_TC007_VerifyAddingandDeletingEducationDetailsofCandidate.class);
 		cu.VerifyAddingandDeletingEducationDetailsofCandidate();
 	}*/
+	
+	
 }
