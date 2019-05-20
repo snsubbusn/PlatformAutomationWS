@@ -102,8 +102,6 @@ public class WSAdminUsersPage extends Action_Method {
 	@FindBy(xpath="//button[contains(text(),'Update')]")
 	WebElement updateButton;
 	
-	
-	
 	//Methods
 	public void clickOnUsersTab() throws InterruptedException {
 		Thread.sleep(2000);
@@ -194,5 +192,4 @@ public class WSAdminUsersPage extends Action_Method {
 		return r;
 	}
 
-	
 }

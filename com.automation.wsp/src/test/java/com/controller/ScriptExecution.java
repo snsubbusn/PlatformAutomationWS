@@ -29,6 +29,9 @@ import com.scenarios.Agent_TC017_VerifyAgencyPartnerAbletoViewJobDetailsfromClos
 import com.scenarios.Candidate_TC001_VerifyCandidateLoginandProfilePage;
 import com.scenarios.Candidate_TC002_VerifyEditingCandidateProfilePage;
 import com.scenarios.Candidate_TC005_VerifyValidationOfUploadingCV;
+import com.scenarios.Candidate_TC006_VerifyVideoCapturingOfCandidateProfile;
+import com.scenarios.Candidate_TC013_VerifyPaginationofMyEngagements;
+import com.scenarios.Candidate_TC014_VerifyJobCardsFromMyEngagements;
 import com.scenarios.Agent_TC018_VerifyAssignCandidateDetailsForJob;
 import com.scenarios.Agent_TC019_VerifyValidationOfInviteNewCandidateForJob;
 import com.scenarios.Agent_TC020_VerifyInviteNewCandidateForJob;
@@ -75,6 +78,7 @@ import com.scenarios.Sc_068_Verify_AlignOfAnAgency;
 import com.scenarios.Sc_080_Verify_Accept_ReviewSubmission;
 import com.scenarios.Sc_087_VerifyAccept_GS;
 import com.scenarios.Sc_101_VerifyTag_Agencypartner;
+import com.scenarios.SuperAdmin_TC002_VerifyAlignedVendorsforjob;
 import com.scenarios.TC_001_Verify_LoginPage;
 import com.scenarios.TC_002_Verify_Corporate_Company_Info_Error_Notification;
 import com.scenarios.TC_016_Create_Save_Corporate_Profile;
@@ -97,6 +101,7 @@ import com.scenarios.WSAdmin_TC017_EditExistingAdminUserName;
 import com.scenarios.WSAdmin_TC018_EditExistingAdminUserEmail;
 import com.scenarios.WSAdmin_TC019_EditExistingAdminUserPhone;
 import com.scenarios.WSAdmin_TC020_DeleteFirstAdminUser;
+import com.scenarios.WSAdmin_TC30_VerifyAccountManagementTab;
 import com.scenarios.WSAdmin_TC013_VerifyUsersAddUser;
 
 
@@ -557,6 +562,17 @@ public class ScriptExecution extends Action_Method
 		ws.verifyDeletingFirstAdminUser();
 	}
 	
+	@Test (groups = {"SuperAdmin General"})
+	public void WSAdmin_TC30() throws InterruptedException {
+		WSAdmin_TC30_VerifyAccountManagementTab ws = PageFactory.initElements(driver, WSAdmin_TC30_VerifyAccountManagementTab.class);
+		ws.VerifyAccountManagement();
+	}
+	
+	@Test (groups = {"SuperAdmin General"})
+	public void SuperAdmin_TC002() throws InterruptedException {
+		SuperAdmin_TC002_VerifyAlignedVendorsforjob ws = PageFactory.initElements(driver, SuperAdmin_TC002_VerifyAlignedVendorsforjob.class);
+		ws.VerifySuperAdminAligendVendors();
+	}
 	
 	//Agency Partner Test Cases
 	
@@ -682,8 +698,23 @@ public class ScriptExecution extends Action_Method
 		cu.VerifyCandidateResumeEdit();
 	}
 	
+	@Test(groups= {"Candidate General"})
+	public void Candidate_TC006() throws InterruptedException {
+		Candidate_TC006_VerifyVideoCapturingOfCandidateProfile ca = PageFactory.initElements(driver, Candidate_TC006_VerifyVideoCapturingOfCandidateProfile.class);
+		ca.CandidateVideoCapture();
+	}
 	
+	@Test(groups= {"Candidate General"})
+	public void Candidate_TC013() throws InterruptedException {
+		Candidate_TC013_VerifyPaginationofMyEngagements ca = PageFactory.initElements(driver, Candidate_TC013_VerifyPaginationofMyEngagements.class);
+		ca.VerifyPagination();
+	}
 	
+	@Test(groups= {"Candidate General"})
+	public void Candidate_TC014() throws InterruptedException {
+		Candidate_TC014_VerifyJobCardsFromMyEngagements ca = PageFactory.initElements(driver, Candidate_TC014_VerifyJobCardsFromMyEngagements.class);
+		ca.VerifyJobCards();
+	}
 	
 	@Test(groups= {"AgencyPartner General"})
 	public void WSAgent18() throws InterruptedException {
@@ -756,7 +787,7 @@ public class ScriptExecution extends Action_Method
 	@Test(groups= {"AgencyPartner General"})
 	public void WSAgent28() throws InterruptedException {
 		Agent_TC028_VeriifyTaggedTabofaJob ag = PageFactory.initElements(driver, Agent_TC028_VeriifyTaggedTabofaJob.class);
-		ag.veriifyTaggedTabofaJob();;
+		ag.veriifyTaggedTabofaJob();
 	}
 	
 }

@@ -1,10 +1,15 @@
 package com.objects_pages;
 
+import java.util.concurrent.TimeUnit;
+
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 
 import com.controller.Action_Method;
 import com.controller.Variables;
+import com.relevantcodes.extentreports.LogStatus;
 
 public class CandidateProfilePage extends Action_Method
 {
@@ -32,7 +37,7 @@ public class CandidateProfilePage extends Action_Method
 	WebElement Skill_Rating;
 
 	@FindBy(xpath="//div//div[@class=\"vjs-poster\"]")
-	WebElement Video_Profile;
+	WebElement Video_Profile;	
 
 	@FindBy(xpath="//div//button[@class=\"vjs-big-play-button\"]")
 	WebElement Play_Button;
@@ -54,8 +59,47 @@ public class CandidateProfilePage extends Action_Method
 
 	@FindBy(xpath="//span[@class=\"views-wrapper\"]/div[@class=\"views-back\"]/span/following-sibling::span[2]")
 	WebElement TotalView_Count;
+	
+	@FindBy(xpath="//iframe[contains(@src,'myinterview')]")
+	WebElement videoFrame;
+	
+	@FindBy(xpath="//div/img[@class='profile-video-banner']")
+	WebElement gifImage;
+	
+	@FindBy(xpath="//div/app-video-display")
+	WebElement uploadedvideo;
+	
+	//Elements of Candidate video Profile Page
 
+	@FindBy(xpath="//a/span[contains(text(),'Re-take')]")
+	WebElement Video_Retake;
 
+	@FindBy(xpath="//a/img[@class='img-responsive custom-img' and @src='assets/Record.png']")
+	WebElement Record_Button;
+
+	@FindBy(xpath="//div/div[text()='Next' and @class='btn btn-red btn-big transition-opacity']")
+	WebElement Video_Next;
+
+	@FindBy(xpath="//div//button[contains(text(),'Start Recording')]")
+	WebElement StartRecording_Button;
+
+	@FindBy(xpath="//div//button[contains(text(),'Stop Recording')]")
+	WebElement StopRecording_Button;
+
+	@FindBy(xpath="//div/div[text()='Next' and @class='btn btn-big btn-short btn-red iblock-text']")
+	WebElement VideoSecNext;
+
+	@FindBy(xpath="//div//div[text()='Retake ?']")
+	WebElement VideoSecRetake;
+
+	@FindBy(xpath="//div[@id= 'goToNextStep' and contains(text(), 'Finish')]")
+	WebElement VideosecFinish_Button;
+	
+	@FindBy(xpath="//div//div[text()='Finish' and @class='btn btn-big btn-short btn-red iblock-text validateRecording']")
+	WebElement CompleteVideoFinish;
+	
+	@FindBy(xpath="//button/i[contains(text(),'close')]")
+	WebElement closemsg;
 
 	//Elements of Profile Edit
 
@@ -111,6 +155,12 @@ public class CandidateProfilePage extends Action_Method
 
 	@FindBy(xpath="//div[contains(text(),'Resume is updated successfully')]")
 	WebElement successMsg;
+
+	@FindBy(xpath="//a/img[@class='img-responsive custom-img']")
+	WebElement Thumbnail;
+
+
+
 
 	public boolean Verify_ProfileHeadline()
 	{
@@ -243,7 +293,8 @@ public class CandidateProfilePage extends Action_Method
 	{
 		try
 		{
-			return Education.isDisplayed();
+			 Education.isDisplayed();
+			 return true;
 		}
 		catch (Exception e)
 		{
@@ -364,11 +415,75 @@ public class CandidateProfilePage extends Action_Method
 		}
 	}
 
+	//Function to return the src of the video if video present else verify image present
+	public String getSrcofVideo()  {
+		try{
+			String src = uploadedvideo.getAttribute("ng-reflect-video-url");
+		    if(src.contains("amazonaw"))
+		    {
+		    	System.out.println("Uploaded Video");
+		    	return src+"s3";
+		    }
+		    
+		    else
+		    {
+		    	System.out.println("Recorded Video");
+		    	return src+"MyInterview";
+		    }
+			
+		
+		}catch(Exception e) {
+			String gif = gifImage.getAttribute("src");
+			return gif;
+			}
+		
+	}
+		 
+	public void captureCandidateVideo() throws InterruptedException {
+		MyInterviewPage mip=PageFactory.initElements(driver,MyInterviewPage.class);
+		
+		if(Video_Retake.isDisplayed()) {
+			logger.log(LogStatus.PASS," Candidate has to Retake video");
+			Video_Retake.click();
+			Thread.sleep(2000);
+			mip.candidateProfileVideoCapturing();
+			Thread.sleep(5000);
+			closemsg.click();
+			//wait_for_elementpresent(Video_ProfileNext);
+			//Video_ProfileNext.click();
+		}
+	}
+		
+		public void captureCandidateNewVideo() throws InterruptedException {
+			MyInterviewPage mip=PageFactory.initElements(driver,MyInterviewPage.class);
+			
+			wait_for_elementpresent(Thumbnail);
+			try{
+				
+				Thumbnail.click();					
+			}catch(Exception e) {
+				Thumbnail.click();
+			}
+			logger.log(LogStatus.PASS," Candidate has to upload a new video");
+			Thread.sleep(2000);
+			mip.candidateProfileVideoCapturing();
+			Thread.sleep(5000);
+			closemsg.click();
+			//wait_for_elementpresent(Video_ProfileNext);
+			//Video_ProfileNext.click();
+		}
+
+	public boolean Start_Video()
+	{
+		StartRecording_Button.click();
+		return true;
+	}
+	
 	public boolean Education_Next()
 	{
 		try
 		{
-			wait_for_elementpresent_Clickable(Education_Next);
+			//wait_for_elementpresent_Clickable(Education_Next);
 			Education_Next.click();
 			return true;
 		}
@@ -403,7 +518,7 @@ public class CandidateProfilePage extends Action_Method
 			return false;
 		}
 	}
-
+	
 	public boolean ProfileView_Page()
 	{
 		try
@@ -510,6 +625,7 @@ public class CandidateProfilePage extends Action_Method
 			return false;
 		}
 	}
+	
 }
 
 
