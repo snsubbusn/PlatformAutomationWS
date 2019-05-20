@@ -36,7 +36,7 @@ public class CorpAdm_TC012_VerifyOnHoldJobMovedtoClosedJob extends Action_Method
 		}
 
 		String firstJob = man.getFirstJobId();
-		if(!firstJob.equals("NoJob")) {
+		if(!firstJob.contains("NoJob")) {
 			logger.log(LogStatus.PASS, "The First Job card under OnHold Job is - "+firstJob);
 
 
@@ -47,7 +47,7 @@ public class CorpAdm_TC012_VerifyOnHoldJobMovedtoClosedJob extends Action_Method
 			}else {
 				logger.log(LogStatus.FAIL, "Failed to close the job. Msg is - "+msg);
 			}
-			
+
 			if(man.Click_On_closedJobs()) {
 				logger.log(LogStatus.PASS, "Navigated to Closed Jobs");
 			}else {

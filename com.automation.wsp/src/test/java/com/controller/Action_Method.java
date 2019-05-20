@@ -156,6 +156,11 @@ public class Action_Method implements ITestListener, IRetryAnalyzer, IAnnotation
 	{
 		((JavascriptExecutor) driver).executeScript("window.scrollTo(0, document.body.scrollHeight)");
 	}
+	
+	public static void scrollingToTopofAPage() 
+	{
+		((JavascriptExecutor) driver).executeScript("window.scrollTo(0, -document.body.scrollHeight)");
+	}
 
 	public void scrollingToElementofAPage(WebElement element) 
 	{

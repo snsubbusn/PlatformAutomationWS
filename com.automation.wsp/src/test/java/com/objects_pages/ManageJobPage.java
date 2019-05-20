@@ -80,7 +80,7 @@ public class ManageJobPage extends Action_Method
 	{
 		try 
 		{
-			Thread.sleep(1000);
+			Thread.sleep(2000);
 			jobs.click();
 			activeJobs.click();
 			return true;
