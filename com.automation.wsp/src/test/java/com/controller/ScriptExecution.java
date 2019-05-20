@@ -60,7 +60,7 @@ public class ScriptExecution extends Action_Method
 
 	//Corporate User Management Test Cases
 
-	@Test (groups = {"CorporateAdmin UserManagement","SmokeTest"})
+	@Test (groups = {"CorporateAdmin UserManagement"})
 	public void CorpUserMangement01() throws InterruptedException {
 		CorpAdm_User_TC001_VerifyUsersTab corp = PageFactory.initElements(driver, CorpAdm_User_TC001_VerifyUsersTab.class);
 		corp.checkUserTabandLicenseofCorpAdmin();
