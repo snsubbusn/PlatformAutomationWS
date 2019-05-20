@@ -1,5 +1,6 @@
 package com.scenarios;
 
+import java.util.ArrayList;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.support.PageFactory;
@@ -34,6 +35,9 @@ public class Candidate_TC016_VerifyErrorValidationofCandidateProfileEditForWorkE
 		if(cp.errorValidationForWorkExperienceAndProjectShowcasePage())
 		{
 			logger.log(LogStatus.PASS, "Errors for Work Experience and Project Showcase field validated successfully ");
+			ArrayList<String> a = cp.getAllErrorMessagesForWorkAndProjectPage();
+			   logger.log(LogStatus.INFO,"Error Messages verified are : "+a);
+			   logger.log(LogStatus.PASS,"Navigated to candidate profile successfully");
 		}
 		else
 		{

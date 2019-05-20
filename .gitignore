@@ -420,3 +420,7 @@ com.automation.wsp/.classpath
 .metadata/.bak_1.log
 .metadata/.bak_0.log
 .metadata/
+<<<<<<< HEAD
+=======
+.recommenders/
+>>>>>>> 4fce4c059feb617be11fb2a67ee07aef433407ad

@@ -1,5 +1,6 @@
 package com.scenarios;
 
+import java.util.ArrayList;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.support.PageFactory;
@@ -34,15 +35,21 @@ public class Candidate_TC003_VerifyErrorValidationofCandidateProfileEdit extends
 		   if(cp.errorValidationForProfileInformation_Page())
 		   {
 			   logger.log(LogStatus.PASS, "Errors on Profile Information Personal info is validated successfully");
+			   ArrayList<String> a = cp.getAllErrorMessagesForProfileInfoPage();
+			   logger.log(LogStatus.INFO,"Error Messages verified are : "+a);
 		   }
 		   else
 		   {
 			   logger.log(LogStatus.FAIL, "Failed to validate the errors");
 		   }
 		   
+		  
+		   
 		   if(cp.errorValidationForProfileInformation_PageOtherDetails())
 		   {
 			   logger.log(LogStatus.PASS, "Errors on Profile Information Page, Other details is validated successfully");
+			   ArrayList<String> a = cp.getAllErrorMessagesForOtherDetailsInProfileInfoPage();
+			   logger.log(LogStatus.INFO,"Error Messages verified are : "+a );
 		   }
 		   else
 		   {
