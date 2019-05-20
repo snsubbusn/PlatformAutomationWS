@@ -694,6 +694,12 @@ public class ScriptExecution extends Action_Method
 	}
 	
 	@Test(groups= {"Candidate General"})
+	public void Candidate_TC003() throws InterruptedException {
+		Candidate_TC003_VerifyErrorValidationofCandidateProfileEdit ce = PageFactory.initElements(driver,Candidate_TC003_VerifyErrorValidationofCandidateProfileEdit.class);
+		ce.errorValidation();
+	}
+	
+	@Test(groups= {"Candidate General"})
 	public void Candidate_TC005() throws InterruptedException {
 		Candidate_TC005_VerifyValidationOfUploadingCV cu = PageFactory.initElements(driver, Candidate_TC005_VerifyValidationOfUploadingCV.class);
 		cu.VerifyCandidateResumeEdit();
@@ -710,42 +716,22 @@ public class ScriptExecution extends Action_Method
 		Candidate_TC012_VerifyItemsPerPage cu = PageFactory.initElements(driver, Candidate_TC012_VerifyItemsPerPage.class);
 		cu.VerifyItemsPerPage();
 	}
-		
-	@Test(groups= {"Candidate General"})
-	public void Candidate_TC007() throws InterruptedException {
-		Candidate_TC007_VerifyAddingandDeletingEducationDetailsofCandidate cu = PageFactory.initElements(driver, Candidate_TC007_VerifyAddingandDeletingEducationDetailsofCandidate.class);
-		cu.VerifyAddingandDeletingEducationDetailsofCandidate();
-	}
-	
-	@Test(groups= {"Candidate General"})
-	public void Candidate_TC003() throws InterruptedException {
-		Candidate_TC003_VerifyErrorValidationofCandidateProfileEdit ca = PageFactory.initElements(driver, Candidate_TC003_VerifyErrorValidationofCandidateProfileEdit.class);
-		ca.errorValidation();
-	}
-	
-	@Test(groups= {"Candidate General"})
-	public void Candidate_TC004() throws InterruptedException, EncryptedDocumentException, InvalidFormatException, IOException {
-		Candidate_TC004_VerifyAddingandDeletingSkillsofCandidate ca = PageFactory.initElements(driver, Candidate_TC004_VerifyAddingandDeletingSkillsofCandidate.class);
-		ca.validatingSkillsField();
-	}
 	
 	@Test(groups= {"Candidate General"})
 	public void Candidate_TC015() throws InterruptedException {
-		Candidate_TC015_VerifyErrorValidationofCandidateProfileEditForEducationPage ca = PageFactory.initElements(driver, Candidate_TC015_VerifyErrorValidationofCandidateProfileEditForEducationPage.class);
-		ca.errorValidationForEducation();
+		Candidate_TC015_VerifyErrorValidationofCandidateProfileEditForEducationPage cv = PageFactory.initElements(driver, Candidate_TC015_VerifyErrorValidationofCandidateProfileEditForEducationPage.class);
+		cv.errorValidationForEducation();
 	}
 	
 	@Test(groups= {"Candidate General"})
 	public void Candidate_TC016() throws InterruptedException {
-		Candidate_TC016_VerifyErrorValidationofCandidateProfileEditForWorkExperiencePage ca = PageFactory.initElements(driver, Candidate_TC016_VerifyErrorValidationofCandidateProfileEditForWorkExperiencePage.class);
-		ca.errorValidationWorkExperienceAndProjectShowcase();
+		Candidate_TC016_VerifyErrorValidationofCandidateProfileEditForWorkExperiencePage cv = PageFactory.initElements(driver, Candidate_TC016_VerifyErrorValidationofCandidateProfileEditForWorkExperiencePage.class);
+		cv.errorValidationWorkExperienceAndProjectShowcase();
 	}
-	
-	@Test(groups= {"Candidate General"})
-	public void Candidate_TC017() throws InterruptedException, EncryptedDocumentException, InvalidFormatException, IOException {
-		Candidate_TC017_VerifyAddingDeletingAndUpdatingSkillsofCandidate ca = PageFactory.initElements(driver, Candidate_TC017_VerifyAddingDeletingAndUpdatingSkillsofCandidate.class);
-		ca.validatingAddDelAndUpdateSkillsField();
-	}
-	
-	
+		
+	/*@Test(groups= {"Candidate General"})
+	public void Candidate_TC007() throws InterruptedException {
+		Candidate_TC007_VerifyAddingandDeletingEducationDetailsofCandidate cu = PageFactory.initElements(driver, Candidate_TC007_VerifyAddingandDeletingEducationDetailsofCandidate.class);
+		cu.VerifyAddingandDeletingEducationDetailsofCandidate();
+	}*/
 }
