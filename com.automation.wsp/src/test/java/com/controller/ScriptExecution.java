@@ -711,12 +711,12 @@ public class ScriptExecution extends Action_Method
 		cu.VerifyItemsPerPage();
 	}
 		
-	@Test(groups= {"Candidate General"})
+	/*@Test(groups= {"Candidate General"})
 	public void Candidate_TC007() throws InterruptedException {
 		Candidate_TC007_VerifyAddingandDeletingEducationDetailsofCandidate cu = PageFactory.initElements(driver, Candidate_TC007_VerifyAddingandDeletingEducationDetailsofCandidate.class);
 		cu.VerifyAddingandDeletingEducationDetailsofCandidate();
 	}
-	
+	*/
 	@Test(groups= {"Candidate General"})
 	public void Candidate_TC003() throws InterruptedException {
 		Candidate_TC003_VerifyErrorValidationofCandidateProfileEdit ca = PageFactory.initElements(driver, Candidate_TC003_VerifyErrorValidationofCandidateProfileEdit.class);
