@@ -2,6 +2,7 @@ package com.objects_pages;
 
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 import org.apache.poi.EncryptedDocumentException;
@@ -734,6 +735,8 @@ public class CandidateProfilePage extends Action_Method
 	@FindBy(xpath="//span[contains(text(),' Please enter your contribution ')]")
 	WebElement NoContribution_Error;	
 
+
+	String x,y,z,q,p,r,s,t,u,v;
 	public boolean errorValidationForProfileInformation_Page() {
 
 
@@ -742,6 +745,7 @@ public class CandidateProfilePage extends Action_Method
 			ViewCV_button.click();
 			UpdateCV_filePath.sendKeys(Variables.InvalidResume);
 			InvalidCV_Format.isDisplayed();
+			x = InvalidCV_Format.getText();
 			Close.click();
 
 
@@ -750,22 +754,26 @@ public class CandidateProfilePage extends Action_Method
 			Profile_HeadlineInput.sendKeys(Keys.chord(Keys.CONTROL,"a",Keys.DELETE));
 			Profile_HeadlineInput.sendKeys(Keys.TAB);
 			Headline_WarningMsg.isDisplayed();
+			y = Headline_WarningMsg.getText();
 
 			//Verifying Name input text
 			Name.sendKeys(Keys.chord(Keys.CONTROL,"a",Keys.DELETE));
 			Name.sendKeys(Keys.TAB);
 			Name_WarningMsg.isDisplayed();
+			z = Name_WarningMsg.getText();
 
 			//Verifying DateOfBirth field
 			Birth_Date.sendKeys(Keys.chord(Keys.CONTROL,"a",Keys.DELETE));
 			Birth_Date.sendKeys(Keys.TAB);
 			DateOfBirth_Warning.isDisplayed();
+			q = DateOfBirth_Warning.getText();
 
 			//Verifying Current Location field
 			Current_Location.sendKeys(Keys.chord(Keys.CONTROL,"a",Keys.DELETE));
 			Current_Location.sendKeys("abc1");
 			Current_Location.sendKeys(Keys.TAB);
 			InvalidLocation_Error.isDisplayed();
+			p = InvalidLocation_Error.getText();
 
 			//Verifying Language field
 			/*Select LanguagePills = new Select(driver.findElement(By.xpath("//div/input[@name='languages']")));
@@ -774,6 +782,7 @@ public class CandidateProfilePage extends Action_Method
 			Language.sendKeys("abc");
 			Language.sendKeys(Keys.TAB);
 			InvalidTextInLanguage_Field.isDisplayed();
+			r = InvalidTextInLanguage_Field.getText();
 			Language.sendKeys(Keys.chord(Keys.CONTROL,"a",Keys.DELETE));
 			//Select 6 languages
 			Language.sendKeys("English");
@@ -792,6 +801,7 @@ public class CandidateProfilePage extends Action_Method
 			Language.sendKeys("English");
 			LanguageSelect.click();
 			Duplicate_Language.isDisplayed();
+			s = Duplicate_Language.getText();
 			Thread.sleep(1000);
 			Language.sendKeys(Keys.chord(Keys.CONTROL,"a",Keys.DELETE));
 
@@ -802,6 +812,7 @@ public class CandidateProfilePage extends Action_Method
 			LanguageSelect.click();
 			Thread.sleep(2000);
 			Language_LimitError.isDisplayed();
+			t = Language_LimitError.getText();
 
 
 
@@ -812,18 +823,44 @@ public class CandidateProfilePage extends Action_Method
 			Current_Designation.sendKeys(Keys.chord(Keys.CONTROL,"a",Keys.DELETE));
 			Current_Designation.sendKeys(Keys.TAB);
 			No_Designation.isDisplayed();
+			u = No_Designation.getText();
 			Thread.sleep(2000);
 			Current_Designation.sendKeys("123");
 			Current_Designation.sendKeys(Keys.TAB);
 			Invalid_Designation.isDisplayed();	
+			v = Invalid_Designation.getText();
 			Thread.sleep(3000);
+
+
+
+
+
+
 			return true;
 		}
 		catch(Exception e)
 		{
 			return false;
 		}	
-	}			
+	}	
+
+	public ArrayList<String> getAllErrorMessagesForProfileInfoPage(){
+		ArrayList<String> a = new ArrayList<String>();
+		a.add(x);
+		a.add(y);
+		a.add(z);
+		a.add(q);
+		a.add(p);
+		a.add(r);
+		a.add(s);
+		a.add(t);
+		a.add(u);
+		a.add(v);
+		return a;		
+	}
+
+
+
 	public boolean errorValidationForProfileInformation_PageOtherDetails() {
 
 		try {
@@ -836,28 +873,34 @@ public class CandidateProfilePage extends Action_Method
 			Info_Next.click();
 			Thread.sleep(3000);
 			Invalid_LandmarkError.isDisplayed();
+			p = Invalid_LandmarkError.getText();
 
 			//Verifying Relocation Preference
 			Thread.sleep(3000);
 			Relocation_Preference.sendKeys("123");
 			Relocation_Preference.sendKeys(Keys.TAB);
 			RelocationPreference_ErrorForInvalidText.isDisplayed();
+			q = RelocationPreference_ErrorForInvalidText.getText();
 
 			//Verifying Total Work Experience
 			TotalExp_Years.sendKeys(Keys.chord(Keys.CONTROL,"a",Keys.DELETE));
 			NoWorkExperience_YearsError.isDisplayed();
+			r = NoWorkExperience_YearsError.getText();
 			TotalExp_Months.sendKeys(Keys.chord(Keys.CONTROL,"a",Keys.DELETE));
 			NoWorkExperience_MonthsError.isDisplayed();
+			s = NoWorkExperience_MonthsError.getText();
 
 			//Verifying Invalid Skill Title
 			Skills_Title.sendKeys("1");
 			Skills_Title.sendKeys(Keys.TAB);
 			Thread.sleep(3000);
 			InvalidSkillTitle.isDisplayed();
+			t = InvalidSkillTitle.getText();
 
 			Skills_Title.sendKeys(Keys.chord(Keys.CONTROL,"a",Keys.DELETE));
 			AddSkill_Button.click();
 			NoSkillData_Added.isDisplayed();
+			u = NoSkillData_Added.getText();
 			Thread.sleep(2000);
 
 			//No Experience data
@@ -866,6 +909,7 @@ public class CandidateProfilePage extends Action_Method
 			AddSkill_Button.click();
 			scrollingToBottomofAPage(); 
 			NoSkillData_Added.isDisplayed();
+			v = NoSkillData_Added.getText();
 			Thread.sleep(1000);
 			driver.navigate().refresh();
 			return true;
@@ -878,6 +922,17 @@ public class CandidateProfilePage extends Action_Method
 
 	}
 
+	public ArrayList<String> getAllErrorMessagesForOtherDetailsInProfileInfoPage(){
+		ArrayList<String> a = new ArrayList<String>();
+		a.add(p);
+		a.add(q);
+		a.add(r);
+		a.add(s);
+		a.add(t);
+		a.add(u);
+		a.add(v);
+		return a;		
+	}
 
 
 	public boolean errorValidationForEducationPage() {
@@ -892,10 +947,15 @@ public class CandidateProfilePage extends Action_Method
 			wait_for_elementpresent(AddEducation_Button);
 			AddEducation_Button.click();
 			NoDegree_Error.isDisplayed();
+			p = NoDegree_Error.getText();
 			NoUniversity_Error.isDisplayed();
+			q = NoUniversity_Error.getText();
 			NoSpecialization_Error.isDisplayed();
+			r = NoSpecialization_Error.getText();
 			NoFromDate_Error.isDisplayed();
+			s = NoFromDate_Error.getText();
 			NoToDate_Error.isDisplayed();
+			t = NoToDate_Error.getText();
 			Thread.sleep(2000);
 			driver.navigate().refresh();
 
@@ -921,18 +981,9 @@ public class CandidateProfilePage extends Action_Method
 			To_Duration.sendKeys(Keys.TAB);
 			NoToDate_Error.isDisplayed();
 
-			//Adding an  new education field
-			driver.navigate().refresh();
-			Degree.sendKeys("Bachelor of Architecture (B.Arch.)");
-			DegreeType.click();
-			University.sendKeys("VTU");
-			Specialization.sendKeys("ISE");
-			From_Duration.sendKeys("4/16/2016");
-			To_Duration.sendKeys("4/20/2019");
-			AddEducation_Button.click();
-			Education_Next.click();
-			Thread.sleep(2000);
+			Thread.sleep(1000);
 			scrollingToBottomofAPage();
+			Education_Next.click();
 			Finish_Button.click();
 			return true;
 		}
@@ -941,6 +992,16 @@ public class CandidateProfilePage extends Action_Method
 			return false;
 		}
 	} 
+	
+	public ArrayList<String> getAllErrorMessagesForEducationPage(){
+		ArrayList<String> a = new ArrayList<String>();
+		a.add(p);
+		a.add(q);
+		a.add(r);
+		a.add(s);
+		a.add(t);
+		return a;		
+	}
 
 	public boolean errorValidationForWorkExperienceAndProjectShowcasePage()
 	{
@@ -956,10 +1017,15 @@ public class CandidateProfilePage extends Action_Method
 			Thread.sleep(3000);
 			AddWorkExperience_Button.click();
 			NoJobTitle_Error.isDisplayed();
+			p = NoJobTitle_Error.getText();
 			NoCompanyName_Error.isDisplayed();
+			q = NoCompanyName_Error.getText(); 
 			NoWorkLocation_Error.isDisplayed();
+			r = NoWorkLocation_Error.getText();
 			NoFromDate_Error.isDisplayed();
+			s = NoFromDate_Error.getText();
 			NoToDate_Error.isDisplayed();
+			t = NoToDate_Error.getText();
 			driver.navigate().refresh();
 
 
@@ -991,9 +1057,13 @@ public class CandidateProfilePage extends Action_Method
 			ProjectShowcase_Accordion.click();
 			AddProject_Btn.click();
 			CompanyName_Error.isDisplayed();
+			u = CompanyName_Error.getText();
 			NoProjectTitle_Error.isDisplayed();
+			v = NoProjectTitle_Error.getText();
 			NoChallenges_Error.isDisplayed();
+			x = NoChallenges_Error.getText();
 			NoContribution_Error.isDisplayed();
+			y = NoContribution_Error.getText();
 			driver.navigate().refresh();
 
 			//Verifying Company name field
@@ -1020,6 +1090,19 @@ public class CandidateProfilePage extends Action_Method
 		{
 			return false;
 		}
+	}
+	public ArrayList<String> getAllErrorMessagesForWorkAndProjectPage(){
+		ArrayList<String> a = new ArrayList<String>();
+		a.add(p);
+		a.add(q);
+		a.add(r);
+		a.add(s);
+		a.add(t);
+		a.add(u);
+		a.add(v);
+		a.add(x);
+		a.add(y);
+		return a;		
 	}
 
 

@@ -11,102 +11,7 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
-import com.scenarios.Agent_TC001_VerifyAgentLogin;
-import com.scenarios.Agent_TC002_VerifyNewAssignmentsPage;
-import com.scenarios.Agent_TC003_VerifyActiveAssignmentsPage;
-import com.scenarios.Agent_TC004_VerifyOnHoldAssignmentsPage;
-import com.scenarios.Agent_TC005_VerifyClosedAssignmentsPage;
-import com.scenarios.Agent_TC006_VerifyInvitedCandidatePage;
-import com.scenarios.Agent_TC007_VerifyInvitedCandidateSortByInvitedOn;
-import com.scenarios.Agent_TC008_VerifyInvitedCandidateSortByName;
-import com.scenarios.Agent_TC009_VerifyInvitedCandidateSortByStatus;
-import com.scenarios.Agent_TC010_VerifySendReminderForInvitedCandidate;
-import com.scenarios.Agent_TC011_VerifyJoinedCandidateProfile;
-import com.scenarios.Agent_TC012_VerifyAgencyPartnerAbletoAcceptNewAssignment;
-import com.scenarios.Agent_TC013_VerifyAgencyPartnerAbletoDeclineNewAssignment;
-import com.scenarios.Agent_TC014_VerifyAgencyPartnerAbletoViewJobDetailsfromNewAssignment;
-import com.scenarios.Agent_TC015_VerifyAgencyPartnerAbletoViewJobDetailsfromActiveAssignment;
-import com.scenarios.Agent_TC016_VerifyAgencyPartnerAbletoViewJobDetailsfromOnHoldAssignment;
-import com.scenarios.Agent_TC017_VerifyAgencyPartnerAbletoViewJobDetailsfromClosedAssignment;
-import com.scenarios.Agent_TC018_VerifyAssignCandidateDetailsForJob;
-import com.scenarios.Agent_TC019_VerifyValidationOfInviteNewCandidateForJob;
-import com.scenarios.Agent_TC020_VerifyInviteNewCandidateForJob;
-import com.scenarios.Agent_TC021_VerifyInvitedTabofaJob;
-import com.scenarios.Agent_TC022_VerifyTagExistingTabofaJob;
-import com.scenarios.Agent_TC023_VerifySearchResultsForNoFiltersandTagCandidate;
-import com.scenarios.Agent_TC024_VerifySearchResultsForNameFilterandTagCandidate;
-import com.scenarios.Agent_TC025_VerifySearchResultsForEmailFilterandTagCandidate;
-import com.scenarios.Agent_TC026_VerifySearchResultsForSkillsFilterandTagCandidate;
-import com.scenarios.Agent_TC027_VerifySearchResultsForExperienceFilterandTagCandidate;
-import com.scenarios.Agent_TC028_VeriifyTaggedTabofaJob;
-import com.scenarios.Candidate_TC001_VerifyCandidateLoginandProfilePage;
-import com.scenarios.Candidate_TC002_VerifyEditingCandidateProfilePage;
-import com.scenarios.Candidate_TC005_VerifyValidationOfUploadingCV;
-import com.scenarios.Candidate_TC007_VerifyAddingandDeletingEducationDetailsofCandidate;
-import com.scenarios.Candidate_TC011_VerifyMyEngagementsofCandidate;
-import com.scenarios.Candidate_TC012_VerifyItemsPerPage;
-import com.scenarios.CorpAdm_Dashboard_TC001_VerifyDashboard;
-import com.scenarios.CorpAdm_Dashboard_TC002_VerifyDashafterGS;
-import com.scenarios.CorpAdm_Dashboard_TC003_VerifyDashafterGO;
-import com.scenarios.CorpAdm_TC010_VerifyActiveJobMovedtoOnHoldJob;
-import com.scenarios.CorpAdm_TC011_VerifyOnHoldJobResumedtoActiveJob;
-import com.scenarios.CorpAdm_TC012_VerifyOnHoldJobMovedtoClosedJob;
-import com.scenarios.CorpAdm_TC013_VerifyClosedJobisRestartedforGS;
-import com.scenarios.CorpAdm_TC014_VerifyClosedJobisRestartedforGO;
-import com.scenarios.CorpAdm_TC015_VerifyClosedJobisReplicatedtoNewJob;
-import com.scenarios.CorpAdm_User_TC001_VerifyUsersTab;
-import com.scenarios.CorpAdm_User_TC002_AddUser;
-import com.scenarios.CorpAdm_User_TC003_AddUserforAllLicenses;
-import com.scenarios.CorpAdm_User_TC004_EditUserName;
-import com.scenarios.CorpAdm_User_TC005_EditEmailId;
-import com.scenarios.CorpAdm_User_TC006_EditPhone;
-import com.scenarios.CorpAdm_User_TC008_DeleteUser;
-import com.scenarios.CorpAdm_User_TC009_DeleteAllUser;
-import com.scenarios.CorpAdm_User_TC010_AddDeletedUser;
-import com.scenarios.CorpAdm_User_TC011_VerifyPagination;
-import com.scenarios.CorpAdm_User_TC012_ValidateAddUserPageErrors;
-import com.scenarios.GOCampaignCreation;
-import com.scenarios.GO_AdminReviewSubmission;
-import com.scenarios.GO_Admin_AlignAgencies;
-import com.scenarios.GO_AgentAcceptandTagCandidates;
-import com.scenarios.GO_CorporateShortlists;
-import com.scenarios.Sc_006_Verify_EmailID_Password_LoginPage;
-import com.scenarios.Sc_008_Verify_Register;
-import com.scenarios.Sc_009_Verify_ForgotPasswordPage;
-import com.scenarios.Sc_010_Verify_ErrorMessage_ForgotPasswordPopUP;
-import com.scenarios.Sc_011_Verify_PasswordReset;
-import com.scenarios.Sc_022_Verify_JobSummaryPage;
-import com.scenarios.Sc_023_Verify_ErrorMessage_JobSummaryPage;
-import com.scenarios.Sc_028_Post_Video_JD;
-import com.scenarios.Sc_032_PerformGuaranteedSubmission;
-import com.scenarios.Sc_036_Verify_Shortlist_PendingReview_CorporateAdmin;
-import com.scenarios.Sc_068_Verify_AlignOfAnAgency;
-import com.scenarios.Sc_080_Verify_Accept_ReviewSubmission;
-import com.scenarios.Sc_087_VerifyAccept_GS;
-import com.scenarios.Sc_101_VerifyTag_Agencypartner;
-import com.scenarios.TC_001_Verify_LoginPage;
-import com.scenarios.TC_002_Verify_Corporate_Company_Info_Error_Notification;
-import com.scenarios.TC_016_Create_Save_Corporate_Profile;
-import com.scenarios.WSAdmin_TC001_VerifyAdminLogin;
-import com.scenarios.WSAdmin_TC002_VerifyInvitePage;
-import com.scenarios.WSAdmin_TC003_VerifyFilterUsingCandidate;
-import com.scenarios.WSAdmin_TC004_VerifyFilterUsingCorporateAdmin;
-import com.scenarios.WSAdmin_TC005_VerifyFilterUsingAgent;
-import com.scenarios.WSAdmin_TC006_VerifySortByName;
-import com.scenarios.WSAdmin_TC007_VerifySortByStatus;
-import com.scenarios.WSAdmin_TC008_VerifySortByInvitedOn;
-import com.scenarios.WSAdmin_TC009_VerifyAddNewUserPage;
-import com.scenarios.WSAdmin_TC010_VerifyEditingCorpAdminUnderInvite;
-import com.scenarios.WSAdmin_TC011_VerifyJobsTabandCountsofJobs;
-import com.scenarios.WSAdmin_TC012_VerifyUsersTab;
-import com.scenarios.WSAdmin_TC013_VerifyUsersAddUser;
-import com.scenarios.WSAdmin_TC014_VerifyAddUserPageValidation;
-import com.scenarios.WSAdmin_TC015_AddNewAdminUser;
-import com.scenarios.WSAdmin_TC016_AddingExistingUser;
-import com.scenarios.WSAdmin_TC017_EditExistingAdminUserName;
-import com.scenarios.WSAdmin_TC018_EditExistingAdminUserEmail;
-import com.scenarios.WSAdmin_TC019_EditExistingAdminUserPhone;
-import com.scenarios.WSAdmin_TC020_DeleteFirstAdminUser;
+import com.scenarios.*;
 
 
 @Listeners(com.controller.Action_Method.class)
@@ -789,6 +694,12 @@ public class ScriptExecution extends Action_Method
 	}
 	
 	@Test(groups= {"Candidate General"})
+	public void Candidate_TC003() throws InterruptedException {
+		Candidate_TC003_VerifyErrorValidationofCandidateProfileEdit ce = PageFactory.initElements(driver,Candidate_TC003_VerifyErrorValidationofCandidateProfileEdit.class);
+		ce.errorValidation();
+	}
+	
+	@Test(groups= {"Candidate General"})
 	public void Candidate_TC005() throws InterruptedException {
 		Candidate_TC005_VerifyValidationOfUploadingCV cu = PageFactory.initElements(driver, Candidate_TC005_VerifyValidationOfUploadingCV.class);
 		cu.VerifyCandidateResumeEdit();
@@ -804,6 +715,18 @@ public class ScriptExecution extends Action_Method
 	public void Candidate_TC012() throws InterruptedException {
 		Candidate_TC012_VerifyItemsPerPage cu = PageFactory.initElements(driver, Candidate_TC012_VerifyItemsPerPage.class);
 		cu.VerifyItemsPerPage();
+	}
+	
+	@Test(groups= {"Candidate General"})
+	public void Candidate_TC015() throws InterruptedException {
+		Candidate_TC015_VerifyErrorValidationofCandidateProfileEditForEducationPage cv = PageFactory.initElements(driver, Candidate_TC015_VerifyErrorValidationofCandidateProfileEditForEducationPage.class);
+		cv.errorValidationForEducation();
+	}
+	
+	@Test(groups= {"Candidate General"})
+	public void Candidate_TC016() throws InterruptedException {
+		Candidate_TC016_VerifyErrorValidationofCandidateProfileEditForWorkExperiencePage cv = PageFactory.initElements(driver, Candidate_TC016_VerifyErrorValidationofCandidateProfileEditForWorkExperiencePage.class);
+		cv.errorValidationWorkExperienceAndProjectShowcase();
 	}
 		
 	@Test(groups= {"Candidate General"})

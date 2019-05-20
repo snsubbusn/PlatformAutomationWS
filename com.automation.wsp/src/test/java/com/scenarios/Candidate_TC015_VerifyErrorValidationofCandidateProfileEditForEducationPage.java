@@ -1,5 +1,6 @@
 package com.scenarios;
 
+import java.util.ArrayList;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.support.PageFactory;
@@ -38,6 +39,9 @@ public class Candidate_TC015_VerifyErrorValidationofCandidateProfileEditForEduca
 		   if(cp.errorValidationForEducationPage())
 		   {
 			   logger.log(LogStatus.PASS, "Errors on Education Page is validated successfully");
+			   ArrayList<String> a = cp.getAllErrorMessagesForEducationPage();
+			   logger.log(LogStatus.INFO,"Error Messages verified are : "+a);
+			   logger.log(LogStatus.PASS,"Navigated to candidate profile successfully");
 		   }
 		   else
 		   {
