@@ -24,10 +24,10 @@ public class RegisterPage extends Action_Method
 		@FindBy(id="email")
 		WebElement Email;
 		
-		@FindBy(id="mobile")
+		@FindBy(id="phone")
 		WebElement Mobile_Number;
 		
-		@FindBy(xpath="//mat-select[@id='mat-select-0']")
+		@FindBy(xpath="(//div[@class='mat-select-arrow'])[2]")
 		WebElement Join_Us_as;
 		
 		@FindBy(xpath="// mat-option[1]")
