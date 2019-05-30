@@ -11,7 +11,7 @@ import com.relevantcodes.extentreports.LogStatus;
 
 public class TC_001_Verify_LoginPage extends Action_Method
 {
-	public void Verify_all_elements_present_in_loginPage()
+	public void Verify_all_elements_present_in_loginPage() throws InterruptedException
 	{
 
 		logger = extent.startTest("TC_001_Verifying all elements and text present in Login page");
