@@ -77,9 +77,9 @@ public class loginPage extends Action_Method {
 	@FindBy(xpath="//div[@class='mat-menu-content']/button")
 	WebElement Logout;
 	
-/*	@FindBy(css="mat-icon:contains( Logout )")
-	WebElement Logout;
-*/
+	@FindBy(xpath="//span[contains(text(),'Got')]")
+	WebElement gotItButton;
+	
 	//Actionable methods to be created 
 
 
@@ -117,6 +117,8 @@ public class loginPage extends Action_Method {
 	public void EnterValidLogin(String filename,String sname,String Username,String Password)
 	{
 		try {
+			gotItButton.click();
+			Thread.sleep(1000);
 			Login_Tab.click();
 			Email.sendKeys(getExceldata(filename, sname,Username));
 			this.Password.sendKeys(getExceldata(filename, sname,Password));
@@ -130,6 +132,8 @@ public class loginPage extends Action_Method {
 	public void EnterCandidateLoginCapturedData(String username, String password)
 	{
 		try {
+			gotItButton.click();
+			Thread.sleep(1000);
 			Login_Tab.click();
 			Email.sendKeys(username);
 			this.Password.sendKeys(password);
@@ -218,6 +222,8 @@ public class loginPage extends Action_Method {
 	public boolean LoginTab()
 	{
 		try {
+			gotItButton.click();
+			Thread.sleep(1000);
 			return Login_Tab.isDisplayed();
 		}catch(Exception e) {
 			return false;
@@ -227,13 +233,17 @@ public class loginPage extends Action_Method {
 	public boolean RegisterTab()
 	{
 		try {
+			gotItButton.click();
+			Thread.sleep(1000);
 			return Register_Tab.isDisplayed();
 		}catch(Exception e) {
 			return false;
 		}
 	}
 
-	public void clickOnLoginTab() {
+	public void clickOnLoginTab() throws InterruptedException {
+		gotItButton.click();
+		Thread.sleep(1000);
 		Login_Tab.click();
 	}
 	public boolean Login_Text1()
