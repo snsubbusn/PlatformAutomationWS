@@ -11,7 +11,7 @@ import com.relevantcodes.extentreports.LogStatus;
 
 public class Sc_010_Verify_ErrorMessage_ForgotPasswordPopUP extends Action_Method
 {
-	public void Verify_ErrorMessage_ForgotPasswordPopUP()
+	public void Verify_ErrorMessage_ForgotPasswordPopUP() throws InterruptedException
 	{
 		
 		logger = extent.startTest("Sc_010_Verify_ErrorMessage for Forgot Password Pop up");
