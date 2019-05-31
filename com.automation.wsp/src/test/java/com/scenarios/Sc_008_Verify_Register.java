@@ -14,7 +14,7 @@ import com.relevantcodes.extentreports.LogStatus;
 
 public class Sc_008_Verify_Register extends Action_Method
 {
-	public void Verify_Registration_Of_user() throws EncryptedDocumentException, InvalidFormatException, IOException
+	public void Verify_Registration_Of_user() throws EncryptedDocumentException, InvalidFormatException, IOException, InterruptedException
 	{
 		logger = extent.startTest("Sc_008_Verify Registration of an user_Started");
 		driver.manage().timeouts().implicitlyWait(1,TimeUnit.MINUTES);

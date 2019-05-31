@@ -12,7 +12,7 @@ import com.relevantcodes.extentreports.LogStatus;
 public class Sc_009_Verify_ForgotPasswordPage extends Action_Method
 {
 	
-	public void Verify_ForgotPasswordPage()
+	public void Verify_ForgotPasswordPage() throws InterruptedException
 	{
 		logger = extent.startTest("Sc_009_Verify_ForgotPasswordPage");
 		driver.manage().timeouts().implicitlyWait(1,TimeUnit.MINUTES);

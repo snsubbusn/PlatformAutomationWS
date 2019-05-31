@@ -231,7 +231,7 @@ public class ScriptExecution extends Action_Method
 
 	//Verify Register
 	@Test (groups = {"General","SmokeTest"})
-	public void Login3() throws EncryptedDocumentException, InvalidFormatException, IOException
+	public void Login3() throws EncryptedDocumentException, InvalidFormatException, IOException, InterruptedException
 	{
 		Sc_008_Verify_Register s08=PageFactory.initElements(driver,Sc_008_Verify_Register.class);
 		s08.Verify_Registration_Of_user();

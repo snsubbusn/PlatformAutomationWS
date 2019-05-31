@@ -233,7 +233,6 @@ public class loginPage extends Action_Method {
 	public boolean RegisterTab()
 	{
 		try {
-			gotItButton.click();
 			Thread.sleep(1000);
 			return Register_Tab.isDisplayed();
 		}catch(Exception e) {
@@ -242,7 +241,11 @@ public class loginPage extends Action_Method {
 	}
 
 	public void clickOnLoginTab() throws InterruptedException {
-		gotItButton.click();
+		try{
+			gotItButton.click();
+		}catch(Exception e) {
+			
+		}
 		Thread.sleep(1000);
 		Login_Tab.click();
 	}
