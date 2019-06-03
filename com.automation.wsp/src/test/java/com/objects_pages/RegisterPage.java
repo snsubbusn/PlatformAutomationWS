@@ -24,10 +24,10 @@ public class RegisterPage extends Action_Method
 		@FindBy(id="email")
 		WebElement Email;
 		
-		@FindBy(id="mobile")
+		@FindBy(id="phone")
 		WebElement Mobile_Number;
 		
-		@FindBy(xpath="//mat-select[@id='mat-select-0']")
+		@FindBy(xpath="(//div[@class='mat-select-arrow'])[2]")
 		WebElement Join_Us_as;
 		
 		@FindBy(xpath="// mat-option[1]")
@@ -36,10 +36,16 @@ public class RegisterPage extends Action_Method
 		@FindBy(id="register")
 		WebElement Request_Invite_Button;
 		
-		public boolean Enter_Inputs_For_All_The_Fields_In_RegisterPage() throws EncryptedDocumentException, IOException, InvalidFormatException
+		@FindBy(xpath="//span[contains(text(),'Got')]")
+		WebElement gotItButton;
+		
+		
+		public boolean Enter_Inputs_For_All_The_Fields_In_RegisterPage() throws EncryptedDocumentException, IOException, InvalidFormatException, InterruptedException
 		{
 			try
 			{
+				gotItButton.click();
+				Thread.sleep(1000);
 				Register_Tab.click();
 				Full_Name.sendKeys("Raghav AT");
 				Email.sendKeys(getExceldata(Variables.testdata,Variables.Update_Data,"email"));

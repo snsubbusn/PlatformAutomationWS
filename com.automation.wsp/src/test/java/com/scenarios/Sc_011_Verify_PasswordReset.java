@@ -11,7 +11,7 @@ import com.relevantcodes.extentreports.LogStatus;
 
 public class Sc_011_Verify_PasswordReset extends Action_Method
 {
-	public void Verify_PasswordReset()
+	public void Verify_PasswordReset() throws InterruptedException
 	{
 
 		logger = extent.startTest("Sc_011_Verify_PasswordReset");

@@ -286,9 +286,10 @@ public class MyAssignmentsPage extends Action_Method
 	}
 
 	public String getFirstJobCardDetails() {
+		scrollingToElementofAPage(firstJobCardJobId);
 		return firstJobCardJobTitle.getText()+"; "+firstJobCardCompanyName.getText()+"; "+firstJobCardJobId.getText();
 	}
-
+	
 	public boolean clickOnFirstJobDetail() {
 		try {
 			firstJobCardJobTitle.click();

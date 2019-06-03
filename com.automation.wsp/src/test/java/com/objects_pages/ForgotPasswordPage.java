@@ -34,6 +34,9 @@ public class ForgotPasswordPage extends Action_Method
 	@FindBy(xpath="//auth-forgot-password-dialog[div[contains(text(),'Please enter your email address for the password reset link')]]//div[contains(text(),'Please enter a valid email')]")
 	WebElement ErrorMsg_InvalidEmail;
 
+	@FindBy(xpath="//span[contains(text(),'Got')]")
+	WebElement gotItButton;
+	
 
 	public void Click_On_ForgotPasswordlink()
 	{
@@ -79,7 +82,9 @@ public class ForgotPasswordPage extends Action_Method
 		return ErrorMsg_InvalidEmail.isDisplayed();
 	}
 
-	public void clickOnLoginTab() {
+	public void clickOnLoginTab() throws InterruptedException {
+		gotItButton.click();
+		Thread.sleep(1000);
 		Login_Tab.click();
 	}
 
