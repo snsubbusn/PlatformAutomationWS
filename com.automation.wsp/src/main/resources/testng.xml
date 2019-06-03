@@ -28,8 +28,8 @@
 		<run>
 			<include name="Smoke"/>
     		<include name="Functional"/>
-    		<include name="GS Basic Flow"/>
-    		<include name="GO Basic Flow"/>
+    		<!--<include name="GS Basic Flow"/>
+    		<include name="GO Basic Flow"/>-->
     	</run>
 	</groups>
 	
