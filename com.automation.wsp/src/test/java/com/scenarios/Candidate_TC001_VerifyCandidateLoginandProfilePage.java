@@ -33,7 +33,7 @@ public class Candidate_TC001_VerifyCandidateLoginandProfilePage extends Action_M
 		logger.log(LogStatus.PASS, "Entered valid credentails");
 
 		CandidateProfilePage vr = PageFactory.initElements(driver, CandidateProfilePage.class);
-
+		vr.ProfileTab();
 
 		String CandidateEmail_Id = getExceldata(Variables.testdata, Variables.LoginPage,7,1);
 		String obt = vr.FetchingCandidate_EmailId();

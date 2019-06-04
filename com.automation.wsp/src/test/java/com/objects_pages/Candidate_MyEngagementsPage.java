@@ -1,6 +1,7 @@
 package com.objects_pages;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
@@ -20,9 +21,45 @@ public class Candidate_MyEngagementsPage extends Action_Method{
 
 	@FindBy(xpath="//div/button[@class='engagements-btn mat-flat-button mat-primary']")
 	WebElement CandidateJobTagged;
-
+	
+	@FindBy(xpath="(//div[@class='parent-div ng-star-inserted']//div/a)[1]")
+	WebElement FirstJobcardtitle;
+	
+	@FindBy(xpath="//a/img[@class='profile-border']")
+	WebElement CorpWeblink;
+	
+	@FindBy(xpath="//button[@title='Play Video']")
+	WebElement JobVideo;
+	
+	@FindBy(xpath="//div[contains(text(),'Experience') and @class='title']")
+	WebElement JobExperience;
+	
+	@FindBy(xpath="//div[contains(text(),'Education')]")
+	WebElement JobEducation;
+	
+	@FindBy(xpath="//div[contains(text(),'Location')]")
+	WebElement JobLocation;
+	
+	@FindBy(xpath="//div[contains(text(),'Salary')]")
+	WebElement JobSalary;
+	
+	@FindBy(xpath="//div/h4[contains(text(),'Description')]")
+	WebElement Jobdescription;
+	
+	@FindBy(xpath="//span[contains(text(),'About Us')]")
+	WebElement JobInfo;
+	
+	@FindBy(xpath="//div/div[contains(text(),'Must have skills')]")
+	WebElement Jobmusthaveskills;
+	
+	@FindBy(xpath="//div[contains(text(),'Good To have skills')]")
+	WebElement Jobgoodtohaveskills;
+	
 	@FindBy(xpath="//span[@class='pagination-bottom']")
 	WebElement PaginationBottom;
+
+	@FindBy(xpath="//li[@class='active ng-star-inserted']/a[@class='page-num']")
+	WebElement Paginationlastarrow;
 
 	@FindBy(xpath="//li/a[@class='page-num']")
 	WebElement PageNum;
@@ -44,20 +81,41 @@ public class Candidate_MyEngagementsPage extends Action_Method{
 
 	@FindBy(xpath="//li/a[@class='arrow'  and @title='Go to previous page']")
 	WebElement PreviousPage;
+	
+	@FindBy(xpath="//li[@class='active ng-star-inserted']/a[@class='page-num']")
+	WebElement totalPages;
 
 	@FindBy(xpath="//li/a[text()=2]")
 	WebElement Page2;
+	
+	@FindBy(xpath="//li/a[text()=1]")
+	WebElement Page1;
+	
+	@FindBy(xpath="//span[contains(text(),'No Engagements')]")
+	WebElement NoEngagements;
+	
+	@FindBy(xpath="//div[@class=\"pull-left arroy ng-star-inserted\"]")
+	WebElement Jobbackbutton;
+	
+	@FindBy(xpath="//div[@class=\"pull-left arroy ng-star-inserted\"]")
+	WebElement Corpbackbutton;
 
 	@FindBy(xpath="//li/a[@title='Go to next page']")
 	WebElement NextPage;
+	
+	@FindBy(xpath="//li/a[@class='page-num']")
+	WebElement Pagenum;
 
 	@FindBy(xpath="//li/a[@title='Go to last page']")
 	WebElement LastPage;
+	
+	@FindBy(xpath="//li[@class='disabled ng-star-inserted']/span[@title='Go to next page']")
+	WebElement DisabledNextPage;
 
 	@FindBy(xpath="//app-pagination/span[@class='pagination-bottom']")
 	WebElement Pagination;
-
-
+	
+	//WebElement LastPageNumber = driver.findElement(By.xpath("//*[@text='>>]/preceding::/span[1]")); 
 
 
 	public void clickonMyEngagements() {
@@ -97,6 +155,7 @@ public class Candidate_MyEngagementsPage extends Action_Method{
 			return false;
 	}
 
+	
 
 	public boolean ClickOn_MyEngagementsTab()
 	{
@@ -115,6 +174,17 @@ public class Candidate_MyEngagementsPage extends Action_Method{
 		return myEngagementsTab.getText();
 	}
 
+	public boolean VerifyJobCards()
+	{
+		try {
+			NoEngagements.isDisplayed();
+			return true;
+		}
+		catch(Exception e)
+		{
+			return false;
+		}
+	}
 
 	public boolean ClickOn_ItemsPerPage()
 	{
@@ -128,6 +198,19 @@ public class Candidate_MyEngagementsPage extends Action_Method{
 		}
 	}
 
+	public boolean CorporateWebsitePage()
+	{
+		try {
+			CorpWeblink.click();
+			Child_Window_Handling();
+			return true;
+		}
+		catch(Exception e)
+		{
+			return false;
+		}
+	}
+	
 	public boolean VerifyJobsTagged()
 	{
 		try {
@@ -137,6 +220,98 @@ public class Candidate_MyEngagementsPage extends Action_Method{
 		{
 			return false;
 		}
+	}
+	
+	public boolean EnabledLastPage()
+	{
+		try {
+			LastPage.click();
+			return true;
+		}
+		catch(Exception e)
+		{
+			return false;
+		}
+	}
+
+	public boolean VerifyJobpage()
+	{
+		try {
+			FirstJobcardtitle.click();
+			return true;
+		}
+		catch(Exception e)
+		{
+			return false;
+		}
+	}
+	public boolean VerifyJobvideo()
+	{
+		   JobVideo.isEnabled();
+		   return true;
+	}
+	
+	public boolean VerifyJobdetails()
+	{
+		JobExperience.isDisplayed();
+		JobEducation.isDisplayed();
+		JobLocation.isDisplayed();
+		JobSalary.isDisplayed();
+		JobInfo.isDisplayed();
+		return true;
+	}	 
+	public boolean VerifyJobDescription()
+	{ 	
+		try {
+			 Jobdescription.isDisplayed();
+			 return true;
+		}
+		catch(Exception e)
+		{
+			return false;
+		}
+	}	 	 
+	public boolean VerifyJobmustskills()
+	{
+		try {
+		   Jobmusthaveskills.isDisplayed();
+		   return true;
+		}
+		catch(Exception e)
+		{
+			return false;
+		}
+	}	 	 
+	public boolean VerifyJobgoodskills()
+	{
+		try {
+			Jobgoodtohaveskills.click();
+			Jobgoodtohaveskills.isDisplayed();
+		  return true;
+		}
+		catch(Exception e)
+		{
+			return false;
+		}
+	}	 	 	 
+	public boolean Verifybackbutton()
+	{
+		
+		   Jobbackbutton.click();
+		   return true;
+	}	 	 
+		
+	public boolean VerifyCorpbackbutton()
+	{
+		
+		   Corpbackbutton.click();
+		   return true;
+	}
+	
+	public boolean VerifyJdDisplayed()
+	{
+		JobVideo.isDisplayed();
+		return true;
 	}
 
 	public boolean Verify_Pagination()
@@ -167,16 +342,24 @@ public class Candidate_MyEngagementsPage extends Action_Method{
 	public String getDefaultItemsPerPage()
 	{
 
-		DefaultItemValue.click();
+		//DefaultItemValue.click();(items per page and pagination scripts make separate functions)
 		String rec = PaginationBottom.getText();
 		String [] recd = rec.split(" ");
 		return recd[3];
 
 	}
-
-
-
+	
+	public boolean goToLastpage() {
+		try{
+			LastPage.click();
+			return LastPage.isEnabled();
+		}catch(Exception e) {
+			return false;
+		}
+	}
+	
 	public Boolean select36ItemsPerPage() {
+		myEngagementsTab.sendKeys(Keys.ESCAPE);
 		ItemsPerPage.click();
 		Items36perpage.click();
 		return true;
@@ -188,15 +371,19 @@ public class Candidate_MyEngagementsPage extends Action_Method{
 		String [] recd = rec.split(" ");
 		return recd[5];
 	}
-
-	public String getTotalNoOfthePage() {
-		String rec = PageNum.getText();
-		String [] recd = rec.split(" ");
-		return recd[1];
+	
+	public boolean clickOnPage1() {
+		Page1.click();
+		return true;
 	}
-
-	public void clickOnPage2() {
-		Page2.click();		
+	
+	public boolean clickOnPage2() {
+		try {
+			Page2.click();	
+			return true;
+			}catch(Exception e) {
+				return false;
+			}
 	}
 
 	public boolean verifyNextPageEnabled() {
@@ -206,9 +393,9 @@ public class Candidate_MyEngagementsPage extends Action_Method{
 			return false;
 		}
 	}
-
 	public boolean verifyLastPageEnabled() {
 		try{
+			//LastPage.click();
 			return LastPage.isEnabled();
 		}catch(Exception e) {
 			return false;
@@ -231,8 +418,13 @@ public class Candidate_MyEngagementsPage extends Action_Method{
 		}
 	}
 
-	public void clickOnPreviousPage() {
-		PreviousPage.click();
+	public boolean clickOnPreviousPage() {
+		try{
+			PreviousPage.click();
+			return true;
+		}catch(Exception e) {
+			return false;
+		}
 	}
 
 

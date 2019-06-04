@@ -7,6 +7,7 @@ import java.io.IOException;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Method;
 import java.util.Iterator;
+import java.util.List;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Logger;
@@ -199,7 +200,21 @@ public class Action_Method implements ITestListener, IRetryAnalyzer, IAnnotation
 		driver.switchTo().window(wid2);
 
 	}
+	
+	public static void Window_Handling()
+	{
+		String parentWindow= driver.getWindowHandle();
+		
+		List<String> allWindows = (List<String>) driver.getWindowHandles();
+		for(String curWindow : allWindows){
+		    driver.switchTo().window(curWindow);
+		}
+	
+		driver.close();
+		
+		driver.switchTo().window(parentWindow);
 
+	}
 
 	public static void wait_for_pageload(String url)
 	{ 

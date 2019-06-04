@@ -61,7 +61,7 @@ public class Corporate_ProfilePage extends Action_Method{
 	@FindBy(id="vision")
 	WebElement aboutUs;
 
-	@FindBy(id="mobileNo")
+	@FindBy(id="phone")
 	WebElement mobileNo;
 
 	@FindBy(xpath="//mat-icon[contains(text(),'add')]")

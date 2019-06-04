@@ -113,6 +113,7 @@ public class Corporate_Profile_OfficeLocations_Page extends Action_Method{
 	
 
 	public void clickNextButton() {
+		wait_for_elementpresent_Clickable(NextButton);
 		NextButton.click();
 	}
 	

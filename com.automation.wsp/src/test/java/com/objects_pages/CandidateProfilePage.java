@@ -11,10 +11,12 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 
 import com.controller.Action_Method;
 import com.controller.Variables;
+import com.relevantcodes.extentreports.LogStatus;
 
 public class CandidateProfilePage extends Action_Method
 {
@@ -22,6 +24,7 @@ public class CandidateProfilePage extends Action_Method
 	//Elements of Candidate Profile View Page
 	@FindBy(xpath="//section/div[@class= \"heading\"]")
 	WebElement Profile_Headline;
+	
 	@FindBy(xpath ="//a[contains(text(),'Profile')]")
 	WebElement Profile;
 
@@ -68,7 +71,44 @@ public class CandidateProfilePage extends Action_Method
 	WebElement TotalView_Count;
 
 
+	//Elements of Candidate video Profile Page
 
+		@FindBy(xpath="//a/span[contains(text(),'Re-take')]")
+		WebElement Video_Retake;
+
+		@FindBy(xpath="//a/img[@class='img-responsive custom-img' and @src='assets/Record.png']")
+		WebElement Record_Button;
+
+		@FindBy(xpath="//div/div[text()='Next' and @class='btn btn-red btn-big transition-opacity']")
+		WebElement Video_Next;
+
+		@FindBy(xpath="//div//button[contains(text(),'Start Recording')]")
+		WebElement StartRecording_Button;
+
+		@FindBy(xpath="//div//button[contains(text(),'Stop Recording')]")
+		WebElement StopRecording_Button;
+
+		@FindBy(xpath="//div/div[text()='Next' and @class='btn btn-big btn-short btn-red iblock-text']")
+		WebElement VideoSecNext;
+
+		@FindBy(xpath="//div//div[text()='Retake ?']")
+		WebElement VideoSecRetake;
+
+		@FindBy(xpath="//div[@id= 'goToNextStep' and contains(text(), 'Finish')]")
+		WebElement VideosecFinish_Button;
+		
+		@FindBy(xpath="//div//div[text()='Finish' and @class='btn btn-big btn-short btn-red iblock-text validateRecording']")
+		WebElement CompleteVideoFinish;
+		
+		@FindBy(xpath="//button/i[contains(text(),'close')]")
+		WebElement closemsg;
+		
+		@FindBy(xpath="//div/img[@class='profile-video-banner']")
+		WebElement gifImage;
+		
+		@FindBy(xpath="//div/app-video-display")
+		WebElement uploadedvideo;
+		
 	//Elements of Profile Edit
 
 	@FindBy(xpath="//div/span[contains(text(),'Total Experience:')]//following-sibling::span")
@@ -106,9 +146,6 @@ public class CandidateProfilePage extends Action_Method
 	@FindBy(xpath="//section/div//following-sibling::iframe")
 	WebElement Resume_Src;
 
-	@FindBy(xpath="//a[contains(text(),' Profile ')]")
-	WebElement Profile_Tab;
-
 	@FindBy(xpath="//div/label[@class=\"upload\"]/img")
 	WebElement ViewCV_button;
 
@@ -126,6 +163,9 @@ public class CandidateProfilePage extends Action_Method
 
 	@FindBy(xpath="//button/i[contains(text(),'close')]")
 	WebElement CloseMsg;
+	
+	@FindBy(xpath="//a/img[@class='img-responsive custom-img']")
+	WebElement Thumbnail;
 
 	public boolean Verify_ProfileHeadline()
 	{
@@ -354,17 +394,15 @@ public class CandidateProfilePage extends Action_Method
 		}
 	}
 
-	public boolean Video_ProfileNext()
+	public void Video_ProfileNext()
 	{
-		try
-		{
+		try {
+			CloseMsg.click();
 			Video_ProfileNext.click();
-			return true;
+		}catch(Exception e) {
+			Video_ProfileNext.click();
 		}
-		catch (Exception e)
-		{
-			return false;
-		}
+			
 	}
 
 	public boolean VerifyEducation_Page()
@@ -407,16 +445,16 @@ public class CandidateProfilePage extends Action_Method
 
 	public boolean Finish_Button()
 	{
-		try
-		{
+		/*try
+		{*/
 			wait_for_elementpresent_Clickable(Finish_Button);
 			Finish_Button.click();
 			return true;
-		}
+		/*}
 		catch (Exception e)
 		{
 			return false;
-		}
+		}*/
 	}
 
 	public boolean ProfileView_Page()
@@ -516,7 +554,7 @@ public class CandidateProfilePage extends Action_Method
 	{
 		try
 		{
-			Profile_Tab.click();
+			Profile.click();
 
 			return true;
 		}
@@ -526,6 +564,69 @@ public class CandidateProfilePage extends Action_Method
 		}
 	}
 
+	//Function to return the src of the video if video present else verify image present
+		public String getSrcofVideo()  {
+			try{
+				String src = uploadedvideo.getAttribute("ng-reflect-video-url");
+			    if(src.contains("amazonaw"))
+			    {
+			    	System.out.println("Uploaded Video");
+			    	return src+"s3";
+			    }
+			    
+			    else
+			    {
+			    	System.out.println("Recorded Video");
+			    	return src+"MyInterview";
+			    }
+				
+			
+			}catch(Exception e) {
+				String gif = gifImage.getAttribute("src");
+				return gif;
+				}
+			
+		}
+			 
+		public void captureCandidateVideo() throws InterruptedException {
+			MyInterviewPage mip=PageFactory.initElements(driver,MyInterviewPage.class);
+			
+			if(Video_Retake.isDisplayed()) {
+				logger.log(LogStatus.PASS," Candidate has to Retake video");
+				Video_Retake.click();
+				Thread.sleep(2000);
+				mip.candidateProfileVideoCapturing();
+				Thread.sleep(5000);
+				closemsg.click();
+				//wait_for_elementpresent(Video_ProfileNext);
+				//Video_ProfileNext.click();
+			}
+		}
+			
+			public void captureCandidateNewVideo() throws InterruptedException {
+				MyInterviewPage mip=PageFactory.initElements(driver,MyInterviewPage.class);
+				
+				wait_for_elementpresent(Thumbnail);
+				try{
+					
+					Thumbnail.click();					
+				}catch(Exception e) {
+					Thumbnail.click();
+				}
+				logger.log(LogStatus.PASS," Candidate has to upload a new video");
+				Thread.sleep(2000);
+				mip.candidateProfileVideoCapturing();
+				Thread.sleep(5000);
+				closemsg.click();
+				//wait_for_elementpresent(Video_ProfileNext);
+				//Video_ProfileNext.click();
+			}
+
+		public boolean Start_Video()
+		{
+			StartRecording_Button.click();
+			return true;
+		}
 
 	//Elements for Error validation
 	@FindBy(xpath="//div[@class='name-wrapper']//span/mat-icon[@class='mat-icon material-icons']")
@@ -935,10 +1036,11 @@ public class CandidateProfilePage extends Action_Method
 	}
 
 
-	public boolean errorValidationForEducationPage() {
+	public boolean errorValidationForEducationPage() throws InterruptedException {
 
-		try {
+		/*try {*/
 			Info_Next.click();
+			CloseMsg.click();
 			Thread.sleep(2000);
 			Video_ProfileNext.click();
 			Thread.sleep(2000);
@@ -986,11 +1088,11 @@ public class CandidateProfilePage extends Action_Method
 			Education_Next.click();
 			Finish_Button.click();
 			return true;
-		}
+		/*}
 		catch(Exception e)
 		{
 			return false;
-		}
+		}*/
 	} 
 	
 	public ArrayList<String> getAllErrorMessagesForEducationPage(){
@@ -1003,11 +1105,12 @@ public class CandidateProfilePage extends Action_Method
 		return a;		
 	}
 
-	public boolean errorValidationForWorkExperienceAndProjectShowcasePage()
+	public boolean errorValidationForWorkExperienceAndProjectShowcasePage() throws InterruptedException
 	{
-		try {
+		/*try {*/
 
 			Info_Next.click();
+			CloseMsg.click();
 			Video_ProfileNext.click();
 			scrollingToBottomofAPage();
 			Thread.sleep(1000);
@@ -1085,11 +1188,11 @@ public class CandidateProfilePage extends Action_Method
 			Finish_Button.click();
 			Thread.sleep(3000);
 			return true;
-		}
+		/*}
 		catch(Exception e)
 		{
 			return false;
-		}
+		}*/
 	}
 	public ArrayList<String> getAllErrorMessagesForWorkAndProjectPage(){
 		ArrayList<String> a = new ArrayList<String>();
@@ -1148,7 +1251,7 @@ public class CandidateProfilePage extends Action_Method
 		int count = skill.size();
 		for(int i=count; i>1; i--) 
 		{
-			driver.findElement(By.xpath("//div//mat-icon[2]")).click();
+			driver.findElement(By.xpath("//mat-card["+n+"]//mat-card-content/mat-list[@class='mat-list']//div//mat-icon[2]")).click();
 			Thread.sleep(2000);
 			ProceedDel.click();
 			CloseMsg.click();
@@ -1169,6 +1272,7 @@ public class CandidateProfilePage extends Action_Method
 		{
 			String title = getExceldata(Variables.testdata,Variables.AddSkillsPage,i,j);
 			Thread.sleep(2000);
+			scrollingToTopofAPage();
 			wait_for_elementpresent(Skills_Title);
 			Skills_Title.click();
 			Skills_Title.sendKeys(title);
@@ -1369,19 +1473,4 @@ public class CandidateProfilePage extends Action_Method
 
 	}
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
