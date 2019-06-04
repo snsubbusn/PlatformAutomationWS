@@ -268,7 +268,7 @@ public class Corporate_PostVideoJD_JobSummaryPage extends Action_Method
 	// Verifying error message for No inputs
 	public String Error_Message_For_NoInputs()
 	{
-		scrollingToElementofAPage(Next_button);
+		//scrollingToElementofAPage(Next_button);
 		Next_button.click();
 		scrollingToBottomofAPage();
 		wait_for_elementpresent(Next_Button_ErrorMessage);
@@ -282,7 +282,8 @@ public class Corporate_PostVideoJD_JobSummaryPage extends Action_Method
 	//Verifying error message for minimum Experience greater than maximum Experience
 	public boolean Error_Message_For_MinimumExperience_GreaterThan_MaximumExperience() throws EncryptedDocumentException, InvalidFormatException, IOException
 	{
-		scrollingToElementofAPage(Minimum_Years);
+		scrollingToTopofAPage();
+		//scrollingToElementofAPage(Minimum_Years);
 		Minimum_Years.sendKeys("4");
 		Maximum_Years.sendKeys("3");
 		Minimum_Salary.click();
@@ -292,7 +293,8 @@ public class Corporate_PostVideoJD_JobSummaryPage extends Action_Method
 	//Verifying error message for minimum Salary greater than maximum Salary
 	public boolean Error_Message_For_MinimumSalary_GreaterThan_MaximumSalary() throws EncryptedDocumentException, InvalidFormatException, IOException
 	{
-		scrollingToElementofAPage(Minimum_Salary);
+		scrollingToTopofAPage();
+		//scrollingToElementofAPage(Minimum_Salary);
 		Minimum_Salary.sendKeys("3");
 		Maximum_Salary.sendKeys("2");
 		Minimum_Years.click();

@@ -33,6 +33,7 @@ public class Candidate_TC015_VerifyErrorValidationofCandidateProfileEditForEduca
 		   logger.log(LogStatus.PASS, "Entered valid credentials");
 		   
 		   CandidateProfilePage cp = PageFactory.initElements(driver, CandidateProfilePage.class);
+		   cp.ProfileTab();
 		   cp.click_OnEditButton();
 		   
 		 //Education page

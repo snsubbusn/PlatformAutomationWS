@@ -31,6 +31,7 @@ public class Candidate_TC003_VerifyErrorValidationofCandidateProfileEdit extends
 		   logger.log(LogStatus.PASS, "Entered valid credentials");
 		   
 		   CandidateProfilePage cp = PageFactory.initElements(driver, CandidateProfilePage.class);
+		   cp.ProfileTab();
 		   cp.click_OnEditButton();
 		   if(cp.errorValidationForProfileInformation_Page())
 		   {

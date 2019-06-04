@@ -1,5 +1,7 @@
 package com.objects_pages;
 
+import java.util.List;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -46,7 +48,7 @@ public class MyAssignmentsPage extends Action_Method
 	@FindBy(xpath="//div[contains(text(), 'Salary')]/preceding-sibling::div")
 	WebElement salaryHikeReasonRadioBtn;
 
-	@FindBy(xpath="//button//span[contains(text(), 'Done')]")
+	@FindBy(xpath="//button[contains(text(), 'Done')]")
 	WebElement doneButton;
 
 	@FindBy(id="email")
@@ -147,6 +149,12 @@ public class MyAssignmentsPage extends Action_Method
 	@FindBy(xpath="(//button//i[contains(text(),'close')])[1]")
 	WebElement successMsgClose;
 
+	@FindBy(id="comments")
+	WebElement comments;
+
+	@FindBy(xpath="//app-skill-rating")
+	List <WebElement> skils;
+	
 	public boolean click_On_ActiveAssignmentTab()
 	{
 		try 
@@ -256,6 +264,10 @@ public class MyAssignmentsPage extends Action_Method
 		{
 			//Tagging the first candidate
 			Tag_Button_TagExisting.click();
+			int count = skils.size();
+			for(int i = 1; i<=count; i++) {
+				driver.findElement(By.xpath("(//app-skill-rating/span[3])["+i+"]")).click();
+			}
 			salaryHikeReasonRadioBtn.click();
 			doneButton.click();
 			return true;
@@ -453,7 +465,7 @@ public class MyAssignmentsPage extends Action_Method
 	
 	
 	public void clickOnTaggedTab() throws InterruptedException {
-		//successMsgClose.click();
+		successMsgClose.click();
 		Actions act = new Actions(driver);
 		act.moveToElement(taggedTab).build().perform();
 		//Thread.sleep(6000);

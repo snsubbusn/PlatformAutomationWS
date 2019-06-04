@@ -73,7 +73,7 @@ public class Agent_TC019_VerifyValidationOfInviteNewCandidateForJob extends Acti
 			//Agency Invite New Page
 			AgencyInviteNewPage an = PageFactory.initElements(driver, AgencyInviteNewPage.class);
 			
-			if(an.clickOnInviteButton()) {
+			if(an.enterEmailandClickOnInviteButton()) {
 				logger.log(LogStatus.PASS, "Clicked on \"Invite\" button without providing any details in the Invite New Page");
 			}else {
 				logger.log(LogStatus.FAIL, "Failed to click on \"Invite\" button ");

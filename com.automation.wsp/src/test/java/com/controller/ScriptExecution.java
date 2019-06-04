@@ -60,7 +60,7 @@ public class ScriptExecution extends Action_Method
 
 	//Corporate User Management Test Cases
 
-	@Test (groups = {"CorporateAdmin UserManagement"})
+	@Test (groups = {"CorporateAdmin UserManagement","SmokeTest"})
 	public void CorpUserMangement01() throws InterruptedException {
 		CorpAdm_User_TC001_VerifyUsersTab corp = PageFactory.initElements(driver, CorpAdm_User_TC001_VerifyUsersTab.class);
 		corp.checkUserTabandLicenseofCorpAdmin();
@@ -499,6 +499,11 @@ public class ScriptExecution extends Action_Method
 		ws.verifyDeletingFirstAdminUser();
 	}
 	
+	@Test (groups = {"WSAdmin UserManagement"})
+	public void WSAdmin30() throws InterruptedException {
+		WSAdmin_TC30_VerifyAccountManagementTab ws = PageFactory.initElements(driver, WSAdmin_TC30_VerifyAccountManagementTab.class);
+		ws.VerifyAccountManagement();
+	}
 	
 	//Agency Partner Test Cases
 	
@@ -700,9 +705,21 @@ public class ScriptExecution extends Action_Method
 	}
 	
 	@Test(groups= {"Candidate General"})
+	public void Candidate_TC004() throws InterruptedException, EncryptedDocumentException, InvalidFormatException, IOException {
+		Candidate_TC004_VerifyAddingandDeletingSkillsofCandidate cu = PageFactory.initElements(driver, Candidate_TC004_VerifyAddingandDeletingSkillsofCandidate.class);
+		cu.validatingSkillsField();
+	}
+	
+	@Test(groups= {"Candidate General"})
 	public void Candidate_TC005() throws InterruptedException {
 		Candidate_TC005_VerifyValidationOfUploadingCV cu = PageFactory.initElements(driver, Candidate_TC005_VerifyValidationOfUploadingCV.class);
 		cu.VerifyCandidateResumeEdit();
+	}
+	
+	@Test(groups= {"Candidate General"})
+	public void Candidate_TC006() throws InterruptedException {
+		Candidate_TC006_VerifyVideoCapturingOfCandidateProfile cu = PageFactory.initElements(driver, Candidate_TC006_VerifyVideoCapturingOfCandidateProfile.class);
+		cu.CandidateVideoCapture();
 	}
 	
 	@Test(groups= {"Candidate General","SmokeTest"})
@@ -715,6 +732,18 @@ public class ScriptExecution extends Action_Method
 	public void Candidate_TC012() throws InterruptedException {
 		Candidate_TC012_VerifyItemsPerPage cu = PageFactory.initElements(driver, Candidate_TC012_VerifyItemsPerPage.class);
 		cu.VerifyItemsPerPage();
+	}
+	
+	@Test(groups= {"Candidate General"})
+	public void Candidate_TC013() throws InterruptedException {
+		Candidate_TC013_VerifyPaginationofMyEngagements cu = PageFactory.initElements(driver, Candidate_TC013_VerifyPaginationofMyEngagements.class);
+		cu.VerifyPagination();
+	}
+	
+	@Test(groups= {"Candidate General"})
+	public void Candidate_TC014() throws InterruptedException {
+		Candidate_TC014_VerifyJobCardsFromMyEngagements cu = PageFactory.initElements(driver, Candidate_TC014_VerifyJobCardsFromMyEngagements.class);
+		cu.VerifyJobCards();
 	}
 	
 	@Test(groups= {"Candidate General"})
@@ -734,4 +763,6 @@ public class ScriptExecution extends Action_Method
 		Candidate_TC007_VerifyAddingandDeletingEducationDetailsofCandidate cu = PageFactory.initElements(driver, Candidate_TC007_VerifyAddingandDeletingEducationDetailsofCandidate.class);
 		cu.VerifyAddingandDeletingEducationDetailsofCandidate();
 	}*/
+	
+	
 }
