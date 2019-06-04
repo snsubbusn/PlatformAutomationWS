@@ -24,6 +24,7 @@ public class CandidateProfilePage extends Action_Method
 	//Elements of Candidate Profile View Page
 	@FindBy(xpath="//section/div[@class= \"heading\"]")
 	WebElement Profile_Headline;
+	
 	@FindBy(xpath ="//a[contains(text(),'Profile')]")
 	WebElement Profile;
 
@@ -144,9 +145,6 @@ public class CandidateProfilePage extends Action_Method
 
 	@FindBy(xpath="//section/div//following-sibling::iframe")
 	WebElement Resume_Src;
-
-	@FindBy(xpath="//a[contains(text(),' Profile ')]")
-	WebElement Profile_Tab;
 
 	@FindBy(xpath="//div/label[@class=\"upload\"]/img")
 	WebElement ViewCV_button;
@@ -396,17 +394,15 @@ public class CandidateProfilePage extends Action_Method
 		}
 	}
 
-	public boolean Video_ProfileNext()
+	public void Video_ProfileNext()
 	{
-		try
-		{
+		try {
+			CloseMsg.click();
 			Video_ProfileNext.click();
-			return true;
+		}catch(Exception e) {
+			Video_ProfileNext.click();
 		}
-		catch (Exception e)
-		{
-			return false;
-		}
+			
 	}
 
 	public boolean VerifyEducation_Page()
@@ -449,16 +445,16 @@ public class CandidateProfilePage extends Action_Method
 
 	public boolean Finish_Button()
 	{
-		try
-		{
+		/*try
+		{*/
 			wait_for_elementpresent_Clickable(Finish_Button);
 			Finish_Button.click();
 			return true;
-		}
+		/*}
 		catch (Exception e)
 		{
 			return false;
-		}
+		}*/
 	}
 
 	public boolean ProfileView_Page()
@@ -558,7 +554,7 @@ public class CandidateProfilePage extends Action_Method
 	{
 		try
 		{
-			Profile_Tab.click();
+			Profile.click();
 
 			return true;
 		}
@@ -1040,10 +1036,11 @@ public class CandidateProfilePage extends Action_Method
 	}
 
 
-	public boolean errorValidationForEducationPage() {
+	public boolean errorValidationForEducationPage() throws InterruptedException {
 
-		try {
+		/*try {*/
 			Info_Next.click();
+			CloseMsg.click();
 			Thread.sleep(2000);
 			Video_ProfileNext.click();
 			Thread.sleep(2000);
@@ -1091,11 +1088,11 @@ public class CandidateProfilePage extends Action_Method
 			Education_Next.click();
 			Finish_Button.click();
 			return true;
-		}
+		/*}
 		catch(Exception e)
 		{
 			return false;
-		}
+		}*/
 	} 
 	
 	public ArrayList<String> getAllErrorMessagesForEducationPage(){
@@ -1108,11 +1105,12 @@ public class CandidateProfilePage extends Action_Method
 		return a;		
 	}
 
-	public boolean errorValidationForWorkExperienceAndProjectShowcasePage()
+	public boolean errorValidationForWorkExperienceAndProjectShowcasePage() throws InterruptedException
 	{
-		try {
+		/*try {*/
 
 			Info_Next.click();
+			CloseMsg.click();
 			Video_ProfileNext.click();
 			scrollingToBottomofAPage();
 			Thread.sleep(1000);
@@ -1190,11 +1188,11 @@ public class CandidateProfilePage extends Action_Method
 			Finish_Button.click();
 			Thread.sleep(3000);
 			return true;
-		}
+		/*}
 		catch(Exception e)
 		{
 			return false;
-		}
+		}*/
 	}
 	public ArrayList<String> getAllErrorMessagesForWorkAndProjectPage(){
 		ArrayList<String> a = new ArrayList<String>();
@@ -1253,7 +1251,7 @@ public class CandidateProfilePage extends Action_Method
 		int count = skill.size();
 		for(int i=count; i>1; i--) 
 		{
-			driver.findElement(By.xpath("//div//mat-icon[2]")).click();
+			driver.findElement(By.xpath("//mat-card["+n+"]//mat-card-content/mat-list[@class='mat-list']//div//mat-icon[2]")).click();
 			Thread.sleep(2000);
 			ProceedDel.click();
 			CloseMsg.click();
@@ -1274,6 +1272,7 @@ public class CandidateProfilePage extends Action_Method
 		{
 			String title = getExceldata(Variables.testdata,Variables.AddSkillsPage,i,j);
 			Thread.sleep(2000);
+			scrollingToTopofAPage();
 			wait_for_elementpresent(Skills_Title);
 			Skills_Title.click();
 			Skills_Title.sendKeys(title);
@@ -1474,19 +1473,4 @@ public class CandidateProfilePage extends Action_Method
 
 	}
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 

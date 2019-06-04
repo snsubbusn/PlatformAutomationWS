@@ -66,7 +66,7 @@ public class WSAdminUsersPage extends Action_Method {
 	@FindBy(xpath="//input[@formcontrolname='email']")
 	WebElement email;
 
-	@FindBy(xpath="//input[@formcontrolname='phone_no']")
+	@FindBy(id="phone")
 	WebElement phoneNum;
 
 	@FindBy(xpath="//input[@formcontrolname='password']")

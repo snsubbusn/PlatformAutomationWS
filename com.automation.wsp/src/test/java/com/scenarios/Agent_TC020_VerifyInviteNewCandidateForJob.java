@@ -70,7 +70,7 @@ public class Agent_TC020_VerifyInviteNewCandidateForJob extends Action_Method{
 			
 			//Agency Invite New Page
 			AgencyInviteNewPage an = PageFactory.initElements(driver, AgencyInviteNewPage.class);
-			
+			an.enterEmailandClickOnInviteButton();
 			an.enterCandidateDetailstoInvite();
 			
 			if(an.clickOnInviteButton()) {

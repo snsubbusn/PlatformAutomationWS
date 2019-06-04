@@ -77,7 +77,7 @@ public class TC_016_Create_Save_Corporate_Profile extends Action_Method {
 
 		landP.clickOnNextButton();
 		Corporate_Profile_OfficeLocations_Page prof2 = PageFactory.initElements(driver, Corporate_Profile_OfficeLocations_Page.class);
-
+		
 		prof2.clickNextButton();
 		logger.log(LogStatus.PASS, "Verified the Media Page and navigating to Add Management Page");
 

@@ -1,13 +1,16 @@
 package com.objects_pages;
 
 import java.util.ArrayList;
+import java.util.List;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+import com.controller.Action_Method;
 import com.controller.Variables;
 
-public class AgencyInviteNewPage {
+public class AgencyInviteNewPage extends Action_Method {
 
 	//Elements of Invite New Page under My Assignements of Agency partner
 	@FindBy(xpath="//button[text()=' Invite ']")
@@ -85,7 +88,7 @@ public class AgencyInviteNewPage {
 	@FindBy(xpath="//span[contains(text(),'Male')]")
 	WebElement male;
 
-	@FindBy(xpath="//input[@formcontrolname='phone']")
+	@FindBy(id="phone")
 	WebElement phone;
 
 	@FindBy(xpath="//input[@formcontrolname='email']")
@@ -136,7 +139,16 @@ public class AgencyInviteNewPage {
 	@FindBy(xpath="//div[@class='message-holder']")
 	WebElement successMsgUserDetails;
 
+	@FindBy(xpath="//input[@formcontrolname='search']")
+	WebElement searchEmail;
+	
+	@FindBy(xpath="//button[contains(text(),'Send')]")
+	WebElement sendButton;
 
+	
+	@FindBy(xpath="//app-skill-rating")
+	List <WebElement> skills;
+	
 	//Invited Tab
 	@FindBy(id="Invited_Cloud_Roboto")
 	WebElement noInvitesImage;
@@ -144,7 +156,18 @@ public class AgencyInviteNewPage {
 	
 	public boolean clickOnInviteButton() {
 		try {
+			sendButton.click();
+			return true;
+		}catch(Exception e) {
+			return false;
+		}
+	}
+	
+	public boolean enterEmailandClickOnInviteButton() {
+		try {
+			searchEmail.sendKeys("random@ran.ran");
 			inviteButton.click();
+			sendButton.click();
 			return true;
 		}catch(Exception e) {
 			return false;
@@ -160,7 +183,7 @@ public class AgencyInviteNewPage {
 		a.add(dobError.getText());
 		a.add(genderError.getText());
 		a.add(phoneError.getText());
-		a.add(emailError.getText());
+		//a.add(emailError.getText());
 		a.add(designationError.getText());
 		a.add(languageError.getText());
 		a.add(degreeError.getText());
@@ -184,7 +207,7 @@ public class AgencyInviteNewPage {
 		gender.click();
 		male.click();
 		phone.sendKeys("8147506453");
-		email.sendKeys("can1@nada.email");
+		//email.sendKeys("can1@nada.email");
 		current_designation.sendKeys("Experienced");
 		languages.click();
 		dropDownOption1.click();
@@ -196,7 +219,11 @@ public class AgencyInviteNewPage {
 		to_date.sendKeys("01/01/2004");
 		exp_year.sendKeys("5");
 		exp_month.sendKeys("5");
-		skillTitle.sendKeys("Java");
+		int count = skills.size();
+		for(int i = 1; i<=count; i++) {
+			driver.findElement(By.xpath("(//app-skill-rating/span[3])["+i+"]")).click();
+		}
+		/*skillTitle.sendKeys("Java");
 		try{
 			if(dropDownOption1.isDisplayed()) {
 				dropDownOption1.click();
@@ -207,7 +234,7 @@ public class AgencyInviteNewPage {
 		}
 		skillExpYears.sendKeys("2");
 		skillExpMonths.sendKeys("2");
-		addSkillButton.click();
+		addSkillButton.click();*/
 	}
 	
 	public String getSuccessMsg() {

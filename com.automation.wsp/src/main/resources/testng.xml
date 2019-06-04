@@ -11,7 +11,7 @@
   		</define>
   		<define name = "Functional">
       		<include name="Corporate General"/>
-      		<include name="CorporateAdmin UserManagement"/>
+      		<!--<include name="CorporateAdmin UserManagement"/>-->
       		<include name="WSAdmin General"/>
       		<include name="General"/>
       		<include name="WSAdmin UserManagement"/>

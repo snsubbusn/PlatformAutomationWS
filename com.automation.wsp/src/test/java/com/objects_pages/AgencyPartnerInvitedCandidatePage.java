@@ -139,16 +139,20 @@ public class AgencyPartnerInvitedCandidatePage extends Action_Method{
 	}
 
 	public boolean selectFirstPendingStatusCandidate() {
-		int pageSize = Integer.parseInt(pagination.getAttribute("ng-reflect-size"));
-		for(int i=0; i<=pageSize; i++) {
-			for(int j =1; j<=9; j++) {
-				WebElement stat = driver.findElement(By.xpath("(//div[contains(@class,'status')]/b)["+j+"]"));
-				if(stat.getText().equalsIgnoreCase("Pending")) {
-					selectAllCheckBoxClick.click();
-					return true;
+		try{
+			int pageSize = Integer.parseInt(pagination.getAttribute("ng-reflect-size"));
+			for(int i=0; i<=pageSize; i++) {
+				for(int j =1; j<=9; j++) {
+					WebElement stat = driver.findElement(By.xpath("(//div[contains(@class,'status')]/b)["+j+"]"));
+					if(stat.getText().equalsIgnoreCase("Pending")) {
+						selectAllCheckBoxClick.click();
+						return true;
+					}
 				}
+				paginationNext.click();
 			}
-			paginationNext.click();
+		}catch(Exception e) {
+			return false;
 		}
 		return false;
 	}

@@ -67,7 +67,7 @@ public class WSAdminGenPage extends Action_Method{
 	@FindBy(xpath="(//div[@class='header-div'])[1]/span")
 	WebElement firstCardHeader;
 
-	@FindBy(xpath="(//div[@class='header-div']/following::div[@class='name-div'])[1]/span/span")
+	@FindBy(xpath="(//div[@class='header-div']/following::div[@class='name-div'])[1]/span")
 	WebElement firstCardName;
 	
 	@FindBy(xpath="(//div[@class='header-div']/following::div[@class='name-div'])[1]/a")

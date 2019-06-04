@@ -31,7 +31,7 @@ public class Candidate_TC005_VerifyValidationOfUploadingCV extends Action_Method
 		logger.log(LogStatus.PASS, "Entered valid credentials");
 
 		CandidateProfilePage re = PageFactory.initElements(driver,CandidateProfilePage.class);
-		driver.manage().timeouts().implicitlyWait(1,TimeUnit.MINUTES);
+		re.ProfileTab();
 		String de= re.ResumeSource();
 		
 		if(re.ClickonEdit())

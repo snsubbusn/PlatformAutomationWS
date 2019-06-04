@@ -206,7 +206,7 @@ public class Sc_022_Verify_JobSummaryPage extends Action_Method
 		{
 			logger.log(LogStatus.FAIL, "Verify elements present in Job summary page","\"Minimum Salary\" field is not available");
 		}
-		if(cjs.MinimumSalary_Text().trim().equals("Min. Salary (In Lakhs)")) 
+		if(cjs.MinimumSalary_Text().trim().equals("Min. Salary")) 
 		{
 			logger.log(LogStatus.PASS, "Verify text of Minimum Salary field in Job summary page","\"Minimum Salary\" text is as per the requirement");
 		}
@@ -226,7 +226,7 @@ public class Sc_022_Verify_JobSummaryPage extends Action_Method
 		{
 			logger.log(LogStatus.FAIL, "Verify elements present in Job summary page","\"Maximum Salary\" field is not available");
 		}
-		if(cjs.MaximumSalary_Text().trim().equals("Max. Salary (In Lakhs)")) 
+		if(cjs.MaximumSalary_Text().trim().equals("Max. Salary")) 
 		{
 			logger.log(LogStatus.PASS, "Verify text of Maximum Salary field in Job summary page","\"Maximum Salary\" text is as per the requirement");
 		}

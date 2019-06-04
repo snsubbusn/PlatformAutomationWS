@@ -34,6 +34,7 @@ public class Candidate_TC004_VerifyAddingandDeletingSkillsofCandidate extends Ac
 		logger.log(LogStatus.PASS, "Entered valid credentials");
 
 		CandidateProfilePage cp = PageFactory.initElements(driver, CandidateProfilePage.class);
+		cp.ProfileTab();
 		if(cp.verifyMaxSkillLimit())
 		{
 

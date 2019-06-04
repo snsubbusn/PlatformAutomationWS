@@ -705,6 +705,12 @@ public class ScriptExecution extends Action_Method
 	}
 	
 	@Test(groups= {"Candidate General"})
+	public void Candidate_TC004() throws InterruptedException, EncryptedDocumentException, InvalidFormatException, IOException {
+		Candidate_TC004_VerifyAddingandDeletingSkillsofCandidate cu = PageFactory.initElements(driver, Candidate_TC004_VerifyAddingandDeletingSkillsofCandidate.class);
+		cu.validatingSkillsField();
+	}
+	
+	@Test(groups= {"Candidate General"})
 	public void Candidate_TC005() throws InterruptedException {
 		Candidate_TC005_VerifyValidationOfUploadingCV cu = PageFactory.initElements(driver, Candidate_TC005_VerifyValidationOfUploadingCV.class);
 		cu.VerifyCandidateResumeEdit();

@@ -30,7 +30,7 @@ import com.relevantcodes.extentreports.LogStatus;
 		   logger.log(LogStatus.PASS, "Entered valid credentials");
 		   
 		   CandidateProfilePage cp = PageFactory.initElements(driver, CandidateProfilePage.class);
-		   
+		   cp.ProfileTab();
 		   String ex = cp.Display_TotalExpData();
 		   logger.log(LogStatus.INFO,"Total Experience of candidate before editing the profile is :"+ex);
 		   
@@ -81,6 +81,8 @@ import com.relevantcodes.extentreports.LogStatus;
 			   logger.log(LogStatus.FAIL, "Failed to navigate to Work Experience page");
 		   }
 		   cp.Finish_Button();
+		   Thread.sleep(1000);
+		   cp.ProfileTab();
 		   if(cp.ProfileView_Page())
 		   {
 			   logger.log(LogStatus.PASS, "Successully clicked on Finish and navigate to Profile view page");

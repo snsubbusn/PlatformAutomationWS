@@ -1,6 +1,7 @@
 package com.objects_pages;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
@@ -358,6 +359,7 @@ public class Candidate_MyEngagementsPage extends Action_Method{
 	}
 	
 	public Boolean select36ItemsPerPage() {
+		myEngagementsTab.sendKeys(Keys.ESCAPE);
 		ItemsPerPage.click();
 		Items36perpage.click();
 		return true;
