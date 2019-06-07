@@ -500,8 +500,8 @@ public class ScriptExecution extends Action_Method
 	}
 	
 	@Test (groups = {"WSAdmin UserManagement"})
-	public void WSAdmin30() throws InterruptedException {
-		WSAdmin_TC30_VerifyAccountManagementTab ws = PageFactory.initElements(driver, WSAdmin_TC30_VerifyAccountManagementTab.class);
+	public void WSuperAdmin01() throws InterruptedException {
+		WSuperAdmin_TC001_VerifyAccountManagementTab ws = PageFactory.initElements(driver, WSuperAdmin_TC001_VerifyAccountManagementTab.class);
 		ws.VerifyAccountManagement();
 	}
 	
@@ -758,11 +758,11 @@ public class ScriptExecution extends Action_Method
 		cv.errorValidationWorkExperienceAndProjectShowcase();
 	}
 		
-	/*@Test(groups= {"Candidate General"})
-	public void Candidate_TC007() throws InterruptedException {
-		Candidate_TC007_VerifyAddingandDeletingEducationDetailsofCandidate cu = PageFactory.initElements(driver, Candidate_TC007_VerifyAddingandDeletingEducationDetailsofCandidate.class);
-		cu.VerifyAddingandDeletingEducationDetailsofCandidate();
-	}*/
+	@Test(groups= {"Candidate General"})
+	public void Candidate_TC017() throws InterruptedException, EncryptedDocumentException, InvalidFormatException, IOException {
+		Candidate_TC017_VerifyAddingDeletingAndUpdatingSkillsofCandidate cu = PageFactory.initElements(driver, Candidate_TC017_VerifyAddingDeletingAndUpdatingSkillsofCandidate.class);
+		cu.validatingAddDelAndUpdateSkillsField();
+	}
 	
 	
 }

@@ -34,7 +34,7 @@ public class Candidate_TC017_VerifyAddingDeletingAndUpdatingSkillsofCandidate  e
 		logger.log(LogStatus.PASS, "Entered valid credentials");
 
 		CandidateProfilePage cp = PageFactory.initElements(driver, CandidateProfilePage.class);
-		
+		cp.ProfileTab();
 		//Add Skills and verify the skills are displayed in the main profile page.
 		int takeCount = cp.takeSkillCount();
 		int finalCount = cp.AddSkillAndVerifyProfile();

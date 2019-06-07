@@ -10,7 +10,7 @@ import com.objects_pages.WSAdminGenPage;
 import com.objects_pages.loginPage;
 import com.relevantcodes.extentreports.LogStatus;
 
-public class WSAdmin_TC30_VerifyAccountManagementTab extends Action_Method {
+public class WSuperAdmin_TC001_VerifyAccountManagementTab extends Action_Method {
 
 	public void VerifyAccountManagement() throws InterruptedException {
 		//logger = extent.startTest(" WSAdmin_TC30_VerifyAccountManagementTab");
