@@ -28,7 +28,7 @@ public class WSAdm_TC026_AdminProxySelectsandVerifyNewJobsPage extends Action_Me
 		
 		WSAdminProxyPage ws = PageFactory.initElements(driver, WSAdminProxyPage.class);
 		ws.acceptCookie();
-
+		
 		lp.EnterValidLogin(Variables.testdata,Variables.LoginPage,"Admin Email","AdminPassword");
 		logger.log(LogStatus.PASS, "Enter valid login credential and click on Login button,Admin Landing page displayed");
 

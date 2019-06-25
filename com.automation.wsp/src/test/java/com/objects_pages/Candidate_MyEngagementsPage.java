@@ -341,12 +341,10 @@ public class Candidate_MyEngagementsPage extends Action_Method{
 
 	public String getDefaultItemsPerPage()
 	{
-
 		//DefaultItemValue.click();(items per page and pagination scripts make separate functions)
 		String rec = PaginationBottom.getText();
 		String [] recd = rec.split(" ");
 		return recd[3];
-
 	}
 	
 	public boolean goToLastpage() {

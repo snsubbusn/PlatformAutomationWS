@@ -61,7 +61,7 @@ public class WSAdm_TC024_VerifytheAdminSelectsTheCorporateAndExitProxy extends A
 				logger.log(LogStatus.FAIL,"Failed to display the Active jobs page of the selected proxy corporate card");
 			}
 			
-			if(ws.clickOnBackButton()) {
+			if(ws.clickOnProxyExit()) {
 				logger.log(LogStatus.PASS,"Successfully clicked on back button");
 			} else {		
 				logger.log(LogStatus.FAIL, "Failed to navigate to proxy page");

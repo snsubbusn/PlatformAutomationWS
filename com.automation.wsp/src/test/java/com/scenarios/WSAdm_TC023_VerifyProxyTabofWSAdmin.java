@@ -75,7 +75,7 @@ public class WSAdm_TC023_VerifyProxyTabofWSAdmin extends Action_Method {
 				String rec = ws.getTotalRecordsofthePage();
 				
 				if(!rec.isEmpty()) {
-					logger.log(LogStatus.PASS, "There are "+rec+" corporate cards in the \"Proxy \" Page");
+					logger.log(LogStatus.PASS, "There are totally "+rec+" corporate cards in the \"Proxy \" Page");
 				}
 			}
 			else {

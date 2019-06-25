@@ -18,20 +18,56 @@ public class WSAdminProxyPage extends Action_Method {
 	@FindBy(xpath="//div[@class='mat-select-arrow']")
 	WebElement itemPerPage;
 	
+	@FindBy(xpath="(//div/a[@class='name'])[1]")
+	WebElement firstActiveProxyCard;
+	
 	@FindBy(xpath="(//span[@class='mat-option-text'])[1]")
 	WebElement selectItem;
+	
+	@FindBy(xpath="(//div[@class='mat-select-arrow-wrapper'])[2]")
+	WebElement arrowClickFilter;
+	
+	@FindBy(xpath="(//div[@class='mat-select-arrow-wrapper'])[3]")
+	WebElement arrowClick;
+	
+	@FindBy(xpath="(//span[@class='mat-option-text'])[1]")
+	WebElement updatedDate;
+	
+	@FindBy(xpath="(//span[@class='mat-option-text'])[2]")
+	WebElement postedDate;
+	
+	@FindBy(xpath="(//span[@class='mat-option-text'])[3]")
+	WebElement title;
 	
 	@FindBy(xpath="(//span[@class='mat-option-text'])[2]")
 	WebElement item32PerPage;
 	
-	@FindBy(xpath="(//div[@class='corporate-name'])[1]")
+	@FindBy(xpath="(//div[@class='corporate-name'])[15]")
 	WebElement firstProxyCard;
+	
+	@FindBy(xpath="//span/mat-icon[contains(text(),'add')]")
+	WebElement postJobs;
+	
+	@FindBy(xpath="//span/span[contains(text(),'Active Jobs')]")
+	WebElement activeJobs;
+	
+	@FindBy(xpath="(//span[@class='mat-option-text'])[1]")
+	WebElement newJobs;
+	
+	@FindBy(xpath="(//span[@class='mat-option-text'])[3]")
+	WebElement onholdJobs;
+	
+	@FindBy(xpath="(//span[@class='mat-option-text'])[4]")
+	WebElement closedJobs;
 	
 	@FindBy(xpath="//a[@class='mat-tab-link mat-tab-label-active ng-star-inserted']")
 	WebElement proxyCorpTab;
 	
-	@FindBy(xpath="//button[@class='back-btn mat-button ng-star-inserted']")
+	@FindBy(xpath="(//button[@class='back-btn mat-button ng-star-inserted'])[2]")
 	WebElement backButton;
+	
+	@FindBy(xpath="//button[@class='back-btn mat-button ng-star-inserted']")
+	WebElement proxyExit;
 	
 	@FindBy(xpath="//span[@class='mat-option-text' and text()=16]")
 	WebElement defaultItemValue;
@@ -65,11 +101,17 @@ public class WSAdminProxyPage extends Action_Method {
 	
 	public boolean verifyProxyCard()
 	{ 	try {
+		wait_for_elementpresent(paginationBottom);
 		paginationBottom.isDisplayed();
 		return true;
 	}catch(Exception e) {
 		return false;
 	} }
+	
+	public boolean activeJobsDisplayed() {
+		activeJobs.isDisplayed();
+		return true;
+	}
 	
 	public boolean ClickOn_ItemsPerPage()
 	{
@@ -79,7 +121,7 @@ public class WSAdminProxyPage extends Action_Method {
 	}
 	
 	public boolean verifyPagination()
-	{
+	{	
 		paginationBottom.isDisplayed();
 		return true;
 	}
@@ -141,8 +183,54 @@ public class WSAdminProxyPage extends Action_Method {
 		return true;
 	}
 	
-	public String ProxyCorpTab() {
-		return proxyTab.getText();
+	public boolean clickOnProxyExit() {
+		proxyExit.click();
+		//proxyTab.getText();
+		return true;
 	}
 	
+	public boolean clickOnUpdatedDate() {
+		arrowClick.click();
+		updatedDate.click();
+		return true;
+	}
+	
+	public boolean clickOnPostedDate() {
+		arrowClick.click();
+		postedDate.click();
+		return true;
+	}
+	
+	public boolean clickOnTitle() {
+		arrowClick.click();
+		title.click();
+		return true;
+	}
+	
+	public boolean clickOnNewJobs() {
+		arrowClickFilter.click();
+		newJobs.click();
+		return true;
+	}
+	
+	public boolean clickOnHoldJobs() {
+		arrowClickFilter.click();
+		onholdJobs.click();
+		return true;
+	}
+	
+	public boolean clickOnClosedJobs() {
+		arrowClickFilter.click();
+		closedJobs.click();
+		return true;
+	}
+	
+	public boolean clickOnAddButton() {
+		postJobs.click();
+		return true;
+	}
+	
+	public String getFirstActiveProxyCardDetails() {
+		return firstActiveProxyCard.getText();
+	}
 }
