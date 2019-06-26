@@ -81,6 +81,9 @@ public class WSAdminProxyPage extends Action_Method {
 	@FindBy(xpath="//li/a[@class='arrow'  and @title='Go to first page']")
 	WebElement firstPage;
 	
+	@FindBy(xpath="//li/a[@title = 'Go to next page']")
+	WebElement nextPage;
+	
 	
 	public boolean acceptCookie()
 	{
@@ -159,6 +162,23 @@ public class WSAdminProxyPage extends Action_Method {
 	public boolean verifyFirstPageEnabled() {
 		try{
 			return firstPage.isEnabled();
+		}catch(Exception e) {
+			return false;
+		}
+	}
+	
+	public boolean verifyNextPageEnabled() {
+		try{
+			return nextPage.isEnabled();
+		}catch(Exception e) {
+			return false;
+		}
+	}
+	
+	public boolean clickOnNextPage() {
+		try{
+			nextPage.click();
+			return true;
 		}catch(Exception e) {
 			return false;
 		}

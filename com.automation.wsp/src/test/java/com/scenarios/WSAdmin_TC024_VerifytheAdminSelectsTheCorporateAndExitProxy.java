@@ -1,5 +1,7 @@
 package com.scenarios;
 
+import java.util.concurrent.TimeUnit;
+
 import org.openqa.selenium.support.PageFactory;
 
 import com.controller.Action_Method;
@@ -8,7 +10,7 @@ import com.objects_pages.WSAdminProxyPage;
 import com.objects_pages.loginPage;
 import com.relevantcodes.extentreports.LogStatus;
 
-public class WSAdm_TC024_VerifytheAdminSelectsTheCorporateAndExitProxy extends Action_Method {
+public class WSAdmin_TC024_VerifytheAdminSelectsTheCorporateAndExitProxy extends Action_Method {
 
 	public  void verifyProxyEntryExit() throws InterruptedException {
 
@@ -32,7 +34,8 @@ public class WSAdm_TC024_VerifytheAdminSelectsTheCorporateAndExitProxy extends A
 		
 		logger.log(LogStatus.PASS, "Click on \"Proxy\" Tab");
 		 
-		Thread.sleep(6000);
+		driver.manage().timeouts().implicitlyWait(3,TimeUnit.MINUTES);
+		
 		if(ws.clickonProxy()) {
 			logger.log(LogStatus.PASS, "Proxy Page is displayed successfully");
 		}

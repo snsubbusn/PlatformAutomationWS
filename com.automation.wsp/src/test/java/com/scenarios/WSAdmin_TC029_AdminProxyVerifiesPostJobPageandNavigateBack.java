@@ -1,5 +1,7 @@
 package com.scenarios;
 
+import java.util.concurrent.TimeUnit;
+
 import org.openqa.selenium.support.PageFactory;
 
 import com.controller.Action_Method;
@@ -10,10 +12,10 @@ import com.objects_pages.WSAdminProxyPage;
 import com.objects_pages.loginPage;
 import com.relevantcodes.extentreports.LogStatus;
 
-public class WSAdm_TC029_AdminProxyVerifiesPostJobPageandNavigateBack extends Action_Method {
+public class WSAdmin_TC029_AdminProxyVerifiesPostJobPageandNavigateBack extends Action_Method {
 	
 	public void verifyPostjobsPageofProxy() throws InterruptedException {
-		logger = extent.startTest("WSAdm_TC029_AdminProxyVerifiesPostJobPageandNavigateBack");
+		logger = extent.startTest("WSAdmin_TC029_AdminProxyVerifiesPostJobPageandNavigateBack");
 		logger.assignAuthor("Keerthana");
 		logger.assignCategory("WSAdmin General");
 
@@ -37,7 +39,8 @@ public class WSAdm_TC029_AdminProxyVerifiesPostJobPageandNavigateBack extends Ac
 
 		logger.log(LogStatus.PASS, "Click on \"Proxy\" Tab");
 
-		Thread.sleep(6000);
+		driver.manage().timeouts().implicitlyWait(3,TimeUnit.MINUTES);
+		
 		if(ws.clickonProxy()) {
 			logger.log(LogStatus.PASS, "Proxy Page is displayed successfully");
 		}
@@ -75,7 +78,7 @@ public class WSAdm_TC029_AdminProxyVerifiesPostJobPageandNavigateBack extends Ac
 			if(cjs.JobSummaryPageTitleText().trim().equals("Job Summary")) {
 				logger.log(LogStatus.PASS, "Verify text of job summary page title in Job summary page","\"Job Summary\" text is as per the requirement");
 			} else {
-				logger.log(LogStatus.FAIL, "Verify text of job summary page title in Job summary page","Text is not as per the requirement,Expected-\"Job Summary\" ,Actual-\""+cjs.JobSummaryPageTitleText().trim()+"\"");
+				logger.log(LogStatus.FAIL, "Verify text of job summary page title in Job summary page","Text is not as per the requirement");
 			}
 
 			//Verifying Requirement type field in Job Summary page
@@ -89,7 +92,7 @@ public class WSAdm_TC029_AdminProxyVerifiesPostJobPageandNavigateBack extends Ac
 			if(cjs.RequirementTypeText().trim().equals("Requirement Type")) {
 				logger.log(LogStatus.PASS, "Verify text of Requirement Type in Job summary page","\"Requirement Type\" text is as per the requirement");
 			} else {
-				logger.log(LogStatus.FAIL, "Verify text of job summary page title in Job summary page","Text is not as per the requirement,Expected-\"Requirement Type\" ,Actual-\""+cjs.RequirementTypeText().trim()+"\"");
+				logger.log(LogStatus.FAIL, "Verify text of job summary page title in Job summary page","Text is not as per the requirement");
 			}
 
 			//Verifying JD Title field in Job Summary page
@@ -103,7 +106,7 @@ public class WSAdm_TC029_AdminProxyVerifiesPostJobPageandNavigateBack extends Ac
 			if(cjs.JD_TitleText().trim().equals("JD Title")) {
 				logger.log(LogStatus.PASS, "Verify text of JD Title in Job summary page","\"JD Title\" text is as per the requirement");
 			} else {
-				logger.log(LogStatus.FAIL, "Verify text of JD Title in Job summary page","Text is not as per the requirement,Expected-\"JD Title\" ,Actual-\""+cjs.JD_TitleText().trim()+"\"");
+				logger.log(LogStatus.FAIL, "Verify text of JD Title in Job summary page","Text is not as per the requirement");
 			}
 
 			//Verifying Description field in Job Summary page
@@ -117,7 +120,7 @@ public class WSAdm_TC029_AdminProxyVerifiesPostJobPageandNavigateBack extends Ac
 			if(cjs.Description_Text().trim().equals("Description")) {
 				logger.log(LogStatus.PASS, "Verify text of Description field in Job summary page","\"Description\" text is as per the requirement");
 			} else {
-				logger.log(LogStatus.FAIL, "Verify text of Description field in Job summary page","Text is not as per the requirement,Expected-\"Description\" ,Actual-\""+cjs.Description_Text().trim()+"\"");
+				logger.log(LogStatus.FAIL, "Verify text of Description field in Job summary page","Text is not as per the requirement");
 			}
 
 			//Verify Experience text in Job Summary page
@@ -125,7 +128,7 @@ public class WSAdm_TC029_AdminProxyVerifiesPostJobPageandNavigateBack extends Ac
 			if(cjs.Experience_Text().trim().equals("Experience")) {
 				logger.log(LogStatus.PASS, "Verify text of Experience in Job summary page","\"Experience\" text is as per the requirement");
 			} else {
-				logger.log(LogStatus.FAIL, "Verify text of Experience in Job summary page","Text is not as per the requirement,Expected-\"Experience\" ,Actual-\""+cjs.Experience_Text().trim()+"\"");
+				logger.log(LogStatus.FAIL, "Verify text of Experience in Job summary page","Text is not as per the requirement");
 			}
 			
 			//Verifying Minimum Years field in Job Summary page
@@ -139,7 +142,7 @@ public class WSAdm_TC029_AdminProxyVerifiesPostJobPageandNavigateBack extends Ac
 			if(cjs.MinimumYears_Text().trim().equals("Min. Years")) {
 				logger.log(LogStatus.PASS, "Verify text of Minimum Years field in Job summary page","\"Minimum Years\" text is as per the requirement");
 			} else {
-				logger.log(LogStatus.FAIL, "Verify text of Minimum Years field in Job summary page","Text is not as per the requirement,Expected-\"Min. Years\" ,Actual-\""+cjs.MinimumYears_Text().trim()+"\"");
+				logger.log(LogStatus.FAIL, "Verify text of Minimum Years field in Job summary page","Text is not as per the requirement");
 			}
 
 			//Verifying Maximum Years field in Job Summary page
@@ -153,7 +156,7 @@ public class WSAdm_TC029_AdminProxyVerifiesPostJobPageandNavigateBack extends Ac
 			if(cjs.MaximumYears_Text().trim().equals("Max. Years")) {
 				logger.log(LogStatus.PASS, "Verify text of Maximum Years field in Job summary page","\"Maximum Years\" text is as per the requirement");
 			} else {
-				logger.log(LogStatus.FAIL, "Verify text of Maximum Years field in Job summary page","Text is not as per the requirement,Expected-\"Max. Years\" ,Actual-\""+cjs.MaximumYears_Text().trim()+"\"");
+				logger.log(LogStatus.FAIL, "Verify text of Maximum Years field in Job summary page","Text is not as per the requirement");
 			}
 
 			//Verify Salary text in Job Summary page
@@ -161,7 +164,7 @@ public class WSAdm_TC029_AdminProxyVerifiesPostJobPageandNavigateBack extends Ac
 			if(cjs.Salary_Text().trim().equals("Salary")) {
 				logger.log(LogStatus.PASS, "Verify text of Salary in Job summary page","\"Salary\" text is as per the requirement");
 			} else {
-				logger.log(LogStatus.FAIL, "Verify text of Salary in Job summary page","Text is not as per the requirement,Expected-\"Salary\" ,Actual-\""+cjs.Salary_Text().trim()+"\"");
+				logger.log(LogStatus.FAIL, "Verify text of Salary in Job summary page","Text is not as per the requirement");
 			}
 
 			//Verifying Minimum Salary field in Job Summary page
@@ -175,7 +178,7 @@ public class WSAdm_TC029_AdminProxyVerifiesPostJobPageandNavigateBack extends Ac
 			if(cjs.MinimumSalary_Text().trim().equals("Min. Salary")) {
 				logger.log(LogStatus.PASS, "Verify text of Minimum Salary field in Job summary page","\"Minimum Salary\" text is as per the requirement");
 			} else {
-				logger.log(LogStatus.FAIL, "Verify text of Minimum Salary field in Job summary page","Text is not as per the requirement,Expected-\"Min. Salary (In Lakhs)\" ,Actual-\""+cjs.MinimumSalary_Text().trim()+"\"");
+				logger.log(LogStatus.FAIL, "Verify text of Minimum Salary field in Job summary page","Text is not as per the requirement");
 			}
 
 			//Verifying Maximum Salary field in Job Summary page
@@ -189,7 +192,7 @@ public class WSAdm_TC029_AdminProxyVerifiesPostJobPageandNavigateBack extends Ac
 			if(cjs.MaximumSalary_Text().trim().equals("Max. Salary")) {
 				logger.log(LogStatus.PASS, "Verify text of Maximum Salary field in Job summary page","\"Maximum Salary\" text is as per the requirement");
 			} else {
-				logger.log(LogStatus.FAIL, "Verify text of Maximum Salary field in Job summary page","Text is not as per the requirement,Expected-\"Max. Salary (In Lakhs)\" ,Actual-\""+cjs.MaximumSalary_Text().trim()+"\"");
+				logger.log(LogStatus.FAIL, "Verify text of Maximum Salary field in Job summary page","Text is not as per the requirement");
 			}
 
 			//Verifying Location field in Job Summary page
@@ -211,7 +214,7 @@ public class WSAdm_TC029_AdminProxyVerifiesPostJobPageandNavigateBack extends Ac
 			if(cjs.Education_Text().trim().contains("Education")) {
 				logger.log(LogStatus.PASS, "Verify text of Education field in Job summary page","\"Education\" text is as per the requirement");
 			} else {
-				logger.log(LogStatus.FAIL, "Verify text of Education field in Job summary page","Text is not as per the requirement,Expected-\"Education\" ,Actual-\""+cjs.Education_Text().trim()+"\"");
+				logger.log(LogStatus.FAIL, "Verify text of Education field in Job summary page","Text is not as per the requirement");
 			}
 
 			//Verifying Next Button in Job Summary page
@@ -227,7 +230,7 @@ public class WSAdm_TC029_AdminProxyVerifiesPostJobPageandNavigateBack extends Ac
 			} else {		
 				logger.log(LogStatus.FAIL, "Failed to navigate to proxy page");
 			}
-			Thread.sleep(5000);
+			driver.manage().timeouts().implicitlyWait(2,TimeUnit.MINUTES);
 			String pro = ws.getProxyCorpTab();
 			
 			if(pro.contains("Proxy")) {

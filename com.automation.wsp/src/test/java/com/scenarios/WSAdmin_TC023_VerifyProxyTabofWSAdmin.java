@@ -9,7 +9,7 @@ import com.objects_pages.WSAdminProxyPage;
 import com.objects_pages.loginPage;
 import com.relevantcodes.extentreports.LogStatus;
 
-public class WSAdm_TC023_VerifyProxyTabofWSAdmin extends Action_Method {
+public class WSAdmin_TC023_VerifyProxyTabofWSAdmin extends Action_Method {
 	public void verifyProxyPage() throws InterruptedException {
 		
 		logger = extent.startTest("WSAdm_TC023_VerifyProxyTabofWSAdmin");
@@ -32,7 +32,7 @@ public class WSAdm_TC023_VerifyProxyTabofWSAdmin extends Action_Method {
 		
 		logger.log(LogStatus.PASS, "Click on \"Proxy\" Tab");
 		 
-		Thread.sleep(6000);
+		//Thread.sleep(6000);
 		if(ws.clickonProxy()) {
 			logger.log(LogStatus.PASS, "Proxy Page is displayed successfully");
 		}
@@ -86,6 +86,13 @@ public class WSAdm_TC023_VerifyProxyTabofWSAdmin extends Action_Method {
 				logger.log(LogStatus.PASS, "Verified the  Last Page button are enabled and accessible");
 			}else {
 				logger.log(LogStatus.FAIL, " Last Page button is not enabled and so cannot navigate to next page");
+			} 
+			
+			if(ws.verifyNextPageEnabled()) {
+				ws.clickOnNextPage();
+				logger.log(LogStatus.PASS, "Verified the  Next Page button is enabled and successfully navigated to next page");
+			}else {
+				logger.log(LogStatus.FAIL, " Next page button is not enabled and so cannot navigate to next page");
 			} 
 			
 			if(ws.verifyFirstPageEnabled() ) {

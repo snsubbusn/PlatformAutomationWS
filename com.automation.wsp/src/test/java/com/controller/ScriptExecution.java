@@ -501,43 +501,43 @@ public class ScriptExecution extends Action_Method
 	
 	@Test (groups = {"WSAdmin UserManagement"})
 	public void WSAdmin23() throws InterruptedException {
-		WSAdm_TC023_VerifyProxyTabofWSAdmin ws = PageFactory.initElements(driver, WSAdm_TC023_VerifyProxyTabofWSAdmin.class);
+		WSAdmin_TC023_VerifyProxyTabofWSAdmin ws = PageFactory.initElements(driver, WSAdmin_TC023_VerifyProxyTabofWSAdmin.class);
 		ws.verifyProxyPage();
 	}
 
 	@Test (groups = {"WSAdmin UserManagement"})
 	public void WSAdmin24() throws InterruptedException {
-		WSAdm_TC024_VerifytheAdminSelectsTheCorporateAndExitProxy ws = PageFactory.initElements(driver, WSAdm_TC024_VerifytheAdminSelectsTheCorporateAndExitProxy.class);
+		WSAdmin_TC024_VerifytheAdminSelectsTheCorporateAndExitProxy ws = PageFactory.initElements(driver, WSAdmin_TC024_VerifytheAdminSelectsTheCorporateAndExitProxy.class);
 		ws.verifyProxyEntryExit();
 	}
 	
 	@Test (groups = {"WSAdmin UserManagement"})
 	public void WSAdmin25() throws InterruptedException {
-		WSAdm_TC025_AdminProxySelectsandVerifyActiveJobsPage ws = PageFactory.initElements(driver, WSAdm_TC025_AdminProxySelectsandVerifyActiveJobsPage.class);
+		WSAdmin_TC025_AdminProxySelectsandVerifyActiveJobsPage ws = PageFactory.initElements(driver, WSAdmin_TC025_AdminProxySelectsandVerifyActiveJobsPage.class);
 		ws.verifyActivejobsPageofProxy();
 	}
 	
 	@Test (groups = {"WSAdmin UserManagement"})
 	public void WSAdmin26() throws InterruptedException {
-		WSAdm_TC026_AdminProxySelectsandVerifyNewJobsPage ws = PageFactory.initElements(driver, WSAdm_TC026_AdminProxySelectsandVerifyNewJobsPage.class);
+		WSAdmin_TC026_AdminProxySelectsandVerifyNewJobsPage ws = PageFactory.initElements(driver, WSAdmin_TC026_AdminProxySelectsandVerifyNewJobsPage.class);
 		ws.verifyNewjobsPageofProxy();
 	}
 	
 	@Test (groups = {"WSAdmin UserManagement"})
 	public void WSAdmin27() throws InterruptedException {
-		WSAdm_TC027_AdminProxySelectsandVerifyOnHoldJobsPage ws = PageFactory.initElements(driver, WSAdm_TC027_AdminProxySelectsandVerifyOnHoldJobsPage.class);
+		WSAdmin_TC027_AdminProxySelectsandVerifyOnHoldJobsPage ws = PageFactory.initElements(driver, WSAdmin_TC027_AdminProxySelectsandVerifyOnHoldJobsPage.class);
 		ws.verifyOnHoldjobsPageofProxy();
 	}
 	
 	@Test (groups = {"WSAdmin UserManagement"})
 	public void WSAdmin28() throws InterruptedException {
-		WSAdm_TC028_AdminProxySelectsandVerifyClosedJobsPage ws = PageFactory.initElements(driver, WSAdm_TC028_AdminProxySelectsandVerifyClosedJobsPage.class);
+		WSAdmin_TC028_AdminProxySelectsandVerifyClosedJobsPage ws = PageFactory.initElements(driver, WSAdmin_TC028_AdminProxySelectsandVerifyClosedJobsPage.class);
 		ws.verifyClosedjobsPageofProxy();
 	}
 	
 	@Test (groups = {"WSAdmin UserManagement"})
 	public void WSAdmin29() throws InterruptedException {
-		WSAdm_TC029_AdminProxyVerifiesPostJobPageandNavigateBack ws = PageFactory.initElements(driver, WSAdm_TC029_AdminProxyVerifiesPostJobPageandNavigateBack.class);
+		WSAdmin_TC029_AdminProxyVerifiesPostJobPageandNavigateBack ws = PageFactory.initElements(driver, WSAdmin_TC029_AdminProxyVerifiesPostJobPageandNavigateBack.class);
 		ws.verifyPostjobsPageofProxy();
 	}
 	

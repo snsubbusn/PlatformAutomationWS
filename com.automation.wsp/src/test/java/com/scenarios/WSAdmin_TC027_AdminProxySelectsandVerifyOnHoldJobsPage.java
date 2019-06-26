@@ -1,5 +1,7 @@
 package com.scenarios;
 
+import java.util.concurrent.TimeUnit;
+
 import org.openqa.selenium.support.PageFactory;
 
 import com.controller.Action_Method;
@@ -9,7 +11,7 @@ import com.objects_pages.WSAdminProxyPage;
 import com.objects_pages.loginPage;
 import com.relevantcodes.extentreports.LogStatus;
 
-public class WSAdm_TC027_AdminProxySelectsandVerifyOnHoldJobsPage extends Action_Method {
+public class WSAdmin_TC027_AdminProxySelectsandVerifyOnHoldJobsPage extends Action_Method {
 
 	public void verifyOnHoldjobsPageofProxy() throws InterruptedException {
 		logger = extent.startTest("WSAdm_TC027_AdminProxySelectsandVerifyOnHoldJobsPage");
@@ -34,7 +36,8 @@ public class WSAdm_TC027_AdminProxySelectsandVerifyOnHoldJobsPage extends Action
 
 		logger.log(LogStatus.PASS, "Click on \"Proxy\" Tab");
 
-		Thread.sleep(6000);
+		driver.manage().timeouts().implicitlyWait(3,TimeUnit.MINUTES);
+		
 		if(ws.clickonProxy()) {
 			logger.log(LogStatus.PASS, "Proxy Page is displayed successfully");
 		}
