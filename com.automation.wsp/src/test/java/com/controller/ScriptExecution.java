@@ -684,22 +684,13 @@ public class ScriptExecution extends Action_Method
 		Agent_TC022_VerifyTagExistingTabofaJob ag = PageFactory.initElements(driver, Agent_TC022_VerifyTagExistingTabofaJob.class);
 		ag.verifyTagExistingTabOfJob();
 	}
-	
-	
-	@Test(groups= {"AgencyPartner General"})
-	public void WSAgent23() throws InterruptedException {
-		Agent_TC023_VerifySearchResultsForNoFiltersandTagCandidate ag = PageFactory.initElements(driver, Agent_TC023_VerifySearchResultsForNoFiltersandTagCandidate.class);
-		ag.verifySearchResultsForNoFiltersandTagCandidate();
-	}
-	
+
 	
 	@Test(groups= {"AgencyPartner General"})
 	public void WSAgent24() throws InterruptedException {
 		Agent_TC024_VerifySearchResultsForNameFilterandTagCandidate ag = PageFactory.initElements(driver, Agent_TC024_VerifySearchResultsForNameFilterandTagCandidate.class);
 		ag.verifySearchResultsForNameFilterandTagCandidate();
 	}
-	
-	
 	@Test(groups= {"AgencyPartner General"})
 	public void WSAgent25() throws InterruptedException {
 		Agent_TC025_VerifySearchResultsForEmailFilterandTagCandidate ag = PageFactory.initElements(driver, Agent_TC025_VerifySearchResultsForEmailFilterandTagCandidate.class);
@@ -806,5 +797,57 @@ public class ScriptExecution extends Action_Method
 		cu.validatingAddDelAndUpdateSkillsField();
 	}
 	
+	@Test(groups= { "General"})
+	public void General_TC007() throws Exception {
+		General_TC007_VerifySettingsOpensaNewTabPreferencesAndSecuritySettings cu = PageFactory.initElements(driver, General_TC007_VerifySettingsOpensaNewTabPreferencesAndSecuritySettings.class);
+		cu.preferenceAndSecurity();
+	}
 	
+	@Test(groups= {"General"})
+	public void General_TC008() throws Exception {
+		General_TC008_VerifySecuritySettingsDetailsandChangeEmailAddress ea = PageFactory.initElements(driver, General_TC008_VerifySecuritySettingsDetailsandChangeEmailAddress.class);
+		ea.preferenceAndSecurity();
+	}
+	
+	@Test(groups= {"General"})
+	public void General_TC009() throws Exception {
+		General_TC009_VerifySecuritySettingsDetailsandChangePhoneNumber cp = PageFactory.initElements(driver, General_TC009_VerifySecuritySettingsDetailsandChangePhoneNumber.class);
+		cp.preferenceAndSecurity();
+	}
+	
+	@Test(groups= {"General"})
+	public void General_TC010() throws Exception {
+		General_TC010_VerifySecuritySettingsDetailsandChangePassword cp = PageFactory.initElements(driver, General_TC010_VerifySecuritySettingsDetailsandChangePassword.class);
+		cp.preferenceAndSecurity();
+	}
+	
+	@Test(groups= {"General"})
+	public void General_TC011() throws Exception {
+		General_TC011_VerifySecuritySettingsEmailChangeErrorValidation cp = PageFactory.initElements(driver, General_TC011_VerifySecuritySettingsEmailChangeErrorValidation.class);
+		cp.preferenceAndSecurity();
+	}
+	
+	@Test(groups= {"General"})
+	public void General_TC012() throws Exception {
+		General_TC012_VerifySecuritySettingsMobileNumberChangeErrorValidation cp = PageFactory.initElements(driver, General_TC012_VerifySecuritySettingsMobileNumberChangeErrorValidation.class);
+		cp.preferenceAndSecurity();
+	}
+	
+	@Test(groups= {"General"})
+	public void General_TC013() throws Exception {
+		General_TC013_VerifySecuritySettingsPasswordChangeErrorValidation cp = PageFactory.initElements(driver, General_TC013_VerifySecuritySettingsPasswordChangeErrorValidation.class);
+		cp.preferenceAndSecurity();
+	}
+	
+	@Test(groups= {"General"})
+	public void General_TC014() throws Exception {
+		General_TC014_VerifyPreferencesPage cp = PageFactory.initElements(driver, General_TC014_VerifyPreferencesPage.class);
+		cp.preferenceAndSecurity();
+	}
+	
+	@Test(groups= {"General"})
+	public void General_TC015() throws Exception {
+		General_TC015_VerifyPreferencesPageDeactivateAccountPopUp pu = PageFactory.initElements(driver,General_TC015_VerifyPreferencesPageDeactivateAccountPopUp.class);
+		pu.preferenceAndSecurity();
+	}
 }
