@@ -6,6 +6,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Method;
+import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
@@ -22,6 +23,7 @@ import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.ss.usermodel.WorkbookFactory;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -29,6 +31,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.events.EventFiringWebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -192,13 +195,29 @@ public class Action_Method implements ITestListener, IRetryAnalyzer, IAnnotation
 	}
 	public static void Child_Window_Handling()
 	{
+
+	    
 		Set<String> All_wid=driver.getWindowHandles();
+		System.out.println(All_wid);
 		Iterator<String> it=All_wid.iterator();
+				
 
 		//String wid1=it.next();
-		String wid2=it.next();
+		String wid2 = it.next();
+		System.out.println(wid2);
 		driver.switchTo().window(wid2);
+		
+		
 
+	}
+	
+	public static void Child_Window_Handling01()
+	{
+
+	    ArrayList tabs = new ArrayList(driver.getWindowHandles());
+	    //System.out.println(tabs.size());
+	    driver.switchTo().window((String) tabs.get(1));
+	    
 	}
 	
 	public static void Window_Handling()
@@ -256,7 +275,7 @@ public class Action_Method implements ITestListener, IRetryAnalyzer, IAnnotation
 			driver.manage().window().maximize();
 
 		}
-		else
+		else                       
 		{
 			FirefoxOptions options=new FirefoxOptions();
 			options.addPreference("media.navigator.permission.disabled", true);
@@ -425,5 +444,10 @@ public class Action_Method implements ITestListener, IRetryAnalyzer, IAnnotation
 
 	}*/
 
+	 public void HandlingMultipleTabs()
+	 {
+		 Actions action= new Actions(driver);
+		 action.keyDown(Keys.CONTROL).sendKeys(Keys.TAB).build().perform();
+	 }
 
 }

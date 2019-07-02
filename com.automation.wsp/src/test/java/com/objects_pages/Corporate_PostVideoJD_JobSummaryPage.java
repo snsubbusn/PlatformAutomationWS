@@ -6,7 +6,9 @@ import java.util.List;
 import org.apache.poi.EncryptedDocumentException;
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 
 import com.controller.Action_Method;
@@ -109,6 +111,22 @@ public class Corporate_PostVideoJD_JobSummaryPage extends Action_Method
 	
 	@FindBy(xpath="//div[contains(text(),'Minimum salary is greater than maximum salary')]")
 	WebElement Salary_ErrorMessage;
+	
+	@FindBy(xpath = "//div/input[@id='address']")
+	WebElement locationAddress;
+
+
+	@FindBy(xpath="//div[@class='body ng-star-inserted']")
+	WebElement addedLocation;
+
+	@FindBy(xpath="//i[contains(text(),'delete')]")
+	WebElement locationsDelete;
+	
+	@FindBy(xpath="//button[@id='addOffice']//span")
+	WebElement AddButton;
+	
+	@FindBy(xpath="//button//i[contains(text(),'close')]")
+	WebElement successMsgClose;
 	
 	//@FindBy(xpath="//div[contains(text(),'Required fields cannot be empty')]")
 	@FindBy(xpath="//mat-error/div")
@@ -302,9 +320,12 @@ public class Corporate_PostVideoJD_JobSummaryPage extends Action_Method
 		return Salary_ErrorMessage.isDisplayed();
 	}
 	//Complete Job summary page and click on next with valid inputs
+	
+	Actions action = new Actions(driver);
+	
 	public void Complete_JobSummaryPage() throws EncryptedDocumentException, InvalidFormatException, IOException, InterruptedException
 	{
-		wait_for_elementpresent(RequirementType);
+		//wait_for_elementpresent(RequirementType);
 		Thread.sleep(1000);
 		RequirementType.click();
 		wait_for_elementpresent(Select_RequirementType);
@@ -316,16 +337,18 @@ public class Corporate_PostVideoJD_JobSummaryPage extends Action_Method
 		Maximum_Years.sendKeys(getExceldata(Variables.testdata,Variables.Corporate_JobSummaryPage,"Max Years"));
 		Minimum_Salary.sendKeys(getExceldata(Variables.testdata,Variables.Corporate_JobSummaryPage,"Min Salary"));
 		Maximum_Salary.sendKeys(getExceldata(Variables.testdata, Variables.Corporate_JobSummaryPage,"Max Salary"));
-		Location.click();
-		Select_Location.click();
 		Eduation.click();
 		Select_Eduation.click();
+		Location.click();
+		Select_Location.click();
+		locationAddress.sendKeys("WIPRO Bengaluru");
+		Thread.sleep(3000);
+		action.sendKeys(Keys.ARROW_DOWN).sendKeys(Keys.ENTER).build().perform();
+		Thread.sleep(2000);
+		//AddButton.click();
+		Thread.sleep(2000);
 		Next_button.click();
-		Thread.sleep(5000);
-	}
-	
-	
-	
-	
+		successMsgClose.click();
+	}	
 	
 }
