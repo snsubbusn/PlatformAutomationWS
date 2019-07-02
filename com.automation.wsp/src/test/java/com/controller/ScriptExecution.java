@@ -684,21 +684,7 @@ public class ScriptExecution extends Action_Method
 		Agent_TC022_VerifyTagExistingTabofaJob ag = PageFactory.initElements(driver, Agent_TC022_VerifyTagExistingTabofaJob.class);
 		ag.verifyTagExistingTabOfJob();
 	}
-	
-	
-	@Test(groups= {"AgencyPartner General"})
-	public void WSAgent23() throws InterruptedException {
-		Agent_TC023_VerifySearchResultsForNoFiltersandTagCandidate ag = PageFactory.initElements(driver, Agent_TC023_VerifySearchResultsForNoFiltersandTagCandidate.class);
-		ag.verifySearchResultsForNoFiltersandTagCandidate();
-	}
-	
-	
-	@Test(groups= {"AgencyPartner General"})
-	public void WSAgent24() throws InterruptedException {
-		Agent_TC024_VerifySearchResultsForNameFilterandTagCandidate ag = PageFactory.initElements(driver, Agent_TC024_VerifySearchResultsForNameFilterandTagCandidate.class);
-		ag.verifySearchResultsForNameFilterandTagCandidate();
-	}
-	
+
 	
 	@Test(groups= {"AgencyPartner General"})
 	public void WSAgent24() throws InterruptedException {
@@ -857,5 +843,11 @@ public class ScriptExecution extends Action_Method
 	public void General_TC014() throws Exception {
 		General_TC014_VerifyPreferencesPage cp = PageFactory.initElements(driver, General_TC014_VerifyPreferencesPage.class);
 		cp.preferenceAndSecurity();
+	}
+	
+	@Test(groups= {"General"})
+	public void General_TC015() throws Exception {
+		General_TC015_VerifyPreferencesPageDeactivateAccountPopUp pu = PageFactory.initElements(driver,General_TC015_VerifyPreferencesPageDeactivateAccountPopUp.class);
+		pu.preferenceAndSecurity();
 	}
 }

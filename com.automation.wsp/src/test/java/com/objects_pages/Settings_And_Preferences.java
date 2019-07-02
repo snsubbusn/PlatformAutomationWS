@@ -356,6 +356,21 @@ public class Settings_And_Preferences extends Action_Method
 		@FindBy(xpath = "//div[contains(text(),'Deactivate Account')]")
 		WebElement DeactivateAcntTitle;
 		
+		@FindBy(xpath = "//div[@class='pref-parent']//div[@class='mat-slide-toggle-bar mat-slide-toggle-bar-no-side-margin']")
+		WebElement DeactivateBtn;
+		
+		@FindBy(xpath = "//div[contains(text(),'Confirm')]")
+		WebElement DeactivationPopUp;
+		
+		@FindBy(xpath = "//span[contains(text(),'No')]")
+		WebElement NoBtn;
+		
+		@FindBy(xpath = "//span[contains(text(),'Yes')]")
+		WebElement YesBtn;
+		
+		@FindBy(xpath = "//i[contains(text(),'close')]")
+		WebElement PopUpCloseBtn;
+		
 		public boolean VerifyPrefernecePageOfWSA()
 		{
 			Preferences_Tab.click();
@@ -363,6 +378,17 @@ public class Settings_And_Preferences extends Action_Method
 			Email_Notification.isDisplayed();
 			Email_Notification.isDisplayed();
 			Email_Notification.isDisplayed();
+			return true;
+		}
+		
+		public boolean verifyDeactivatePopUp() throws InterruptedException
+		{
+			DeactivateBtn.click();
+			Thread.sleep(2000);
+			DeactivationPopUp.isDisplayed();
+			YesBtn.isDisplayed();
+			NoBtn.isDisplayed();
+			PopUpCloseBtn.click();
 			return true;
 		}
 		
