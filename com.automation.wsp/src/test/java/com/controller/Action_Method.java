@@ -275,7 +275,7 @@ public class Action_Method implements ITestListener, IRetryAnalyzer, IAnnotation
 			driver.manage().window().maximize();
 
 		}
-		else
+		else                       
 		{
 			FirefoxOptions options=new FirefoxOptions();
 			options.addPreference("media.navigator.permission.disabled", true);
