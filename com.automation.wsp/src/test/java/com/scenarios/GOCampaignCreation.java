@@ -37,7 +37,7 @@ public class GOCampaignCreation extends Action_Method {
 		logger.log(LogStatus.PASS, "Enter valid login credential and click on Login button,Corporate Landing page displayed");
 		//Creating object for Job summary page
 		
-		Corporate_PostVideoJD_JobSummaryPage Cjs=PageFactory.initElements(driver,Corporate_PostVideoJD_JobSummaryPage.class);
+		Corporate_PostVideoJD_JobSummaryPage Cjs=PageFactory.initElements(driver,Corporate_PostVideoJD_JobSummaryPage.class);                       
 		Cjs.ClickOnPostVideoJD_Tab();
 		logger.log(LogStatus.PASS, "Clicked on Post video JD tab and Job summary page displayed");
 		Cjs.Complete_JobSummaryPage();
