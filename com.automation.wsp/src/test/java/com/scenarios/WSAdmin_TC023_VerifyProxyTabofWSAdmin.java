@@ -18,21 +18,17 @@ public class WSAdmin_TC023_VerifyProxyTabofWSAdmin extends Action_Method {
 
 		logger.setDescription("WS Admin Logs in and click on proxy and verify the items per page default value and  verify the total count of proxy corporate cards  displayed matches with the selected value and also verifies pagination for proxy.");
 
-
 		wait_for_pageload(Variables.url);
 		logger.log(LogStatus.PASS, "Launched the URL and the Login Page is displayed");
 		
 		loginPage lp=PageFactory.initElements(driver,loginPage.class);
-		
-		WSAdminProxyPage ws = PageFactory.initElements(driver, WSAdminProxyPage.class);
-		ws.acceptCookie();
-		
 		lp.EnterValidLogin(Variables.testdata,Variables.LoginPage,"Admin Email","AdminPassword");
 		logger.log(LogStatus.PASS, "Enter valid login credential and click on Login button,Admin Landing page displayed");
 		
 		logger.log(LogStatus.PASS, "Click on \"Proxy\" Tab");
 		 
-		//Thread.sleep(6000);
+		WSAdminProxyPage ws = PageFactory.initElements(driver, WSAdminProxyPage.class);
+		
 		if(ws.clickonProxy()) {
 			logger.log(LogStatus.PASS, "Proxy Page is displayed successfully");
 		}

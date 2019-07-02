@@ -42,7 +42,7 @@ public class WSAdminProxyPage extends Action_Method {
 	@FindBy(xpath="(//span[@class='mat-option-text'])[2]")
 	WebElement item32PerPage;
 	
-	@FindBy(xpath="(//div[@class='corporate-name'])[15]")
+	@FindBy(xpath="(//div[@class='corporate-name'])[14]")
 	WebElement firstProxyCard;
 	
 	@FindBy(xpath="//span/mat-icon[contains(text(),'add')]")

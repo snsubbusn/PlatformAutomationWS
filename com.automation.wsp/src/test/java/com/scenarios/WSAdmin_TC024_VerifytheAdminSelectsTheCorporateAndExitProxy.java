@@ -20,21 +20,16 @@ public class WSAdmin_TC024_VerifytheAdminSelectsTheCorporateAndExitProxy extends
 
 		logger.setDescription("WS Admin Logs in and click on proxy and verify the proxy page and clicks on any proxy corporate card and clicks on back button,verifies the navigation of pages.");
 
-
 		wait_for_pageload(Variables.url);
 		logger.log(LogStatus.PASS, "Launched the URL and the Login Page is displayed");
 		
 		loginPage lp=PageFactory.initElements(driver,loginPage.class);
-		
-		WSAdminProxyPage ws = PageFactory.initElements(driver, WSAdminProxyPage.class);
-		ws.acceptCookie();
-		
 		lp.EnterValidLogin(Variables.testdata,Variables.LoginPage,"Admin Email","AdminPassword");
 		logger.log(LogStatus.PASS, "Enter valid login credential and click on Login button,Admin Landing page displayed");
 		
 		logger.log(LogStatus.PASS, "Click on \"Proxy\" Tab");
 		 
-		driver.manage().timeouts().implicitlyWait(3,TimeUnit.MINUTES);
+		WSAdminProxyPage ws = PageFactory.initElements(driver, WSAdminProxyPage.class);
 		
 		if(ws.clickonProxy()) {
 			logger.log(LogStatus.PASS, "Proxy Page is displayed successfully");
@@ -55,7 +50,7 @@ public class WSAdmin_TC024_VerifytheAdminSelectsTheCorporateAndExitProxy extends
 			} else {
 				logger.log(LogStatus.FAIL, "Failed to Navigate to Active Jobs page of the respective proxy.");
 			}
-			Thread.sleep(5000);
+			Thread.sleep(500);
 			String corpTab = ws.getProxyCorpTab() ; 
 			
 			if(corp.equalsIgnoreCase(corpTab)) {
@@ -69,7 +64,7 @@ public class WSAdmin_TC024_VerifytheAdminSelectsTheCorporateAndExitProxy extends
 			} else {		
 				logger.log(LogStatus.FAIL, "Failed to navigate to proxy page");
 			}
-			Thread.sleep(5000);
+			Thread.sleep(500);
 			String pro = ws.getProxyCorpTab();
 			
 			if(pro.contains("Proxy")) {

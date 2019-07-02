@@ -26,20 +26,12 @@ public class WSAdmin_TC029_AdminProxyVerifiesPostJobPageandNavigateBack extends 
 		logger.log(LogStatus.PASS, "Launched the URL and the Login Page is displayed");
 
 		loginPage lp=PageFactory.initElements(driver,loginPage.class);
-
-		ManageJobPage mp = PageFactory.initElements(driver, ManageJobPage.class);
-		
-		Corporate_PostVideoJD_JobSummaryPage cjs=PageFactory.initElements(driver,Corporate_PostVideoJD_JobSummaryPage.class);
-		
-		WSAdminProxyPage ws = PageFactory.initElements(driver, WSAdminProxyPage.class);
-		ws.acceptCookie();
-
 		lp.EnterValidLogin(Variables.testdata,Variables.LoginPage,"Admin Email","AdminPassword");
 		logger.log(LogStatus.PASS, "Enter valid login credential and click on Login button,Admin Landing page displayed");
 
 		logger.log(LogStatus.PASS, "Click on \"Proxy\" Tab");
 
-		driver.manage().timeouts().implicitlyWait(3,TimeUnit.MINUTES);
+		WSAdminProxyPage ws = PageFactory.initElements(driver, WSAdminProxyPage.class);
 		
 		if(ws.clickonProxy()) {
 			logger.log(LogStatus.PASS, "Proxy Page is displayed successfully");
@@ -60,6 +52,8 @@ public class WSAdmin_TC029_AdminProxyVerifiesPostJobPageandNavigateBack extends 
 			}
 			if(ws.activeJobsDisplayed() ) {
 				logger.log(LogStatus.PASS, "Active job page displayed successfully");
+			} else {
+				logger.log(LogStatus.FAIL, "Failed to display Active Jobs page of the respective proxy.");
 			}
 			if(ws.clickOnAddButton()) {
 				logger.log(LogStatus.PASS, "Successfully clicked on '+' icon and navigated to Job summary page of that respective proxy");
@@ -68,6 +62,8 @@ public class WSAdmin_TC029_AdminProxyVerifiesPostJobPageandNavigateBack extends 
 			}
 			
 			//Verifying Job Summary text in Job Summary page
+			Corporate_PostVideoJD_JobSummaryPage cjs=PageFactory.initElements(driver,Corporate_PostVideoJD_JobSummaryPage.class);
+			
 			logger.log(LogStatus.INFO, "Verifying \"Job Summary\" text in Job Summary page");
 			if(cjs.Verify_JobSummaryPageTitle()==true) {
 				logger.log(LogStatus.PASS, "Verify elements present in Job summary page","\"Job Summary\" text is available");

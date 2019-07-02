@@ -20,23 +20,16 @@ public class WSAdmin_TC028_AdminProxySelectsandVerifyClosedJobsPage extends Acti
 
 		logger.setDescription("WS Admin Logs in and click on proxy and verify the proxy page and clicks on any proxy corporate card and navigates to closed jobs page, gets the first closed job card details sort by `updated Date` `Posted Date` and `Title`.");
 
-
 		wait_for_pageload(Variables.url);
 		logger.log(LogStatus.PASS, "Launched the URL and the Login Page is displayed");
 
 		loginPage lp=PageFactory.initElements(driver,loginPage.class);
-
-		ManageJobPage mp = PageFactory.initElements(driver, ManageJobPage.class);
-		
-		WSAdminProxyPage ws = PageFactory.initElements(driver, WSAdminProxyPage.class);
-		ws.acceptCookie();
-
 		lp.EnterValidLogin(Variables.testdata,Variables.LoginPage,"Admin Email","AdminPassword");
 		logger.log(LogStatus.PASS, "Enter valid login credential and click on Login button,Admin Landing page displayed");
 
 		logger.log(LogStatus.PASS, "Click on \"Proxy\" Tab");
 
-		driver.manage().timeouts().implicitlyWait(3,TimeUnit.MINUTES);
+		WSAdminProxyPage ws = PageFactory.initElements(driver, WSAdminProxyPage.class);
 		
 		if(ws.clickonProxy()) {
 			logger.log(LogStatus.PASS, "Proxy Page is displayed successfully");
@@ -57,7 +50,6 @@ public class WSAdmin_TC028_AdminProxySelectsandVerifyClosedJobsPage extends Acti
 			}
 			if(ws.activeJobsDisplayed() ) {
 				logger.log(LogStatus.PASS, "Active job page displayed successfully");
-			}
 			
 			if(ws.clickOnClosedJobs()) {
 				logger.log(LogStatus.PASS, "Closed Jobs Page is displayed successfully");
@@ -103,7 +95,6 @@ public class WSAdmin_TC028_AdminProxySelectsandVerifyClosedJobsPage extends Acti
 						
 						String postedJobDetails =  ws.getFirstActiveProxyCardDetails();
 					
-
 						logger.log(LogStatus.PASS, "The Job title is "+postedJobDetails+" of the first proxy\"Closed Job \" card sort by `posted Date`");
 					}else {
 						logger.log(LogStatus.FAIL, "Failed to get jobdetails of the first Closed job card sort by `posted Date`");
@@ -115,25 +106,17 @@ public class WSAdmin_TC028_AdminProxySelectsandVerifyClosedJobsPage extends Acti
 						
 						String titledJobDetails =  ws.getFirstActiveProxyCardDetails();
 					
-
 						logger.log(LogStatus.PASS, "The Job title is "+titledJobDetails+" of the first proxy\"Closed Job \" card sort by `Title`");
 					}else {
 						logger.log(LogStatus.FAIL, "Failed to get jobdetails of the first new job card sort by `Title`");
 					}
-				}
-				
+				}else {
+					logger.log(LogStatus.FAIL, "No Closed Jobs cards present");
 			}
-				if(mp.clickOnOnHoldJobs()) {
-					logger.log(LogStatus.PASS, "Navigated to \"On Hold Jobs\" page successfully");
-				}else {
-					logger.log(LogStatus.FAIL, "Failed to navigate to \"On Hold Jobs\" page page");
-				}
-
-				if(mp.clickOnClosedJobs()) {
-					logger.log(LogStatus.PASS, "Navigated to \"Closed Jobs\" page successfully");
-				}else {
-					logger.log(LogStatus.FAIL, "Failed to navigate to \"Closed Jobs\" page page");
-				}
+		}
+			}else {
+				logger.log(LogStatus.FAIL, "Failed to display Active Jobs page");
+			}
 		}
 		logger.log(LogStatus.INFO,"Verified the WS Admin Login and Proxy Closed Jobs  Page details");
 		extent.endTest(logger);

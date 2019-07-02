@@ -228,6 +228,7 @@ public class Corporate_PostVideoJD_AddSkillsPage extends Action_Method
 			Name.sendKeys(Keys.TAB);
 			MustHaveSkills.click();
 			Experience_Years.sendKeys(getExceldata(filename, sname,"Year 2"));
+			Thread.sleep(2000);
 			Add_Skill_Button.click();
 			
 			Thread.sleep(1000);

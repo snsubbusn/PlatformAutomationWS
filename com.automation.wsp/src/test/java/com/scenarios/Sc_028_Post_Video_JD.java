@@ -37,6 +37,7 @@ public class Sc_028_Post_Video_JD extends Action_Method
 	
 		//Creating object for Job summary page
 		Corporate_PostVideoJD_JobSummaryPage Cjs=PageFactory.initElements(driver,Corporate_PostVideoJD_JobSummaryPage.class);
+		//Corporate_ProfilePage cpp = PageFactory.initElements(driver,Corporate_ProfilePage.class);
 		Cjs.ClickOnPostVideoJD_Tab();
 		logger.log(LogStatus.INFO, "Clicked on Post video JD tab and Job summary page displayed");
 		Cjs.Complete_JobSummaryPage();

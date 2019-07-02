@@ -19,24 +19,17 @@ public class WSAdmin_TC025_AdminProxySelectsandVerifyActiveJobsPage extends Acti
 		logger.assignCategory("WSAdmin General");
 
 		logger.setDescription("WS Admin Logs in and click on proxy and verify the proxy page and clicks on any proxy corporate card and navigates to Active jobs page, gets the first Active job card details sort by `updated Date` `Posted Date` and `Title`.");
-
-
+		
 		wait_for_pageload(Variables.url);
 		logger.log(LogStatus.PASS, "Launched the URL and the Login Page is displayed");
 
 		loginPage lp=PageFactory.initElements(driver,loginPage.class);
-
-		ManageJobPage mp = PageFactory.initElements(driver, ManageJobPage.class);
-		
-		WSAdminProxyPage ws = PageFactory.initElements(driver, WSAdminProxyPage.class);
-		ws.acceptCookie();
-
 		lp.EnterValidLogin(Variables.testdata,Variables.LoginPage,"Admin Email","AdminPassword");
 		logger.log(LogStatus.PASS, "Enter valid login credential and click on Login button,Admin Landing page displayed");
 
 		logger.log(LogStatus.PASS, "Click on \"Proxy\" Tab");
 
-		driver.manage().timeouts().implicitlyWait(3,TimeUnit.MINUTES);
+		WSAdminProxyPage ws = PageFactory.initElements(driver, WSAdminProxyPage.class);
 		
 		if(ws.clickonProxy()) {
 			logger.log(LogStatus.PASS, "Proxy Page is displayed successfully");
@@ -57,14 +50,11 @@ public class WSAdmin_TC025_AdminProxySelectsandVerifyActiveJobsPage extends Acti
 			}
 			if(ws.activeJobsDisplayed() ) {
 				logger.log(LogStatus.PASS, "Active job page displayed successfully");
-			}
+			
 			if(!ws.verifyProxyCard()) {
 				logger.log(LogStatus.FAIL,"No Active job cards  viewed");
 			} else {		
 				logger.log(LogStatus.PASS, "Pagination and Active job cards are viewed");
-				//Thread.sleep(2000);
-				
-				//scrollingToBottomofAPage();
 				
 				String record = ws.getTotalRecordsofthePage();
 				
@@ -113,22 +103,15 @@ public class WSAdmin_TC025_AdminProxySelectsandVerifyActiveJobsPage extends Acti
 					}else {
 						logger.log(LogStatus.FAIL, "Failed to get jobdetails of the first active job card sort by `Title`");
 					}
+				}else {
+					   logger.log(LogStatus.FAIL, "No Active job cards present to get the details of the job card");
 				}
+				
 			}
-			
-				if(mp.clickOnOnHoldJobs()) {
-					logger.log(LogStatus.PASS, "Navigated to \"On Hold Jobs\" page successfully");
-				}else {
-					logger.log(LogStatus.FAIL, "Failed to navigate to \"On Hold Jobs\" page page");
-				}
-
-				if(mp.clickOnClosedJobs()) {
-					logger.log(LogStatus.PASS, "Navigated to \"Closed Jobs\" page successfully");
-				}else {
-					logger.log(LogStatus.FAIL, "Failed to navigate to \"Closed Jobs\" page page");
-				}
-			
-		}
+		}else {
+			logger.log(LogStatus.FAIL, "Failed to navigate to Active Jobs page");
+		}		
+	}
 		logger.log(LogStatus.INFO,"Verified the WS Admin Login and Proxy Active Jobs Page details");
 		extent.endTest(logger);
 

@@ -25,19 +25,13 @@ public class WSAdmin_TC027_AdminProxySelectsandVerifyOnHoldJobsPage extends Acti
 		logger.log(LogStatus.PASS, "Launched the URL and the Login Page is displayed");
 
 		loginPage lp=PageFactory.initElements(driver,loginPage.class);
-
-		ManageJobPage mp = PageFactory.initElements(driver, ManageJobPage.class);
-		
-		WSAdminProxyPage ws = PageFactory.initElements(driver, WSAdminProxyPage.class);
-		ws.acceptCookie();
-
 		lp.EnterValidLogin(Variables.testdata,Variables.LoginPage,"Admin Email","AdminPassword");
 		logger.log(LogStatus.PASS, "Enter valid login credential and click on Login button,Admin Landing page displayed");
 
 		logger.log(LogStatus.PASS, "Click on \"Proxy\" Tab");
 
-		driver.manage().timeouts().implicitlyWait(3,TimeUnit.MINUTES);
-		
+		WSAdminProxyPage ws = PageFactory.initElements(driver, WSAdminProxyPage.class);
+
 		if(ws.clickonProxy()) {
 			logger.log(LogStatus.PASS, "Proxy Page is displayed successfully");
 		}
@@ -57,7 +51,6 @@ public class WSAdmin_TC027_AdminProxySelectsandVerifyOnHoldJobsPage extends Acti
 			}
 			if(ws.activeJobsDisplayed() ) {
 				logger.log(LogStatus.PASS, "Active job page displayed successfully");
-			}
 			
 			if(ws.clickOnHoldJobs()) {
 				logger.log(LogStatus.PASS, "OnHold Jobs Page is displayed successfully");
@@ -65,82 +58,75 @@ public class WSAdmin_TC027_AdminProxySelectsandVerifyOnHoldJobsPage extends Acti
 			else {
 				logger.log(LogStatus.FAIL, "Failed to Navigate to \"OnHold Jobs \" page.");
 			}
-			
+
 			logger.log(LogStatus.INFO, "Verifying details of OnHold Jobs page");
-			
+
 			if(!ws.verifyProxyCard()) {
 				logger.log(LogStatus.FAIL,"No OnHold job cards  viewed");
 			} else {		
 				logger.log(LogStatus.PASS, "Pagination and OnHold job cards are viewed");
-				
+
 				String record = ws.getTotalRecordsofthePage();
-				
+
 				if(!record.isEmpty()) {
 					logger.log(LogStatus.PASS, "There are "+record+" job cards  in the \"OnHold Jobs \" Page");
 				}else {
 					logger.log(LogStatus.FAIL, "There are no records in the \"OnHold Jobs \" page");
 				}
-				
+
 				String rec = ws.getDefaultItemsPerPage();
 				int count = Integer.parseInt(rec);
 				if(count >= 1) {
 					logger.log(LogStatus.PASS, "Multiple job cards are viewed in OnHold Jobs page");
-					
+
 					logger.log(LogStatus.INFO, "Getting first job card details sort by `updated Date`");
-					
+
 					if(ws.clickOnUpdatedDate()) {
-						
+
 						String updatedJobDetails =ws.getFirstActiveProxyCardDetails();
-						
+
 						logger.log(LogStatus.PASS, "The Job title is "+updatedJobDetails+" of the first proxy\"OnHold Job \" card sort by 'updated Date`");
 					}else {
 						logger.log(LogStatus.FAIL, "Failed to get jobdetails of the first OnHold job card sort by `updated Date`");
 					}
-					
+
 					logger.log(LogStatus.INFO, "Getting first job card details sort by `posted Date`");
-					
+
 					if(ws.clickOnPostedDate()) {
-						
+
 						String postedJobDetails =  ws.getFirstActiveProxyCardDetails();
-					
+
 
 						logger.log(LogStatus.PASS, "The Job title is "+postedJobDetails+" of the first proxy\"OnHold Job \" card sort by `posted Date`");
 					}else {
 						logger.log(LogStatus.FAIL, "Failed to get jobdetails of the first OnHold job card sort by `posted Date`");
 					}
-					
+
 					logger.log(LogStatus.INFO, "Getting first job card details sort by `Title`");
-					
+
 					if(ws.clickOnTitle()) {
-						
+
 						String titledJobDetails =  ws.getFirstActiveProxyCardDetails();
-					
+
 
 						logger.log(LogStatus.PASS, "The Job title is "+titledJobDetails+" of the first proxy\"OnHold Job \" card sort by `Title`");
 					}else {
 						logger.log(LogStatus.FAIL, "Failed to get jobdetails of the first new job card sort by `Title`");
 					}
-				}
-				
+				}else {
+					logger.log(LogStatus.FAIL, "No On-Hold Jobs cards present");
 			}
-				if(mp.clickOnOnHoldJobs()) {
-					logger.log(LogStatus.PASS, "Navigated to \"On Hold Jobs\" page successfully");
-				}else {
-					logger.log(LogStatus.FAIL, "Failed to navigate to \"On Hold Jobs\" page page");
-				}
-
-				if(mp.clickOnClosedJobs()) {
-					logger.log(LogStatus.PASS, "Navigated to \"Closed Jobs\" page successfully");
-				}else {
-					logger.log(LogStatus.FAIL, "Failed to navigate to \"Closed Jobs\" page page");
-				}
 		}
+		}else {
+			logger.log(LogStatus.FAIL, "Failed to display Active Jobs page");
+		}
+	}
 		logger.log(LogStatus.INFO,"Verified the WS Admin Login and Proxy OnHold Jobs  Page details");
 		extent.endTest(logger);
 
 		lp.logout();
 	}
-	
+
 }
 
 
