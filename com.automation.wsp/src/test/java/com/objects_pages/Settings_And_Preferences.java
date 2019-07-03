@@ -374,10 +374,19 @@ public class Settings_And_Preferences extends Action_Method
 
 	@FindBy(id= "mat-slide-toggle-2")
 	WebElement CarrerInterestsBtn;
- 
+
 	@FindBy(xpath = "//i[contains(text(),'close')]")
 	WebElement CloseBtn;
-	
+
+	@FindBy(id = "mat-checkbox-1-input")
+	WebElement permanentChkBox;
+
+	@FindBy(id = "mat-checkbox-2-input")
+	WebElement contractToHireChkBox;
+
+	@FindBy(id = "mat-checkbox-3-input")
+	WebElement contractChkBox;
+
 	public boolean VerifyPrefernecePageOfWSA()
 	{
 		Preferences_Tab.click();
@@ -391,58 +400,47 @@ public class Settings_And_Preferences extends Action_Method
 	{
 		DeactivateBtn.click();
 		Thread.sleep(2000);
-		DeactivationPopUp.isDisplayed();
-		YesBtn.isDisplayed();
-		NoBtn.isDisplayed();
-		PopUpCloseBtn.click();
-		return true;
+		if(DeactivationPopUp.isDisplayed() && YesBtn.isDisplayed() && NoBtn.isDisplayed())
+		{
+			PopUpCloseBtn.click();
+			return true;
+		}
+		else
+		{
+			return false;
+		}
+				
 	}
 
 	public boolean VerifyPrefernecePageOfCandidate()
 	{
 		Preferences_Tab.click();
-		SystemNotification.isDisplayed();
-		Email_Notification.isDisplayed();
-		DeactivateAcntTitle.isDisplayed();
-		CareerInterests_Title.isDisplayed();
-		Permamanent_title.isDisplayed();
-		ContractToHire.isDisplayed();
-		Contract.isDisplayed();
-
-		return true;
+		if(SystemNotification.isDisplayed() && Email_Notification.isDisplayed() && DeactivateAcntTitle.isDisplayed() && CareerInterests_Title.isDisplayed() && Permamanent_title.isDisplayed() && ContractToHire.isDisplayed() && Contract.isDisplayed())
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
 	}
 
 	public boolean verifyCarrerInterest() throws InterruptedException
 	{
-
 		try
 		{
-			String a = CarrerInterestsBtn.getAttribute("ng-reflect-checked");
-			String b = "false";
-			String c = "true";
-			if(a.equals(b))
+			if(CarrerInterestsBtn.getAttribute("ng-reflect-checked").equals("false"))
 			{
 				CarrerInterestsBtn.click();
 				CloseBtn.click();
-				String p = driver.findElement(By.id("mat-checkbox-1-input")).getAttribute("aria-checked");
-				String q = driver.findElement(By.id("mat-checkbox-2-input")).getAttribute("aria-checked");
-				String r = driver.findElement(By.id("mat-checkbox-3-input")).getAttribute("aria-checked");
-				if(p.equals(b))
+
+				if((permanentChkBox.getAttribute("aria-checked").equals("false")) && (contractToHireChkBox.getAttribute("aria-checked").equals("false")) && (contractChkBox.getAttribute("aria-checked").equals("false")))
 				{
-					if(q.equals(p))
-					{
-						if(r.equals(q))
-						{
-							System.out.println("Buttons enabled successfully");
-							Thread.sleep(3000);
-							CarrerInterestsBtn.click();
-							CloseBtn.click();
-
-						}
-					}
-
+					System.out.println("Buttons enabled successfully");
+					Thread.sleep(4000);
+					CarrerInterestsBtn.click();
+					CloseBtn.click();
 				}
-
 
 			}
 
@@ -450,24 +448,13 @@ public class Settings_And_Preferences extends Action_Method
 			{
 				CarrerInterestsBtn.click();
 				CloseBtn.click();
-				String p = driver.findElement(By.id("mat-checkbox-1-input")).getAttribute("aria-checked");
-				String q = driver.findElement(By.id("mat-checkbox-2-input")).getAttribute("aria-checked");
-				String r = driver.findElement(By.id("mat-checkbox-3-input")).getAttribute("aria-checked");
-				if(p.equals(c))
+				if((permanentChkBox.getAttribute("aria-checked").equals("true")) && (contractToHireChkBox.getAttribute("aria-checked").equals("true")) && (contractChkBox.getAttribute("aria-checked").equals("true")))
 				{
-					if(q.equals(p))
-					{
-						if(r.equals(q))
-						{
-							System.out.println("Buttons disabled successfully");
-							Thread.sleep(3000);
-							CarrerInterestsBtn.click();
-							CloseBtn.click();
-
-						}
-					}
-
-				}
+					System.out.println("Buttons disabled successfully");
+					Thread.sleep(4000);
+					CarrerInterestsBtn.click();
+					CloseBtn.click();
+				}			
 			}
 
 
