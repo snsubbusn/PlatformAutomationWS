@@ -850,4 +850,12 @@ public class ScriptExecution extends Action_Method
 		General_TC015_VerifyPreferencesPageDeactivateAccountPopUp pu = PageFactory.initElements(driver,General_TC015_VerifyPreferencesPageDeactivateAccountPopUp.class);
 		pu.preferenceAndSecurity();
 	}
+	
+	@Test(groups= {"General"})
+	public void General_TC016() throws Exception {
+		General_TC016_VerifyPreferencesPageForCandidate pu = PageFactory.initElements(driver,General_TC016_VerifyPreferencesPageForCandidate.class);
+		pu.preferenceAndSecurity();
+	}
+	
+
 }

@@ -2,6 +2,7 @@ package com.objects_pages;
 
 import java.util.ArrayList;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -72,7 +73,7 @@ public class Settings_And_Preferences extends Action_Method
 
 	@FindBy(id="savePassword")
 	WebElement PassSaveBtn;
-	
+
 
 	//Errors 
 
@@ -221,7 +222,7 @@ public class Settings_And_Preferences extends Action_Method
 		NewNumber.sendKeys("");
 		NewNumber.sendKeys("8951283885");
 		NumberOTP.sendKeys("12231");
-		
+
 		//verify Save button
 		String a = MobileSaveBtn.getAttribute("ng-reflect-disabled");
 		return a;
@@ -329,72 +330,156 @@ public class Settings_And_Preferences extends Action_Method
 
 	}
 
-	
+
 	//Candidate Preference paths
 
-		@FindBy(xpath = "//div[contains(text(),'Career Interests')]")
-		WebElement CareerInterests_Title;
+	@FindBy(xpath = "//div[contains(text(),'Career Interests')]")
+	WebElement CareerInterests_Title;
 
-		@FindBy(xpath = "//div[contains(text(),'Permanent')]")
-		WebElement Permamanent_title;
+	@FindBy(xpath = "//div[contains(text(),'Permanent')]")
+	WebElement Permamanent_title;
 
-		@FindBy(xpath = "//div[contains(text(),'Contract to hire')]")
-		WebElement ContractToHire;
+	@FindBy(xpath = "//div[contains(text(),'Contract to hire')]")
+	WebElement ContractToHire;
 
-		@FindBy(xpath = "//div[(text()='Contract')]")
-		WebElement Contract;
+	@FindBy(xpath = "//div[(text()='Contract')]")
+	WebElement Contract;
 
-		@FindBy(xpath = "//div[contains(text(),'System Notifications')]")
-		WebElement SystemNotification;
+	@FindBy(xpath = "//div[contains(text(),'System Notifications')]")
+	WebElement SystemNotification;
 
-		@FindBy(xpath = "//div[contains(text(),'Receive notification over email')]")
-		WebElement Email_Notification;
+	@FindBy(xpath = "//div[contains(text(),'Receive notification over email')]")
+	WebElement Email_Notification;
 
-		@FindBy(xpath = "//div[contains(text(),'Receive notification over SMS')]")
-		WebElement SMS_Notification;
-		
-		@FindBy(xpath = "//div[contains(text(),'Deactivate Account')]")
-		WebElement DeactivateAcntTitle;
-		
-		@FindBy(xpath = "//div[@class='pref-parent']//div[@class='mat-slide-toggle-bar mat-slide-toggle-bar-no-side-margin']")
-		WebElement DeactivateBtn;
-		
-		@FindBy(xpath = "//div[contains(text(),'Confirm')]")
-		WebElement DeactivationPopUp;
-		
-		@FindBy(xpath = "//span[contains(text(),'No')]")
-		WebElement NoBtn;
-		
-		@FindBy(xpath = "//span[contains(text(),'Yes')]")
-		WebElement YesBtn;
-		
-		@FindBy(xpath = "//i[contains(text(),'close')]")
-		WebElement PopUpCloseBtn;
-		
-		public boolean VerifyPrefernecePageOfWSA()
-		{
-			Preferences_Tab.click();
-			SystemNotification.isDisplayed();
-			Email_Notification.isDisplayed();
-			Email_Notification.isDisplayed();
-			Email_Notification.isDisplayed();
-			return true;
-		}
-		
-		public boolean verifyDeactivatePopUp() throws InterruptedException
-		{
-			DeactivateBtn.click();
-			Thread.sleep(2000);
-			DeactivationPopUp.isDisplayed();
-			YesBtn.isDisplayed();
-			NoBtn.isDisplayed();
-			PopUpCloseBtn.click();
-			return true;
-		}
-		
+	@FindBy(xpath = "//div[contains(text(),'Receive notification over SMS')]")
+	WebElement SMS_Notification;
 
+	@FindBy(xpath = "//div[contains(text(),'Deactivate Account')]")
+	WebElement DeactivateAcntTitle;
 
+	@FindBy(xpath = "//div[@class='pref-parent']//div[@class='mat-slide-toggle-bar mat-slide-toggle-bar-no-side-margin']")
+	WebElement DeactivateBtn;
+
+	@FindBy(xpath = "//div[contains(text(),'Confirm')]")
+	WebElement DeactivationPopUp;
+
+	@FindBy(xpath = "//span[contains(text(),'No')]")
+	WebElement NoBtn;
+
+	@FindBy(xpath = "//span[contains(text(),'Yes')]")
+	WebElement YesBtn;
+
+	@FindBy(xpath = "//i[contains(text(),'close')]")
+	WebElement PopUpCloseBtn;
+
+	@FindBy(id= "mat-slide-toggle-2")
+	WebElement CarrerInterestsBtn;
+ 
+	@FindBy(xpath = "//i[contains(text(),'close')]")
+	WebElement CloseBtn;
 	
+	public boolean VerifyPrefernecePageOfWSA()
+	{
+		Preferences_Tab.click();
+		SystemNotification.isDisplayed();
+		Email_Notification.isDisplayed();
+		DeactivateAcntTitle.isDisplayed();
+		return true;
+	}
+
+	public boolean verifyDeactivatePopUp() throws InterruptedException
+	{
+		DeactivateBtn.click();
+		Thread.sleep(2000);
+		DeactivationPopUp.isDisplayed();
+		YesBtn.isDisplayed();
+		NoBtn.isDisplayed();
+		PopUpCloseBtn.click();
+		return true;
+	}
+
+	public boolean VerifyPrefernecePageOfCandidate()
+	{
+		Preferences_Tab.click();
+		SystemNotification.isDisplayed();
+		Email_Notification.isDisplayed();
+		DeactivateAcntTitle.isDisplayed();
+		CareerInterests_Title.isDisplayed();
+		Permamanent_title.isDisplayed();
+		ContractToHire.isDisplayed();
+		Contract.isDisplayed();
+
+		return true;
+	}
+
+	public boolean verifyCarrerInterest() throws InterruptedException
+	{
+
+		try
+		{
+			String a = CarrerInterestsBtn.getAttribute("ng-reflect-checked");
+			String b = "false";
+			String c = "true";
+			if(a.equals(b))
+			{
+				CarrerInterestsBtn.click();
+				CloseBtn.click();
+				String p = driver.findElement(By.id("mat-checkbox-1-input")).getAttribute("aria-checked");
+				String q = driver.findElement(By.id("mat-checkbox-2-input")).getAttribute("aria-checked");
+				String r = driver.findElement(By.id("mat-checkbox-3-input")).getAttribute("aria-checked");
+				if(p.equals(b))
+				{
+					if(q.equals(p))
+					{
+						if(r.equals(q))
+						{
+							System.out.println("Buttons enabled successfully");
+							Thread.sleep(3000);
+							CarrerInterestsBtn.click();
+							CloseBtn.click();
+
+						}
+					}
+
+				}
+
+
+			}
+
+			else
+			{
+				CarrerInterestsBtn.click();
+				CloseBtn.click();
+				String p = driver.findElement(By.id("mat-checkbox-1-input")).getAttribute("aria-checked");
+				String q = driver.findElement(By.id("mat-checkbox-2-input")).getAttribute("aria-checked");
+				String r = driver.findElement(By.id("mat-checkbox-3-input")).getAttribute("aria-checked");
+				if(p.equals(c))
+				{
+					if(q.equals(p))
+					{
+						if(r.equals(q))
+						{
+							System.out.println("Buttons disabled successfully");
+							Thread.sleep(3000);
+							CarrerInterestsBtn.click();
+							CloseBtn.click();
+
+						}
+					}
+
+				}
+			}
+
+
+			return true;
+		}
+		catch(Exception e)
+		{
+			return false;
+		}
+
+	}
+
 
 
 }
