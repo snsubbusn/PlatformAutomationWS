@@ -387,6 +387,9 @@ public class Settings_And_Preferences extends Action_Method
 	@FindBy(id = "mat-checkbox-3-input")
 	WebElement contractChkBox;
 
+	@FindBy(id = "mat-slide-toggle-2")
+	WebElement AcceptAssignmentBtn;
+
 	public boolean VerifyPrefernecePageOfWSA()
 	{
 		Preferences_Tab.click();
@@ -469,6 +472,21 @@ public class Settings_And_Preferences extends Action_Method
 
 	}
 
+	public boolean verifyAgencyPreferencePage()
+	{
+		Preferences_Tab.click();
+		if(SystemNotification.isDisplayed() && Email_Notification.isDisplayed() && DeactivateAcntTitle.isDisplayed() && AcceptAssignmentBtn.isDisplayed())
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
+	}
 
-
+    public String getChkBoxValue()
+    {
+    	return (AcceptAssignmentBtn.getAttribute("ng-reflect-checked"));
+    }
 }
