@@ -2,7 +2,7 @@ package com.objects_pages;
 
 import java.util.ArrayList;
 
-import org.openqa.selenium.By;
+
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -409,7 +409,7 @@ public class Settings_And_Preferences extends Action_Method
 		{
 			return false;
 		}
-				
+
 	}
 
 	public boolean VerifyPrefernecePageOfCandidate()
@@ -434,27 +434,29 @@ public class Settings_And_Preferences extends Action_Method
 				CarrerInterestsBtn.click();
 				CloseBtn.click();
 
-				if((permanentChkBox.getAttribute("aria-checked").equals("false")) && (contractToHireChkBox.getAttribute("aria-checked").equals("false")) && (contractChkBox.getAttribute("aria-checked").equals("false")))
+				if((permanentChkBox.getAttribute("aria-checked").equals("true")) && (contractToHireChkBox.getAttribute("aria-checked").equals("true")) && (contractChkBox.getAttribute("aria-checked").equals("true")))
 				{
 					System.out.println("Buttons enabled successfully");
-					Thread.sleep(4000);
+					Thread.sleep(2000);
 					CarrerInterestsBtn.click();
 					CloseBtn.click();
 				}
-
 			}
 
 			else
 			{
 				CarrerInterestsBtn.click();
 				CloseBtn.click();
-				if((permanentChkBox.getAttribute("aria-checked").equals("true")) && (contractToHireChkBox.getAttribute("aria-checked").equals("true")) && (contractChkBox.getAttribute("aria-checked").equals("true")))
+
+				if((permanentChkBox.getAttribute("aria-checked").equals("false")) && (contractToHireChkBox.getAttribute("aria-checked").equals("false")) && (contractChkBox.getAttribute("aria-checked").equals("false")))
 				{
+
 					System.out.println("Buttons disabled successfully");
-					Thread.sleep(4000);
+					Thread.sleep(2000);
 					CarrerInterestsBtn.click();
 					CloseBtn.click();
-				}			
+				}		
+
 			}
 
 

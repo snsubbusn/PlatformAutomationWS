@@ -46,7 +46,7 @@ public class General_TC016_VerifyPreferencesPageForCandidate extends Action_Meth
 
 		if(sp.VerifyPrefernecePageOfCandidate())
 		{
-			sp.verifyCarrerInterest();
+			
 			logger.log(LogStatus.INFO, "Clicked on Preference tab");
 			logger.log(LogStatus.PASS, "Successfully verified Preference page of Candidate ");
 		}
