@@ -88,7 +88,7 @@ public class CorporateAdmin_UserManagement_Page extends Action_Method {
 	@FindBy(xpath="//input[@formcontrolname='email']")
 	WebElement email;
 
-	@FindBy(xpath="//input[@formcontrolname='phone_no']")
+	@FindBy(id = "phone")
 	WebElement phoneNum;
 
 	@FindBy(xpath="//input[@formcontrolname='password']")
@@ -169,11 +169,14 @@ public class CorporateAdmin_UserManagement_Page extends Action_Method {
 		AddButton.click();
 		return addUserHeading.getText();
 	}
+	
+	String aToZ = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
 
 
 	public void addCorporateUser(int userno){
 		name.sendKeys("Automate"+userno);
-		email.sendKeys("automate"+userno+"@mailinator.com");
+		String ran = generateRandom(aToZ);
+		email.sendKeys(" "+ran+""+userno+"@mailinator.com");
 		phoneNum.sendKeys("8147506453");
 		//password.sendKeys("admin@123");
 		//confirmPassword.sendKeys("admin@123");
@@ -217,14 +220,17 @@ public class CorporateAdmin_UserManagement_Page extends Action_Method {
 
 	public String editName() {
 		name.clear();
+		
 		name.sendKeys("EditedUser");
 		updateButton.click();
 		return successMsgUserDetails.getText();
 	}
 
 	public String editEmailId() {
+		email.click();
 		email.clear();
-		email.sendKeys("editeduser@mailinator.com");
+		String ran = generateRandom(aToZ);
+		email.sendKeys("edit"+ran+"@mailinator.com");
 		updateButton.click();
 		return successMsgUserDetails.getText();
 	}

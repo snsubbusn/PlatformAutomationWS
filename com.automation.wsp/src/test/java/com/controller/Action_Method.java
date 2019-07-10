@@ -9,6 +9,7 @@ import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Random;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Logger;
@@ -449,5 +450,17 @@ public class Action_Method implements ITestListener, IRetryAnalyzer, IAnnotation
 		 Actions action= new Actions(driver);
 		 action.keyDown(Keys.CONTROL).sendKeys(Keys.TAB).build().perform();
 	 }
+	 
+	 //Generate random string
+	 
+	 protected static String generateRandom(String aToZ) {
+		    Random rand=new Random();
+		    StringBuilder res=new StringBuilder();
+		    for (int i = 0; i < 17; i++) {
+		       int randIndex=rand.nextInt(aToZ.length()); 
+		       res.append(aToZ.charAt(randIndex));            
+		    }
+		    return res.toString();
+		}
 
 }
