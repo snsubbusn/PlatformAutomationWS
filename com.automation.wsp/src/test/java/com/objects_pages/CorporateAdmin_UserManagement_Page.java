@@ -88,7 +88,7 @@ public class CorporateAdmin_UserManagement_Page extends Action_Method {
 	@FindBy(xpath="//input[@formcontrolname='email']")
 	WebElement email;
 
-	@FindBy(xpath="//input[@formcontrolname='phone_no']")
+	@FindBy(id = "phone")
 	WebElement phoneNum;
 
 	@FindBy(xpath="//input[@formcontrolname='password']")
@@ -122,7 +122,7 @@ public class CorporateAdmin_UserManagement_Page extends Action_Method {
 	@FindBy(xpath="//div/mat-error/span[contains(text(),'email')]")
 	WebElement errorEmail;
 
-	@FindBy(xpath="//div/mat-error/span[contains(text(),'phone')]")
+	@FindBy(xpath="//span[contains(text(),'Please enter phone no')]")
 	WebElement errorPhone;
 
 	@FindBy(xpath="//div/mat-error/span[contains(text(),'password')]")
@@ -131,7 +131,7 @@ public class CorporateAdmin_UserManagement_Page extends Action_Method {
 	@FindBy(xpath="//div/mat-error/span[contains(text(),'onfirm')]")
 	WebElement errorconfirmPassword;
 
-	@FindBy(xpath="//div[contains(text(),'Invite request has already been accepted or is pending')]")
+	@FindBy(xpath="//div[contains(text(),'User has been deactivated. Please contact account manager.')]")
 	WebElement alreadyInvitedError;
 
 
@@ -169,11 +169,14 @@ public class CorporateAdmin_UserManagement_Page extends Action_Method {
 		AddButton.click();
 		return addUserHeading.getText();
 	}
+	
+	String aToZ = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
 
 
 	public void addCorporateUser(int userno){
 		name.sendKeys("Automate"+userno);
-		email.sendKeys("automate"+userno+"@mailinator.com");
+		String ran = generateRandom(aToZ);
+		email.sendKeys(" "+ran+""+userno+"@mailinator.com");
 		phoneNum.sendKeys("8147506453");
 		//password.sendKeys("admin@123");
 		//confirmPassword.sendKeys("admin@123");
@@ -217,14 +220,17 @@ public class CorporateAdmin_UserManagement_Page extends Action_Method {
 
 	public String editName() {
 		name.clear();
+		
 		name.sendKeys("EditedUser");
 		updateButton.click();
 		return successMsgUserDetails.getText();
 	}
 
 	public String editEmailId() {
+		email.click();
 		email.clear();
-		email.sendKeys("editeduser@mailinator.com");
+		String ran = generateRandom(aToZ);
+		email.sendKeys("edit"+ran+"@mailinator.com");
 		updateButton.click();
 		return successMsgUserDetails.getText();
 	}
@@ -267,7 +273,9 @@ public class CorporateAdmin_UserManagement_Page extends Action_Method {
 		return a;
 	}
 
-	public String invalidPhoneNo() {
+	public String invalidPhoneNo() throws InterruptedException {
+		phoneNum.click();
+		Thread.sleep(3000);
 		phoneNum.clear();
 		phoneNum.sendKeys("asds");
 		return errorPhone.getText();

@@ -55,7 +55,7 @@ public class CorpAdm_User_TC012_ValidateAddUserPageErrors extends Action_Method{
 		
 		logger.log(LogStatus.INFO, "Verify the error message for invalid phone number");
 		String phoneError = user.invalidPhoneNo();
-		if(phoneError.contains("Please enter a valid phone no")) {
+		if(phoneError.contains("Please enter phone no")) {
 			logger.log(LogStatus.PASS, "Verified the error message for invlid entry on phone number field. The error is - "+phoneError);
 		}else {
 			logger.log(LogStatus.FAIL, "The error message displayed is not relevant. The error is - "+phoneError);
@@ -80,11 +80,9 @@ public class CorpAdm_User_TC012_ValidateAddUserPageErrors extends Action_Method{
 */		
 		logger.log(LogStatus.INFO, "Verify the error message for adding the existing user");
 		user.addDeletedCorporateUser("NewUser", "new@mailinator.com", "8147506453");
-		user.clickonAddButton();
-		user.addDeletedCorporateUser("NewUser", "new@mailinator.com", "8147506453");
 		
 		String alreadyError = user.alreadyInvitedUserError();
-		if(alreadyError.contains("already")) {
+		if(alreadyError.contains("User has been deactivated. Please contact account manager.")) {
 			logger.log(LogStatus.PASS, "Verified the error message and the error is - "+alreadyError);
 		}else {
 			logger.log(LogStatus.FAIL, "The error message displayed is not relevant. The error is - "+alreadyError);
