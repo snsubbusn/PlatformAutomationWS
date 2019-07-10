@@ -86,7 +86,7 @@ public class CorpAdm_User_TC011_VerifyPagination extends Action_Method {
 			
 			
 		}else {
-			logger.log(LogStatus.FAIL, "Pagination cannot be validated as there are only "+used+" licenses added and it doesnot allow pagination.");
+			logger.log(LogStatus.INFO, "Pagination cannot be validated as there are only "+used+" licenses added and it doesnot allow pagination.");
 		}
 		
 		logger.log(LogStatus.INFO, "Verified the Pagination functionality");

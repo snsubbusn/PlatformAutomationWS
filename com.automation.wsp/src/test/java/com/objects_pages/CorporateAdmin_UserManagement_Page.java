@@ -122,7 +122,7 @@ public class CorporateAdmin_UserManagement_Page extends Action_Method {
 	@FindBy(xpath="//div/mat-error/span[contains(text(),'email')]")
 	WebElement errorEmail;
 
-	@FindBy(xpath="//div/mat-error/span[contains(text(),'phone')]")
+	@FindBy(xpath="//span[contains(text(),'Please enter phone no')]")
 	WebElement errorPhone;
 
 	@FindBy(xpath="//div/mat-error/span[contains(text(),'password')]")
@@ -131,7 +131,7 @@ public class CorporateAdmin_UserManagement_Page extends Action_Method {
 	@FindBy(xpath="//div/mat-error/span[contains(text(),'onfirm')]")
 	WebElement errorconfirmPassword;
 
-	@FindBy(xpath="//div[contains(text(),'Invite request has already been accepted or is pending')]")
+	@FindBy(xpath="//div[contains(text(),'User has been deactivated. Please contact account manager.')]")
 	WebElement alreadyInvitedError;
 
 
@@ -273,7 +273,9 @@ public class CorporateAdmin_UserManagement_Page extends Action_Method {
 		return a;
 	}
 
-	public String invalidPhoneNo() {
+	public String invalidPhoneNo() throws InterruptedException {
+		phoneNum.click();
+		Thread.sleep(3000);
 		phoneNum.clear();
 		phoneNum.sendKeys("asds");
 		return errorPhone.getText();

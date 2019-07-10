@@ -102,13 +102,13 @@ public class ScriptExecution extends Action_Method
 	}
 	*/	
 	 
-
+/* After Sprint 30 changes, user with same credentials cannot be added.
 	@Test (groups = {"CorporateAdmin UserManagement"})
 	public void CorpUserMangement07() throws InterruptedException {
 		CorpAdm_User_TC010_AddDeletedUser corp = PageFactory.initElements(driver, CorpAdm_User_TC010_AddDeletedUser.class);
 		corp.addDeletedUser();
 	}
-
+*/
 	@Test (groups = {"CorporateAdmin UserManagement"})
 	public void CorpUserMangement08() throws InterruptedException {
 		CorpAdm_User_TC012_ValidateAddUserPageErrors corp = PageFactory.initElements(driver, CorpAdm_User_TC012_ValidateAddUserPageErrors.class);
