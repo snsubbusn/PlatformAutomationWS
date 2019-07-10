@@ -117,7 +117,7 @@ public class CandidateProfilePage extends Action_Method
 	@FindBy(xpath= "//div[text() ='Profile Information']")
 	WebElement ProfileInformation_Page;	   
 
-	@FindBy(xpath="//button[contains(text(),' Next')]")
+	@FindBy(xpath="//button[contains(text(),'Next')]")
 	WebElement Info_Next;
 
 	@FindBy(xpath="//div/h2[text() ='Video Profile']")
