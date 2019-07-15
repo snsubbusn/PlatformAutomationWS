@@ -1473,12 +1473,30 @@ public class CandidateProfilePage extends Action_Method
 
 	}
 
+	public boolean addEducation()
+	{
+		//Verifying degree field
+		Degree.sendKeys(Keys.TAB);
+		Degree.sendKeys("123");
+		
+		//Verifying University field
+		University.sendKeys(Keys.TAB);
+		
+		//Verifying Specialization field
+		Specialization.sendKeys(Keys.TAB);
+		
+		//Verifying Duration field
+		From_Duration.sendKeys(Keys.TAB);
+		
+		To_Duration.sendKeys(Keys.TAB);
+		
 
-
-
-	
-
-
+		/*Thread.sleep(1000);
+		scrollingToBottomofAPage();
+		Education_Next.click();
+		Finish_Button.click();*/
+		return true;
+	}
 
 }
 
