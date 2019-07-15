@@ -1,6 +1,7 @@
 package com.objects_pages;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -142,10 +143,10 @@ public class ManageResponsesPage extends Action_Method
 		{
 			WebElement PendingReview_Button=driver.findElement(By.xpath("//span[contains(text(),'#"+JobId+"')]/following::button//span[contains(text(),'Pending')]"));
 			wait_for_elementpresent(PendingReview_Button);
-			PendingReview_Button.click();
+			PendingReview_Button.sendKeys(Keys.ENTER);
 			return true;
 		}
-		catch (Exception e) 
+		catch (Exception e)
 		{
 			return false;
 		}
@@ -207,7 +208,8 @@ public class ManageResponsesPage extends Action_Method
 		try{
 			return jobIdFirstCard.getText();
 		}catch(Exception e) {
-			return "NoJob :- "+e.toString();
+			return "NoJob";
+			//return "NoJob :- "+e.toString();
 		}
 	}
 

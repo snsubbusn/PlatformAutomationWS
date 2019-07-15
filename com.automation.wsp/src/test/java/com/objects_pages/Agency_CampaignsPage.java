@@ -23,6 +23,12 @@ public class Agency_CampaignsPage extends Action_Method
 	@FindBy(xpath="//button//i[contains(text(),'close')]")
 	WebElement successMsgClose;
 	
+	@FindBy(xpath="//span[@class='pagination-bottom']")
+	WebElement paginationBottom;
+	
+	@FindBy(xpath="(//button[@class='mat-flat-button mat-primary'])[1]")
+	WebElement acceptButton;
+	
 	public boolean Click_on_Campaigns_Tab()
 	{
 		try
@@ -42,11 +48,11 @@ public class Agency_CampaignsPage extends Action_Method
 		//WebElement Accept_Button=driver.findElement(By.xpath("//mat-card[div[div[div[app-job-card-square-header[div[div[div[contains(text(),'#"+JobId+"')]]]]]]]]//button[@class='btn-class gs-button mat-raised-button mat-primary']"));
 		//WebElement Accept_Button=driver.findElement(By.xpath("//a[contains(@href,'job/"+JobId+"')]/following::button[2]"));
 		
-		WebElement Accept_Button=driver.findElement(By.xpath("//span[contains(text(),'#"+JobId+"')]/following::button[2]"));
+		//WebElement Accept_Button=driver.findElement(By.xpath("//span[contains(text(),'#"+JobId+"')]/following::button[2]"));
 		
 		try
 		{
-			Accept_Button.click();
+			acceptButton.click();
 			successMsgClose.click();
 			return true;
 		} 
@@ -55,4 +61,13 @@ public class Agency_CampaignsPage extends Action_Method
 			return false;
 		}
 	}
+	
+	public boolean verifyNewAssignmentCards()
+	{ 	try {
+		wait_for_elementpresent(paginationBottom);
+		paginationBottom.isDisplayed();
+		return true;
+	}catch(Exception e) {
+		return false;
+	} }
 }

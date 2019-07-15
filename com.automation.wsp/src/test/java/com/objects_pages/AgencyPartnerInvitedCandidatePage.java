@@ -118,13 +118,23 @@ public class AgencyPartnerInvitedCandidatePage extends Action_Method{
 	}
 
 	public String getFirstCardDetails() {
-		String name;
-		try{ 
-			name = firstCardJoinedName.getText();
+		try {
+			String name = firstCardJoinedName.getAttribute("href") ;
+			if(name.contains("profile"))
+		    {
+		    	System.out.println("Joined card");
+		    	String candJoinedName = firstCardJoinedName.getText();
+		    	return candJoinedName;
+		    }
+		    else
+		    {
+		    	System.out.println("not joined card");
+		    	String candNotJoinedName = firstCardNotJoinedName.getText();
+		    	return candNotJoinedName;
+		    }
 		}catch(Exception e) {
-			name = firstCardNotJoinedName.getText();
-		}		
-		return name;
+			return "FAILED";
+		}
 	}
 
 

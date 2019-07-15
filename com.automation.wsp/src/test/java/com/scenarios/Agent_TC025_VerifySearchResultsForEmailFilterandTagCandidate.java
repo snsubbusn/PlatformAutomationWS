@@ -86,13 +86,13 @@ public class Agent_TC025_VerifySearchResultsForEmailFilterandTagCandidate extend
 			}else {
 				logger.log(LogStatus.FAIL, "Failed to Clicked on Search button and no results are displayed:- "+result);
 			}
-
+			
 			if(my.clickOnFirstCandidateSearchResult()) {
 				logger.log(LogStatus.PASS, "First Candidate Clicked successfully");
 			}else {
 				logger.log(LogStatus.FAIL, "No First Candidate available to click in the search results");
 			}
-
+			
 			String email = my.getEmailOfCandidate();
 			if(my.clickBackButtonofCandidateProfile()) {
 				logger.log(LogStatus.PASS, "Obtained the Email of the first candidate and clicked on back button to the search results. The Email is - "+email);
