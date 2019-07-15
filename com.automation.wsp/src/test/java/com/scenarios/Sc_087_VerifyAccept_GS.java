@@ -44,6 +44,9 @@ public class Sc_087_VerifyAccept_GS extends Action_Method
 		{
 			logger.log(LogStatus.FAIL, "New Assignments page is not displayed.");
 		}
+		if(!gs.verifyNewAssignmentCards()) {
+			logger.log(LogStatus.PASS, "No New Assignments job cards viewed for this Agency.");
+		} else {
 		if(gs.Accept_Job(getExceldata(Variables.testdata,Variables.SetData_Excel,"Job ID"))==true)
 		{
 			logger.log(LogStatus.PASS, "Click on Accept button for job in Agency Campaigns page","Accept button clicked in job card");
@@ -52,6 +55,7 @@ public class Sc_087_VerifyAccept_GS extends Action_Method
 		{
 			logger.log(LogStatus.FAIL, "Click on Accept button for job in Agency Campaigns page","Fail,Accept button not clicked in job card");
 		}
+	}
 		logger.log(LogStatus.INFO,"Accept Agency Campaigns verification completed");
 		extent.endTest(logger);
 	}

@@ -1,5 +1,6 @@
 package com.objects_pages;
 
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
@@ -56,37 +57,40 @@ public class MyInterviewPage extends Action_Method
 		Actions act=new Actions(driver);
 		act.moveToElement(First_Next_btn).click().perform();
 		//First_Next_btn.click();
-		wait_for_elementpresent(Start_recording);
+				wait_for_elementpresent(Start_recording);
 		if (Start_recording.isDisplayed()){
-		Start_recording.click();
+		Start_recording.sendKeys(Keys.ENTER);
+		//act.doubleClick(Start_recording).perform();
+
+		System.out.println("start");
 		}else {
 			logger.log(LogStatus.FAIL, "Start Recording is not displayed");
 		}
 		logger.log(LogStatus.PASS, "Video recording Started for Company Back Ground");
 		Thread.sleep(15000);
-		Stop_recording.click();
+		Stop_recording.sendKeys(Keys.ENTER);
 		wait_for_elementpresent(Videocapture_Next);
 		Videocapture_Next.click();
 		
-		Start_recording.click();
+		Start_recording.sendKeys(Keys.ENTER);
 		logger.log(LogStatus.PASS,"Video recording Started for Job Role");
 		Thread.sleep(15000);
-		Stop_recording.click();
+		Stop_recording.sendKeys(Keys.ENTER);
 		wait_for_elementpresent(Videocapture_Next);
 		Videocapture_Next.click();
 		wait_for_elementpresent(Start_recording);
-		Start_recording.click();
+		Start_recording.sendKeys(Keys.ENTER);
 		logger.log(LogStatus.PASS, "Video recording Started for Must Have Skills");
 		Thread.sleep(15000);
-		Stop_recording.click();
+		Stop_recording.sendKeys(Keys.ENTER);
 		wait_for_elementpresent(Videocapture_Next);
 		Videocapture_Next.click();
 		wait_for_elementpresent(Start_recording);
-		Start_recording.click();
+		Start_recording.sendKeys(Keys.ENTER);
 		logger.log(LogStatus.PASS,"Video recording Started for The Career Growth");
 		Thread.sleep(15000);
 		wait_for_elementpresent(Stop_recording);
-		Stop_recording.click();
+		Stop_recording.sendKeys(Keys.ENTER);
 		wait_for_elementpresent(Submit);
 		Submit.click();
 		wait_for_elementpresent(Finish);
@@ -110,27 +114,27 @@ public class MyInterviewPage extends Action_Method
 		//First_Next_btn.click();
 		wait_for_elementpresent(Start_recording);
 		if (Start_recording.isDisplayed()){
-		Start_recording.click();
+		Start_recording.sendKeys(Keys.ENTER);
 		}else {
 			logger.log(LogStatus.FAIL, "Start Recording is not displayed");
 		}
 		logger.log(LogStatus.PASS, "Video recording Started for Personal, Edu. & Professional Intro");
 		Thread.sleep(15000);
-		Stop_recording.click();
+		Stop_recording.sendKeys(Keys.ENTER);
 		wait_for_elementpresent(Videocapture_Next);
 		Videocapture_Next.click();
 		
-		Start_recording.click();
+		Start_recording.sendKeys(Keys.ENTER);
 		logger.log(LogStatus.PASS,"Video recording Started for Job Role");
 		Thread.sleep(15000);
-		Stop_recording.click();
+		Stop_recording.sendKeys(Keys.ENTER);
 		wait_for_elementpresent(Videocapture_Next);
 		Videocapture_Next.click();
 		wait_for_elementpresent(Start_recording);
-		Start_recording.click();
+		Start_recording.sendKeys(Keys.ENTER);
 		logger.log(LogStatus.PASS, "Video recording Started for Must Have Skills");
 		Thread.sleep(15000);
-		Stop_recording.click();
+		Stop_recording.sendKeys(Keys.ENTER);
 		Thread.sleep(2000);
 		wait_for_elementpresent_Clickable(Submit);
 		Submit.click();
