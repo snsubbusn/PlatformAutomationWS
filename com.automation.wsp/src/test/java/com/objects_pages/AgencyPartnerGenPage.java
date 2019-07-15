@@ -75,7 +75,7 @@ public class AgencyPartnerGenPage extends Action_Method{
 		NewAssignmentsTab.click();
 		s.append(NewAssignmentsTab.getText());
 		s.append("; "+activeAssignments.getText()+"; "+onHoldAssignments.getText()+"; "+
-				closedAssignments.getText()+"; "+invitedCandidatesTab.getText()+"; "+dashboardTab.getText());
+				closedAssignments.getText()+"; "+invitedCandidatesTab.getText());
 		return s;
 	}
 

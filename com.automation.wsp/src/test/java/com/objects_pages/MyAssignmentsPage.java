@@ -134,8 +134,11 @@ public class MyAssignmentsPage extends Action_Method
 	@FindBy(xpath="//div/label[contains(text(),'Found')]")
 	WebElement foundResults;
 	
-	@FindBy(xpath="(//span[@mattooltip='Candidate Name'])[1]")
+	@FindBy(xpath="(//span/a)[1]")
 	WebElement firstSearchResult;
+	
+	/*@FindBy(xpath="(//span[@mattooltip='Candidate Name'])[1]")
+	WebElement firstSearchResult;*/
 	
 	@FindBy(xpath="//div[text()='Email']/following-sibling::div[2]")
 	WebElement emailOfCandidate;

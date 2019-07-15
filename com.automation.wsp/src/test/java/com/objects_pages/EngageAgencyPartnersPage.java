@@ -58,7 +58,10 @@ public class EngageAgencyPartnersPage extends Action_Method
 	@FindBy(xpath="//button[span[b[contains(text(),'Accept To Pay Later')]]]")
 	WebElement Accept_To_PayLater;
 
-	@FindBy(xpath="//span[contains(text(),'Accept to pay as per agreement')]")
+	/*@FindBy(xpath="//span[contains(text(),'Accept to pay as per agreement')]")
+	WebElement OnboardingAcceptCheckBox;*/
+	
+	@FindBy(xpath="//div[@class='mat-checkbox-inner-container']")
 	WebElement OnboardingAcceptCheckBox;
 
 	@FindBy(xpath="//span[contains(text(),'Submit')]")

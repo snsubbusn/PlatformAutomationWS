@@ -92,7 +92,7 @@ public class WSAdmin_TC029_AdminProxyVerifiesPostJobPageandNavigateBack extends 
 			}
 
 			//Verifying JD Title field in Job Summary page
-			logger.log(LogStatus.INFO, "Verifying \"JD Title\" field in Job Summary page");
+		    logger.log(LogStatus.INFO, "Verifying \"JD Title\" field in Job Summary page");
 			if(cjs.JdTitle()==true) {
 				logger.log(LogStatus.PASS, "Verify elements present in Job summary page","\"JD Title\" field is available");
 			} else {
@@ -107,7 +107,7 @@ public class WSAdmin_TC029_AdminProxyVerifiesPostJobPageandNavigateBack extends 
 
 			//Verifying Description field in Job Summary page
 			logger.log(LogStatus.INFO, "Verifying \"Description\" field in Job Summary page");
-			if(cjs.Description()==true) {
+			if(cjs.Description() == true) {
 				logger.log(LogStatus.PASS, "Verify elements present in Job summary page","\"Description\" field is available");
 			} else {
 				logger.log(LogStatus.FAIL, "Verify elements present in Job summary page","\"Description\" field is not available");

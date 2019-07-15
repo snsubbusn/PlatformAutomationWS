@@ -98,7 +98,7 @@ public class GO_CorporateShortlists extends Action_Method {
 		if(shortlis.clickOnFirstScheduleInterview()==true) {
 			logger.log(LogStatus.PASS, "Click on Schedule Interview for Candidate, Clicked on Schedule Interview and the side panel is displayed");
 		}else {
-			logger.log(LogStatus.FAIL, "Click on Schedule Interview for Candidate, Clicked on Schedhle Interview but the side panel is not displayed");
+			logger.log(LogStatus.FAIL, "Click on Schedule Interview for Candidate, Clicked on Schedule Interview but the side panel is not displayed");
 		}
 
 		String status = shortlis.scheduleFixedSlotInterview();
