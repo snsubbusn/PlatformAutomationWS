@@ -24,7 +24,7 @@ public class CandidateProfilePage extends Action_Method
 	//Elements of Candidate Profile View Page
 	@FindBy(xpath="//section/div[@class= \"heading\"]")
 	WebElement Profile_Headline;
-	
+
 	@FindBy(xpath ="//a[contains(text(),'Profile')]")
 	WebElement Profile;
 
@@ -73,42 +73,42 @@ public class CandidateProfilePage extends Action_Method
 
 	//Elements of Candidate video Profile Page
 
-		@FindBy(xpath="//a/span[contains(text(),'Re-take')]")
-		WebElement Video_Retake;
+	@FindBy(xpath="//a/span[contains(text(),'Re-take')]")
+	WebElement Video_Retake;
 
-		@FindBy(xpath="//a/img[@class='img-responsive custom-img' and @src='assets/Record.png']")
-		WebElement Record_Button;
+	@FindBy(xpath="//a/img[@class='img-responsive custom-img' and @src='assets/Record.png']")
+	WebElement Record_Button;
 
-		@FindBy(xpath="//div/div[text()='Next' and @class='btn btn-red btn-big transition-opacity']")
-		WebElement Video_Next;
+	@FindBy(xpath="//div/div[text()='Next' and @class='btn btn-red btn-big transition-opacity']")
+	WebElement Video_Next;
 
-		@FindBy(xpath="//div//button[contains(text(),'Start Recording')]")
-		WebElement StartRecording_Button;
+	@FindBy(xpath="//div//button[contains(text(),'Start Recording')]")
+	WebElement StartRecording_Button;
 
-		@FindBy(xpath="//div//button[contains(text(),'Stop Recording')]")
-		WebElement StopRecording_Button;
+	@FindBy(xpath="//div//button[contains(text(),'Stop Recording')]")
+	WebElement StopRecording_Button;
 
-		@FindBy(xpath="//div/div[text()='Next' and @class='btn btn-big btn-short btn-red iblock-text']")
-		WebElement VideoSecNext;
+	@FindBy(xpath="//div/div[text()='Next' and @class='btn btn-big btn-short btn-red iblock-text']")
+	WebElement VideoSecNext;
 
-		@FindBy(xpath="//div//div[text()='Retake ?']")
-		WebElement VideoSecRetake;
+	@FindBy(xpath="//div//div[text()='Retake ?']")
+	WebElement VideoSecRetake;
 
-		@FindBy(xpath="//div[@id= 'goToNextStep' and contains(text(), 'Finish')]")
-		WebElement VideosecFinish_Button;
-		
-		@FindBy(xpath="//div//div[text()='Finish' and @class='btn btn-big btn-short btn-red iblock-text validateRecording']")
-		WebElement CompleteVideoFinish;
-		
-		@FindBy(xpath="//button/i[contains(text(),'close')]")
-		WebElement closemsg;
-		
-		@FindBy(xpath="//div/img[@class='profile-video-banner']")
-		WebElement gifImage;
-		
-		@FindBy(xpath="//div/app-video-display")
-		WebElement uploadedvideo;
-		
+	@FindBy(xpath="//div[@id= 'goToNextStep' and contains(text(), 'Finish')]")
+	WebElement VideosecFinish_Button;
+
+	@FindBy(xpath="//div//div[text()='Finish' and @class='btn btn-big btn-short btn-red iblock-text validateRecording']")
+	WebElement CompleteVideoFinish;
+
+	@FindBy(xpath="//button/i[contains(text(),'close')]")
+	WebElement closemsg;
+
+	@FindBy(xpath="//div/img[@class='profile-video-banner']")
+	WebElement gifImage;
+
+	@FindBy(xpath="//div/app-video-display")
+	WebElement uploadedvideo;
+
 	//Elements of Profile Edit
 
 	@FindBy(xpath="//div/span[contains(text(),'Total Experience:')]//following-sibling::span")
@@ -163,7 +163,7 @@ public class CandidateProfilePage extends Action_Method
 
 	@FindBy(xpath="//button/i[contains(text(),'close')]")
 	WebElement CloseMsg;
-	
+
 	@FindBy(xpath="//a/img[@class='img-responsive custom-img']")
 	WebElement Thumbnail;
 
@@ -374,6 +374,7 @@ public class CandidateProfilePage extends Action_Method
 	{
 		try
 		{
+			scrollingToElementofAPage(Info_Next);
 			Info_Next.click();
 			return true;
 		}
@@ -398,11 +399,12 @@ public class CandidateProfilePage extends Action_Method
 	{
 		try {
 			CloseMsg.click();
+			scrollingToElementofAPage(Video_ProfileNext);
 			Video_ProfileNext.click();
 		}catch(Exception e) {
 			Video_ProfileNext.click();
 		}
-			
+
 	}
 
 	public boolean VerifyEducation_Page()
@@ -421,7 +423,8 @@ public class CandidateProfilePage extends Action_Method
 	{
 		try
 		{
-			wait_for_elementpresent_Clickable(Education_Next);
+			Thread.sleep(3000);
+			scrollingToElementofAPage(Education_Next);
 			Education_Next.click();
 			return true;
 		}
@@ -445,16 +448,11 @@ public class CandidateProfilePage extends Action_Method
 
 	public boolean Finish_Button()
 	{
-		/*try
-		{*/
-			wait_for_elementpresent_Clickable(Finish_Button);
-			Finish_Button.click();
-			return true;
-		/*}
-		catch (Exception e)
-		{
-			return false;
-		}*/
+		
+		scrollingToElementofAPage(Finish_Button);
+		Finish_Button.click();
+		return true;
+		
 	}
 
 	public boolean ProfileView_Page()
@@ -565,68 +563,68 @@ public class CandidateProfilePage extends Action_Method
 	}
 
 	//Function to return the src of the video if video present else verify image present
-		public String getSrcofVideo()  {
-			try{
-				String src = uploadedvideo.getAttribute("ng-reflect-video-url");
-			    if(src.contains("amazonaw"))
-			    {
-			    	System.out.println("Uploaded Video");
-			    	return src+"s3";
-			    }
-			    
-			    else
-			    {
-			    	System.out.println("Recorded Video");
-			    	return src+"MyInterview";
-			    }
-				
-			
-			}catch(Exception e) {
-				String gif = gifImage.getAttribute("src");
-				return gif;
-				}
-			
-		}
-			 
-		public void captureCandidateVideo() throws InterruptedException {
-			MyInterviewPage mip=PageFactory.initElements(driver,MyInterviewPage.class);
-			
-			if(Video_Retake.isDisplayed()) {
-				logger.log(LogStatus.PASS," Candidate has to Retake video");
-				Video_Retake.click();
-				Thread.sleep(2000);
-				mip.candidateProfileVideoCapturing();
-				Thread.sleep(5000);
-				closemsg.click();
-				//wait_for_elementpresent(Video_ProfileNext);
-				//Video_ProfileNext.click();
-			}
-		}
-			
-			public void captureCandidateNewVideo() throws InterruptedException {
-				MyInterviewPage mip=PageFactory.initElements(driver,MyInterviewPage.class);
-				
-				wait_for_elementpresent(Thumbnail);
-				try{
-					
-					Thumbnail.click();					
-				}catch(Exception e) {
-					Thumbnail.click();
-				}
-				logger.log(LogStatus.PASS," Candidate has to upload a new video");
-				Thread.sleep(2000);
-				mip.candidateProfileVideoCapturing();
-				Thread.sleep(5000);
-				closemsg.click();
-				//wait_for_elementpresent(Video_ProfileNext);
-				//Video_ProfileNext.click();
+	public String getSrcofVideo()  {
+		try{
+			String src = uploadedvideo.getAttribute("ng-reflect-video-url");
+			if(src.contains("amazonaw"))
+			{
+				System.out.println("Uploaded Video");
+				return src+"s3";
 			}
 
-		public boolean Start_Video()
-		{
-			StartRecording_Button.click();
-			return true;
+			else
+			{
+				System.out.println("Recorded Video");
+				return src+"MyInterview";
+			}
+
+
+		}catch(Exception e) {
+			String gif = gifImage.getAttribute("src");
+			return gif;
 		}
+
+	}
+
+	public void captureCandidateVideo() throws InterruptedException {
+		MyInterviewPage mip=PageFactory.initElements(driver,MyInterviewPage.class);
+
+		if(Video_Retake.isDisplayed()) {
+			logger.log(LogStatus.PASS," Candidate has to Retake video");
+			Video_Retake.click();
+			Thread.sleep(2000);
+			mip.candidateProfileVideoCapturing();
+			Thread.sleep(5000);
+			closemsg.click();
+			//wait_for_elementpresent(Video_ProfileNext);
+			//Video_ProfileNext.click();
+		}
+	}
+
+	public void captureCandidateNewVideo() throws InterruptedException {
+		MyInterviewPage mip=PageFactory.initElements(driver,MyInterviewPage.class);
+
+		wait_for_elementpresent(Thumbnail);
+		try{
+
+			Thumbnail.click();					
+		}catch(Exception e) {
+			Thumbnail.click();
+		}
+		logger.log(LogStatus.PASS," Candidate has to upload a new video");
+		Thread.sleep(2000);
+		mip.candidateProfileVideoCapturing();
+		Thread.sleep(5000);
+		closemsg.click();
+		//wait_for_elementpresent(Video_ProfileNext);
+		//Video_ProfileNext.click();
+	}
+
+	public boolean Start_Video()
+	{
+		StartRecording_Button.click();
+		return true;
+	}
 
 	//Elements for Error validation
 	@FindBy(xpath="//div[@class='name-wrapper']//span/mat-icon[@class='mat-icon material-icons']")
@@ -1039,62 +1037,62 @@ public class CandidateProfilePage extends Action_Method
 	public boolean errorValidationForEducationPage() throws InterruptedException {
 
 		/*try {*/
-			Info_Next.click();
-			CloseMsg.click();
-			Thread.sleep(2000);
-			Video_ProfileNext.click();
-			Thread.sleep(2000);
+		Info_Next.click();
+		CloseMsg.click();
+		Thread.sleep(2000);
+		Video_ProfileNext.click();
+		Thread.sleep(2000);
 
-			//Empty fields
-			wait_for_elementpresent(AddEducation_Button);
-			AddEducation_Button.click();
-			NoDegree_Error.isDisplayed();
-			p = NoDegree_Error.getText();
-			NoUniversity_Error.isDisplayed();
-			q = NoUniversity_Error.getText();
-			NoSpecialization_Error.isDisplayed();
-			r = NoSpecialization_Error.getText();
-			NoFromDate_Error.isDisplayed();
-			s = NoFromDate_Error.getText();
-			NoToDate_Error.isDisplayed();
-			t = NoToDate_Error.getText();
-			Thread.sleep(2000);
-			driver.navigate().refresh();
+		//Empty fields
+		wait_for_elementpresent(AddEducation_Button);
+		AddEducation_Button.click();
+		NoDegree_Error.isDisplayed();
+		p = NoDegree_Error.getText();
+		NoUniversity_Error.isDisplayed();
+		q = NoUniversity_Error.getText();
+		NoSpecialization_Error.isDisplayed();
+		r = NoSpecialization_Error.getText();
+		NoFromDate_Error.isDisplayed();
+		s = NoFromDate_Error.getText();
+		NoToDate_Error.isDisplayed();
+		t = NoToDate_Error.getText();
+		Thread.sleep(2000);
+		driver.navigate().refresh();
 
-			//Verifying degree field
-			Degree.sendKeys(Keys.TAB);
-			NoDegree_Error.isDisplayed();
-			Degree.sendKeys("123");
-			Degree.sendKeys(Keys.TAB);
-			InvalidDegree_Error.isDisplayed();
+		//Verifying degree field
+		Degree.sendKeys(Keys.TAB);
+		NoDegree_Error.isDisplayed();
+		Degree.sendKeys("123");
+		Degree.sendKeys(Keys.TAB);
+		InvalidDegree_Error.isDisplayed();
 
 
-			//Verifying University field
-			University.sendKeys(Keys.TAB);
-			NoUniversity_Error.isDisplayed();
+		//Verifying University field
+		University.sendKeys(Keys.TAB);
+		NoUniversity_Error.isDisplayed();
 
-			//Verifying Specialization field
-			Specialization.sendKeys(Keys.TAB);
-			NoSpecialization_Error.isDisplayed();
+		//Verifying Specialization field
+		Specialization.sendKeys(Keys.TAB);
+		NoSpecialization_Error.isDisplayed();
 
-			//Verifying Duration field
-			From_Duration.sendKeys(Keys.TAB);
-			NoFromDate_Error.isDisplayed();
-			To_Duration.sendKeys(Keys.TAB);
-			NoToDate_Error.isDisplayed();
+		//Verifying Duration field
+		From_Duration.sendKeys(Keys.TAB);
+		NoFromDate_Error.isDisplayed();
+		To_Duration.sendKeys(Keys.TAB);
+		NoToDate_Error.isDisplayed();
 
-			Thread.sleep(1000);
-			scrollingToBottomofAPage();
-			Education_Next.click();
-			Finish_Button.click();
-			return true;
+		Thread.sleep(1000);
+		scrollingToBottomofAPage();
+		Education_Next.click();
+		Finish_Button.click();
+		return true;
 		/*}
 		catch(Exception e)
 		{
 			return false;
 		}*/
 	} 
-	
+
 	public ArrayList<String> getAllErrorMessagesForEducationPage(){
 		ArrayList<String> a = new ArrayList<String>();
 		a.add(p);
@@ -1109,85 +1107,85 @@ public class CandidateProfilePage extends Action_Method
 	{
 		/*try {*/
 
-			Info_Next.click();
-			CloseMsg.click();
-			Video_ProfileNext.click();
-			scrollingToBottomofAPage();
-			Thread.sleep(1000);
-			Education_Next.click();
+		Info_Next.click();
+		CloseMsg.click();
+		Video_ProfileNext.click();
+		scrollingToBottomofAPage();
+		Thread.sleep(1000);
+		Education_Next.click();
 
-			//Verify click on Add Work Exp btn without any data
-			Thread.sleep(3000);
-			AddWorkExperience_Button.click();
-			NoJobTitle_Error.isDisplayed();
-			p = NoJobTitle_Error.getText();
-			NoCompanyName_Error.isDisplayed();
-			q = NoCompanyName_Error.getText(); 
-			NoWorkLocation_Error.isDisplayed();
-			r = NoWorkLocation_Error.getText();
-			NoFromDate_Error.isDisplayed();
-			s = NoFromDate_Error.getText();
-			NoToDate_Error.isDisplayed();
-			t = NoToDate_Error.getText();
-			driver.navigate().refresh();
+		//Verify click on Add Work Exp btn without any data
+		Thread.sleep(3000);
+		AddWorkExperience_Button.click();
+		NoJobTitle_Error.isDisplayed();
+		p = NoJobTitle_Error.getText();
+		NoCompanyName_Error.isDisplayed();
+		q = NoCompanyName_Error.getText(); 
+		NoWorkLocation_Error.isDisplayed();
+		r = NoWorkLocation_Error.getText();
+		NoFromDate_Error.isDisplayed();
+		s = NoFromDate_Error.getText();
+		NoToDate_Error.isDisplayed();
+		t = NoToDate_Error.getText();
+		driver.navigate().refresh();
 
 
-			//Verify Job Title field
-			Thread.sleep(3000);
-			JobTitle.sendKeys(Keys.TAB);
-			NoJobTitle_Error.isDisplayed();
+		//Verify Job Title field
+		Thread.sleep(3000);
+		JobTitle.sendKeys(Keys.TAB);
+		NoJobTitle_Error.isDisplayed();
 
-			//Verify Company/Organization field
-			CompanyOrganization.sendKeys(Keys.TAB);
-			NoCompanyName_Error.isDisplayed();
+		//Verify Company/Organization field
+		CompanyOrganization.sendKeys(Keys.TAB);
+		NoCompanyName_Error.isDisplayed();
 
-			//Verify No Location
-			Work_Location.sendKeys(Keys.TAB);
-			NoWorkLocation_Error.isDisplayed();				
+		//Verify No Location
+		Work_Location.sendKeys(Keys.TAB);
+		NoWorkLocation_Error.isDisplayed();				
 
-			//Verify Invalid Company Location
-			Work_Location.sendKeys("abc");
-			Work_Location.sendKeys(Keys.TAB);
-			InvalidWorkLocation_Error.isDisplayed();
+		//Verify Invalid Company Location
+		Work_Location.sendKeys("abc");
+		Work_Location.sendKeys(Keys.TAB);
+		InvalidWorkLocation_Error.isDisplayed();
 
-			//Verifying Duration field
-			From_Duration.sendKeys(Keys.TAB);
-			NoFromDate_Error.isDisplayed();
-			To_Duration.sendKeys(Keys.TAB);
-			NoToDate_Error.isDisplayed();
+		//Verifying Duration field
+		From_Duration.sendKeys(Keys.TAB);
+		NoFromDate_Error.isDisplayed();
+		To_Duration.sendKeys(Keys.TAB);
+		NoToDate_Error.isDisplayed();
 
-			//Verifying Project Showcase
-			ProjectShowcase_Accordion.click();
-			AddProject_Btn.click();
-			CompanyName_Error.isDisplayed();
-			u = CompanyName_Error.getText();
-			NoProjectTitle_Error.isDisplayed();
-			v = NoProjectTitle_Error.getText();
-			NoChallenges_Error.isDisplayed();
-			x = NoChallenges_Error.getText();
-			NoContribution_Error.isDisplayed();
-			y = NoContribution_Error.getText();
-			driver.navigate().refresh();
+		//Verifying Project Showcase
+		ProjectShowcase_Accordion.click();
+		AddProject_Btn.click();
+		CompanyName_Error.isDisplayed();
+		u = CompanyName_Error.getText();
+		NoProjectTitle_Error.isDisplayed();
+		v = NoProjectTitle_Error.getText();
+		NoChallenges_Error.isDisplayed();
+		x = NoChallenges_Error.getText();
+		NoContribution_Error.isDisplayed();
+		y = NoContribution_Error.getText();
+		driver.navigate().refresh();
 
-			//Verifying Company name field
-			ProjectShowcase_Accordion.click();
-			Thread.sleep(1000);
+		//Verifying Company name field
+		ProjectShowcase_Accordion.click();
+		Thread.sleep(1000);
 
-			//Verifying Project title
-			ProjectTitle.sendKeys(Keys.TAB);
-			NoProjectTitle_Error.isDisplayed();
+		//Verifying Project title
+		ProjectTitle.sendKeys(Keys.TAB);
+		NoProjectTitle_Error.isDisplayed();
 
-			//Verifying Challenges
-			Challenges.sendKeys(Keys.TAB);
-			NoChallenges_Error.isDisplayed();
+		//Verifying Challenges
+		Challenges.sendKeys(Keys.TAB);
+		NoChallenges_Error.isDisplayed();
 
-			//Verifying My Contribution
-			MyContribution.sendKeys(Keys.TAB);
-			NoContribution_Error.isDisplayed();
+		//Verifying My Contribution
+		MyContribution.sendKeys(Keys.TAB);
+		NoContribution_Error.isDisplayed();
 
-			Finish_Button.click();
-			Thread.sleep(3000);
-			return true;
+		Finish_Button.click();
+		Thread.sleep(3000);
+		return true;
 		/*}
 		catch(Exception e)
 		{
@@ -1476,7 +1474,7 @@ public class CandidateProfilePage extends Action_Method
 
 
 
-	
+
 
 
 
