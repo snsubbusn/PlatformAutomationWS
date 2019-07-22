@@ -448,11 +448,11 @@ public class CandidateProfilePage extends Action_Method
 
 	public boolean Finish_Button()
 	{
-		
+
 		scrollingToElementofAPage(Finish_Button);
 		Finish_Button.click();
 		return true;
-		
+
 	}
 
 	public boolean ProfileView_Page()
@@ -834,6 +834,8 @@ public class CandidateProfilePage extends Action_Method
 	@FindBy(xpath="//span[contains(text(),' Please enter your contribution ')]")
 	WebElement NoContribution_Error;	
 
+	@FindBy(id = "projectSubmitBtn")
+	WebElement SubmitBtn;
 
 	String x,y,z,q,p,r,s,t,u,v;
 	public boolean errorValidationForProfileInformation_Page() {
@@ -1471,6 +1473,66 @@ public class CandidateProfilePage extends Action_Method
 
 	}
 
+	// Verify Adding and Deleting Project Showcase
+	@FindBy(xpath = "//span[contains(text(),'Others')]")
+	WebElement OthersData; 
+
+	public boolean VerifyAddingOfProjectShowcase() throws EncryptedDocumentException, InvalidFormatException, IOException, InterruptedException
+	{
+
+		scrollingToElementofAPage(ProjectShowcase_Accordion);
+		ProjectShowcase_Accordion.click();
+		//Selecting other from Company drop down
+		CompanyName.click();
+		OthersData.click();
+		//Adding Project title from excel
+		String title = getExceldata(Variables.testdata,Variables.projectshowcase,"Project Title");
+		ProjectTitle.sendKeys(title);
+		//Adding Challenges from excel 
+		String challenges = getExceldata(Variables.testdata,Variables.projectshowcase,"Challenges");
+		Challenges.sendKeys(challenges);
+		//Adding Contribution from excel
+		
+		String contribution = getExceldata(Variables.testdata,Variables.projectshowcase,"My Contribution");
+		MyContribution.sendKeys(contribution);
+		SubmitBtn.click();
+		Thread.sleep(2000);
+		Profile.click();
+		return true;
+	}
+
+	public int getProjectCount()
+	{
+		List<WebElement> projcnt = driver.findElements(By.xpath("//ngu-tile//div[@class='project-box-wrapper']"));
+		int count = projcnt.size();
+		return count;
+		
+	}
+
+	public String getTextOfProjectAdded()
+	{
+		int count = getProjectCount();
+		String Pro = driver.findElement(By.xpath("//ngu-tile["+(count+1)+"]//div[@class='project-box-wrapper']//div[@class='project-title']")).getText();
+		return Pro;	
+	}
+	
+	@FindBy(xpath = "//button/span[contains(text(),'Proceed')]")
+	WebElement ConfProBtn;
+	
+	public boolean deleteProjtShowcase()
+	{
+		scrollingToElementofAPage(ProjectShowcase_Accordion);
+		ProjectShowcase_Accordion.click();
+		//Get count of delete button
+		List<WebElement> projcnt = driver.findElements(By.xpath("//div[@class='full-width']//div[@class='company-card ng-star-inserted']//i[contains(text(),'delete')]"));
+		int count = projcnt.size();
+		
+		driver.findElement(By.xpath("//div[@class='full-width']//div[@class='company-card ng-star-inserted']["+count+"]//i[contains(text(),'delete')]")).click();
+		ConfProBtn.click();
+		CloseMsg.click();
+		Profile.click();
+		return true;
+	}
 
 
 
