@@ -10,11 +10,11 @@ import com.objects_pages.CandidateProfilePage;
 import com.objects_pages.loginPage;
 import com.relevantcodes.extentreports.LogStatus;
 
-public class Candidate_TC007_VerifyAddingandDeletingEducationDetailsofCandidate extends Action_Method {
+public class Candidate_TC008_VerifyAddingandDeletingWorkExperienceofCandidate extends Action_Method{
 
-	public void addAndDeleteCandidateEducation() throws InterruptedException
+	public void addAndDeleteCandidateWorkExperience() throws InterruptedException
 	   {
-		   logger = extent.startTest("Candidate_TC007_VerifyAddingandDeletingEducationDetailsofCandidate");
+		   logger = extent.startTest("Candidate_TC008_VerifyAddingandDeletingWorkExperienceofCandidate");
 		   driver.manage().timeouts().implicitlyWait(1,TimeUnit.MINUTES);
 		   logger.assignAuthor("Keerthana");
 		   logger.assignCategory("Candidate General");
@@ -34,7 +34,7 @@ public class Candidate_TC007_VerifyAddingandDeletingEducationDetailsofCandidate 
 		   String ex = cp.Display_TotalExpData();
 		   logger.log(LogStatus.INFO,"Total Experience of candidate before editing the profile is :"+ex);
 		   
-		   int count = cp.getcountOfProfileEducation();
+		   int count = cp.getcountOfProfileWorkExp();
 		   
 		   if(cp.click_OnEditButton()) {
 			   logger.log(LogStatus.PASS, "Candidate logged in successfully and clicked on Profile Edit icon");
@@ -71,66 +71,73 @@ public class Candidate_TC007_VerifyAddingandDeletingEducationDetailsofCandidate 
 		   {
 			   logger.log(LogStatus.FAIL, "Failed to navigate to Education page when clicked on next");
 		   }
-		   
-		   
-		   if(cp.addEducation()) {
-			   logger.log(LogStatus.PASS, "Successfully new education details is added for the candidate");
-		   }else {
-			   logger.log(LogStatus.FAIL, "Failed to add new education details for the candidate");
+		   scrollingToBottomofAPage();
+		   cp.Education_Next();
+			 
+		   if(cp.VerifyWorkExp_Page())
+		   {
+			   logger.log(LogStatus.PASS, "Successfully cliked on next and navigated to Work Experience page");
 		   }
+		   else
+		   {
+			   logger.log(LogStatus.FAIL, "Failed to navigate to Work Experience page");
+		   }
+		   
+		   if(cp.addWorkExperience()) {
+			   logger.log(LogStatus.PASS, "Successfully added new Work Experience details for the candidate.");
+		   } else {
+			   logger.log(LogStatus.FAIL, "Failed to add new Work Experience details for the candidate.");
+		   }
+		   
 		   cp.clickOnProfile();
-		   int finaladdedCount = cp.getcountOfProfileEducation();
+		   int addedExpCount = cp.getcountOfProfileWorkExp();
 		   
-		   if(finaladdedCount!=count) {
-			   logger.log(LogStatus.PASS, "Before adding new education details the count was "+count+" Count after Successfully adding the Education is "+finaladdedCount+" in profile page");
+		   if(count!=addedExpCount) {
+			   logger.log(LogStatus.PASS, "Before adding new Work Experience details the count was "+count+" Count after Successfully adding the Work Experience is "+addedExpCount+" in profile page");
 		   }else {
-			   logger.log(LogStatus.FAIL, "Failed to display the added Education in profile page");
-		   }
-		   cp.closeSuccessMessage();
+			   logger.log(LogStatus.FAIL, "Failed to display the added Work Experience in profile page");
+		   } 
 		   cp.click_OnEditButton();
 		   cp.click_OnNext();
 		   cp.Video_ProfileNext();
-		   if(cp.deleteEducation()) {
-			   logger.log(LogStatus.PASS, "Successfully education details is deleted for the candidate");
-		   }else {
-			   logger.log(LogStatus.FAIL, "Failed to delete the education details for the candidate");
-		   }
-		   cp.closeSuccessMessage();
+		   cp.Education_Next();
+		   if(cp.deleteWorkExperience()) {
+			   logger.log(LogStatus.PASS, "Successfully deleted  Work Experience details for the candidate.");
+		   } else {
+			   logger.log(LogStatus.FAIL, "Failed to delete Work Experience details for the candidate.");
+		   } 
 		   cp.clickOnProfile();
+		   int deletedExpCount = cp.getcountOfProfileWorkExp();
 		   
-		   int finaldeletedCount = cp.getcountOfProfileEducation();
-		   //int finaldeletedCount1 = cp.getcountOfProfileEducation();
-		   
-		   if(finaladdedCount!=finaldeletedCount) {
-			   logger.log(LogStatus.PASS, "Before deleting  education details the count was "+finaladdedCount+" Count after Successfully deleting the Education is "+finaldeletedCount+" in profile page");
+		   if(addedExpCount!=deletedExpCount) {
+			   logger.log(LogStatus.PASS, "Before deleting Work Experience details the count was "+addedExpCount+" Count after Successfully deleting the Work Experience is "+deletedExpCount+" in profile page");
 		   }else {
-			   logger.log(LogStatus.FAIL, "Deleted Education is still displayed  in profile page");
-		   }
-		  //cp.closeSuccessMessage();
-		   int updatedElement = cp.getcountOfProfileEducation();
+			   logger.log(LogStatus.FAIL, "Deleted Work Experience is still viewed in profile page");
+		   } 
+		   int updatedElement = cp.getcountOfProfileWorkExp();
 		   cp.click_OnEditButton();
 		   cp.click_OnNext();
 		   cp.Video_ProfileNext();
+		   cp.Education_Next();
 		   
-		   if(cp.updateEducation()) {
-			   logger.log(LogStatus.PASS, "Successfully education details is updated for the candidate");
-		   }else {
-			   logger.log(LogStatus.FAIL, "Failed to delete the education details for the candidate");
-		   }
-		  
+		   if(cp.updateWorkExp()) {
+			   logger.log(LogStatus.PASS, "Successfully updated  Work Experience details for the candidate.");
+		   } else {
+			   logger.log(LogStatus.FAIL, "Failed to update Work Experience details for the candidate.");
+		   } 
 		   cp.clickOnProfile();
-		   int updatedEduCount = cp.getcountOfProfileEducation();
+		   int updatedExpCount = cp.getcountOfProfileWorkExp();
 		   
-		   if(updatedEduCount == updatedElement) {
-			   logger.log(LogStatus.PASS, "Before updating the Education details the count was "+updatedElement+" Count after Successfully updating Education details is "+updatedEduCount+" in profile page");
+		   if(updatedExpCount == updatedElement) {
+			   logger.log(LogStatus.PASS, "Before updating Work Experience details the count was "+updatedElement+" Count after Successfully updating the Work Experience is "+updatedExpCount+" in profile page");
 		   }else {
-			   logger.log(LogStatus.FAIL, "Education isn't updated  in profile page");
+			   logger.log(LogStatus.FAIL, "Deleted Work Experience is still viewed in profile page");
 		   } 
 		   
-		   logger.log(LogStatus.INFO, "Vrified the addition,deletion and updation of Education details for the candidate.");
+		   logger.log(LogStatus.INFO, "Vrified the addition,deletion and updation of Work Experience details for the candidate.");
 		   
 		   lp.logout();
-		   extent.endTest(logger);
-	}
-
+		   extent.endTest(logger); 
+	   }
+		   
 }

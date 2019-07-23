@@ -754,7 +754,19 @@ public class ScriptExecution extends Action_Method
 		Candidate_TC006_VerifyVideoCapturingOfCandidateProfile cu = PageFactory.initElements(driver, Candidate_TC006_VerifyVideoCapturingOfCandidateProfile.class);
 		cu.CandidateVideoCapture();
 	}
-
+	
+	@Test(groups= {"Candidate General"})
+	public void Candidate_TC007() throws InterruptedException {
+		Candidate_TC007_VerifyAddingandDeletingEducationDetailsofCandidate cu = PageFactory.initElements(driver, Candidate_TC007_VerifyAddingandDeletingEducationDetailsofCandidate.class);
+		cu.addAndDeleteCandidateEducation();
+	}
+	
+	@Test(groups= {"Candidate General"})
+	public void Candidate_TC008() throws InterruptedException {
+		Candidate_TC008_VerifyAddingandDeletingWorkExperienceofCandidate cu = PageFactory.initElements(driver, Candidate_TC008_VerifyAddingandDeletingWorkExperienceofCandidate.class);
+		cu.addAndDeleteCandidateWorkExperience();
+	}
+	
 	@Test(groups= {"Candidate General","SmokeTest"})
 	public void Candidate_TC011() throws InterruptedException {
 		Candidate_TC011_VerifyMyEngagementsofCandidate cu = PageFactory.initElements(driver, Candidate_TC011_VerifyMyEngagementsofCandidate.class);

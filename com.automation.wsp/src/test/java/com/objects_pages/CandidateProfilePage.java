@@ -394,9 +394,9 @@ public class CandidateProfilePage extends Action_Method
 		}
 	}
 
-	public void Video_ProfileNext()
+	public void Video_ProfileNext() throws InterruptedException
 	{
-		try {
+		try {Thread.sleep(1000);
 			CloseMsg.click();
 			Video_ProfileNext.click();
 		}catch(Exception e) {
@@ -417,10 +417,12 @@ public class CandidateProfilePage extends Action_Method
 		}
 	}
 
-	public boolean Education_Next()
-	{
+	public boolean Education_Next() throws InterruptedException
+	{	
 		try
 		{
+			Thread.sleep(1000);
+			scrollingToBottomofAPage();
 			wait_for_elementpresent_Clickable(Education_Next);
 			Education_Next.click();
 			return true;
@@ -1473,22 +1475,92 @@ public class CandidateProfilePage extends Action_Method
 
 	}
 
+	@FindBy(xpath="(//mat-option/span)[1]")
+	WebElement selectDegree;
+	
+	@FindBy(xpath="(//mat-option/span)[1]")
+	WebElement updateDegree;
+	
+	@FindBy(xpath="(//button[@class='mat-icon-button'])[3]")
+	WebElement selectFromDate;
+	
+	@FindBy(xpath="//div[@class='mat-calendar-body-cell-content mat-calendar-body-today']")
+	WebElement selectTodayDate;
+	
+	@FindBy(xpath="//div[@class='mat-checkbox-inner-container']")
+	WebElement presentDate;
+	
+	@FindBy(xpath="//button[@type='submit']")
+	WebElement addButton;
+	
+	//@FindBy(xpath="//button[@type='submit']")
+	//WebElement saveEducation;
+	
+	@FindBy(xpath="(//div/i[contains(text(),'edit')])[1]")
+	WebElement updateEducation;
+	
+	@FindBy(xpath="(//span/i[contains(text(),'edit')])[1]")
+	WebElement updateWrkExp;
+	
+	@FindBy(xpath="(//mat-panel-title[@class='mat-expansion-panel-header-title']/span)[1]")
+	WebElement updatedEducationtText;
+	
+	@FindBy(xpath="//app-list-view-box-row")
+	WebElement addedEducationDetails;
+	
+	@FindBy(xpath="//div/i[contains(text(),'delete')]")
+	WebElement deleteEducation;
+	
+	@FindBy(xpath="(//span/i[contains(text(),'delete')])[1]")
+	WebElement deleteWrkExp;
+	
+	@FindBy(xpath="//span[contains(text(),'Proceed')]")
+	WebElement proceedDeletion;
+	
+	@FindBy(xpath="(//mat-panel-title/span)[1]")
+	WebElement profileEducation;
+	
+	@FindBy(xpath="//mat-expansion-panel-header")
+	WebElement profileEducationCount;
+	
+	@FindBy(xpath="//div[@class='box-wrapper row']")
+	WebElement addedEducationCount;
+	
+	@FindBy(xpath="//div/input[@placeholder='Job Title']")
+	WebElement jobTitle;
+	
+	@FindBy(xpath="//div/input[@placeholder='Company / Organization']")
+	WebElement company;
+	
+	@FindBy(xpath="//div/input[@placeholder='Location']")
+	WebElement location;
+	
+	@FindBy(xpath="(//span[@class='mat-option-text'])[1]")
+	WebElement selectLocation;
+	
+	@FindBy(xpath="//div/textarea[@placeholder='Description']")
+	WebElement description;
+	
 	public boolean addEducation()
 	{
 		//Verifying degree field
-		Degree.sendKeys(Keys.TAB);
-		Degree.sendKeys("123");
+		//Degree.sendKeys(Keys.TAB);
+		Degree.click();
+		selectDegree.click();
 		
 		//Verifying University field
 		University.sendKeys(Keys.TAB);
-		
+		University.sendKeys("VTU");
 		//Verifying Specialization field
 		Specialization.sendKeys(Keys.TAB);
-		
+		Specialization.sendKeys("ISE");
 		//Verifying Duration field
-		From_Duration.sendKeys(Keys.TAB);
+		From_Duration.sendKeys("8/16/2016");
+		//selectFromDate.click();
+		//selectTodayDate.click();
+		presentDate.click();
+		addButton.click();
 		
-		To_Duration.sendKeys(Keys.TAB);
 		
 
 		/*Thread.sleep(1000);
@@ -1497,7 +1569,119 @@ public class CandidateProfilePage extends Action_Method
 		Finish_Button.click();*/
 		return true;
 	}
+	
+	public String verifyAddedEducationDisplayed() {
+		CloseMsg.click();
+		String src = addedEducationDetails.getAttribute("ng-reflect-subtitle");
+		Profile.click();
+		return src;
+	}
+	
+	public String verifyEducationDisplayed() {
+		String edu = profileEducation.getText();
+		return edu;
+	}
+	
+	public int getcountOfaddedEducation()
+	{
+		List<WebElement> Edu = driver.findElements(By.xpath("//mat-panel-title[@class='mat-expansion-panel-header-title']"));
+		int Educount = Edu.size();
+		return Educount;
 
+	}
+	public void closeSuccessMessage() {
+		CloseMsg.click();
+		
+	}
+	public int getcountOfProfileEducation()
+	{	
+		//Profile.click();
+		List<WebElement> proEdu = driver.findElements(By.xpath("//mat-panel-title[@class='mat-expansion-panel-header-title']"));
+		int proEducount = proEdu.size();
+		return proEducount;
+
+	}
+	
+	public void clickOnProfile() {
+		Profile.click();
+	}
+	
+	public boolean updateEducation() throws InterruptedException {
+		Thread.sleep(1000);
+		updateEducation.click();
+		Degree.click();
+		Degree.clear();
+		updateDegree.click();
+		addButton.click();
+		return true;
+	}
+	
+	public boolean updateWorkExp() throws InterruptedException {
+		Thread.sleep(1000);
+		updateWrkExp.click();
+		jobTitle.click();
+		jobTitle.clear();
+		jobTitle.sendKeys("Back End Developer");
+		addButton.click();
+		return true;
+	}
+	
+	public boolean deleteEducation()
+	{
+		try{
+			//String src = addedEducationDetails.getAttribute("ng-reflect-video-url");
+		    if(deleteEducation.isDisplayed())
+		    {
+		    	//System.out.println("edu present");
+		    	deleteEducation.click();
+		    	proceedDeletion.click();
+		    }
+		    
+		    else
+		    {
+		    	System.out.println("Edu not present");
+		    	
+		    }
+			
+		return true;
+		}catch(Exception e) {
+			
+			return false;
+			}
+	}		
+	
+	public boolean addWorkExperience() {
+		jobTitle.click();
+		jobTitle.sendKeys("Front End Developer");
+		company.sendKeys(Keys.TAB);
+		company.sendKeys("Infosys");
+		location.click();
+		selectLocation.click();
+		From_Duration.sendKeys("8/16/2016");
+		presentDate.click();
+		description.sendKeys(Keys.TAB);
+		description.sendKeys("Manual and Automation testing");
+		addButton.click();
+		CloseMsg.click();
+		return true;
+		}
+	
+	public boolean deleteWorkExperience() {
+		deleteWrkExp.click();
+		proceedDeletion.click();
+		CloseMsg.click();
+		return true;
+	}
+		
+	public int getcountOfProfileWorkExp()
+	{	
+		//Profile.click();
+		List<WebElement> wrkExp = driver.findElements(By.xpath("//div/strong"));
+		int wrkExpcount = wrkExp.size();
+		return wrkExpcount;
+
+	}
+	
 }
 
 
