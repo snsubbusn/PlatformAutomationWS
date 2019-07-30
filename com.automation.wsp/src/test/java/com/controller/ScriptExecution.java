@@ -364,18 +364,18 @@ public class ScriptExecution extends Action_Method
 	}
 
 
-//	@Test(/*dependsOnMethods ="onboarding5",*/ groups = {"GS","Corporate General"})
-/*	public void CorporateDashboard02() throws InterruptedException, EncryptedDocumentException, InvalidFormatException, IOException {
+	//	@Test(/*dependsOnMethods ="onboarding5",*/ groups = {"GS","Corporate General"})
+	/*	public void CorporateDashboard02() throws InterruptedException, EncryptedDocumentException, InvalidFormatException, IOException {
 		CorpAdm_Dashboard_TC002_VerifyDashafterGS ds = PageFactory.initElements(driver, CorpAdm_Dashboard_TC002_VerifyDashafterGS.class);
 		ds.verifyCorpAdminDashboardAfterGS();
 	}
-*/
-//	@Test(/*dependsOnMethods = "onboarding5",*/ groups = {"GO","Corporate General"})
-/*	public void CorporateDashboard03() throws InterruptedException, EncryptedDocumentException, InvalidFormatException, IOException {
+	 */
+	//	@Test(/*dependsOnMethods = "onboarding5",*/ groups = {"GO","Corporate General"})
+	/*	public void CorporateDashboard03() throws InterruptedException, EncryptedDocumentException, InvalidFormatException, IOException {
 		CorpAdm_Dashboard_TC003_VerifyDashafterGO ds = PageFactory.initElements(driver, CorpAdm_Dashboard_TC003_VerifyDashafterGO.class);
 		ds.verifyCorpAdminDashboardAfterGO();
 	}
-*/
+	 */
 
 
 	@Test (groups = {"WSAdmin General","SmokeTest"})
@@ -803,6 +803,12 @@ public class ScriptExecution extends Action_Method
 		cu.validatingAddDelAndUpdateSkillsField();
 	}
 
+	@Test(groups= {"Candidate General"})
+	public void Candidate_TC009() throws  InterruptedException, EncryptedDocumentException, InvalidFormatException, IOException {
+		Candidate_TC009_VerifyAddingandDeletingProjectShowcaseofCandidate sc =  PageFactory.initElements(driver, Candidate_TC009_VerifyAddingandDeletingProjectShowcaseofCandidate.class);
+		sc.ProjectShowcase();
+	}
+
 	@Test(groups= { "General"})
 	public void General_TC007() throws Exception {
 		General_TC007_VerifySettingsOpensaNewTabPreferencesAndSecuritySettings cu = PageFactory.initElements(driver, General_TC007_VerifySettingsOpensaNewTabPreferencesAndSecuritySettings.class);
@@ -856,18 +862,18 @@ public class ScriptExecution extends Action_Method
 		General_TC015_VerifyPreferencesPageDeactivateAccountPopUp pu = PageFactory.initElements(driver,General_TC015_VerifyPreferencesPageDeactivateAccountPopUp.class);
 		pu.preferenceAndSecurity();
 	}
-	
+
 	@Test(groups= {"General"})
 	public void General_TC016() throws Exception {
 		General_TC016_VerifyPreferencesPageForCandidate pu = PageFactory.initElements(driver,General_TC016_VerifyPreferencesPageForCandidate.class);
 		pu.preferenceAndSecurity();
 	}
-	
+
 	@Test(groups= {"General"})
 	public void General_TC017() throws Exception {
 		General_TC017_VerifyPreferencesPageForAgency pf = PageFactory.initElements(driver,General_TC017_VerifyPreferencesPageForAgency.class);
 		pf.preferenceAndSecurity();
 	}
-	
+
 
 }
