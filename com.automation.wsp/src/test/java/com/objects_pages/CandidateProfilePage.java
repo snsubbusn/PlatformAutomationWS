@@ -396,7 +396,8 @@ public class CandidateProfilePage extends Action_Method
 
 	public void Video_ProfileNext() throws InterruptedException
 	{
-		try {Thread.sleep(1000);
+		try {
+			Thread.sleep(1000);
 			CloseMsg.click();
 			Video_ProfileNext.click();
 		}catch(Exception e) {
