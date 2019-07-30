@@ -498,7 +498,13 @@ public class ScriptExecution extends Action_Method
 		WSAdmin_TC020_DeleteFirstAdminUser ws = PageFactory.initElements(driver, WSAdmin_TC020_DeleteFirstAdminUser.class);
 		ws.verifyDeletingFirstAdminUser();
 	}
-
+	
+	@Test (groups = {"WSAdmin UserManagement"})
+	public void WSAdmin22() throws InterruptedException {
+		WSAdmin_TC022_VerifyingtheInvitePageusingFilterBySAASClient ws = PageFactory.initElements(driver, WSAdmin_TC022_VerifyingtheInvitePageusingFilterBySAASClient.class);
+		ws.verifyingtheInvitePageusingFilterBySAASClient();
+	}
+	
 	@Test (groups = {"WSAdmin UserManagement"})
 	public void WSAdmin23() throws InterruptedException {
 		WSAdmin_TC023_VerifyProxyTabofWSAdmin ws = PageFactory.initElements(driver, WSAdmin_TC023_VerifyProxyTabofWSAdmin.class);
