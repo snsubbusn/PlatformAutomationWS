@@ -38,9 +38,15 @@ public class WSAdminGenPage extends Action_Method{
 	@FindBy(xpath="//div[@class='cdk-overlay-container']//span[contains(text(),'Agency Partner')]")
 	WebElement filterAgencyPartner;
 
+	@FindBy(xpath="//div[@class='cdk-overlay-container']//span[contains(text(),'SaaS')]")
+	WebElement fiterSAASClient;
+	
 	@FindBy(xpath="//div[@class='cdk-overlay-container']//span[contains(text(),'None')]")
 	WebElement none;
 
+	@FindBy(xpath="//div[@class='header-parent']//span[contains(text(),'SaaS')]")
+	List<WebElement> listOfSaaS;
+	
 
 	@FindBy(xpath="//div[div[contains(text(),'Sort')]]//span/span")
 	WebElement sortSelectedValue;
@@ -261,6 +267,12 @@ public class WSAdminGenPage extends Action_Method{
 		filterAgencyPartner.click();
 		return filterSelectedValue.getText();
 	}
+	
+	public String filterSAASClient() {
+		filterSelectedValue.click();
+		fiterSAASClient.click();
+		return filterSelectedValue.getText();
+	}
 
 	public String getDefaultSortValue() {
 		return sortSelectedValue.getText();
@@ -317,6 +329,11 @@ public class WSAdminGenPage extends Action_Method{
 	public int getCountOfAgents() {
 		List <WebElement> agn = driver.findElements(By.xpath("//div[@class='header-parent']//span[contains(text(),'Agency')]"));
 		return agn.size();
+	}
+	
+	
+	public int getCountOfSaaSClient() {
+		return listOfSaaS.size();
 	}
 
 	public void select45ItemsPerPage() {
