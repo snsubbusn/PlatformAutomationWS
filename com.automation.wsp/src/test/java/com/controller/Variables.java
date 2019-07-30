@@ -20,7 +20,7 @@ public interface Variables
 	String SetData_Excel="Write data";
 	String ResumeWithoutContact = "E:\\PlatformAutomation\\com.automation.wsp\\src\\main\\resources\\ResumeWithoutContact.docx";
 	String InvalidResume = "E:\\\\PlatformAutomation\\\\com.automation.wsp\\\\src\\\\main\\\\resources\\\\InvalidResume.doc";
-	
+	String projectshowcase = "ProjectShowcase";
 /*	String testdata="C:\\Users\\DELL\\git\\platformautomation\\com.automation.wsp\\src\\main\\resources\\TestData.xlsx";
 	//String testdata="E:\\Workstreets Platform\\WSPAutomation\\DataSheet\\TestData.xlsx";
 	String gecko_driver_path="C:\\Users\\DELL\\git\\platformautomation\\com.automation.wsp\\src\\main\\resources\\geckodriver.exe";
