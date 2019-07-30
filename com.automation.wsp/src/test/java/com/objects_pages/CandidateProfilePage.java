@@ -12,7 +12,7 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-
+import org.openqa.selenium.support.ui.Select;
 
 import com.controller.Action_Method;
 import com.controller.Variables;
@@ -24,7 +24,7 @@ public class CandidateProfilePage extends Action_Method
 	//Elements of Candidate Profile View Page
 	@FindBy(xpath="//section/div[@class= \"heading\"]")
 	WebElement Profile_Headline;
-	
+
 	@FindBy(xpath ="//a[contains(text(),'Profile')]")
 	WebElement Profile;
 
@@ -73,42 +73,42 @@ public class CandidateProfilePage extends Action_Method
 
 	//Elements of Candidate video Profile Page
 
-		@FindBy(xpath="//a/span[contains(text(),'Re-take')]")
-		WebElement Video_Retake;
+	@FindBy(xpath="//a/span[contains(text(),'Re-take')]")
+	WebElement Video_Retake;
 
-		@FindBy(xpath="//a/img[@class='img-responsive custom-img' and @src='assets/Record.png']")
-		WebElement Record_Button;
+	@FindBy(xpath="//a/img[@class='img-responsive custom-img' and @src='assets/Record.png']")
+	WebElement Record_Button;
 
-		@FindBy(xpath="//div/div[text()='Next' and @class='btn btn-red btn-big transition-opacity']")
-		WebElement Video_Next;
+	@FindBy(xpath="//div/div[text()='Next' and @class='btn btn-red btn-big transition-opacity']")
+	WebElement Video_Next;
 
-		@FindBy(xpath="//div//button[contains(text(),'Start Recording')]")
-		WebElement StartRecording_Button;
+	@FindBy(xpath="//div//button[contains(text(),'Start Recording')]")
+	WebElement StartRecording_Button;
 
-		@FindBy(xpath="//div//button[contains(text(),'Stop Recording')]")
-		WebElement StopRecording_Button;
+	@FindBy(xpath="//div//button[contains(text(),'Stop Recording')]")
+	WebElement StopRecording_Button;
 
-		@FindBy(xpath="//div/div[text()='Next' and @class='btn btn-big btn-short btn-red iblock-text']")
-		WebElement VideoSecNext;
+	@FindBy(xpath="//div/div[text()='Next' and @class='btn btn-big btn-short btn-red iblock-text']")
+	WebElement VideoSecNext;
 
-		@FindBy(xpath="//div//div[text()='Retake ?']")
-		WebElement VideoSecRetake;
+	@FindBy(xpath="//div//div[text()='Retake ?']")
+	WebElement VideoSecRetake;
 
-		@FindBy(xpath="//div[@id= 'goToNextStep' and contains(text(), 'Finish')]")
-		WebElement VideosecFinish_Button;
-		
-		@FindBy(xpath="//div//div[text()='Finish' and @class='btn btn-big btn-short btn-red iblock-text validateRecording']")
-		WebElement CompleteVideoFinish;
-		
-		@FindBy(xpath="//button/i[contains(text(),'close')]")
-		WebElement closemsg;
-		
-		@FindBy(xpath="//div/img[@class='profile-video-banner']")
-		WebElement gifImage;
-		
-		@FindBy(xpath="//div/app-video-display")
-		WebElement uploadedvideo;
-		
+	@FindBy(xpath="//div[@id= 'goToNextStep' and contains(text(), 'Finish')]")
+	WebElement VideosecFinish_Button;
+
+	@FindBy(xpath="//div//div[text()='Finish' and @class='btn btn-big btn-short btn-red iblock-text validateRecording']")
+	WebElement CompleteVideoFinish;
+
+	@FindBy(xpath="//button/i[contains(text(),'close')]")
+	WebElement closemsg;
+
+	@FindBy(xpath="//div/img[@class='profile-video-banner']")
+	WebElement gifImage;
+
+	@FindBy(xpath="//div/app-video-display")
+	WebElement uploadedvideo;
+
 	//Elements of Profile Edit
 
 	@FindBy(xpath="//div/span[contains(text(),'Total Experience:')]//following-sibling::span")
@@ -163,7 +163,7 @@ public class CandidateProfilePage extends Action_Method
 
 	@FindBy(xpath="//button/i[contains(text(),'close')]")
 	WebElement CloseMsg;
-	
+
 	@FindBy(xpath="//a/img[@class='img-responsive custom-img']")
 	WebElement Thumbnail;
 
@@ -374,6 +374,7 @@ public class CandidateProfilePage extends Action_Method
 	{
 		try
 		{
+			scrollingToElementofAPage(Info_Next);
 			Info_Next.click();
 			return true;
 		}
@@ -394,15 +395,16 @@ public class CandidateProfilePage extends Action_Method
 		}
 	}
 
-	public void Video_ProfileNext() throws InterruptedException
+	public void Video_ProfileNext()
 	{
-		try {Thread.sleep(1000);
+		try {
 			CloseMsg.click();
+			scrollingToElementofAPage(Video_ProfileNext);
 			Video_ProfileNext.click();
 		}catch(Exception e) {
 			Video_ProfileNext.click();
 		}
-			
+
 	}
 
 	public boolean VerifyEducation_Page()
@@ -417,13 +419,12 @@ public class CandidateProfilePage extends Action_Method
 		}
 	}
 
-	public boolean Education_Next() throws InterruptedException
-	{	
+	public boolean Education_Next()
+	{
 		try
 		{
-			Thread.sleep(1000);
-			scrollingToBottomofAPage();
-			wait_for_elementpresent_Clickable(Education_Next);
+			Thread.sleep(3000);
+			scrollingToElementofAPage(Education_Next);
 			Education_Next.click();
 			return true;
 		}
@@ -447,16 +448,11 @@ public class CandidateProfilePage extends Action_Method
 
 	public boolean Finish_Button()
 	{
-		/*try
-		{*/
-			wait_for_elementpresent_Clickable(Finish_Button);
-			Finish_Button.click();
-			return true;
-		/*}
-		catch (Exception e)
-		{
-			return false;
-		}*/
+
+		scrollingToElementofAPage(Finish_Button);
+		Finish_Button.click();
+		return true;
+
 	}
 
 	public boolean ProfileView_Page()
@@ -567,68 +563,68 @@ public class CandidateProfilePage extends Action_Method
 	}
 
 	//Function to return the src of the video if video present else verify image present
-		public String getSrcofVideo()  {
-			try{
-				String src = uploadedvideo.getAttribute("ng-reflect-video-url");
-			    if(src.contains("amazonaw"))
-			    {
-			    	System.out.println("Uploaded Video");
-			    	return src+"s3";
-			    }
-			    
-			    else
-			    {
-			    	System.out.println("Recorded Video");
-			    	return src+"MyInterview";
-			    }
-				
-			
-			}catch(Exception e) {
-				String gif = gifImage.getAttribute("src");
-				return gif;
-				}
-			
-		}
-			 
-		public void captureCandidateVideo() throws InterruptedException {
-			MyInterviewPage mip=PageFactory.initElements(driver,MyInterviewPage.class);
-			
-			if(Video_Retake.isDisplayed()) {
-				logger.log(LogStatus.PASS," Candidate has to Retake video");
-				Video_Retake.click();
-				Thread.sleep(2000);
-				mip.candidateProfileVideoCapturing();
-				Thread.sleep(5000);
-				closemsg.click();
-				//wait_for_elementpresent(Video_ProfileNext);
-				//Video_ProfileNext.click();
-			}
-		}
-			
-			public void captureCandidateNewVideo() throws InterruptedException {
-				MyInterviewPage mip=PageFactory.initElements(driver,MyInterviewPage.class);
-				
-				wait_for_elementpresent(Thumbnail);
-				try{
-					
-					Thumbnail.click();					
-				}catch(Exception e) {
-					Thumbnail.click();
-				}
-				logger.log(LogStatus.PASS," Candidate has to upload a new video");
-				Thread.sleep(2000);
-				mip.candidateProfileVideoCapturing();
-				Thread.sleep(5000);
-				closemsg.click();
-				//wait_for_elementpresent(Video_ProfileNext);
-				//Video_ProfileNext.click();
+	public String getSrcofVideo()  {
+		try{
+			String src = uploadedvideo.getAttribute("ng-reflect-video-url");
+			if(src.contains("amazonaw"))
+			{
+				System.out.println("Uploaded Video");
+				return src+"s3";
 			}
 
-		public boolean Start_Video()
-		{
-			StartRecording_Button.click();
-			return true;
+			else
+			{
+				System.out.println("Recorded Video");
+				return src+"MyInterview";
+			}
+
+
+		}catch(Exception e) {
+			String gif = gifImage.getAttribute("src");
+			return gif;
 		}
+
+	}
+
+	public void captureCandidateVideo() throws InterruptedException {
+		MyInterviewPage mip=PageFactory.initElements(driver,MyInterviewPage.class);
+
+		if(Video_Retake.isDisplayed()) {
+			logger.log(LogStatus.PASS," Candidate has to Retake video");
+			Video_Retake.click();
+			Thread.sleep(2000);
+			mip.candidateProfileVideoCapturing();
+			Thread.sleep(5000);
+			closemsg.click();
+			//wait_for_elementpresent(Video_ProfileNext);
+			//Video_ProfileNext.click();
+		}
+	}
+
+	public void captureCandidateNewVideo() throws InterruptedException {
+		MyInterviewPage mip=PageFactory.initElements(driver,MyInterviewPage.class);
+
+		wait_for_elementpresent(Thumbnail);
+		try{
+
+			Thumbnail.click();					
+		}catch(Exception e) {
+			Thumbnail.click();
+		}
+		logger.log(LogStatus.PASS," Candidate has to upload a new video");
+		Thread.sleep(2000);
+		mip.candidateProfileVideoCapturing();
+		Thread.sleep(5000);
+		closemsg.click();
+		//wait_for_elementpresent(Video_ProfileNext);
+		//Video_ProfileNext.click();
+	}
+
+	public boolean Start_Video()
+	{
+		StartRecording_Button.click();
+		return true;
+	}
 
 	//Elements for Error validation
 	@FindBy(xpath="//div[@class='name-wrapper']//span/mat-icon[@class='mat-icon material-icons']")
@@ -838,6 +834,8 @@ public class CandidateProfilePage extends Action_Method
 	@FindBy(xpath="//span[contains(text(),' Please enter your contribution ')]")
 	WebElement NoContribution_Error;	
 
+	@FindBy(id = "projectSubmitBtn")
+	WebElement SubmitBtn;
 
 	String x,y,z,q,p,r,s,t,u,v;
 	public boolean errorValidationForProfileInformation_Page() {
@@ -1041,62 +1039,62 @@ public class CandidateProfilePage extends Action_Method
 	public boolean errorValidationForEducationPage() throws InterruptedException {
 
 		/*try {*/
-			Info_Next.click();
-			CloseMsg.click();
-			Thread.sleep(2000);
-			Video_ProfileNext.click();
-			Thread.sleep(2000);
+		Info_Next.click();
+		CloseMsg.click();
+		Thread.sleep(2000);
+		Video_ProfileNext.click();
+		Thread.sleep(2000);
 
-			//Empty fields
-			wait_for_elementpresent(AddEducation_Button);
-			AddEducation_Button.click();
-			NoDegree_Error.isDisplayed();
-			p = NoDegree_Error.getText();
-			NoUniversity_Error.isDisplayed();
-			q = NoUniversity_Error.getText();
-			NoSpecialization_Error.isDisplayed();
-			r = NoSpecialization_Error.getText();
-			NoFromDate_Error.isDisplayed();
-			s = NoFromDate_Error.getText();
-			NoToDate_Error.isDisplayed();
-			t = NoToDate_Error.getText();
-			Thread.sleep(2000);
-			driver.navigate().refresh();
+		//Empty fields
+		wait_for_elementpresent(AddEducation_Button);
+		AddEducation_Button.click();
+		NoDegree_Error.isDisplayed();
+		p = NoDegree_Error.getText();
+		NoUniversity_Error.isDisplayed();
+		q = NoUniversity_Error.getText();
+		NoSpecialization_Error.isDisplayed();
+		r = NoSpecialization_Error.getText();
+		NoFromDate_Error.isDisplayed();
+		s = NoFromDate_Error.getText();
+		NoToDate_Error.isDisplayed();
+		t = NoToDate_Error.getText();
+		Thread.sleep(2000);
+		driver.navigate().refresh();
 
-			//Verifying degree field
-			Degree.sendKeys(Keys.TAB);
-			NoDegree_Error.isDisplayed();
-			Degree.sendKeys("123");
-			Degree.sendKeys(Keys.TAB);
-			InvalidDegree_Error.isDisplayed();
+		//Verifying degree field
+		Degree.sendKeys(Keys.TAB);
+		NoDegree_Error.isDisplayed();
+		Degree.sendKeys("123");
+		Degree.sendKeys(Keys.TAB);
+		InvalidDegree_Error.isDisplayed();
 
 
-			//Verifying University field
-			University.sendKeys(Keys.TAB);
-			NoUniversity_Error.isDisplayed();
+		//Verifying University field
+		University.sendKeys(Keys.TAB);
+		NoUniversity_Error.isDisplayed();
 
-			//Verifying Specialization field
-			Specialization.sendKeys(Keys.TAB);
-			NoSpecialization_Error.isDisplayed();
+		//Verifying Specialization field
+		Specialization.sendKeys(Keys.TAB);
+		NoSpecialization_Error.isDisplayed();
 
-			//Verifying Duration field
-			From_Duration.sendKeys(Keys.TAB);
-			NoFromDate_Error.isDisplayed();
-			To_Duration.sendKeys(Keys.TAB);
-			NoToDate_Error.isDisplayed();
+		//Verifying Duration field
+		From_Duration.sendKeys(Keys.TAB);
+		NoFromDate_Error.isDisplayed();
+		To_Duration.sendKeys(Keys.TAB);
+		NoToDate_Error.isDisplayed();
 
-			Thread.sleep(1000);
-			scrollingToBottomofAPage();
-			Education_Next.click();
-			Finish_Button.click();
-			return true;
+		Thread.sleep(1000);
+		scrollingToBottomofAPage();
+		Education_Next.click();
+		Finish_Button.click();
+		return true;
 		/*}
 		catch(Exception e)
 		{
 			return false;
 		}*/
 	} 
-	
+
 	public ArrayList<String> getAllErrorMessagesForEducationPage(){
 		ArrayList<String> a = new ArrayList<String>();
 		a.add(p);
@@ -1111,85 +1109,85 @@ public class CandidateProfilePage extends Action_Method
 	{
 		/*try {*/
 
-			Info_Next.click();
-			CloseMsg.click();
-			Video_ProfileNext.click();
-			scrollingToBottomofAPage();
-			Thread.sleep(1000);
-			Education_Next.click();
+		Info_Next.click();
+		CloseMsg.click();
+		Video_ProfileNext.click();
+		scrollingToBottomofAPage();
+		Thread.sleep(1000);
+		Education_Next.click();
 
-			//Verify click on Add Work Exp btn without any data
-			Thread.sleep(3000);
-			AddWorkExperience_Button.click();
-			NoJobTitle_Error.isDisplayed();
-			p = NoJobTitle_Error.getText();
-			NoCompanyName_Error.isDisplayed();
-			q = NoCompanyName_Error.getText(); 
-			NoWorkLocation_Error.isDisplayed();
-			r = NoWorkLocation_Error.getText();
-			NoFromDate_Error.isDisplayed();
-			s = NoFromDate_Error.getText();
-			NoToDate_Error.isDisplayed();
-			t = NoToDate_Error.getText();
-			driver.navigate().refresh();
+		//Verify click on Add Work Exp btn without any data
+		Thread.sleep(3000);
+		AddWorkExperience_Button.click();
+		NoJobTitle_Error.isDisplayed();
+		p = NoJobTitle_Error.getText();
+		NoCompanyName_Error.isDisplayed();
+		q = NoCompanyName_Error.getText(); 
+		NoWorkLocation_Error.isDisplayed();
+		r = NoWorkLocation_Error.getText();
+		NoFromDate_Error.isDisplayed();
+		s = NoFromDate_Error.getText();
+		NoToDate_Error.isDisplayed();
+		t = NoToDate_Error.getText();
+		driver.navigate().refresh();
 
 
-			//Verify Job Title field
-			Thread.sleep(3000);
-			JobTitle.sendKeys(Keys.TAB);
-			NoJobTitle_Error.isDisplayed();
+		//Verify Job Title field
+		Thread.sleep(3000);
+		JobTitle.sendKeys(Keys.TAB);
+		NoJobTitle_Error.isDisplayed();
 
-			//Verify Company/Organization field
-			CompanyOrganization.sendKeys(Keys.TAB);
-			NoCompanyName_Error.isDisplayed();
+		//Verify Company/Organization field
+		CompanyOrganization.sendKeys(Keys.TAB);
+		NoCompanyName_Error.isDisplayed();
 
-			//Verify No Location
-			Work_Location.sendKeys(Keys.TAB);
-			NoWorkLocation_Error.isDisplayed();				
+		//Verify No Location
+		Work_Location.sendKeys(Keys.TAB);
+		NoWorkLocation_Error.isDisplayed();				
 
-			//Verify Invalid Company Location
-			Work_Location.sendKeys("abc");
-			Work_Location.sendKeys(Keys.TAB);
-			InvalidWorkLocation_Error.isDisplayed();
+		//Verify Invalid Company Location
+		Work_Location.sendKeys("abc");
+		Work_Location.sendKeys(Keys.TAB);
+		InvalidWorkLocation_Error.isDisplayed();
 
-			//Verifying Duration field
-			From_Duration.sendKeys(Keys.TAB);
-			NoFromDate_Error.isDisplayed();
-			To_Duration.sendKeys(Keys.TAB);
-			NoToDate_Error.isDisplayed();
+		//Verifying Duration field
+		From_Duration.sendKeys(Keys.TAB);
+		NoFromDate_Error.isDisplayed();
+		To_Duration.sendKeys(Keys.TAB);
+		NoToDate_Error.isDisplayed();
 
-			//Verifying Project Showcase
-			ProjectShowcase_Accordion.click();
-			AddProject_Btn.click();
-			CompanyName_Error.isDisplayed();
-			u = CompanyName_Error.getText();
-			NoProjectTitle_Error.isDisplayed();
-			v = NoProjectTitle_Error.getText();
-			NoChallenges_Error.isDisplayed();
-			x = NoChallenges_Error.getText();
-			NoContribution_Error.isDisplayed();
-			y = NoContribution_Error.getText();
-			driver.navigate().refresh();
+		//Verifying Project Showcase
+		ProjectShowcase_Accordion.click();
+		AddProject_Btn.click();
+		CompanyName_Error.isDisplayed();
+		u = CompanyName_Error.getText();
+		NoProjectTitle_Error.isDisplayed();
+		v = NoProjectTitle_Error.getText();
+		NoChallenges_Error.isDisplayed();
+		x = NoChallenges_Error.getText();
+		NoContribution_Error.isDisplayed();
+		y = NoContribution_Error.getText();
+		driver.navigate().refresh();
 
-			//Verifying Company name field
-			ProjectShowcase_Accordion.click();
-			Thread.sleep(1000);
+		//Verifying Company name field
+		ProjectShowcase_Accordion.click();
+		Thread.sleep(1000);
 
-			//Verifying Project title
-			ProjectTitle.sendKeys(Keys.TAB);
-			NoProjectTitle_Error.isDisplayed();
+		//Verifying Project title
+		ProjectTitle.sendKeys(Keys.TAB);
+		NoProjectTitle_Error.isDisplayed();
 
-			//Verifying Challenges
-			Challenges.sendKeys(Keys.TAB);
-			NoChallenges_Error.isDisplayed();
+		//Verifying Challenges
+		Challenges.sendKeys(Keys.TAB);
+		NoChallenges_Error.isDisplayed();
 
-			//Verifying My Contribution
-			MyContribution.sendKeys(Keys.TAB);
-			NoContribution_Error.isDisplayed();
+		//Verifying My Contribution
+		MyContribution.sendKeys(Keys.TAB);
+		NoContribution_Error.isDisplayed();
 
-			Finish_Button.click();
-			Thread.sleep(3000);
-			return true;
+		Finish_Button.click();
+		Thread.sleep(3000);
+		return true;
 		/*}
 		catch(Exception e)
 		{
@@ -1475,213 +1473,73 @@ public class CandidateProfilePage extends Action_Method
 
 	}
 
-	@FindBy(xpath="(//mat-option/span)[1]")
-	WebElement selectDegree;
-	
-	@FindBy(xpath="(//mat-option/span)[1]")
-	WebElement updateDegree;
-	
-	@FindBy(xpath="(//button[@class='mat-icon-button'])[3]")
-	WebElement selectFromDate;
-	
-	@FindBy(xpath="//div[@class='mat-calendar-body-cell-content mat-calendar-body-today']")
-	WebElement selectTodayDate;
-	
-	@FindBy(xpath="//div[@class='mat-checkbox-inner-container']")
-	WebElement presentDate;
-	
-	@FindBy(xpath="//button[@type='submit']")
-	WebElement addButton;
-	
-	//@FindBy(xpath="//button[@type='submit']")
-	//WebElement saveEducation;
-	
-	@FindBy(xpath="(//div/i[contains(text(),'edit')])[1]")
-	WebElement updateEducation;
-	
-	@FindBy(xpath="(//span/i[contains(text(),'edit')])[1]")
-	WebElement updateWrkExp;
-	
-	@FindBy(xpath="(//mat-panel-title[@class='mat-expansion-panel-header-title']/span)[1]")
-	WebElement updatedEducationtText;
-	
-	@FindBy(xpath="//app-list-view-box-row")
-	WebElement addedEducationDetails;
-	
-	@FindBy(xpath="//div/i[contains(text(),'delete')]")
-	WebElement deleteEducation;
-	
-	@FindBy(xpath="(//span/i[contains(text(),'delete')])[1]")
-	WebElement deleteWrkExp;
-	
-	@FindBy(xpath="//span[contains(text(),'Proceed')]")
-	WebElement proceedDeletion;
-	
-	@FindBy(xpath="(//mat-panel-title/span)[1]")
-	WebElement profileEducation;
-	
-	@FindBy(xpath="//mat-expansion-panel-header")
-	WebElement profileEducationCount;
-	
-	@FindBy(xpath="//div[@class='box-wrapper row']")
-	WebElement addedEducationCount;
-	
-	@FindBy(xpath="//div/input[@placeholder='Job Title']")
-	WebElement jobTitle;
-	
-	@FindBy(xpath="//div/input[@placeholder='Company / Organization']")
-	WebElement company;
-	
-	@FindBy(xpath="//div/input[@placeholder='Location']")
-	WebElement location;
-	
-	@FindBy(xpath="(//span[@class='mat-option-text'])[1]")
-	WebElement selectLocation;
-	
-	@FindBy(xpath="//div/textarea[@placeholder='Description']")
-	WebElement description;
-	
-	public boolean addEducation()
-	{
-		//Verifying degree field
-		//Degree.sendKeys(Keys.TAB);
-		Degree.click();
-		selectDegree.click();
-		
-		//Verifying University field
-		University.sendKeys(Keys.TAB);
-		University.sendKeys("VTU");
-		//Verifying Specialization field
-		Specialization.sendKeys(Keys.TAB);
-		Specialization.sendKeys("ISE");
-		//Verifying Duration field
-		From_Duration.sendKeys("8/16/2016");
-		//selectFromDate.click();
-		//selectTodayDate.click();
-		presentDate.click();
-		addButton.click();
-		
-		
+	// Verify Adding and Deleting Project Showcase
+	@FindBy(xpath = "//span[contains(text(),'Others')]")
+	WebElement OthersData; 
 
-		/*Thread.sleep(1000);
-		scrollingToBottomofAPage();
-		Education_Next.click();
-		Finish_Button.click();*/
-		return true;
-	}
-	
-	public String verifyAddedEducationDisplayed() {
-		CloseMsg.click();
-		String src = addedEducationDetails.getAttribute("ng-reflect-subtitle");
+	public boolean VerifyAddingOfProjectShowcase() throws EncryptedDocumentException, InvalidFormatException, IOException, InterruptedException
+	{
+
+		scrollingToElementofAPage(ProjectShowcase_Accordion);
+		ProjectShowcase_Accordion.click();
+		//Selecting other from Company drop down
+		CompanyName.click();
+		OthersData.click();
+		//Adding Project title from excel
+		String title = getExceldata(Variables.testdata,Variables.projectshowcase,"Project Title");
+		ProjectTitle.sendKeys(title);
+		//Adding Challenges from excel 
+		String challenges = getExceldata(Variables.testdata,Variables.projectshowcase,"Challenges");
+		Challenges.sendKeys(challenges);
+		//Adding Contribution from excel
+		
+		String contribution = getExceldata(Variables.testdata,Variables.projectshowcase,"My Contribution");
+		MyContribution.sendKeys(contribution);
+		SubmitBtn.click();
+		Thread.sleep(2000);
 		Profile.click();
-		return src;
+		return true;
 	}
-	
-	public String verifyEducationDisplayed() {
-		String edu = profileEducation.getText();
-		return edu;
-	}
-	
-	public int getcountOfaddedEducation()
-	{
-		List<WebElement> Edu = driver.findElements(By.xpath("//mat-panel-title[@class='mat-expansion-panel-header-title']"));
-		int Educount = Edu.size();
-		return Educount;
 
-	}
-	public void closeSuccessMessage() {
-		CloseMsg.click();
+	public int getProjectCount()
+	{
+		List<WebElement> projcnt = driver.findElements(By.xpath("//ngu-tile//div[@class='project-box-wrapper']"));
+		int count = projcnt.size();
+		return count;
 		
 	}
-	public int getcountOfProfileEducation()
-	{	
-		//Profile.click();
-		List<WebElement> proEdu = driver.findElements(By.xpath("//mat-panel-title[@class='mat-expansion-panel-header-title']"));
-		int proEducount = proEdu.size();
-		return proEducount;
 
+	public String getTextOfProjectAdded()
+	{
+		int count = getProjectCount();
+		String Pro = driver.findElement(By.xpath("//ngu-tile["+(count+1)+"]//div[@class='project-box-wrapper']//div[@class='project-title']")).getText();
+		return Pro;	
 	}
 	
-	public void clickOnProfile() {
+	@FindBy(xpath = "//button/span[contains(text(),'Proceed')]")
+	WebElement ConfProBtn;
+	
+	public boolean deleteProjtShowcase()
+	{
+		scrollingToElementofAPage(ProjectShowcase_Accordion);
+		ProjectShowcase_Accordion.click();
+		//Get count of delete button
+		List<WebElement> projcnt = driver.findElements(By.xpath("//div[@class='full-width']//div[@class='company-card ng-star-inserted']//i[contains(text(),'delete')]"));
+		int count = projcnt.size();
+		
+		driver.findElement(By.xpath("//div[@class='full-width']//div[@class='company-card ng-star-inserted']["+count+"]//i[contains(text(),'delete')]")).click();
+		ConfProBtn.click();
+		CloseMsg.click();
 		Profile.click();
-	}
-	
-	public boolean updateEducation() throws InterruptedException {
-		Thread.sleep(1000);
-		updateEducation.click();
-		Degree.click();
-		Degree.clear();
-		updateDegree.click();
-		addButton.click();
 		return true;
 	}
-	
-	public boolean updateWorkExp() throws InterruptedException {
-		Thread.sleep(1000);
-		updateWrkExp.click();
-		jobTitle.click();
-		jobTitle.clear();
-		jobTitle.sendKeys("Back End Developer");
-		addButton.click();
-		return true;
-	}
-	
-	public boolean deleteEducation()
-	{
-		try{
-			//String src = addedEducationDetails.getAttribute("ng-reflect-video-url");
-		    if(deleteEducation.isDisplayed())
-		    {
-		    	//System.out.println("edu present");
-		    	deleteEducation.click();
-		    	proceedDeletion.click();
-		    }
-		    
-		    else
-		    {
-		    	System.out.println("Edu not present");
-		    	
-		    }
-			
-		return true;
-		}catch(Exception e) {
-			
-			return false;
-			}
-	}		
-	
-	public boolean addWorkExperience() {
-		jobTitle.click();
-		jobTitle.sendKeys("Front End Developer");
-		company.sendKeys(Keys.TAB);
-		company.sendKeys("Infosys");
-		location.click();
-		selectLocation.click();
-		From_Duration.sendKeys("8/16/2016");
-		presentDate.click();
-		description.sendKeys(Keys.TAB);
-		description.sendKeys("Manual and Automation testing");
-		addButton.click();
-		CloseMsg.click();
-		return true;
-		}
-	
-	public boolean deleteWorkExperience() {
-		deleteWrkExp.click();
-		proceedDeletion.click();
-		CloseMsg.click();
-		return true;
-	}
-		
-	public int getcountOfProfileWorkExp()
-	{	
-		//Profile.click();
-		List<WebElement> wrkExp = driver.findElements(By.xpath("//div/strong"));
-		int wrkExpcount = wrkExp.size();
-		return wrkExpcount;
 
-	}
-	
+
+
+
+
+
+
 }
 
 
